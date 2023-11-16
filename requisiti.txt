@@ -1,0 +1,38 @@
+Home:
+ - Cosa offro:
+	- massaggi
+	- corsi di massaggio
+	- Danza libera
+ -  estratto pagine testuali del sito con link di approfondimento
+
+Pagina di presentazione:
+ - video di presentazione
+ - formazione
+ - metodologia e valori
+
+Massaggi (8tipi): 
+ - tutti in una pagina, se necessario con link approfondimento
+
+Corsi di massaggio:
+
+Danza libera:
+
+Shop:
+ - gitcard di vario tipo.
+ - Pacchetto 3 massaggi
+ - Pacchetto 5 massaggi
+	- pagamento online + pdf gift-card stampabile
+
+Contatti e Prenotazioni:
+ - calendario (seleziona tipo di massaggio per vedere il calendario) 
+	- view 1 giorni (disponibile/pieno)
+	- view 2 ore 
+Login 
+
+Amministratore
+
+Richieste Generali:
+Layout semplice
+
+Pagina Admin accettazione/rifiuto prenotazioni. 
+
