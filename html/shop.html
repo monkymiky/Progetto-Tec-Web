@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang = "it">
+
+     <head>                                                         <!-- Qua poi sostituisco con l'header generale-->
+        <meta charset="UTF-8"> 
+
+        <title>Shop</title>
+                
+    </head>
+
+    <body>
+        
+        <ul class="shop-items">                                     <!-- Ho messo come lista gli item acquistabili, ma se non vi torna posso farla come una serie di div -->
+            <li class="card">                                       <!-- Classe a cui daremo gli attributi specifici di ogni carta -->
+                <div class="card-front">                            <!-- Fronte della carta con immagine e nome del servizio-->
+                    <img src="massaggioholder.jpg">                 <!-- Immagine a caso -->
+                    <h3>Nome servizio</h3>
+                </div>
+                <div class="card-back">                             <!-- Retro della carta con la descrizione del servizio-->
+                    <p>Testo da inserire</p>
+                </div>
+                <input type="button" value="Seleziona" onclick="">  <!-- Pulsanti per selezionare il trattamento o vedere il pdf, onlick vuoto al momento-->
+                <input type="button" value="PDF" onclick="">
+            </li>
+
+            <li class="card">
+                <div class="card-front">
+                    <img src="massaggioholder.jpg">
+                    <h3>Nome servizio</h3>
+                </div>
+                <div class="card-back">
+                    <p>Testo da inserire</p>
+                </div>
+                <input type="button" value="Seleziona" onclick="">
+                <input type="button" value="PDF" onclick="">
+            </li>
+
+            <li class="card">
+                <div class="card-front">
+                    <img src="massaggioholder.jpg">
+                    <h3>Nome servizio</h3>
+                </div>
+                <div class="card-back">
+                    <p>Testo da inserire</p>
+                </div>
+                <input type="button" value="Seleziona" onclick="">
+                <input type="button" value="PDF" onclick="">
+            </li>
+            
+        </ul>
+        <input type="button" class="checkout" value="Vai al carrello" onclick="">   <!-- Pulsante per il checkout, classe a parte perché avrà uno stile suo-->
+
+    </body>
+        
+</html>

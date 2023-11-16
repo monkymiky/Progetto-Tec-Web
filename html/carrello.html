@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html lang = "it">
+
+     <head>
+        <meta charset="UTF-8"> 
+
+        <title>Carrello</title>
+                
+    </head>
+
+    <body>
+        
+        <div class="box" id="email">
+            <div class="titolo"><h2 class="stile-titolo">Indirizzo e-mail</h2></div>
+            <form action=""><fieldset>
+                <label for="mail">Indirizzo email:</label>
+                <input name="mail" id="mail" maxlength="30"/>
+
+                <label for="verifica">Verifica indirizzo email:</label>
+                <input name="verifica" id="verifica" maxlength="30" />
+            </fieldset></form>
+        </div>
+
+        <div class="box" id="acquisti">
+            <div class="titolo"><h2 class="stile-titolo">Acquisti</h2></div>
+                <div class="box" id="placeholder-item">
+                    <div>
+                        <img src="" alt="placeholder-item">
+                        <span>Placeholder</span>
+                    </div>
+                    <div>
+                        <span>€0</span>
+                        <input type="number" value="1" min="1" />
+                    </div>
+                </div>
+            <div id="totale">
+                <span>Totale acquisti: €0</span>
+            </div>
+        </div>
+
+        <div class="box" id="metodo-pagamento">
+            <div class="titolo">
+              <h2 class="stile-titolo">Metodo di pagamento</h2>
+            </div>
+            <form action="">
+              <fieldset>
+                <legend>Seleziona metodo di pagamento:</legend>
+                <div>
+                  <label for="carta-credito">
+                    <input type="radio" name="metodo-pagamento" id="carta-credito" value="carta-credito" checked />
+                    Carta di credito
+                  </label>
+                </div>
+                <div>
+                  <label for="paypal">
+                    <input type="radio" name="metodo-pagamento" id="paypal" value="paypal" />
+                    Paypal
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+        </div>
+          
+
+        <div class="box" id="dati-carta">
+            <div class="titolo">
+                <h2 class="stile-titolo">Dati di pagamento</h2>
+            </div>
+            <form action="">
+                <fieldset>
+                    <label for="nome-cognome">Nome e cognome:</label>
+                    <input name="nome-cognome" id="nome-cognome" maxlength="40"/>
+
+                    <label for="numero-carta">Numero della carta:</label>
+                    <input name="numero-carta" id="numero-carta" maxlength="24"/>
+
+                    <label for="cvv">CVV:</label>
+                    <input name="cvv" id="cvv" maxlength="3" />
+
+                    <div class="scadenza"></div>
+                        <span>Scad.</span>
+                        <select id="mese">
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <select id="anno">
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <input type="button" name="conferma-checkout" id="conferma-checkout" value="acquista" onclick="" />
+
+    </body>
+        
+</html>
