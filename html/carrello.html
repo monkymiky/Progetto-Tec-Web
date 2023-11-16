@@ -10,8 +10,8 @@
 
     <body>
         
-        <div class="box" id="email">
-            <div class="titolo"><h2 class="stile-titolo">Indirizzo e-mail</h2></div>
+        <div class="box" id="email">                                                            <!-- Per ogni box ho usato un div perché section mi sembrava overkill, ma vedete voi cosa è meglio -->
+            <div class="titolo"><h2 class="stile-titolo">Indirizzo e-mail</h2></div>            <!-- Ho usato dei div e h anzi che legend perché mi sembravano migliori per stilizzarli -->
             <form action=""><fieldset>
                 <label for="mail">Indirizzo email:</label>
                 <input name="mail" id="mail" maxlength="30"/>
@@ -21,12 +21,12 @@
             </fieldset></form>
         </div>
 
-        <div class="box" id="acquisti">
+        <div class="box" id="acquisti">                                                           <!-- Al momento ho messo un placeholder per gli item presenti nel carrello che verranno compilati man mano con php -->
             <div class="titolo"><h2 class="stile-titolo">Acquisti</h2></div>
                 <div class="box" id="placeholder-item">
                     <div>
                         <img src="" alt="placeholder-item">
-                        <span>Placeholder</span>
+                        <span>Placeholder</span>                                                    <!-- span vari a cui daremo una classe e id quando avremo chiaro il php -->
                     </div>
                     <div>
                         <span>€0</span>
@@ -34,20 +34,20 @@
                     </div>
                 </div>
             <div id="totale">
-                <span>Totale acquisti: €0</span>
+                <span>Totale acquisti: €0</span>                                                    
             </div>
         </div>
 
-        <div class="box" id="metodo-pagamento">
+        <div class="box" id="metodo-pagamento">         
             <div class="titolo">
               <h2 class="stile-titolo">Metodo di pagamento</h2>
             </div>
             <form action="">
               <fieldset>
-                <legend>Seleziona metodo di pagamento:</legend>
+                <legend>Seleziona metodo di pagamento:</legend>                                     <!-- La selezione dei metodi di pagamento l'ho fatta con dei radio per similarità con l'immagine, poi si può cambiare -->
                 <div>
                   <label for="carta-credito">
-                    <input type="radio" name="metodo-pagamento" id="carta-credito" value="carta-credito" checked />
+                    <input type="radio" name="metodo-pagamento" id="carta-credito" value="carta-credito" checked />         <!-- checked di default il pagamento con la carta -->
                     Carta di credito
                   </label>
                 </div>
@@ -74,11 +74,11 @@
                     <label for="numero-carta">Numero della carta:</label>
                     <input name="numero-carta" id="numero-carta" maxlength="24"/>
 
-                    <label for="cvv">CVV:</label>
+                    <label for="cvv"><abbr title="codice di verifica o convalida">CVV:</abbr></label>
                     <input name="cvv" id="cvv" maxlength="3" />
 
-                    <div class="scadenza"></div>
-                        <span>Scad.</span>
+                    <div class="scadenza"></div>                             <!-- Qua non so ancora come fare per la lettura della data (si potrebbe usare un datetime per ogni opzione?) -->
+                        <span><abbr title="scadenza">Scad.</abbr></span>
                         <select id="mese">
                             <option>01</option>
                             <option>02</option>
