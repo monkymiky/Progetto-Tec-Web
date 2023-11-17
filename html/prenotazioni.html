@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Temp_title</title>
+
+        <!--tag style TEMPORANEO-->
+        <style>
+            .form-field {
+                display:flex;
+                flex-direction:row-reverse;
+                justify-content:start;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <header>                           
+            <h1 id="logo">logo</h1>           
+        </header>
+        <nav id="menu">
+            <ul>
+                <li lang="en">Home</li>
+                <li><a href="Anna.html">Anna</a></li>
+                <li><a href="Prestazioni.html">Prestazioni</a></li>
+                <li><a href="Contatti.html">Contatti</a></li>
+                <li>Prenotazioni</li>
+                <li><a href="Shop.html">Shop</a></li>                            
+            </ul>
+        </nav>
+        <nav id="breadcrumb"><p>Ti trovi in: Prenotazioni</p></nav>
+        <main>
+            <h2>Prenota una prestazione</h2>
+            
+            <div>
+                <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
+            
+                <input id="domicilio" name="scelta-luogo" type="radio">
+                <label for="domicilio">a domicilio</label>
+
+                <input id="studio" name="scelta-luogo" type="radio">
+                <label for="studio">in studio</label>
+            </div>
+            
+
+            <p>Qui andrà il calendario interattivo.</p>
+            <div class="disponibilita">
+                <div class="yellow-box"></div>
+                <p>Disponibile</p>
+            </div>
+            <div class="disponibilita">
+                <div class="orange-box"></div>
+                 <p>Occupato</p>
+            </div>
+            <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
+            
+            <form>
+                <fieldset>
+                    <legend>Slot selezionato:</legend>
+                    <div class="form-field">
+                        <input id="date" name="date" readonly value="placeHolderDate"> <!--Stringa recuperata tramite JScript/PHP dal calendario?-->
+                        <label for="date">Giorno:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="time" name="time" readonly value="placeHolderTime"> <!--Stringa recuperata tramite JScript/PHP dal calendario?-->
+                        <label for="time">Ora:</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Dati di contatto</legend>
+                    <div class="form-field">
+                        <input id="email" name="email" type="email" maxlength="20">
+                        <label for="email">Email:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="cell" name="cell" type="tel" maxlength="15">
+                        <label for="cell">Numero di telefono:</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Hai una gift card?</legend>
+                    <input id="yes" name="is-giftcard" type="radio">
+                    <label for="yes">Si</label>
+                    <input id="No" name="is-giftcard" type="radio">
+                    <label for="No">No</label>
+                </fieldset>
+
+                <div class="form-field">
+                    <input id="giftcard-code" name="giftcard-code" placeholder="formato del codice (da decidere)" maxlength="20"> <!--Validato tramite script PHP-->
+                    <label for="giftcard-code">Inserisci il codice della giftcard:</label>
+                </div>
+                
+
+                <fieldset> <!--Appare se selezionato "no" su gift card-->
+                    <legend>Metodo di pagamento</legend>
+                    <input id="paypal" name="payment-method" type="radio">
+                    <label for="paypal">Paypal</label>
+                    <input id="credit-debit" name="payment-method" type="radio">
+                    <label for="credit-debit">Carta di credito/debito</label>
+                    <input id="cash" name="payment-method" type="radio">
+                    <label for="cash">Contanti</label>
+                </fieldset>
+
+                <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
+                    <legend>Dati carta</legend>
+                    <div class="form-field">
+                        <input id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
+                        <label for="card-number">Numero della carta:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-expiration" name="card-expiration" type="date"> <!--Verifica validità tramite PHP-->
+                        <label for="card-expiration">Data di scadenza:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
+                        <label for="card-CVV">CVV:</label>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Prenota">
+            </form>
+        </main>
+        <footer>
+            <small>Nesler Michele - Parise Luca - Marco - Elia Leonetti - <span lang="en">All Rights Reserved</span></small>
+        </footer>
+    </body>
+</html>
+    
