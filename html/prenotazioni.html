@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-mettere abbreviazioni 
-aggiungere selezione casa domicilio a form 
-dati carta copiare shop 
+valutare rimozione div con classe "form-field", se si riesce a mantenere uguale lo stile
 -->
 <html lang="it">
     <head>
@@ -19,7 +17,6 @@ dati carta copiare shop
         </style>
 
     </head>
-
     <body>
         <header>                           
             <h1 id="logo">logo</h1>           
@@ -37,8 +34,6 @@ dati carta copiare shop
         <nav id="breadcrumb"><p>Ti trovi in: Prenotazioni</p></nav>
         <main>
             <h2>Prenota una prestazione</h2>
-            
-            <div>
                 <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
             
                 <input id="domicilio" name="scelta-luogo" type="radio">
@@ -46,7 +41,6 @@ dati carta copiare shop
 
                 <input id="studio" name="scelta-luogo" type="radio">
                 <label for="studio">in studio</label>
-            </div>
             
 
             <p>Qui andrà il calendario interattivo.</p>
@@ -61,6 +55,13 @@ dati carta copiare shop
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form>
+                <fieldset>
+                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
+                    <input id="domicilio" name="scelta-luogo" type="radio">
+                    <label for="domicilio">a domicilio</label>
+                    <input id="studio" name="scelta-luogo" type="radio">
+                    <label for="studio">in studio</label>
+                </fieldset>
                 <fieldset>
                     <legend>Slot selezionato:</legend>
                     <div class="form-field">
@@ -103,27 +104,54 @@ dati carta copiare shop
                 <fieldset> <!--Appare se selezionato "no" su gift card-->
                     <legend>Metodo di pagamento</legend>
                     <input id="paypal" name="payment-method" type="radio">
-                    <label for="paypal">Paypal</label>
+                    <label for="paypal"><span lang="en">Paypal</span></label>
                     <input id="credit-debit" name="payment-method" type="radio">
                     <label for="credit-debit">Carta di credito/debito</label>
-                    <input id="cash" name="payment-method" type="radio">
-                    <label for="cash">Contanti</label>
                 </fieldset>
 
                 <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
+                        <input id="name-surname" name="nome-cognome" maxlength="40">
+                        <label for="name-surname">Nome e cognome:</label>
+                    </div>
+                    <div class="form-field">
                         <input id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
                         <label for="card-number">Numero della carta:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
+                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
                     </div>
                     <div class="form-field">
                         <input id="card-expiration" name="card-expiration" type="date"> <!--Verifica validità tramite PHP-->
                         <label for="card-expiration">Data di scadenza:</label>
                     </div>
-                    <div class="form-field">
-                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
-                        <label for="card-CVV">CVV:</label>
-                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Scadenza:</legend>
+                    <select id="month" name="month">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <select>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2028</option>
+                        <option>2029</option>
+                        <option>2030</option>
+                    </select>
                 </fieldset>
                 <input type="submit" value="Prenota">
             </form>
