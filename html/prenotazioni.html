@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--
+valutare rimozione div con classe "form-field", se si riesce a mantenere uguale lo stile
+-->
 <html lang="it">
     <head>
         <meta charset="UTF-8">
@@ -14,7 +17,6 @@
         </style>
 
     </head>
-
     <body>
         <header>                           
             <h1 id="logo">logo</h1>           
@@ -32,8 +34,6 @@
         <nav id="breadcrumb"><p>Ti trovi in: Prenotazioni</p></nav>
         <main>
             <h2>Prenota una prestazione</h2>
-            
-            <div>
                 <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
             
                 <input id="domicilio" name="scelta-luogo" type="radio">
@@ -41,7 +41,6 @@
 
                 <input id="studio" name="scelta-luogo" type="radio">
                 <label for="studio">in studio</label>
-            </div>
             
 
             <p>Qui andrà il calendario interattivo.</p>
@@ -56,6 +55,13 @@
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form>
+                <fieldset>
+                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
+                    <input id="domicilio" name="scelta-luogo" type="radio">
+                    <label for="domicilio">a domicilio</label>
+                    <input id="studio" name="scelta-luogo" type="radio">
+                    <label for="studio">in studio</label>
+                </fieldset>
                 <fieldset>
                     <legend>Slot selezionato:</legend>
                     <div class="form-field">
@@ -98,27 +104,56 @@
                 <fieldset> <!--Appare se selezionato "no" su gift card-->
                     <legend>Metodo di pagamento</legend>
                     <input id="paypal" name="payment-method" type="radio">
-                    <label for="paypal">Paypal</label>
+                    <label for="paypal"><span lang="en">Paypal</span></label>
                     <input id="credit-debit" name="payment-method" type="radio">
                     <label for="credit-debit">Carta di credito/debito</label>
-                    <input id="cash" name="payment-method" type="radio">
-                    <label for="cash">Contanti</label>
                 </fieldset>
 
                 <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
+                        <input id="name-surname" name="nome-cognome" maxlength="40">
+                        <label for="name-surname">Nome e cognome:</label>
+                    </div>
+                    <div class="form-field">
                         <input id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
                         <label for="card-number">Numero della carta:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
+                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
                     </div>
                     <div class="form-field">
                         <input id="card-expiration" name="card-expiration" type="date"> <!--Verifica validità tramite PHP-->
                         <label for="card-expiration">Data di scadenza:</label>
                     </div>
-                    <div class="form-field">
-                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
-                        <label for="card-CVV">CVV:</label>
-                    </div>
+                    <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
+                        <legend><abbr title="Scadenza">Scad</abbr>.</legend>
+                        <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                        <select id="month" name="month">
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                        <select id="year" name="year">
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                        </select> 
+                    </fieldset>
                 </fieldset>
                 <input type="submit" value="Prenota">
             </form>

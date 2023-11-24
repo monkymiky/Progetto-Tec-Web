@@ -1,4 +1,8 @@
- <!--    HEADER    -->
+<!--    dropdown-list per prestazioni 
+        nuovo li per carrello
+        se c'è tempo alla fine mettere numerino tot elementi nel carrello
+-->
+<!--    HEADER    -->
     <header>                                                                <!--header e footer sono simili a quelli fatti dalla prof in lab-->
         <h1 id="logo">logo</h1>                                        
     </header>
