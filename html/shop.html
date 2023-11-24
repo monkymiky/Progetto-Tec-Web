@@ -1,55 +1,83 @@
-<!DOCTYPE html> 
-<html lang = "it">
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
 
-     <head>                                                         <!-- Qua poi sostituisco con l'header generale-->
-        <meta charset="UTF-8"> 
+    <title>Shop</title>
 
-        <title>Shop</title>
-                
-    </head>
+    <link rel="stylesheet" type="text/css" href="shop.css">
+  </head>
 
-    <body>
-        
-        <ul class="shop-items">                                     <!-- Ho messo come lista gli item acquistabili, ma se non vi torna posso farla come una serie di div -->
-            <li class="card">                                       <!-- Classe a cui daremo gli attributi specifici di ogni carta -->
-                <div class="card-front">                            <!-- Fronte della carta con immagine e nome del servizio-->
-                    <img src="massaggioholder.jpg">                 <!-- Immagine a caso -->
-                    <h3>Nome servizio</h3>
-                </div>
-                <div class="card-back">                             <!-- Retro della carta con la descrizione del servizio-->
-                    <p>Testo da inserire</p>
-                </div>
-                <input type="button" value="Seleziona" onclick="">  <!-- Pulsanti per selezionare il trattamento o vedere il pdf, onlick vuoto al momento-->
-                <input type="button" value="PDF" onclick="">
-            </li>
+  <body>
+    <header>
+      <h1 id="logo">logo</h1>
+    </header>
 
-            <li class="card">
-                <div class="card-front">
-                    <img src="massaggioholder.jpg">
-                    <h3>Nome servizio</h3>
-                </div>
-                <div class="card-back">
-                    <p>Testo da inserire</p>
-                </div>
-                <input type="button" value="Seleziona" onclick="">
-                <input type="button" value="PDF" onclick="">
-            </li>
+    <nav id="menu">
+      <ul>
+        <li><a href="Home.html"><span lang="eng">Home</span></a></li>
+        <li><a href="Anna.html">Anna</a></li>
+        <li><a href="Prestazioni.html">Prestazioni</a></li>
+        <li><a href="Contatti.html">Contatti</a></li>
+        <li><a href="Prenotazioni.html">Prenotazioni</a></li>
+        <li><span lang="eng">Shop</span><div id="shop_img">shop_img</div></li>
+      </ul>
+    </nav>
 
-            <li class="card">
-                <div class="card-front">
-                    <img src="massaggioholder.jpg">
-                    <h3>Nome servizio</h3>
-                </div>
-                <div class="card-back">
-                    <p>Testo da inserire</p>
-                </div>
-                <input type="button" value="Seleziona" onclick="">
-                <input type="button" value="PDF" onclick="">
-            </li>
-            
-        </ul>
-        <input type="button" class="checkout" value="Vai al carrello" onclick="">   <!-- Pulsante per il checkout, classe a parte perché avrà uno stile suo-->
+    <nav id="breadcrumb">
+      <p>Ti trovi in: <span lang="eng">Shop</span></p>
+    </nav>
 
-    </body>
-        
+    <main>
+      <ul class="shop-items">
+        <!-- Ho messo come lista gli item acquistabili, ma se non vi torna posso farla come una serie di div -->
+        <li class="card">
+          <!-- Classe a cui daremo gli attributi specifici di ogni carta -->
+          <div class="card-front">
+            <!-- Fronte della carta con immagine e nome del servizio-->
+            <img src="massaggioholder.jpg" />
+            <!-- Immagine a caso -->
+            <p>Nome servizio</p>
+          </div>
+          <div class="card-back">
+            <!-- Retro della carta con la descrizione del servizio-->
+            <p>Testo da inserire</p>
+          </div>
+          <input type="button" value="Seleziona" onclick="" />
+          <!-- Pulsanti per selezionare il trattamento o vedere il pdf, onlick vuoto al momento-->
+          <input type="button" value="PDF" onclick="" />
+        </li>
+
+        <li class="card">
+          <div class="card-front">
+            <img src="massaggioholder.jpg" />
+            <p>Nome servizio</p>
+          </div>
+          <div class="card-back">
+            <p>Testo da inserire</p>
+          </div>
+          <input type="button" value="Seleziona" onclick="" />
+          <input type="button" value="PDF" onclick="" />
+        </li>
+
+        <li class="card">
+          <div class="card-front">
+            <img src="massaggioholder.jpg" />
+            <p>Nome servizio</p>
+          </div>
+          <div class="card-back">
+            <p>Testo da inserire</p>
+          </div>
+          <input type="button" value="Seleziona" onclick="" />
+          <input type="button" value="PDF" onclick="" />
+        </li>
+      </ul>
+      <input
+        type="button"
+        class="checkout"
+        value="Vai al carrello"
+        onclick=""
+      />
+    </main>
+  </body>
 </html>
