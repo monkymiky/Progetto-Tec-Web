@@ -1,4 +1,4 @@
-<!--    dropdown-list per prestazioni 
+<!--    dropdown-list per prestazioni (../prestazioni/fisioterapia.html ../prestazioni/danza.html ../prestazioni/corsi.html)
         nuovo li per carrello
         se c'è tempo alla fine mettere numerino tot elementi nel carrello
 -->
