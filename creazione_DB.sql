@@ -18,8 +18,7 @@ CREATE TABLE Gift_card (
 );
 
 CREATE TABLE Dati_cliente(
-    ID INT PRIMARY KEY AUTO INCREMENT,
-    Email VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) PRIMARY KEY,
     Cellulare VARCHAR(15) NOT NULL,
     Indirizzo VARCHAR(50),
     Nome VARCHAR(20) NOT NULL
@@ -28,8 +27,9 @@ CREATE TABLE Dati_cliente(
 CREATE TABLE Prenotazioni(
     Data_Ora_Inizio DATETIME PRIMARY KEY,
     Tipo BOOLEAN NOT NULL, -- true = 1,5 h (in studio) | false = 3h (a domicilio)
-    Descrizione VARCHAR(500),
-    Utilizzi_possibili INT NOT NULL,
+    InfoAggiuntive VARCHAR(500),
+    Cliente INT NOT NULL,
+    FOREIGN KEY (Cliente) REFERENCES Dati_cliente(Email),
     UNIQUE(Data_Ora_Inizio)
 );
 
