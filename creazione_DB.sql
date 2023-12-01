@@ -29,8 +29,7 @@ CREATE TABLE Prenotazioni(
     Tipo BOOLEAN NOT NULL, -- true = 1,5 h (in studio) | false = 3h (a domicilio)
     InfoAggiuntive VARCHAR(500),
     Cliente INT NOT NULL,
-    FOREIGN KEY (Cliente) REFERENCES Dati_cliente(Email),
-    UNIQUE(Data_Ora_Inizio)
+    FOREIGN KEY (Cliente) REFERENCES Dati_cliente(Email)
 );
 
 CREATE TABLE Disponibilità(
