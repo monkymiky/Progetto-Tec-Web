@@ -3,14 +3,14 @@
 require_once ("connessione.php");
 //creazione della prima parte della pagina
 
-$giorno = array(); // array di giorni
-$slot = array(); // $slot[giorno][Data_Ora_inizio]
+
+$slot = array(); // $slot[Data_Ora_inizio] 
 $azione =;
 
 if($azione = 0){// cancella prenotazione
-    if (count($giorno)==1 && count($slot) == 1){
-        if (!$result = $connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = '".$giorno[0].$slot[0][0]."'")){
-            echo "Errore della query  (".$giorno[0].$slot[0][0]."): " . $connessione->error . ".";
+    if ( count($slot) == 1){
+        if (!$result = $connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = '$slot[0]'")){
+            echo "Errore della query : " . $connessione->error . ".";
             exit();
         }
     }else {
@@ -20,9 +20,10 @@ if($azione = 0){// cancella prenotazione
 
 if($azione = 1){//imposta non disponibile
     $prenotata = false;
-    for ($i=0;$i<count($giorno);$i++){ // vengono fatte molte query ma è un evento relativamente raro siccome può farlo solo l'admin
-        for($j=0;$j<9;$j++){
-            if (!$result= $connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Data_Ora_Inizio ='".$giorno[0].$slot[0][0]."'")){
+    foreach($s in $slot) {// vengono fatte molte query ma è un evento relativamente raro siccome può farlo solo l'admin
+            $tmp = startotime("-90 min",$s);
+            $slotprecedente = date("Y:M:d h:i:s");
+            if (!$result= $connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Data_Ora_Inizio ='".$s."' OR Data_Ora_Inizio ='".$slotprecedente."' AND Tipo ='false'")){
                 echo "Errore della query: " . $connessione->error . ".";
                 exit();
             }else if($result->num_rows != 0){
@@ -31,10 +32,9 @@ if($azione = 1){//imposta non disponibile
         }
     }
     if(!$prenotata){
-        for ($i=0;$i<count($giorno);$i++){
-            for($j=0;$j<9;$j++){
-                if (!$result = $connessione->query("DELETE FROM Disponibilità WHERE Data_Ora_Inizio = '".$giorno[0].$slot[0][0]."';")){
-                    echo "Errore della query per il runback delle modifiche fatte prima del primo errore (".$giorno[0].$slot[0][0]."): " . $connessione->error . ".";
+        foreach($s in $slot) {
+                if (!$result = $connessione->query("DELETE FROM Disponibilità WHERE Data_Ora_Inizio = '".$s."';")){
+                    echo "Errore della query : " . $connessione->error . ".";
                     exit();
                 }
             }
@@ -42,17 +42,18 @@ if($azione = 1){//imposta non disponibile
     }else{echo"operazione annullata : non è possibile impostare come non disponibile uno slot gia prenotato.";}
 }
 if($azione = 2){// imposta disponibile
-    for ($i=0;$i<count($giorno);$i++){
-        for($j=0;$j<9;$j++){
-            if (!$result= $connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Data_Ora_Inizio ='".$giorno[$i].$slot[$i][$j]."')"){
-                echo "Errore della query:" . $connessione->error . ".";
+    foreach($s in $slot) {
+        $tmp = startotime("-90 min",$s);
+        $slotprecedente = date("Y:M:d h:i:s");
+        if (!$result= $connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Data_Ora_Inizio ='".$s."') OR Data_Ora_Inizio ='".$slotprecedente."' AND Tipo ='false'"){
+            echo "Errore della query:" . $connessione->error . ".";
+            exit();
+        }else if($result->num_rows == 0){ // se non è gia prenotato inserisce lo slot im Disponibilità
+            if (!$result = $connessione->query("INSERT INTO Disponibilità (Data_Ora_Inizio) VALUES (".$s.")")){
+                echo "Errore della query :". $connessione->error .";
                 exit();
-            }else if($result->num_rows == 0){ // se non è gia prenotato inserisce lo slot im Disponibilità
-                if (!$result = $connessione->query("INSERT INTO Disponibilità (Data_Ora_Inizio) VALUES (".$giorno[$i].$slot[$i][$j].")")){
-                    echo "Errore della query :". $connessione->error .";
-                    exit();
-                }
             }
+        }
         }
     }
 }
