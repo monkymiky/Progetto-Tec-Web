@@ -2,16 +2,15 @@
 // inclusione del file di connessione
 require_once ("connessione.php");
 //creazione della prima parte della pagina
-…
 // esecuzione della query per la selezione dei record
-$DataOraInizio=;
-$tipo=;
-$Infoaggiuntive=;
+$DataOraInizio= "2023-12-1 08:30:00";
+$tipo= true;
+$Infoaggiuntive="";
 
-$email=;
-$cel=;
-$indirizzo=;
-$nome=;
+$email="";
+$cel="";
+$indirizzo="";
+$nome="";
 // se l'utente è gia presente nel db aggiunge solo la prenotazione, altrimenti entrambi. gestisce gli errori.
 // se l'email non è presente e fallisce la seconda query di inserimento (prenotazione) cancella i dati inseriti
 

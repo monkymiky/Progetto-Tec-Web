@@ -3,8 +3,8 @@
 require_once ("connessione.php");
 
 
-$user = ; // 
-$pass =;
+$user = "admin" ; // 
+$pass = "admin";
 
 if (!$result= $connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Username ='$user' AND Pass = '$pass'")){
     echo "Errore della query: " . $connessione->error . ".";
