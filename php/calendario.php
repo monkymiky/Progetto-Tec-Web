@@ -28,12 +28,20 @@ if (!$result = $connessione->query("SELECT Data_Ora_Inizio FROM Disponibilità W
 else{
     $dataOraSlotTab = array();
     if($result->num_rows > 0){ // TABELLA NON ACCESSIBILE!! (basta il campo data sotto?)
-        echo"<table><thead><th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th><th>Ven</th><th>Sab</th><th>Dom</th></thead><tbody>";
+        echo"<ol id='calendario'>
+                <li><time datetime="$anno-$mese">$anno-$mese</time></li>
+                <li><abbr title='Lunedì'>Lun</abbr></li>
+                <li><abbr title='Martedì'>Mar</abbr></li>
+                <li><abbr title='Mercoledì'>Mer</abbr></li>
+                <li><abbr title='Giovedì'>Gio</abbr></li>
+                <li><abbr title='Venerdì'>Ven</abbr></li>
+                <li><abbr title='Sabato'>Sab</abbr></li>
+                <li><abbr title='Domenica'>Dom</abbr></li>"
     //------------ popolamento array con tutte le date e ora di inizio per tutti gli slot esistenti in un mese -----------------
         $orarioSlot = array(" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00","19:00:00"," 20:30:00");
         $giorno = $primoTab;
         for($i=0;$i<35;$i++){
-            $giorno = strtotime("+$i day" $giorno); 
+            $giorno = strtotime("+$i day",$giorno); 
             for($j=0,$j<9,$j++){
                 $data = date("Y-M-d",$giorno);
                 $dataOraSlotTab[i][j][0] = $data.$orarioSlot[$j];
@@ -57,37 +65,34 @@ else{
                 }
             }
         }
-        // ------------------ creazione tabella del mese con info sui singoli slot negli attributi data- (in modo da ridurre le query e trasferire il carico lato client) ----------------------------------------------
+        // ------------------ creazione tabella del mese (grid) con info sui singoli slot negli attributi data- (in modo da ridurre le query e trasferire il carico lato client) ----------------------------------------------
         $giorno = $primoTab;
-        for($i=0;$i<5;$i++){ // colonne
-            echo"<tr>";
-            for($j=0;$j<7;$j++){// righe (giorni della settimana)
+        for($i=0;$i<35;$i++){ // colonne
                 $giorno = strtotime("+$i day" $giorno);
                 $tmp = date("d", $giorno);
-                echo"<td data-slot0= '$dataOraSlotTab[($i+1)*7+($j)][0][1]' 
-                data-slot1= '$dataOraSlotTab[($i+1)*7+($j)][1][1]'
-                data-slot2= '$dataOraSlotTab[($i+1)*7+($j)][2][1]'
-                data-slot3= '$dataOraSlotTab[($i+1)*7+($j)][3][1]'
-                data-slot4= '$dataOraSlotTab[($i+1)*7+($j)][4][1]'
-                data-slot5= '$dataOraSlotTab[($i+1)*7+($j)][5][1]'
-                data-slot6= '$dataOraSlotTab[($i+1)*7+($j)][6][1]'
-                data-slot7= '$dataOraSlotTab[($i+1)*7+($j)][7][1]'
-                data-slot8= '$dataOraSlotTab[($i+1)*7+($j)][8][1]'
+                echo"<li 
+                data-slot0= '$dataOraSlotTab[$i][0][1]' 
+                data-slot1= '$dataOraSlotTab[$i][1][1]'
+                data-slot2= '$dataOraSlotTab[$i][2][1]'
+                data-slot3= '$dataOraSlotTab[$i][3][1]'
+                data-slot4= '$dataOraSlotTab[$i][4][1]'
+                data-slot5= '$dataOraSlotTab[$i][5][1]'
+                data-slot6= '$dataOraSlotTab[$i][6][1]'
+                data-slot7= '$dataOraSlotTab[$i][7][1]'
+                data-slot8= '$dataOraSlotTab[$i][8][1]'
                 >";
-                if($giornoDisponibile[($i+1)*7+($j)]){ //equivale a for x = 0--> 35
-                    echo"<button type='button' onclick"">$tmp</button>"
+                $data = date("Y-M-d",$giorno);
+                if($giornoDisponibile[$i]){
+                    echo"<button type='button' onclick""><time datetime="$data">$tmp</time></button>"
                 }else{
-                    echo$tmp;
+                    echo"<button type='button' disabled><time datetime="$data">$tmp</time></button>"
                 }
-                echo"</td>";
-            }
-            echo"</tr>";
+                echo"</li>";
         }
-
     $result->free(); // liberaz. risorse occupate dalla query
-    echo "</tbody></table>"
+    echo "</ol>"
     } else{
-        echo"non ci sono slot disponibili questo mese";
+        echo"non ci sono slot disponibili questo mese"; // brutto...
     }
 }
 $connessione->close();
