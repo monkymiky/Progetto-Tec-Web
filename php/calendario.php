@@ -99,24 +99,3 @@ else{
 $connessione->close();
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
