@@ -38,5 +38,9 @@ CREATE TABLE Disponibilità(
         AND ADDTIME(Data_Ora_Inizio, "-1:30:0") NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Tipo = false)
         ),
 );
+CREATE TABLE Login(
+    Username VARCHAR(20) PRIMARY KEY,
+    Pass VARCHAR(256) NOT NULL
+);
 
 
