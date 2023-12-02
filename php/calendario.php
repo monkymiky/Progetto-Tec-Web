@@ -5,16 +5,16 @@ require_once ("connessione.php");
 date_default_timezone_set("Europe/Rome"); // setta il fusorario giusto
 //-------------------------------- calcolo e formattazione data inizio e fine per la Query sql ---------------
 $giorni_del_mese = date("t");
-$mese = date("M");
+$nrmese = date("M");
 $anno= date("Y");
-$primoDelMese = strtotime("1 $mese $anno");
-$ultimoDelMese = strtotime("$giorniDelMese $mese $anno");
+$primoDelMese = strtotime("1 $nrmese $anno");
+$ultimoDelMese = strtotime("$giorniDelMese $nrmese $anno");
 $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
 if($giornoSettimanaUltimoDelMese != 7){
-    $ultimoTab = strtotime( 7-$giornoSettimanaUltimoDelMese $mese+1 $anno);
+    $ultimoTab = strtotime( 7-$giornoSettimanaUltimoDelMese $nrmese+1 $anno);
     $primoTab = strtotime("-34 day" $ultimoTab); 
 }else{
-    $ultimoTab = strtotime( $giornoSettimanaUltimoDelMese $mese $anno);
+    $ultimoTab = strtotime( $giornoSettimanaUltimoDelMese $nrmese $anno);
     $primoTab = strtotime("-34 day" $ultimoTab); 
 }
 $SQLultimoTab = date("Y-M-d", $ultimoTab)." 00:00:00";
@@ -27,9 +27,10 @@ if (!$result = $connessione->query("SELECT Data_Ora_Inizio FROM Disponibilità W
 }
 else{
     $dataOraSlotTab = array();
-    if($result->num_rows > 0){ // TABELLA NON ACCESSIBILE!! (basta il campo data sotto?)
+    if($result->num_rows > 0){
+        $mesi = array("Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre");
         echo"<ol id='calendario'>
-                <li><time datetime="$anno-$mese">$anno-$mese</time></li>
+                <li id='mese'><time datetime="$anno-$nrmese">$anno-$mesi[$nrmese]</time></li>
                 <li><abbr title='Lunedì'>Lun</abbr></li>
                 <li><abbr title='Martedì'>Mar</abbr></li>
                 <li><abbr title='Mercoledì'>Mer</abbr></li>
