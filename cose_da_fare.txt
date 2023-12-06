@@ -6,5 +6,11 @@ Home
 -	mettere background-color a descrizione anna pagina home (sopra la foto)
 -	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
 -	mettere l'immagine del logo a sx rispetto alla lista nella home. 
--	
+
  
+distribuire carico css
+-	fare css mobile 
+-	fare css desktop 
+-	fare css print 
+
+
