@@ -14,3 +14,16 @@ distribuire carico css
 -	fare css print 
 
 
+
+
+ uniformare e sistemare HTML
+> iniziare CSS mobile
+> ultimare CSS desktop
+    • carrello
+    • prenotazioni
+    • prestazioni (...)
+    • pagina anna
+    • admin
+    • contatti
+> Gestione pulsanti Shop via Javascript
+> Gestione animazioni a scomparsa per inserimento dati carta (JavaScript/PHP?)
