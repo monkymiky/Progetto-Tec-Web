@@ -1,0 +1,10 @@
+Shop
+-	fare carrello in fondo allo shop come link e non come bottone. 
+-	provare a mettere le carte 2 2 1, cambiare sfondo perchè è noioso
+
+Home
+-	mettere background-color a descrizione anna pagina home (sopra la foto)
+-	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
+-	mettere l'immagine del logo a sx rispetto alla lista nella home. 
+-	
+ 
