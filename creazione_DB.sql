@@ -33,11 +33,9 @@ CREATE TABLE Prenotazioni(
 );
 
 CREATE TABLE Disponibilità(
-    Data_Ora_Inizio DATETIME PRIMARY KEY CHECK (
-        Data_Ora_Inizio NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni)
-        AND ADDTIME(Data_Ora_Inizio, "-1:30:0") NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Tipo = false)
-        ),
-);
+    Data_Ora_Inizio DATETIME PRIMARY KEY --CHECK (Data_Ora_Inizio NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni)AND ADDTIME(Data_Ora_Inizio, "-1:30:0") NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Tipo = false)),
+); 
+
 CREATE TABLE Login(
     Username VARCHAR(20) PRIMARY KEY,
     Pass VARCHAR(256) NOT NULL
