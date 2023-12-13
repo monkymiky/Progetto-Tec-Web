@@ -1,0 +1,9 @@
+- validare css e html (inserire badge)
+- validare colori
+- validare accessibilità ( validator in lab e google "")
+- controllare link rotti e circolari
+- controllare link al contenuto per persone con disabilità visiva
+- controllare keyword e posizionamento
+- controllare description
+- controllare tag <title>
+- modificare header('Location: localhost/admin.php') ; in Login.php

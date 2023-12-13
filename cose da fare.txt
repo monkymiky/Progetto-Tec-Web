@@ -1,3 +1,13 @@
 chiedere alla prof come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
 
-gestire gli errori 404 e 500
+gestire gli errori 404 e 500 (emotional desig)
+
+
+------------------------------------ PHP ------------------------------------------
+controlli input in php
+controllo disponibilità slot prima di prenotare
+controllo chiusura connessioni php e liberazione risorse $return
+implementare escape output
+try catch per ogni query (funzione) 
+-----------------------------------------------------------------------------------
+
