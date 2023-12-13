@@ -1,15 +1,13 @@
  <!DOCTYPE html>
 
 
-
-
  <header>
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="stylesheet" href="home.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="print.css" media="print">
     <link rel="stylesheet" href="mini.css" media="screen and (max-width:600px)">
  </header>
@@ -28,7 +26,7 @@
            <li><a href="Prestazioni.html">Prestazioni</a></li>  
            <li><a href="Contatti.html">Contatti</a></li>
            <li><a href="Prenotazioni.html">Prenotazioni</a></li>
-           <li><a href="Shop.html">Shop <div id="shop_img">shop_img</div></a></li> 
+           <a href="Carrello.html"><li id="immagine-carrello">Carrello</li></a>
         </ul>
     </nav>
 
@@ -50,26 +48,26 @@
 
             <h1>Cosa offro:</h1>
 
-            <a href="#messaggi">massaggi</a>
-            <a href="#corsi_massaggi">corsi di massaggio</a>
-            <a href="#danza_libera">danza libera</a>
+            <a class="cosa-offro-links" id="link-massaggi" href="#messaggi">massaggi</a>
+            <a class="cosa-offro-links" id="link-corsi" href="#corsi_massaggi">corsi di massaggio</a>
+            <a class="cosa-offro-links" id="link-danza" href="#danza_libera">danza libera</a>
+            <p id="img-corso">Immagine corso di massaggi</p>
+            <p id="img-massaggio">Immagine danza</p>
             <!--    <img src="#.png" alt="Img danza a caso">    immagini non di contenuto, da 
                     <img src="#.png" alt="Img massaggio">       implementare attraverso css
             -->
         </div>
 
 
-        <div id="Foto_con_descrizione_anna_Homepage">
-            <h2>Anna Nesler (foto da inserire in background)</h2>
+        <div id="foto-anna-home">
+            <h2>Anna Nesler</h2>
             <h3>Fisioterapista e Massaggiatrice</h3>
-            <p>descrizione ... </p>
+            <p>descrizione Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia vulputate dolor vel volutpat. Morbi lacus justo, vulputate a ligula eget, elementum porttitor lacus. Quisque et tortor vulputate, facilisis augue sed, fermentum nulla. Donec a nulla vel orci fringilla euismod. Sed porta facilisis vulputate. Nam nulla nisl, hendrerit a molestie.</p>
             
             <a href="scopri di piu'">Scopri di più</a>      
         </div>
 
-        <div id="bottone_per_prenotare_Homepage">                       
-            <a href="Prenotazioni.html">Prenota un massaggio</a>
-        </div>
+        <a id="prenotazioni-home-main" href="Prenotazioni.html">Prenota un massaggio</a>
 
         <div id="idee_regalo">
             <h2>idee regalo</h2>
@@ -90,7 +88,7 @@
     <!--    FOOTER    -->
 
     <footer>
-        <small>Nesler Michele - Parise Luca - Marco - Elia - <span lang="en">All Rights Reserved</span></small>
+        <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span></small>
     </footer>
 
 
