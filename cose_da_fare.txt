@@ -39,5 +39,7 @@ controllo disponibilità slot prima di prenotare
 controllo chiusura connessioni php e liberazione risorse $return
 implementare escape output
 try catch per ogni query (funzione) 
+sposta apertura connessione piu tardi possibile
+rendere errori connessione accessibili es: ul con almento un li dentro, errori in tag html validi
 -----------------------------------------------------------------------------------
 

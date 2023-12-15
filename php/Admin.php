@@ -1,7 +1,5 @@
-<?php // selezione di dati da una tabella con MySQLi
-// inclusione del file di connessione
+<?php
 require_once ("connessione.php");
-//creazione della prima parte della pagina
 
 
 $slot = array(); // $slot[Data_Ora_inizio] 
