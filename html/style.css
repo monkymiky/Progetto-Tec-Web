@@ -26,6 +26,10 @@
     --boxesBackground:white;
 
     --font: "CustomFont", "Segoe UI", "Arial", sans-serif;
+  
+    --cardWidth: 26.25em;
+    --cardHeight: 38.44em;
+    --cardBorderRadius: 1.25em;
 }
 
 html {
