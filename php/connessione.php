@@ -110,7 +110,18 @@
         }
 
         public function modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note){
-            // ------------------------------------------------------------------- da fare
+            try{
+                $this->connessione->query("UPDATE Dati_cliente SET   (Email,Cellulare,Indirizzo,Nome) VALUES ($email,$cel,$indirizzo,$nome);");
+                $this->connessione->query("UPDATE Prenotazioni SET   (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ($DataOraInizio, $tipo, $note, $email);");
+                if($tipo == true){ // elimino anche la tupla che identifica lo slot sucessivo 
+                    $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,$DataOraInizio)); // aggiungo 1,5h
+                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $slot2");
+                }
+            }catch(Exception $e){
+                $this->connessione->openErrorPage(MESSAGGIO_RIPROVA,$e->getMessage());
+                return false;
+            }
+            return true;
         }
 
         public function login($user, $password){
