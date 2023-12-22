@@ -1,6 +1,6 @@
 <?php
     namespace DB;
-
+    //Es ist möglich, date() und mktime() gleichzeitig zu verwenden, um Datumsangaben in der Zukunft oder der Vergangenheit zu bestimmen.
     define(MESSAGGIO_RIPROVA, "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
     contattami tramite il <a href=\"../html/contatti.html\">form di contatto</a> riportando il seguente 
     errore. Potrebbe essere d'aiuto ai tecnici!");
@@ -70,7 +70,7 @@
                 
                 if($tipo == true){ // elimino anche la tupla che identifica lo slot sucessivo 
                     $timestampslot2 = strtotime("+90 min" ,$DataOraInizio);
-                    $slot2= date("Y/M/d h:i:s", $timestampslot2);
+                    $slot2= date("Y-m-d H:i:s", $timestampslot2);
                     $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ($slot2);");
                 }
             }catch(Exception $e){
@@ -98,8 +98,31 @@
 
         public function cancellaPrenotazione($inizio, $tipo){
             try{
-                
+                $this->connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = $inizio");
+                $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $inizio");
+                if($tipo){
+                    $inizio = date("Y-m-d H:i:s",strtotime("+90 min" ,$inizio)); // aggiunge ad inixio 1,5h
+                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $inizio");
+                }
             }catch(Exception $ex){
+                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+            }
+        }
+
+        public function modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note){
+            // ------------------------------------------------------------------- da fare
+        }
+
+        public function login($user, $password){
+            try{
+                $result = $this->connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Username ='$user' AND Pass = '$pass'");
+                if ($result->num_rows == 1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            catch(Exception $ex){
                 openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
             }
         }

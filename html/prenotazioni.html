@@ -75,7 +75,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                     </div>
                     
                     <div class="form-field">
-                        <input id="time" name="time" readonly value="placeHolderTime"> <!--Stringa recuperata tramite JScript/PHP dal calendario?-->
+                        <input id="time" name="time" readonly value="placeHolderTime"> <!--Stringa recuperata tramite JScript dal calendario?-->
                         <label for="time">Ora:</label>
                     </div>
                 </fieldset>
@@ -90,9 +90,14 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <input id="cell" name="cell" type="tel" maxlength="15">
                         <label for="cell">Numero di telefono:</label>
                     </div>
+
+                    <div class="form-field">
+                        <input id="indirizzo" name="indirizzo"  maxlength="100">
+                        <label for="indirizzo">Indirizzo:</label>
+                    </div>
                 </fieldset>
 
-                <fieldset>
+                <!--fieldset>
                     <legend>Hai una gift card?</legend>
                     <input id="yes" name="is-giftcard" type="radio">
                     <label for="yes">Si</label>
@@ -101,9 +106,9 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 </fieldset>
 
                 <div class="form-field">
-                    <input id="giftcard-code" name="giftcard-code" placeholder="formato del codice (da decidere)" maxlength="20"> <!--Validato tramite script PHP-->
+                    <input id="giftcard-code" name="giftcard-code" placeholder="formato del codice (da decidere)" maxlength="20"> Validato tramite script PHP
                     <label for="giftcard-code">Inserisci il codice della giftcard:</label>
-                </div>
+                </div-->
                 
 
                 <fieldset> <!--Appare se selezionato "no" su gift card-->

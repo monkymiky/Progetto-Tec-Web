@@ -124,13 +124,10 @@ $stringaSlot .= "</ol>";
 $paginaHTML = str_replace("{calendario}", $stringaCalendario, $paginaHTML);
 $paginaHTML = str_replace("{slot}", $stringaSlot, $paginaHTML);
 
-
-
-
-
+// ---------------------------cancella prenotazione--------------------------------------
 $messaggiForm = "";
 
-if(isset($_POST['submit'])){// cancella prenotazione
+if(isset($_POST['submit']) && empty($_POST['modifica'])){
     if (!empty($_POST['dataOra'])){
         controllaInput($_POST['dataOra']); 
         if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/", $_POST['slot'])){
@@ -150,24 +147,42 @@ if(isset($_POST['submit'])){// cancella prenotazione
     }
 }
 
-if(isset($_POST['submit'])){// modifica prenotazione
-    if (!empty($_POST['dataOra'])){
-        controllaInput($_POST['dataOra']); 
-        if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/", $_POST['slot'])){
-            if(!empty($_POST['modifica'])){
-                controllaInput($_POST['modifica']);
-                $connessione->openDBConnection();
-                $prenotazioni = $connessione->cancellaPrenotazione($_POST['dataOra'],$_POST['tipo']); // Query prenotazioni con dati clienti per visualizzare nel calendario 
-                $connessione->closeDBConnection();
-            }else{
-                $messaggiForm .= "per cancellare una prenotazione il campo 'data e ora' deve essere compilato e formattato nel modo giusto. (data = 'aaaa-mm-dd hh:mm:ss')";
-            }
-        }else{
-            $messaggiForm .= "per cancellare una prenotazione il campo 'data e ora' deve essere compilato e formattato nel modo giusto. (data = 'aaaa-mm-dd hh:mm:ss')";
-        }
-    }else {
-        $messaggiForm .= "per cancellare una prenotazione il campo 'data e ora' deve essere compilato e formattato nel modo giusto. (data = 'aaaa-mm-dd hh:mm:ss')";
+// ----------------------------- modifica prenotazione -------------------------------
+if(isset($_POST['submit']) && !empty($_POST['modifica'])){ //campo nascosto che viene riempito tramite javascript priMA DI INVIARE IL FORM se l' intento è modificare uno slot
+    $DataOraInizio= "";
+    $tipo= false;
+    $note="";
+    
+    $email="";
+    $cel="";
+    $indirizzo="";
+    $nome="";
+    $checkedYes="";
+    $checkedNo="";
+    // controlli input 
+    $DataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); // problabilmente sarà da formattare bene
+
+    if(controllaADomicilio($_POST['aDomicilio'],$messaggiForm )){
+        $checkedYes = "checked";
+    }else{
+        $checkedNo = "checked";
     }
+
+    $note = controllaNote($_POST['note'], $messaggiForm);
+    
+    $email = controllaEmail($_POST['email'], $messaggiForm);
+
+    $cel = controllaCel($_POST['cel'], $messaggiForm);
+
+    $nome = controllaNome($_POST['nome'], $messaggiForm);
+
+    $indirizzo = controllaIndirizzo($_POST['indirizzo'] , $messaggiForm);
+
+    $connessione->openDBConnection();
+    if($connessione->modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
+        $messaggiForm .= "<h1 id='success'>Modifica effettuata con successo!! </h1>";
+    }
+    $connessione->closeDBConnection();
 }
 
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
