@@ -1,0 +1,121 @@
+  .shop-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card-name-container {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    right: 20%;
+    background-color: white;
+    padding: 1.75em;
+    border-radius: var(--cardBorderRadius);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .card-name {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64%; /* so che è strano ma era l'unica altezza che centrava il testo nel container */
+}
+
+
+  .card {
+    max-width: 100%;
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    perspective: 62.5em; 
+    margin: 0.625em;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25em; 
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 1.2em;
+  }
+
+  .card-back br {
+    margin: 1em; /* spacing verticale per ogni volta che si va a capo nel retro della carta */
+  }
+  
+  .card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--cardBorderRadius);
+  }
+  
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-name {
+    position: absolute;
+    top: 0.625em;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-text {
+    margin-bottom: 0.5em;
+  }
+  
+  input[type="button"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3125em;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #45a049;
+  }  
