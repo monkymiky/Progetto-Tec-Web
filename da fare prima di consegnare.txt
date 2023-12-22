@@ -7,3 +7,5 @@
 - controllare description
 - controllare tag <title>
 - modificare header('Location: localhost/admin.php') ; in Login.php
+- cambiare nomi variabili in ingese(?)
+- controllare che tutti gli onclik abbiano il corrispettivo ontouchend

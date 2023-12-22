@@ -1,19 +1,22 @@
-Shop
--	fare carrello in fondo allo shop come link e non come bottone. 
--	provare a mettere le carte 2 2 1, cambiare sfondo perchè è noioso
+Shop --> rinominare (direi di chiamarla massaggi.html)
+
 
 Home
 -	mettere background-color a descrizione anna pagina home (sopra la foto)
 -	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
 -	mettere l'immagine del logo a sx rispetto alla lista nella home. 
 
- 
+
+Header e footer
+-   dropdown-list per prestazioni (../prestazioni/fisioterapia.html ../prestazioni/danza.html ../prestazioni/corsi.html)
+-   rinominare pagina shop.html ( diventa vetrina. direi massaggi.html?)
+-   inserire social nel footer
+
+
 distribuire carico css
 -	fare css mobile 
 -	fare css desktop 
 -	fare css print 
-
-
 
 
  uniformare e sistemare HTML
@@ -25,21 +28,20 @@ distribuire carico css
     • pagina anna
     • admin
     • contatti
-> Gestione pulsanti Shop via Javascript
-> Gestione animazioni a scomparsa per inserimento dati carta (JavaScript/PHP?)
+> Gestione pulsanti Shop via Javascript --> sostituito da vetrina
+> Gestione animazioni a scomparsa per inserimento dati carta (JavaScript)
 
 
 gestire gli errori 404 e 500 (emotional desig) con pagine html apposite
 
 -------------------------------------------------------------------------------------------------------
-chiedere alla prof come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
+chiedere alla prof:
+-	come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
 ------------------------------------ PHP ------------------------------------------
-controlli input in php
-controllo disponibilità slot prima di prenotare
-controllo chiusura connessioni php e liberazione risorse $return
-implementare escape output
-try catch per ogni query (funzione) 
-sposta apertura connessione piu tardi possibile
-rendere errori connessione accessibili es: ul con almento un li dentro, errori in tag html validi
+
+controllo disponibilità slot prima di prenotare (concorrenza tra clienti)
+controllare che gli errori connessione siano accessibili es: ul con almento un li dentro, errori in tag html validi
+implementare possibilità di modifica prenotazioni (admin)
+casse :target css display: default per il giorno che si vuole visualizzare none per tutti gli altri giorni
 -----------------------------------------------------------------------------------
 

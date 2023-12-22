@@ -1,0 +1,1 @@
+giustificare la non buona usabilità della pagina admin dicendo che è un progetto accademico e perciò abbiamo ridotto le funzionalità in modo da rientrare nel monteore previsto, ma per un progetto reale lo avremmo fatto.
