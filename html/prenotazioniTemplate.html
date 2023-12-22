@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+valutare rimozione div con classe "form-field", se si riesce a mantenere uguale lo stile
+-->
+<html lang="it">
+    <head>
+        <title>Prenotazioni</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="print.css" media="print">
+        <link rel="stylesheet" href="mini.css" media="screen and (max-width:600px)">
+        <!--tag style TEMPORANEO-->
+        <style>
+            .form-field {
+                display:flex;
+                flex-direction:row-reverse;
+                justify-content:start;
+            }
+        </style>
+    </head>
+    <body>
+        <header>                           
+            <h1 id="logo">logo</h1>           
+        </header>
+        <nav id="menu">
+            <ul>
+               <li><a href="home.html">Home</a></li>
+               <li><a href="Anna.html">Anna</a></li>
+               <li><a href="Prestazioni.html">Prestazioni</a></li>  
+               <li><a href="Contatti.html">Contatti</a></li>
+               <li><a href="prenotazioni.php">Prenotazioni</a></li>
+               <li><a href="Massaggi.html">Massaggi</a></li>
+            </ul>
+        </nav>
+        <nav id="breadcrumb"><p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p></nav>
+        <main>
+            <h2>Prenota una prestazione</h2>
+                <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
+            
+                <input id="domicilio" name="scelta-luogo" type="radio">
+                <label for="domicilio">a domicilio</label>
+
+                <input id="studio" name="scelta-luogo" type="radio">
+                <label for="studio">in studio</label>
+            
+
+            <p>{calendario}</p>
+            <p>{slot}</p>
+            <div class="disponibilita">
+                <div class="yellow-box"></div>
+                <p>Disponibile</p>
+            </div>
+            <div class="disponibilita">
+                <div class="orange-box"></div>
+                 <p>Occupato</p>
+            </div>
+            <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
+            
+            <form>
+                <fieldset>
+                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
+                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio" {checkedDomicilio}>
+                    <label for="domicilio">a domicilio</label>
+                    <input id="studio" name="scelta-luogo" type="radio" value = "studio" {checkedStudio}>
+                    <label for="studio">in studio</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Slot selezionato:</legend>
+                    <div class="form-field">
+                        <input id="date" name="date" readonly value="{data}"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <label for="date">Giorno:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="time" name="time" readonly value="{ora}"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <label for="time">Ora:</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Dati di contatto</legend>
+                    <div class="form-field">
+                        <input id="email" name="email" type="email" maxlength="20" value="{email}">
+                        <label for="email">Email:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="cell" name="cell" type="tel" maxlength="15" value="{cel}">
+                        <label for="cell">Numero di telefono:</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}">
+                        <label for="indirizzo">Indirizzo:</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Note aggiuntive</legend>
+                    <div class="form-field">
+                        <input id="note" name="note"  maxlength="500" value="{note}">
+                        <label for="email">Note:</label>
+                    </div>
+                </fieldset>
+
+                <fieldset> <!--Appare se selezionato "no" su gift card-->
+                    <legend>Metodo di pagamento</legend>
+                    <input id="paypal" name="payment-method" type="radio">
+                    <label for="paypal"><span lang="en">Paypal</span></label>
+                    <input id="credit-debit" name="payment-method" type="radio">
+                    <label for="credit-debit">Carta di credito/debito</label>
+                </fieldset>
+
+                <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
+                    <legend>Dati carta</legend>
+                    <div class="form-field">
+                        <input id="name-surname" name="nome" maxlength="40">
+                        <label for="name-surname">Nome e cognome:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
+                        <label for="card-number">Numero della carta:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
+                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="card-expiration" name="card-expiration" type="date"> <!--Verifica validità tramite PHP-->
+                        <label for="card-expiration">Data di scadenza:</label>
+                    </div>
+                    <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
+                        <legend><abbr title="Scadenza">Scad</abbr>.</legend>
+                        <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                        <select id="month" name="month">
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                        <select id="year" name="year">
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                        </select> 
+                    </fieldset>
+                </fieldset>
+                <input type="submit" value="Prenota">
+            </form>
+        </main>
+        <footer>
+            <small>Nesler Michele - Parise Luca - Marco - Elia Leonetti - <span lang="en">All Rights Reserved</span></small>
+        </footer>
+    </body>
+</html>
+    

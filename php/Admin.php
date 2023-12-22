@@ -3,6 +3,10 @@ require_once ("connessione.php");
 require_once ("controlli.php");
 USE DB\DBAccess;
 $connection = new DBAcces();
+ini_set('display_errors',1);
+ini_set("display_startup_errors",1);
+
+setlocale(LC_ALL, 'it_IT');
 //------------------------------------- clanedario admin ----------------------------------------------------------------------------------------------------------
 date_default_timezone_set("Europe/Rome"); // setta il fusorario giusto
 //---- calcolo e formattazione data inizio e fine per la Query sql -----
@@ -119,7 +123,7 @@ for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
 }
 $stringaCalendario .="</ol>";
 $stringaSlot .= "</ol>";
-
+$paginaHTML = file_get_contents("../html/adminTemplate.html");
 $paginaHTML = str_replace("{calendario}", $stringaCalendario, $paginaHTML);
 $paginaHTML = str_replace("{slot}", $stringaSlot, $paginaHTML);
 

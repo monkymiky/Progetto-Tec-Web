@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Admin</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="print.css" media="print">
+        <link rel="stylesheet" href="mini.css" media="screen and (max-width:600px)">
+    </head>
+    <body>
+        <header>                           
+            <h1 id="logo">logo</h1>           
+        </header>
+        <nav id="menu">
+            <ul>
+               <li><a href="home.html">Home</a></li>
+               <li><a href="Anna.html">Anna</a></li>
+               <li><a href="Prestazioni.html">Prestazioni</a></li>  
+               <li><a href="Contatti.html">Contatti</a></li>
+               <li><a href="prenotazioni.php">Prenotazioni</a></li>
+               <li><a href="Massaggi.html">Massaggi</a></li>
+            </ul>
+        </nav>
+        <nav id="breadcrumb"><p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Admin</p></nav>
+
+        <main>
+            <h2>Pagina amministratore</h2>
+            <h3>{messaggiForm}</h3>
+            <p>Prenotazioni attive nel periodo corrente:</p>
+            <p>{calendario}</p>
+            <p>Slot occupati nel giorno selezionato:</p>
+            <p>{slot}</p>
+
+            <p>Info prenotazione</p>
+
+            <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
+            <form action="../php/admin.php" method="post"> 
+                <fieldset>
+                    <input id="data" name="data" type="date">
+                    <label for="start-date">Data</label>
+                    <input id="ora" name="ora" type="time">
+                    <label for="ora">Ora</label>
+                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio">
+                    <label for="domicilio">a domicilio</label>
+                    <input id="studio" name="scelta-luogo" type="radio" value = "studio">
+                    <label for="studio">in studio</label>
+                </fieldset>
+                <input type="submit" value="CANCELLA">
+            </form>
+            
+            <p>Modifica prenotazione:</p>
+            <form action="../php/admin.php" method="post">
+                <fieldset>
+                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
+                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio">
+                    <label for="domicilio">a domicilio</label>
+                    <input id="studio" name="scelta-luogo" type="radio" value = "studio">
+                    <label for="studio">in studio</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Slot selezionato:</legend>
+                    <div class="form-field">
+                        <input id="date" name="data" readonly value="{data}"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <label for="date">Giorno:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="time" name="ora" readonly value="{ora}"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <label for="time">Ora:</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Dati di contatto</legend>
+                    <div class="form-field">
+                        <input id="name-surname" name="nome" maxlength="40">
+                        <label for="name-surname">Nome e cognome:</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="email" name="email" type="email" maxlength="20" value="{email}">
+                        <label for="email">Email:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input id="cell" name="cel" type="tel" maxlength="15" value="{cel}">
+                        <label for="cell">Numero di telefono:</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}">
+                        <label for="indirizzo">Indirizzo:</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Note aggiuntive</legend>
+                    <div class="form-field">
+                        <input id="note" name="note"  maxlength="500" value="{note}">
+                        <label for="email">Note:</label>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Modifica">
+            </form>
+        </main>
+        <footer>
+            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span></small>
+        </footer>
+    </body>
+</html>

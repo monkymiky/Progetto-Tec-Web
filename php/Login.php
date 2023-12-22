@@ -7,7 +7,7 @@ ini_set("display_startup_errors",1);
 
 setlocale(LC_ALL, 'it_IT');
 
-$paginaHTML = file_get_contents("../html/login.html");
+$paginaHTML = file_get_contents("../html/loginTemplate.html");
 
 $messaggiForm = "";
   if (isset($_POST['submit'])) {
