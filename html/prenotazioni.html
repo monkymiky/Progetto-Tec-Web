@@ -62,54 +62,47 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <form>
                 <fieldset>
                     <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <input id="domicilio" name="scelta-luogo" type="radio">
+                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio" {checkedDomicilio}>
                     <label for="domicilio">a domicilio</label>
-                    <input id="studio" name="scelta-luogo" type="radio">
+                    <input id="studio" name="scelta-luogo" type="radio" value = "studio" {checkedStudio}>
                     <label for="studio">in studio</label>
                 </fieldset>
                 <fieldset>
                     <legend>Slot selezionato:</legend>
                     <div class="form-field">
-                        <input id="date" name="date" readonly value="placeHolderDate"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <input id="date" name="date" readonly value="{data}"> <!--Stringa recuperata tramite JScript dal calendario?-->
                         <label for="date">Giorno:</label>
                     </div>
                     
                     <div class="form-field">
-                        <input id="time" name="time" readonly value="placeHolderTime"> <!--Stringa recuperata tramite JScript dal calendario?-->
+                        <input id="time" name="time" readonly value="{ora}"> <!--Stringa recuperata tramite JScript dal calendario?-->
                         <label for="time">Ora:</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Dati di contatto</legend>
                     <div class="form-field">
-                        <input id="email" name="email" type="email" maxlength="20">
+                        <input id="email" name="email" type="email" maxlength="20" value="{email}">
                         <label for="email">Email:</label>
                     </div>
                     
                     <div class="form-field">
-                        <input id="cell" name="cell" type="tel" maxlength="15">
+                        <input id="cell" name="cell" type="tel" maxlength="15" value="{cel}">
                         <label for="cell">Numero di telefono:</label>
                     </div>
 
                     <div class="form-field">
-                        <input id="indirizzo" name="indirizzo"  maxlength="100">
+                        <input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}">
                         <label for="indirizzo">Indirizzo:</label>
                     </div>
                 </fieldset>
-
-                <!--fieldset>
-                    <legend>Hai una gift card?</legend>
-                    <input id="yes" name="is-giftcard" type="radio">
-                    <label for="yes">Si</label>
-                    <input id="No" name="is-giftcard" type="radio">
-                    <label for="No">No</label>
+                <fieldset>
+                    <legend>Note aggiuntive</legend>
+                    <div class="form-field">
+                        <input id="note" name="note"  maxlength="500" value="{note}">
+                        <label for="email">Note:</label>
+                    </div>
                 </fieldset>
-
-                <div class="form-field">
-                    <input id="giftcard-code" name="giftcard-code" placeholder="formato del codice (da decidere)" maxlength="20"> Validato tramite script PHP
-                    <label for="giftcard-code">Inserisci il codice della giftcard:</label>
-                </div-->
-                
 
                 <fieldset> <!--Appare se selezionato "no" su gift card-->
                     <legend>Metodo di pagamento</legend>
@@ -122,7 +115,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
-                        <input id="name-surname" name="nome-cognome" maxlength="40">
+                        <input id="name-surname" name="nome" maxlength="40">
                         <label for="name-surname">Nome e cognome:</label>
                     </div>
                     <div class="form-field">

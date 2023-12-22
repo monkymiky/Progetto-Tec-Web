@@ -11,24 +11,23 @@ setlocale(LC_ALL, 'it_IT');
 $paginaHTML = file_get_contents("../html/prenotazioniTemplate.html");
 // ------------------------------------------------------------------------- form ---------------------------------------------------------------------------------------------
 $messaggiForm = "";
+$dataOraInizio= "";
+$note="";
+$email="";
+$cel="";
+$indirizzo="";
+$nome="";
+$checkedDomicilio="";
+$checkedStudio="";
 if(isset($_POST['submit'])){
-    $DataOraInizio= "";
-    $tipo= false;
-    $note="";
-    
-    $email="";
-    $cel="";
-    $indirizzo="";
-    $nome="";
-    $checkedYes="";
-    $checkedNo="";
     // controlli input 
-    $DataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); // problabilmente sarà da sostituire con $data.$ora
-
-    if(controllaADomicilio($_POST['aDomicilio'],$messaggiForm )){
-        $checkedYes = "checked";
+    $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); // problabilmente sarà da sostituire con $data.$ora
+    
+    $tipo = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
+    if($tipo){
+        $checkedDomicilio = "checked";
     }else{
-        $checkedNo = "checked";
+        $checkedStudio = "checked";
     }
 
     $note = controllaNote($_POST['note'], $messaggiForm);
@@ -42,11 +41,28 @@ if(isset($_POST['submit'])){
     $indirizzo = controllaIndirizzo($_POST['indirizzo'] , $messaggiForm);
 
     $connessione->openDBConnection();
-    if($connessione->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
+    if($messaggiForm == "" && $connessione->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
         $messaggiForm .= "<h1 id='success'>Prenotazione effettuata con successo!! A presto :) </h1>";
+        $dataOraInizio= "";
+        $note="";
+        $email="";
+        $cel="";
+        $indirizzo="";
+        $nome="";
+        $checkedDomicilio="";
+        $checkedStudio="";
     }
 }
-
+$paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
+$paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
+$dataOraArray = explode(" ",$dataOraInizio);
+$paginaHTML = str_replace("{data}", $dataOraArray[0], $paginaHTML);
+$paginaHTML = str_replace("{ora}", $dataOraArray[1], $paginaHTML);
+$paginaHTML = str_replace("{nome}", $nome, $paginaHTML);
+$paginaHTML = str_replace("{email}", $email, $paginaHTML);
+$paginaHTML = str_replace("{cel}", $cel, $paginaHTML);
+$paginaHTML = str_replace("{indirizzo}", $indirizzo, $paginaHTML);
+$paginaHTML = str_replace("{note}", $note, $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 
 

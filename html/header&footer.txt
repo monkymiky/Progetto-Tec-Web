@@ -31,7 +31,7 @@
      <!--    FOOTER    -->
 
      <footer>
-        <p><a href = "../html/contatti.html"> contattami </a>
+        <p><a href = "../html/contatti.html"> contattami </a></p>
 
         <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span></small>
     </footer>

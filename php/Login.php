@@ -16,15 +16,15 @@ $messaggiForm = "";
       $pass = controlla($_POST["admin"]);
       $connessione = new DBAccess();
       $connessione->openDBConnection();
-    if ($connessione->login()){
-      $connessione->closeDBConnection();
-      $host  = $_SERVER['HTTP_HOST'];
-      $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-      $extra = 'admin.php';
-      header("Location: http://$host$uri/$extra");// redirect ad admin.php
-    }else {
-      $connessione->closeDBConnection();
-    }
+      if ($connessione->login()){
+        $connessione->closeDBConnection();
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'admin.php';
+        header("Location: http://$host$uri/$extra");// redirect ad admin.php
+      }else {
+        $connessione->closeDBConnection();
+      }
     }else{
       $messaggiForm .= "user o password non inserito";
     }
