@@ -101,7 +101,7 @@ Class Giorno {
     public $disponibilitàSlot = [true,true,true,true,true,true,true,true,true];
     public $disponibile;
     public $disponibile3h;
-    public const ORARIO_SLOT = [" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00"," 19:00:00"," 20:30:00"];
+    public $ORARIO_SLOT = [" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00"," 19:00:00"," 20:30:00"];
 
     function __construct($data){
         $this->data = $data;

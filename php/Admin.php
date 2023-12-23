@@ -49,7 +49,7 @@ Class Giorno {
     public $datiPrenotazioni;
     public $disponibile;
     public $disponibile3h;
-    public const ORARIO_SLOT = [" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00"," 19:00:00"," 20:30:00"];
+    public $ORARIO_SLOT = [" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00"," 19:00:00"," 20:30:00"];
 
     function __construct($data){
         $this->data = $data;
@@ -60,14 +60,13 @@ Class Giorno {
 // popolamento array giorni e slot con le disponibilità o non disponibilità
 $giorno = array();
 $k = 0;
-if(!defined($nonDisponibili[0])){$nonDisponibili[0] = "2001-03-04 00:00:00";} //il caso in cui sono tutti disponibili è gestito (ma rimane il warning)
+if(!defined($nonDisponibili[0])){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito (ma rimane il warning)
 for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
     $giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
     $giorno[$i]->disponibile = false;
     $tuttiSlotOccupati = false; 
     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-        echo "1) ".strtotime($giorno[$i]->data.$giorno[$i]->ORARIO_SLOT[$j])."<br>2) ".strtotime($nonDisponibili[$k]);
-        while($k < count($nonDisponibili)-1 && strtotime($giorno[$i]->data.$giorno[$i] ->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+        while($k < count($nonDisponibili)-1 && strtotime($giorno[$i]->stringData.$giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
             $k++;
         }
         if(strtotime($giorno[$i]->data.$giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
@@ -85,8 +84,8 @@ for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
 // ---------- creazione stringhe HTML per i 2 calendari -----------------
 $mesi = array("Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre");
 
-$stringaCalendario = "<ol id='calendario'>
-                        <li id='mese'><time datetime='$anno-$nrmese'>$anno-$mesi[$nrmese]</time></li>
+$stringaCalendario = "  <p id='mese'><time datetime='".$anno."-".($nrMese-1)."'>".$anno."-".($mesi[$nrMese-1])."</time></p>
+                        <ol id='calendario'>
                         <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                         <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                         <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
@@ -106,17 +105,22 @@ for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
         if($giorno[$i]->disponibilitàSlot[$j]){
             $stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>disponibile</button></li>";
         }else{
-            $stringaSlot .= "<li class='slotNonDisponibile'><button type='button'
-                                data-dataOra=\"".$giorno[$i]->stringData.$giorno[$i]->ORARIO_SLOT[$j]."\"
-                                data-nome=\"".$giorno[$i]->datiPrenotazioni["nome"]."\"  
-                                data-email=\"".$giorno[$i]->datiPrenotazioni["email"]."\"   
-                                data-cel=\"".$giorno[$i]->datiPrenotazioni["cel"]."\"
-                                data-note=\"".$giorno[$i]->datiPrenotazioni["note"]."\"
-                                data-indirizzo=\"".$giorno[$i]->datiPrenotazioni["indirizzo"]."\"
-                                data-tipo=\"".$giorno[$i]->datiPrenotazioni["tipo"]."\"
-                                onclick='javascript:mostraDati_cliente()' ontouchend='javascript:mostraDati_cliente()'>
-                                <p>nome : ".$giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
-                                </button> </li>";
+            if($giorno[$i]->datiPrenotazioni != NULL){ 
+                $stringaSlot .= "   <li class='slotNonDisponibile'><button type='button'
+                                    data-dataOra=\"".$giorno[$i]->stringData.$giorno[$i]->ORARIO_SLOT[$j]."\"
+                                    data-nome=\"".$giorno[$i]->datiPrenotazioni["nome"]."\"  
+                                    data-email=\"".$giorno[$i]->datiPrenotazioni["email"]."\"   
+                                    data-cel=\"".$giorno[$i]->datiPrenotazioni["cel"]."\"
+                                    data-note=\"".$giorno[$i]->datiPrenotazioni["note"]."\"
+                                    data-indirizzo=\"".$giorno[$i]->datiPrenotazioni["indirizzo"]."\"
+                                    data-tipo=\"".$giorno[$i]->datiPrenotazioni["tipo"]."\"
+                                    onclick='javascript:mostraDati_cliente()' ontouchend='javascript:mostraDati_cliente()'>
+                                    <p>nome : ".$giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
+                                    </button> </li>";
+            }
+            else{ // caso in cui il giorno è precedente ad oggi ma non era prenotato
+                $stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>disponibile</button></li>";
+            }
         }
     }
     $stringaSlot .= "</ol></li>";
@@ -201,9 +205,14 @@ if(isset($_POST['submit']) && !empty($_POST['modifica'])){ //campo nascosto che 
 }
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
-$dataOraArray = explode(" ",$dataOraInizio);
-$paginaHTML = str_replace("{data}", $dataOraArray[0], $paginaHTML);
-$paginaHTML = str_replace("{ora}", $dataOraArray[1], $paginaHTML);
+if($dataOraInizio != ""){
+    $dataOraArray = explode(" ",$dataOraInizio);
+    $paginaHTML = str_replace("{data}", $dataOraArray[0], $paginaHTML);
+    $paginaHTML = str_replace("{ora}", $dataOraArray[1], $paginaHTML);
+}else{
+    $paginaHTML = str_replace("{data}", "", $paginaHTML);
+    $paginaHTML = str_replace("{ora}", "", $paginaHTML);
+}
 $paginaHTML = str_replace("{nome}", $nome, $paginaHTML);
 $paginaHTML = str_replace("{email}", $email, $paginaHTML);
 $paginaHTML = str_replace("{cel}", $cel, $paginaHTML);
