@@ -64,7 +64,7 @@ header h1 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    font-size: 12em;
+    font-size: 7em;
     line-height: 1.5em;
 }
 
@@ -72,22 +72,23 @@ header h1 {
 /********************************************
 NAV
 ********************************************/
+
 nav {
     background-color: var(--headerBackground);
     color: var(--headerText);
-    padding: 1em; 
     text-align:center;
-    font-size:1.5em;
+    padding:1em;
+    font-size:1em;
 }
 
-#menu{
+#menu {
+    margin:auto;
     list-style-type: none;
 }
 
 #menu ul li {
-    margin:1em;
     display:inline-block;
-    width:10%;
+    margin:0.5em;
 }
 
 #menu ul a {
