@@ -1,13 +1,12 @@
 <?php
     namespace DB;
     //Es ist möglich, date() und mktime() gleichzeitig zu verwenden, um Datumsangaben in der Zukunft oder der Vergangenheit zu bestimmen.
-    define(MESSAGGIO_RIPROVA, "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
+    const MESSAGGIO_RIPROVA = "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
     contattami tramite il <a href=\"../html/contatti.html\">form di contatto</a> riportando il seguente 
-    errore. Potrebbe essere d'aiuto ai tecnici!");
-
-    define(MESSAGGIO_SCUSA, "Scusa, il sito ha avuto un problema.
+    errore. Potrebbe essere d'aiuto ai tecnici!";
+    const MESSAGGIO_SCUSA = "Scusa, il sito ha avuto un problema.
     Contattami tramite il <a href=\"../html/contatti.html\">form di contatto</a> riportando il seguente 
-    errore, in modo che i tecnici possano risolvere l'errore. Ti contatterò appena il sito ritorna a funzionare.");
+    errore, in modo che i tecnici possano risolvere l'errore. Ti contatterò appena il sito ritorna a funzionare.";
     
     class DBAccess {
         private const HOST_DB = "localhost";
@@ -43,12 +42,12 @@
             $this -> state = false;
         }
 
-        public function getState(){return this->state;}
+        public function getState(){return $this->state;}
         
         public function getNonDisponibili($inizio,$fine){
             try{
                 $result = $this->connessione->query(
-                    "SELECT Data_Ora_Inizio FROM NonDisponibili WHERE Data_Ora_Inizio>= $inizio AND Data_Ora_Inizio<= $fine");
+                    "SELECT Data_Ora_Inizio FROM NonDisponibili WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
                 openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
@@ -83,7 +82,7 @@
         public function getPrenotazioni($inizio,$fine){
             try{
                 $result = $this->connessione->query(
-                    "SELECT Data_Ora_Inizio, nome, indirizzo, email, cel, note, tipo FROM NonDisponibili JOIN Dati_cliente WHERE Data_Ora_Inizio>= $inizio AND Data_Ora_Inizio<= $fine");
+                    "SELECT Data_Ora_Inizio, nome, indirizzo, email, cellulare, InfoAggiuntive, tipo FROM Prenotazioni JOIN Dati_cliente WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
                 openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
@@ -98,11 +97,11 @@
 
         public function cancellaPrenotazione($inizio, $tipo){
             try{
-                $this->connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = $inizio");
-                $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $inizio");
+                $this->connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = '$inizio'");
+                $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$inizio'");
                 if($tipo){
                     $inizio = date("Y-m-d H:i:s",strtotime("+90 min" ,$inizio)); // aggiunge ad inixio 1,5h
-                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $inizio");
+                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$inizio'");
                 }
             }catch(Exception $ex){
                 openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
@@ -115,7 +114,7 @@
                 $this->connessione->query("UPDATE Prenotazioni SET   (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ($dataOraInizio, $tipo, $note, $email);");
                 if($tipo == true){ // elimino anche la tupla che identifica lo slot sucessivo 
                     $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,$dataOraInizio)); // aggiungo 1,5h
-                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = $slot2");
+                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
                 $this->connessione->openErrorPage(MESSAGGIO_RIPROVA,$e->getMessage());

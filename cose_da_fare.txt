@@ -1,16 +1,13 @@
-Shop --> rinominare (direi di chiamarla massaggi.html)
-
-
 Home
 -	mettere background-color a descrizione anna pagina home (sopra la foto)
 -	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
 -	mettere l'immagine del logo a sx rispetto alla lista nella home. 
 
-
-Header e footer
--   dropdown-list per prestazioni (../prestazioni/fisioterapia.html ../prestazioni/danza.html ../prestazioni/corsi.html)
--   rinominare pagina shop.html ( diventa vetrina. direi massaggi.html?)
--   inserire social nel footer
+Header
+-	dropdown-list per prestazioni (fisioterapia.html massaggi.html danza.html corsi.html )
+	link per dropdown accessibile : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/
+Footer
+-   	inserire social nel footer
 
 
 distribuire carico css
@@ -28,7 +25,6 @@ distribuire carico css
     • pagina anna
     • admin
     • contatti
-> Gestione pulsanti Shop via Javascript --> sostituito da vetrina
 > Gestione animazioni a scomparsa per inserimento dati carta (JavaScript)
 
 
@@ -39,9 +35,8 @@ chiedere alla prof:
 -	come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
 ------------------------------------ PHP ------------------------------------------
 
-controllo disponibilità slot prima di prenotare (concorrenza tra clienti)
+controllo disponibilità slot prima di prenotare (concorrenza tra clienti) // non essenziale direi 
 controllare che gli errori connessione siano accessibili es: ul con almento un li dentro, errori in tag html validi
-implementare possibilità di modifica prenotazioni (admin)
 casse :target css display: default per il giorno che si vuole visualizzare none per tutti gli altri giorni
 -----------------------------------------------------------------------------------
 

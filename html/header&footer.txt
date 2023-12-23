@@ -9,9 +9,25 @@
     
     <nav id="menu">
         <ul>
-           <li lang="en">Home</li>
+           <li lang="en"><a href="../html/index.html">Home</a></li>
            <li><a href="../html/anna.html">Anna</a></li>
-           <li><a href="../html/prestazioni.html">Prestazioni</a></li>             
+           <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                <!-- aria-expanded needs managed with Javascript -->
+                <button
+                    type="button"
+                    class="dropdown__title"
+                    aria-expanded="false"
+                    aria-controls="Prestazioni-dropdown"
+                >
+                    Prestazioni
+                </button>
+                <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                    <li><a href="../html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                    <li><a href="../html/prestazioni/massaggi.html">Massaggi</a></li>
+                    <li><a href="../html/prestazioni/danza.html">Danza</a></li>
+                    <li><a href="../html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                </ul>
+            </li>          
            <li><a href="../html/contatti.html">Contatti</a></li>
            <li><a href="../php/prenotazioni.php">Prenotazioni</a></li>
            <li><a href="../html/shop.html">Shop</a></li>                  

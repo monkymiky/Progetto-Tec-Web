@@ -2,7 +2,7 @@
 require_once ("connessione.php");
 require_once ("controlli.php");
 USE DB\DBAccess;
-$connection = new DBAcces();
+$connection = new DBAccess();
 ini_set('display_errors',1);
 ini_set("display_startup_errors",1);
 
@@ -40,8 +40,8 @@ if(isset($_POST['submit'])){
 
     $indirizzo = controllaIndirizzo($_POST['indirizzo'] , $messaggiForm);
 
-    $connessione->openDBConnection();
-    if($messaggiForm == "" && $connessione->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
+    $connection->openDBConnection();
+    if($messaggiForm == "" && $connection->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
         $messaggiForm .= "<h1 id='success'>Prenotazione effettuata con successo!! A presto :) </h1>";
         $dataOraInizio= "";
         $note="";
@@ -55,9 +55,14 @@ if(isset($_POST['submit'])){
 }
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
-$dataOraArray = explode(" ",$dataOraInizio);
-$paginaHTML = str_replace("{data}", $dataOraArray[0], $paginaHTML);
-$paginaHTML = str_replace("{ora}", $dataOraArray[1], $paginaHTML);
+if($dataOraInizio != ""){
+    $dataOraArray = explode(" ",$dataOraInizio);
+    $paginaHTML = str_replace("{data}", $dataOraArray[0], $paginaHTML);
+    $paginaHTML = str_replace("{ora}", $dataOraArray[1], $paginaHTML);
+}else{
+    $paginaHTML = str_replace("{data}", "", $paginaHTML);
+    $paginaHTML = str_replace("{ora}", "", $paginaHTML);
+}
 $paginaHTML = str_replace("{nome}", $nome, $paginaHTML);
 $paginaHTML = str_replace("{email}", $email, $paginaHTML);
 $paginaHTML = str_replace("{cel}", $cel, $paginaHTML);
@@ -69,26 +74,26 @@ $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 //------------------------------------- clanedario ----------------------------------------------------------------------------------------------------------
 date_default_timezone_set("Europe/Rome"); // setta il fusorario giusto
 //---- calcolo e formattazione data inizio e fine per la Query sql -----
-$giorni_del_mese = date("t");
-$nrmese = date("m");
+$giorniDelMese = date("t");
+$nrMese = date("m");
 $anno= date("Y");
+$ultimoDelMese = strtotime($anno."-".$nrMese."-".$giorniDelMese);
 $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
-if($giornoSettimanaUltimoDelMese != 7){
-    $tmp = (string)(7-$giornoSettimanaUltimoDelMese) . $nrmese+1 . $anno;
-    $ultimoTab = strtotime($tmp);
+if($giornoSettimanaUltimoDelMese != "7"){
+    $ultimoTab = strtotime(7-(int)$giornoSettimanaUltimoDelMese . $nrMese+1 . $anno);
     $primoTab = strtotime("-34 day" ,$ultimoTab); 
 }else{
-    $tmp =  $giornoSettimanaUltimoDelMese . $nrmese . $anno;
-    $ultimoTab = strtotime($tmp);
+    $ultimoTab = strtotime($giornoSettimanaUltimoDelMese."-". $nrMese ."-". $anno);
     $primoTab = strtotime("-34 day", $ultimoTab); 
 }
 $SQLultimoTab = date("Y-m-d", $ultimoTab)." 00:00:00";
 $SQLprimoTab = date("Y-m-d", $primoTab)." 00:00:00";
+
 if(!$connection->getState()){
-    $connessione->openDBConnection();
+    $connection->openDBConnection();
 }
-$nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLULTIMOTab);//Query slot non disponibili per visualizzare nel calendario ------------
-$connessione->closeDBConnection();
+$nonDisponibili = $connection->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
+$connection->closeConnection();
 //-------- creazione calendario ----------------------------------------------------------------------
 Class Giorno {
     public $stringData;
@@ -111,31 +116,31 @@ $k = 0;
 $slotPrecedenteDisponibile = false;
 for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
     $giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-    if($giorno[$i]->data >= strtotime("+2 day",date("Y-m-d"))){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
-        $giorno[$i]->disponibile = true;
-        $giorno[$i]->disponibile3h = false;
-        $tuttiSlotOccupati = true; 
+    if($giorno[$i]->data >= strtotime("+2 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
+        $giorno[$i]->disponibile = false;
+        $giorno[$i]->disponibile3h = true;
+        $tuttiSlotOccupati = false; 
         for($j=0;$j<9;$j++){ // per ogni slot del giorno
             while($dataora > startotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                 $k++;
             }
             if($dataora == startotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-                $giorno[$i]->disponibilitàSlot[$j] = false;
-                if($j==8 && $tuttiSlotOccupati){$giorno[$i]->disponibile = false;}
+                $giorno[$i]->disponibilitàSlot[$j] = true;
+                if($j==8 && $tuttiSlotOccupati){$giorno[$i]->disponibile = true;}
             }
             else{
-                $tuttiSlotOccupati = false;
-                $giorno[$i]->disponibilitàSlot[$j] = true;
-                if($slotPrecedenteDisponibile == true){$giorno[$i]->disponibile3h = true;}
-                $slotPrecedenteDisponibile = true;
+                $tuttiSlotOccupati = true;
+                $giorno[$i]->disponibilitàSlot[$j] = false;
+                if($slotPrecedenteDisponibile == false){$giorno[$i]->disponibile3h = false;}
+                $slotPrecedenteDisponibile = false;
             }
         }
     }
     else{ // giorno intero non disponibile
-        $giorno[$i]->disponibile = false;
-        $giorno[$i]->disponibile3h = false;
+        $giorno[$i]->disponibile = true;
+        $giorno[$i]->disponibile3h = true;
         for($j=0;$j<9;$j++){ // per ogni slot del giorno
-            $giorno[$i]->disponibilitàSlot[$j] = false;
+            $giorno[$i]->disponibilitàSlot[$j] = true;
         }
     }
 }
@@ -143,8 +148,8 @@ for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
 // ---------- creazione stringhe HTML per i 2 calendari -----------------
 $mesi = array("Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre");
 
-$stringaCalendario = "<ol id='calendario'>
-                        <li id='mese'><time datetime='$anno-$nrmese'>$anno-$mesi[$nrmese]</time></li>
+$stringaCalendario = "  <p id='mese'><time datetime='".$anno."-".($nrMese-1)."'>".$anno."-".($mesi[$nrMese-1])."</time></p>
+                        <ol id='calendario'>
                         <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                         <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                         <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
@@ -177,13 +182,19 @@ for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
     $stringaSlot .= "<li id='slot3hGiorno$i'><ol>"; // calendario slot 3 h
     $libero = true; // per ogni slot guarda se il sucessivo è libero, se si è disponibile uno slot da 3 ore e il sucessivo viene disabilitato.
     for($j=0;$j<9;$j++){ // per ogni slot
-        if($libero && $giorno[$i]->disponibilitàSlot[$j] && $giorno[$i]->disponibilitàSlot[$j+1]){
-            $stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
-            $libero = false;
+        if($j!=8){
+            if($libero && $giorno[$i]->disponibilitàSlot[$j] && $giorno[$i]->disponibilitàSlot[$j+1]){
+                $stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
+                $libero = false;
+            }else{
+                $stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
+                $libero = true;
+            }
         }else{
             $stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
-            $libero = true;
+                $libero = true;
         }
+        
     }
     $stringaSlot .= "</ol></li>";
 

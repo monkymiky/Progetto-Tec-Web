@@ -17,13 +17,13 @@ $messaggiForm = "";
       $connessione = new DBAccess();
       $connessione->openDBConnection();
       if ($connessione->login()){
-        $connessione->closeDBConnection();
+        $connessione->closeConnection();
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'admin.php';
         header("Location: http://$host$uri/$extra");// redirect ad admin.php
       }else {
-        $connessione->closeDBConnection();
+        $connessione->closeConnection();
       }
     }else{
       $messaggiForm .= "user o password non inserito";

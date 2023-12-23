@@ -2,7 +2,7 @@
 require_once ("connessione.php");
 require_once ("controlli.php");
 USE DB\DBAccess;
-$connection = new DBAcces();
+$connessione = new DBAccess();
 ini_set('display_errors',1);
 ini_set("display_startup_errors",1);
 
@@ -10,25 +10,24 @@ setlocale(LC_ALL, 'it_IT');
 //------------------------------------- clanedario admin ----------------------------------------------------------------------------------------------------------
 date_default_timezone_set("Europe/Rome"); // setta il fusorario giusto
 //---- calcolo e formattazione data inizio e fine per la Query sql -----
-$giorni_del_mese = date("t");
-$nrmese = date("M");
+$giorniDelMese = date("t");
+$nrMese = date("m");
 $anno= date("Y");
+$ultimoDelMese = strtotime($anno."-".$nrMese."-".$giorniDelMese);
 $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
-if($giornoSettimanaUltimoDelMese != 7){
-    $tmp = (string)(7-$giornoSettimanaUltimoDelMese) . $nrmese+1 . $anno;
-    $ultimoTab = strtotime($tmp);
+if($giornoSettimanaUltimoDelMese != "7"){
+    $ultimoTab = strtotime(7-(int)$giornoSettimanaUltimoDelMese . $nrMese+1 . $anno);
     $primoTab = strtotime("-34 day" ,$ultimoTab); 
 }else{
-    $tmp =  $giornoSettimanaUltimoDelMese . $nrmese . $anno;
-    $ultimoTab = strtotime($tmp);
+    $ultimoTab = strtotime($giornoSettimanaUltimoDelMese."-". $nrMese ."-". $anno);
     $primoTab = strtotime("-34 day", $ultimoTab); 
 }
-$SQLultimoTab = date("Y-M-d", $ultimoTab)." 00:00:00";
-$SQLprimoTab = date("Y-M-d", $primoTab)." 00:00:00";
+$SQLultimoTab = date("Y-m-d", $ultimoTab)." 00:00:00";
+$SQLprimoTab = date("Y-m-d", $primoTab)." 00:00:00";
 
 $connessione->openDBConnection();
-$prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLULTIMOTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
-$connessione->closeDBConnection();
+$prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
+$connessione->closeConnection();
 $nonDisponibili = array();
 $i = 0;
 $considera = true;
@@ -61,22 +60,24 @@ Class Giorno {
 // popolamento array giorni e slot con le disponibilità o non disponibilità
 $giorno = array();
 $k = 0;
+if(!defined($nonDisponibili[0])){$nonDisponibili[0] = "2001-03-04 00:00:00";} //il caso in cui sono tutti disponibili è gestito (ma rimane il warning)
 for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
     $giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-    $giorno[$i]->disponibile = true;
-    $tuttiSlotOccupati = true; 
+    $giorno[$i]->disponibile = false;
+    $tuttiSlotOccupati = false; 
     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-        while($dataora > startotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+        echo "1) ".strtotime($giorno[$i]->data.$giorno[$i]->ORARIO_SLOT[$j])."<br>2) ".strtotime($nonDisponibili[$k]);
+        while($k < count($nonDisponibili)-1 && strtotime($giorno[$i]->data.$giorno[$i] ->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
             $k++;
         }
-        if($dataora == startotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-            $giorno[$i]->disponibilitàSlot[$j] = false;
+        if(strtotime($giorno[$i]->data.$giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
+            $giorno[$i]->disponibilitàSlot[$j] = true;
             $giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni["nome"],"indirizzo" => $prenotazioni["indirizzo"],"email" => $prenotazioni["email"],"cel" => $prenotazioni["cel"],"note" => $prenotazioni["note"],"tipo" => $prenotazioni["tipo"]];
-            if($j==8 && $tuttiSlotOccupati){$giorno[$i]->disponibile = false;}
+            if($j==8 && $tuttiSlotOccupati){$giorno[$i]->disponibile = true;}
         }
         else{
-            $tuttiSlotOccupati = false;
-            $giorno[$i]->disponibilitàSlot[$j] = true;
+            $tuttiSlotOccupati = true;
+            $giorno[$i]->disponibilitàSlot[$j] = false;
             $giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cel" =>"","note" =>"","tipo" =>""];
         }
     }
@@ -140,7 +141,7 @@ if(isset($_POST['submit']) && empty($_POST['modifica'])){
                 controllaInput($_POST['tipo']);
                 $connessione->openDBConnection();
                 $connessione->cancellaPrenotazione($_POST['data'].$_POST['ora'],$tipo); // Query prenotazioni con dati clienti per visualizzare nel calendario 
-                $connessione->closeDBConnection();
+                $connessione->closeConnection();
             } 
         }else{
             $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (data = 'aaaa-mm-dd'  ora ='hh:mm:ss')";
@@ -196,7 +197,7 @@ if(isset($_POST['submit']) && !empty($_POST['modifica'])){ //campo nascosto che 
         $checkedDomicilio="";
         $checkedStudio="";
     }
-    $connessione->closeDBConnection();
+    $connessione->closeConnection();
 }
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
