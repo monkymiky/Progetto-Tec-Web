@@ -253,6 +253,15 @@ main a:hover {
     width:30%;
 }
 
+#descrizione-foto-anna-home {
+    background-color: white;
+    border-radius: 1em;
+}
+
+#descrizione-foto-anna-home > * {
+    margin: 0.5em;
+}
+
 #prenotazioni-home-main {
     width:10em;
     margin:auto;
