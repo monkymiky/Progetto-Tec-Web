@@ -64,7 +64,7 @@ header h1 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    font-size: 12em;
+    font-size: 7em;
     line-height: 1.5em;
 }
 
@@ -72,22 +72,35 @@ header h1 {
 /********************************************
 NAV
 ********************************************/
+
 nav {
     background-color: var(--headerBackground);
     color: var(--headerText);
-    padding: 1em; 
     text-align:center;
-    font-size:1.5em;
+    padding:1em;
+    font-size:1em;
 }
 
-#menu{
+#menu {
+    margin:auto;
     list-style-type: none;
 }
 
+#menu a {
+    text-decoration: none;
+    padding: 0.5em;
+    color: var(--link);
+}
+
+#menu a:hover {
+    background-color: var(--hoverLink);
+    border-radius: 1em;
+}
+
 #menu ul li {
-    margin:1em;
-    display:inline-block;
-    width:10%;
+    display: inline-block;
+    margin: 0.5em;
+    position: relative;
 }
 
 #menu ul a {
@@ -97,6 +110,19 @@ nav {
 #menu ul a:hover {
     background-color: #403B33;
     border-radius:1em;
+}
+
+#menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+#menu ul li:hover > ul {
+    display: block;
 }
 
 #breadcrumb {
@@ -146,6 +172,19 @@ main a:visited {
 
 main a:hover {
     color:var(--hoverLink);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+#menu ul li:hover .dropdown-menu {
+    display: block;
 }
 
 #CosaOffro {
@@ -250,6 +289,15 @@ main a:hover {
 #foto-anna-home>* {
     padding:0.5em;
     width:30%;
+}
+
+#descrizione-foto-anna-home {
+    background-color: white;
+    border-radius: 1em;
+}
+
+#descrizione-foto-anna-home > * {
+    margin: 0.5em;
 }
 
 #prenotazioni-home-main {
