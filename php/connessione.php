@@ -125,7 +125,7 @@
 
         public function login($user, $password){
             try{
-                $result = $this->connessione->query("SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Username ='$user' AND Pass = '$pass'");
+                $result = $this->connessione->query("SELECT * FROM Login WHERE Username ='$user' AND Pass = '$password'");
                 if ($result->num_rows == 1){
                     return true;
                 }else{

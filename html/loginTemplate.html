@@ -32,11 +32,12 @@
         </nav>
 
         <main id="content">
-            <form action="../php/login.php" method="post">
-                <input id="user" name="user" maxlength="40">
+            <form method="POST" action="../php/login.php" >
+                <input type="text" id="user" name="user" maxlength="40">
                 <label for="user"><span lang="en">Username:</span></label>
-                <input type="password" id="password" name="nome" maxlength="40">
+                <input type="password" id="password" name="password" maxlength="40">
                 <label for="password"><span lang="en">Password:</span></label>
+                <input type="submit" id="submit" name="submit" value="login"/>
             </form>
         </main>
 
