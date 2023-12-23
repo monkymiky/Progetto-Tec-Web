@@ -1,6 +1,3 @@
-Shop --> rinominare (direi di chiamarla massaggi.html)
-
-
 Home
 -	mettere background-color a descrizione anna pagina home (sopra la foto)
 -	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
@@ -8,8 +5,6 @@ Home
 
 
 Header e footer
--   dropdown-list per prestazioni (../prestazioni/fisioterapia.html ../prestazioni/danza.html ../prestazioni/corsi.html)
--   rinominare pagina shop.html ( diventa vetrina. direi massaggi.html?)
 -   inserire social nel footer
 
 
