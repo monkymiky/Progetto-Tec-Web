@@ -8,36 +8,50 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/CSS/massaggi.css" />
-    <link rel="stylesheet" href="/CSS/style.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/CSS/mini.css" type="text/css" media="screen and (max-width:600px)">
-    <link rel="stylesheet" href="/CSS/print.css" media="print" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
   </head>
 
   <body>
-    <header>
-      <h1 id="logo">logo</h1>
-    </header>
-
-    <nav id="menu">
-        <ul>
-          <li><a href="home.html"><span lang="eng">Home</span></a></li>
-          <li><a href="anna.html">Anna</a></li>
-          <li class="dropdown">
-            <a href="prestazioni.html">Prestazioni</a>
-            <ul class="dropdown-menu">
-                <li><a href="prestazioni/corsi.html">Corsi</a></li>
-                <li><a href="prestazioni/danza.html">Danza</a></li>
-                <li><a href="prestazioni/fisioterapia.html">Fisioterapia</a></li>
-            </ul>
-          </li>
-          <li><a href="contatti.html">Contatti</a></li>
-          <li><a href="prenotazioni.php">Prenotazioni</a></li>
-          <li>Massaggi</li>
-        </ul>
-      </nav>
-
-    <nav id="breadcrumb"><p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Massaggi</p></nav>
-
+            <!--    HEADER    -->    
+            <header>                                                                
+              <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+          </header>
+          <!--    NAVBAR    -->
+          <nav id="menu">
+              <ul>
+              <li lang="en"><a href="/html/index.html">Home</a></li>
+              <li><a href="/html/anna.html">Anna</a></li>
+              <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                      <!-- aria-expanded needs managed with Javascript -->
+                      <button
+                          type="button"
+                          class="dropdown__title"
+                          aria-expanded="false"
+                          aria-controls="Prestazioni-dropdown"
+                      >
+                          Prestazioni
+                      </button>
+                      <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                          <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                          <li>Massaggi</li>
+                          <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                          <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                      </ul>
+                  </li>          
+              <li><a href="/html/contatti.html">Contatti</a></li>
+              <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+              </ul>
+          </nav>
+  
+          <!--    BREADCRUMB    -->
+          <nav id="breadcrumb">
+              <p>Ti trovi in: Massaggi</p>
+          </nav>
+  
+          
+  
     <main>
       <ul class="shop-items">
         <li class="card">
@@ -208,11 +222,11 @@
       </ul>
 
     </main>
+    <!--    FOOTER    -->
     <footer>
-      <small
-        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
-        <span lang="en">All Rights Reserved</span></small
-      >
-    </footer>
+      <p><a href = "../html/contatti.html"> contattami </a></p>
+      <!-- Icone social -->
+      <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+  </footer>
   </body>
 </html>
