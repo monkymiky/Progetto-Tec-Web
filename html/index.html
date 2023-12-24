@@ -1,97 +1,99 @@
  <!DOCTYPE html>
-
-
- <header>
-    <title>Home</title>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="print.css" media="print">
-    <link rel="stylesheet" href="mini.css" media="screen and (max-width:600px)">
- </header>
-
- <body>
-
-    <!--    HEADER    -->
-    <header>                                                            <!--header e footer sono simili a quelli fatti dalla prof in lab-->
-        <h1 id="logo">logo</h1>                                        
-    </header>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
     
-    <nav id="menu">
-        <ul>
-           <li lang="en">Home</li>
-           <li><a href="anna.html">Anna</a></li>
-           <li><a href="Prestazioni.html">Prestazioni</a></li>  
-           <li><a href="Contatti.html">Contatti</a></li>
-           <li><a href="prenotazioni.php">Prenotazioni</a></li>
-           <li><a href="Massaggi.html">Massaggi</a></li>
-        </ul>
-    </nav>
-
-
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Home</span></p>
-    </nav>
-
-
-
-
-
-    <!--    MAIN    -->
-
-    <main id="homepage_main">
-
-
-        <div id="CosaOffro">
-
-            <h1>Cosa offro:</h1>
-
-            <a class="cosa-offro-links" id="link-massaggi" href="#messaggi">massaggi</a>
-            <a class="cosa-offro-links" id="link-corsi" href="#corsi_massaggi">corsi di massaggio</a>
-            <a class="cosa-offro-links" id="link-danza" href="#danza_libera">danza libera</a>
-            <div id="img-corso">Immagine corso di massaggi</div>
-            <div id="img-massaggio">Immagine danza</div>
-            -->
-        </div>
-
-
-        <div id="foto-anna-home">
-            <h2>Anna Nesler</h2>
-            <h3>Fisioterapista e Massaggiatrice</h3>
-            <p>descrizione Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia vulputate dolor vel volutpat. Morbi lacus justo, vulputate a ligula eget, elementum porttitor lacus. Quisque et tortor vulputate, facilisis augue sed, fermentum nulla. Donec a nulla vel orci fringilla euismod. Sed porta facilisis vulputate. Nam nulla nisl, hendrerit a molestie.</p>
-            
-            <a href="scopri di piu'">Scopri di più</a>      
-        </div>
-
-        <a id="prenotazioni-home-main" href="prenotazioni.php">Prenota un massaggio</a>
-
-        <div id="idee_regalo">
-            <h2>idee regalo</h2>
-            <a href="Prestazioni.html">Vedi di piu'</a>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="/css/print.css" media="print">
+        <link rel="stylesheet" href="/css/mini.css" media="screen and (max-width:600px)">
+     </head>
+    
+     <body>
+    
+        <!--    HEADER    -->    
+        <header>                                                                
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+        </header>
+        <!--    NAVBAR    -->
+        <nav id="menu">
             <ul>
-                <li>Gift card</li>                    <!--parte dinamica se intendiamo farla-->
-                <li>idea regalo 1</li>
-                <li>idea regalo 2</li>
-                <li>idea regalo 3</li>
+               <li lang="en">Home</li>
+               <li><a href="/html/anna.html">Anna</a></li>
+               <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                    <!-- aria-expanded needs managed with Javascript -->
+                    <button
+                        type="button"
+                        class="dropdown__title"
+                        aria-expanded="false"
+                        aria-controls="Prestazioni-dropdown"
+                    >
+                        Prestazioni
+                    </button>
+                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                        <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                        <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                        <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                    </ul>
+                </li>          
+               <li><a href="/html/contatti.html">Contatti</a></li>
+               <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
             </ul>
-        </div>
-        
-    </main>
-
-
-
-
-    <!--    FOOTER    -->
-
-    <footer>
-        <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span></small>
-    </footer>
-
-
-
-
-
-
- </body>
+        </nav>
+        <!--    BREADCRUMB    -->
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+    
+        <!--    MAIN    -->
+    
+        <main id="homepage_main">
+    
+    
+            <div id="CosaOffro">
+    
+                <h1>Cosa offro:</h1>
+    
+                <a class="cosa-offro-links" id="link-massaggi" href="#messaggi">massaggi</a>
+                <a class="cosa-offro-links" id="link-corsi" href="#corsi_massaggi">corsi di massaggio</a>
+                <a class="cosa-offro-links" id="link-danza" href="#danza_libera">danza libera</a>
+                <div id="img-corso">Immagine corso di massaggi</div>
+                <div id="img-massaggio">Immagine danza</div>
+                -->
+            </div>
+    
+    
+            <div id="foto-anna-home">
+                <h2>Anna Nesler</h2>
+                <h3>Fisioterapista e Massaggiatrice</h3>
+                <p>descrizione Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia vulputate dolor vel volutpat. Morbi lacus justo, vulputate a ligula eget, elementum porttitor lacus. Quisque et tortor vulputate, facilisis augue sed, fermentum nulla. Donec a nulla vel orci fringilla euismod. Sed porta facilisis vulputate. Nam nulla nisl, hendrerit a molestie.</p>
+                
+                <a href="scopri di piu'">Scopri di più</a>      
+            </div>
+    
+            <a id="prenotazioni-home-main" href="prenotazioni.php">Prenota un massaggio</a>
+    
+            <div id="idee_regalo">
+                <h2>idee regalo</h2>
+                <a href="Prestazioni.html">Vedi di piu'</a>
+                <ul>
+                    <li>Gift card</li>                    <!--parte dinamica se intendiamo farla-->
+                    <li>idea regalo 1</li>
+                    <li>idea regalo 2</li>
+                    <li>idea regalo 3</li>
+                </ul>
+            </div>
+            
+        </main>
+    
+        <!--    FOOTER    -->
+        <footer>
+            <p><a href = "../html/contatti.html"> contattami </a></p>
+            <!-- Icone social -->
+            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+        </footer>
+     </body>
+</html>

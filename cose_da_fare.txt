@@ -4,6 +4,7 @@ Home
 -	mettere l'immagine del logo a sx rispetto alla lista nella home. 
 
 Header
+-	inserire link per non vedenti per saltare la navbar
 -	dropdown-list per prestazioni (fisioterapia.html massaggi.html danza.html corsi.html )
 	link per dropdown accessibile : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/
 Footer
@@ -33,6 +34,7 @@ gestire gli errori 404 e 500 (emotional desig) con pagine html apposite
 -------------------------------------------------------------------------------------------------------
 chiedere alla prof:
 -	come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
+-	come gestire la breadcrumb (danza o prestazioni>danza ? -- home>anna o anna? )
 ------------------------------------ PHP ------------------------------------------
 
 controllo disponibilità slot prima di prenotare (concorrenza tra clienti) // non essenziale direi 

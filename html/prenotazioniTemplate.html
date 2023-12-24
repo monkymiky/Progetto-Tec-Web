@@ -22,20 +22,44 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         </style>
     </head>
     <body>
-        <header>                           
-            <h1 id="logo">logo</h1>           
-        </header>
-        <nav id="menu">
-            <ul>
-               <li><a href="home.html">Home</a></li>
-               <li><a href="anna.html">Anna</a></li>
-               <li><a href="prestazioni.html">Prestazioni</a></li>  
-               <li><a href="contatti.html">Contatti</a></li>
-               <li>Prenotazioni</li>
-               <li><a href="massaggi.html">Massaggi</a></li>
-            </ul>
-        </nav>
-        <nav id="breadcrumb"><p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p></nav>
+                <!--    HEADER    -->    
+                <header>                                                                
+                    <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+                </header>
+                <!--    NAVBAR    -->
+                <nav id="menu">
+                    <ul>
+                    <li lang="en"><a href="/html/index.html">Home</a></li>
+                    <li><a href="/html/anna.html">Anna</a></li>
+                    <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                            <!-- aria-expanded needs managed with Javascript -->
+                            <button
+                                type="button"
+                                class="dropdown__title"
+                                aria-expanded="false"
+                                aria-controls="Prestazioni-dropdown"
+                            >
+                                Prestazioni
+                            </button>
+                            <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                                <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                                <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
+                                <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                                <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                            </ul>
+                        </li>          
+                    <li><a href="/html/contatti.html">Contatti</a></li>
+                    <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+                    </ul>
+                </nav>
+        
+                <!--    BREADCRUMB    -->
+                <nav id="breadcrumb">
+                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
+                </nav>
+        
+                
+        
         <main>
             <h2>Prenota una prestazione</h2>
                 <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
@@ -161,8 +185,11 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 <input type="submit" value="Prenota">
             </form>
         </main>
+        <!--    FOOTER    -->
         <footer>
-            <small>Nesler Michele - Parise Luca - Marco - Elia Leonetti - <span lang="en">All Rights Reserved</span></small>
+            <p><a href = "../html/contatti.html"> contattami </a></p>
+            <!-- Icone social -->
+            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
     </body>
 </html>
