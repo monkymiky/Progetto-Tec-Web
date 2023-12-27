@@ -5,7 +5,6 @@ USE DB\DBAccess;
 $connessione = new DBAccess();
 ini_set('display_errors',1);
 ini_set("display_startup_errors",1);
-
 setlocale(LC_ALL, 'it_IT');
 //------------------------------------- clanedario admin ----------------------------------------------------------------------------------------------------------
 date_default_timezone_set("Europe/Rome"); // setta il fusorario giusto

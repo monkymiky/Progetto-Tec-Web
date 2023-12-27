@@ -19,7 +19,7 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
     }
     return "";
 }
-
+ 
 function controllaADomicilio(&$aDomicilio, &$messaggiForm){
   if(empty($aDomicilio)){
 		$messaggiForm .= "<p> il campo \"a domicilio\" deve essere specificato </p>";

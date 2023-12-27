@@ -8,7 +8,6 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <meta charset="UTF-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
-
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
         <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
         <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
@@ -84,6 +83,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form>
+                {messaggiForm}
                 <fieldset>
                     <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
                     <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio" {checkedDomicilio}>

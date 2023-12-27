@@ -25,7 +25,7 @@
         }
 
         public function openDBConnection(){
-            try{
+            try{ 
                 $this -> connessione = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
                 $this -> connessione ->set_charset('utf8');
             }
