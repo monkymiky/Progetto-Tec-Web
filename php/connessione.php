@@ -1,12 +1,11 @@
 <?php
     namespace DB;
     //Es ist möglich, date() und mktime() gleichzeitig zu verwenden, um Datumsangaben in der Zukunft oder der Vergangenheit zu bestimmen.
-    const MESSAGGIO_RIPROVA = "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
-    contattami tramite il <a href=\"../html/contatti.html\">form di contatto</a> riportando il seguente 
+    const MESSAGGIO_SHOW_ERR = "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
+    contattami tramite il <a href=\"/html/contatti.html\">form di contatto</a> riportando il seguente 
     errore. Potrebbe essere d'aiuto ai tecnici!";
-    const MESSAGGIO_SCUSA = "Scusa, il sito ha avuto un problema.
-    Contattami tramite il <a href=\"../html/contatti.html\">form di contatto</a> riportando il seguente 
-    errore, in modo che i tecnici possano risolvere l'errore. Ti contatterò appena il sito ritorna a funzionare.";
+    const MESSAGGIO_DBERR = "Scusa, il sito ha avuto un problema nel contattare il Database. Riprova tra qualche minuto, se il problema persiste 
+    contattami tramite il <a href=\"/html/contatti.html\">form di contatto</a>";
     
     class DBAccess {
         private const HOST_DB = "localhost";
@@ -17,20 +16,28 @@
         private $connessione;
         private $state = false;
 
-        public function openErrorPage(String $s, Exception $e){
+        public function openErrorPage(String $s = MESSAGGIO_DBERR, Exception $e = new Exception("")){ 
+            // se gli passo un messaggio mostra quello, se gli passo un eccezzione mostra l'errore con messaggio standard, se passo entrambi mostra entrambi
             $paginaHTML = file_get_contents("../html/DBerrorTemplate.html");
-            $messaggioErrore ="<p class=\"errorMessage\">".$s."messaggio d'errore:".$e->getMessage()."</p>";
+            if($e->getMessage()== ""){ 
+                $messaggioErrore ="<p class=\"errorMessage\">".$s."</p>";
+            }else{
+                $messaggioErrore ="<p class=\"errorMessage\">".$s." Se mi contatterai riporta il seguente 
+                errore. Grazie in anticipo, potrebbe essere d'aiuto ai tecnici per risolvere il problema! </p><p>messaggio d'errore:".$e->getMessage()."</p>";
+            }
             $paginaHTML = str_replace("{messaggioErrore}", $messaggioErrore, $paginaHTML);
             echo $paginaHTML;
+            exit;
         }
 
         public function openDBConnection(){
             try{ 
+                $this->openErrorPage();
                 $this -> connessione = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
                 $this -> connessione ->set_charset('utf8');
             }
             catch(Exception $ex){
-                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+                $this->openErrorPage();
                 return false;
             }
             $this -> state = true;
@@ -50,7 +57,7 @@
                     "SELECT Data_Ora_Inizio FROM NonDisponibili WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
-                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+                $this->openErrorPage();
             }
             return $result -> fetch_all(MYSQLI_NUM); // ritorna un array numerico (non associativo) con tutti gli slot non disponibili
         }
@@ -73,7 +80,9 @@
                     $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ($slot2);");
                 }
             }catch(Exception $e){
-                $this->connessione->openErrorPage(MESSAGGIO_RIPROVA,$e->getMessage());
+                $this->openErrorPage("C'èstato un problema nella prenotazione. 
+                Porebbe essere che qualcuno ti abbia soffiato il posto mentre lo sceglievi, quindi per prima cosa prova nuovamente. 
+                Se il problema persiste contattami tramite il <a href='/html/contatti.html'>form di contatto</a> spiegandomi il problema.");
                 return false;
             }
             return true;
@@ -85,7 +94,7 @@
                     "SELECT Data_Ora_Inizio, nome, indirizzo, email, cellulare, InfoAggiuntive, tipo FROM Prenotazioni JOIN Dati_cliente WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
-                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+                $this->openErrorPage();
             }
             $matrice = array();
             $i = 0;
@@ -104,7 +113,7 @@
                     $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$inizio'");
                 }
             }catch(Exception $ex){
-                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+                $this->openErrorPage($ex->getMessage());
             }
         }
 
@@ -117,7 +126,7 @@
                     $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
-                $this->connessione->openErrorPage(MESSAGGIO_RIPROVA,$e->getMessage());
+                $this->openErrorPage();
                 return false;
             }
             return true;
@@ -133,7 +142,7 @@
                 }
             }
             catch(Exception $ex){
-                openErrorPage(MESSAGGIO_RIPROVA, $ex->getMessage());
+                $this->openErrorPage();
             }
         }
 

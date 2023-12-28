@@ -7,7 +7,7 @@ function controllaInput(&$data) { // meglio htmlentities e sttrip_tags?
   }
 
 function controllaDataOra(&$dataOra, &$messaggiForm){
-  if(!empty($dataOra)){
+  if(!isset($dataOra)){
         if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/",$dataOra)){
             return $dataOra;
         }else{
@@ -21,7 +21,7 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
 }
  
 function controllaADomicilio(&$aDomicilio, &$messaggiForm){
-  if(empty($aDomicilio)){
+  if(isset($aDomicilio)){
 		$messaggiForm .= "<p> il campo \"a domicilio\" deve essere specificato </p>";
     return NULL; // da verificare se viene tramutato in 0
 	}else{
@@ -36,14 +36,14 @@ function controllaADomicilio(&$aDomicilio, &$messaggiForm){
 }
 
 function controllaNote(&$note,&$messaggiForm ){
-  if(!empty($note)){
+  if(!isset($note)){
 		controllaInput($note);
 		return $note ;
 	}
 }
 
 function controllaEmail(&$email,&$messaggiForm){
-  if(!empty($email)){
+  if(!isset($email)){
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 			$messaggiForm .= "<p>L'email inserito non è in un formato valido </p>";
 		}else{
@@ -56,7 +56,7 @@ function controllaEmail(&$email,&$messaggiForm){
 }
 
 function controllaCel(&$cel, &$messaggiForm){
-  if(!empty($cel)){
+  if(!isset($cel)){
     controllaInput($cel);
     if(preg_match("/^([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])$ | ^(+[0-9][0-9] [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])$/", $_POST['cel'])){
         return $cel;
@@ -71,7 +71,7 @@ return "";
 }
 
 function controllaNome(&$nome, &$messaggiForm){
-  if(!empty($nome)){
+  if(!isset($nome)){
     controllaInput($nome);
     if (preg_match("/^[a-zA-Z' ]*$/",$nome)){
         return $nome;
@@ -85,7 +85,7 @@ return "";
 }
 
 function controllaIndirizzo(&$indirizzo , &$messaggiForm){
-  if(!empty($indirizzo)){
+  if(!isset($indirizzo)){
   controllaInput($indirizzo);
     if (preg_match("/^[a-zA-Z0-9' ]*$/",$indirizzo)){
         return $indirizzo;
