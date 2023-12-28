@@ -21,18 +21,13 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
 }
  
 function controllaADomicilio(&$aDomicilio, &$messaggiForm){
-  if(isset($aDomicilio)){
+  if(!isset($aDomicilio) || NULL == filter_var($aDomicilio,FILTER_VALIDATE_BOOLEAN)){
 		$messaggiForm .= "<p> il campo \"a domicilio\" deve essere specificato </p>";
     return NULL; // da verificare se viene tramutato in 0
-	}else{
-    if($aDomicilio == "domicilio"){
-      return true;
-    }
-    if($aDomicilio == "studio"){
-      return false;
-    }
-		return NULL;
 	}
+  else{
+    return $aDomicilio;
+  }
 }
 
 function controllaNote(&$note,&$messaggiForm ){

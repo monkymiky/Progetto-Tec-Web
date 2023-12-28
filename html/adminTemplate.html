@@ -71,16 +71,17 @@
                     <input id="studio" name="scelta-luogo" type="radio" value = "studio">
                     <label for="studio">in studio</label>
                 </fieldset>
-                <input type="submit" value="CANCELLA">
+                <input type="submit" name="submitCancella" value="cancella">
             </form>
             
             <p>Modifica prenotazione:</p>
-            <form action="../php/admin.php" method="post">
+            <form action="../php/admin.php" method="post" id="formPrenota">
                 <fieldset>
+                    <input id="mese" name="mese" type="hidden" value = "{mese}">
                     <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio">
+                    <input id="domicilio" name="aDomicilio" type="radio" value = "1">
                     <label for="domicilio">a domicilio</label>
-                    <input id="studio" name="scelta-luogo" type="radio" value = "studio">
+                    <input id="studio" name="aDomicilio" type="radio" value = "0">
                     <label for="studio">in studio</label>
                 </fieldset>
                 <fieldset>
@@ -123,7 +124,7 @@
                         <label for="email">Note:</label>
                     </div>
                 </fieldset>
-                <input type="submit" value="Modifica">
+                <input type="submit" name="action" value="modifica">
             </form>
         </main>
         <!--    FOOTER    -->
