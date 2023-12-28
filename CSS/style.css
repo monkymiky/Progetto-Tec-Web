@@ -313,6 +313,15 @@ main a:hover {
     text-align:center;
 }
 
+#foto-anna-home-descrizione {
+    background-color: white;
+    border-radius: 1em;
+    padding: 1em;
+}
+#foto-anna-home-descrizione > *{
+    margin: 0.4em;
+}
+
 #idee_regalo {
     width:50%;
     margin:auto;
