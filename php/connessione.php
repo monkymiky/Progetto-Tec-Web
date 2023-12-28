@@ -15,11 +15,11 @@
 
         private $connessione;
         private $state = false;
-
-        public function openErrorPage(String $s = MESSAGGIO_DBERR, Exception $e = new Exception("")){ 
+        
+        public function openErrorPage(String $s = MESSAGGIO_DBERR, Exception $e = NULL){ 
             // se gli passo un messaggio mostra quello, se gli passo un eccezzione mostra l'errore con messaggio standard, se passo entrambi mostra entrambi
             $paginaHTML = file_get_contents("../html/DBerrorTemplate.html");
-            if($e->getMessage()== ""){ 
+            if($e == NULL){ 
                 $messaggioErrore ="<p class=\"errorMessage\">".$s."</p>";
             }else{
                 $messaggioErrore ="<p class=\"errorMessage\">".$s." Se mi contatterai riporta il seguente 
@@ -32,12 +32,11 @@
 
         public function openDBConnection(){
             try{ 
-                $this->openErrorPage();
                 $this -> connessione = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
                 $this -> connessione ->set_charset('utf8');
             }
             catch(Exception $ex){
-                $this->openErrorPage();
+                $this->openErrorPage("1");
                 return false;
             }
             $this -> state = true;
@@ -57,7 +56,7 @@
                     "SELECT Data_Ora_Inizio FROM NonDisponibili WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
-                $this->openErrorPage();
+                $this->openErrorPage("2");
             }
             return $result -> fetch_all(MYSQLI_NUM); // ritorna un array numerico (non associativo) con tutti gli slot non disponibili
         }
@@ -94,7 +93,7 @@
                     "SELECT Data_Ora_Inizio, nome, indirizzo, email, cellulare, InfoAggiuntive, tipo FROM Prenotazioni JOIN Dati_cliente WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
-                $this->openErrorPage();
+                $this->openErrorPage("3");
             }
             $matrice = array();
             $i = 0;
@@ -126,7 +125,7 @@
                     $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
-                $this->openErrorPage();
+                $this->openErrorPage("4");
                 return false;
             }
             return true;
@@ -142,7 +141,7 @@
                 }
             }
             catch(Exception $ex){
-                $this->openErrorPage();
+                $this->openErrorPage("5");
             }
         }
 

@@ -14,219 +14,216 @@
   </head>
 
   <body>
-            <!--    HEADER    -->    
-            <header>                                                                
-              <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
-          </header>
-          <!--    NAVBAR    -->
-          <nav id="menu">
-              <ul>
-              <li lang="en"><a href="/html/index.html">Home</a></li>
-              <li><a href="/html/anna.html">Anna</a></li>
-              <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
-                      <!-- aria-expanded needs managed with Javascript -->
-                      <button
-                          type="button"
-                          class="dropdown__title"
-                          aria-expanded="false"
-                          aria-controls="Prestazioni-dropdown"
-                      >
-                          Prestazioni
-                      </button>
-                      <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                          <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
-                          <li>Massaggi</li>
-                          <li><a href="/html/prestazioni/danza.html">Danza</a></li>
-                          <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
-                      </ul>
-                  </li>          
-              <li><a href="/html/contatti.html">Contatti</a></li>
-              <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
-              </ul>
-          </nav>
+        <!--    HEADER    -->    
+        <header>                                                                
+          <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+      </header>
+      <!--    NAVBAR    -->
+      <nav id="menu">
+          <ul>
+          <li lang="en"><a href="/html/index.html">Home</a></li>
+          <li><a href="/html/anna.html">Anna</a></li>
+          <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                  <!-- aria-expanded needs managed with Javascript -->
+                  <button
+                      type="button"
+                      class="dropdown__title"
+                      aria-expanded="false"
+                      aria-controls="Prestazioni-dropdown"
+                  >
+                      Prestazioni
+                  </button>
+                  <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                      <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                      <li>Massaggi</li>
+                      <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                      <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                  </ul>
+              </li>          
+          <li><a href="/html/contatti.html">Contatti</a></li>
+          <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+          </ul>
+      </nav>
+
+      <!--    BREADCRUMB    -->
+      <nav id="breadcrumb">
+          <p>Ti trovi in: Massaggi</p>
+      </nav>
   
-          <!--    BREADCRUMB    -->
-          <nav id="breadcrumb">
-              <p>Ti trovi in: Massaggi</p>
-          </nav>
-  
-          
-  
-    <main>
-      <ul class="shop-items">
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Massaggio hawaiiano Lomi Lomi Nui</div>
+      <main>
+        <ul class="shop-items">
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Massaggio hawaiiano Lomi Lomi Nui</div>
+                </div>
+                <img src="../media/card/card1.jpg"/>
               </div>
-              <img src="../media/card/card1.jpg"/>
+              <p class="card-back">
+                Le prese avvolgenti con olio di cocco e le pressioni gentili
+                trasmettono profonda accettazione, completezza e armonia. <br />
+                80 minuti <br />
+                €75
+              </p>
             </div>
-            <p class="card-back">
-              Le prese avvolgenti con olio di cocco e le pressioni gentili
-              trasmettono profonda accettazione, completezza e armonia. <br />
-              80 minuti <br />
-              €75
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div>          
-        </li>
-        
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div>          
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Massaggio Thai Yoga</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Massaggio Thai Yoga</div>
+                </div>
+                <img src="../media/card/card2.jpg"/>
               </div>
-              <img src="../media/card/card2.jpg"/>
+              <p class="card-back">
+                Viene fatto da vestiti sul materassino. Pressione decisa lungo le
+                linee energetiche. Riequilibrante. Gli arti vengono allungati in
+                posizioni di yoga passivo. Ti sentirai rinvigorito! <br />
+                80 minuti <br />
+                €80
+              </p>
             </div>
-            <p class="card-back">
-              Viene fatto da vestiti sul materassino. Pressione decisa lungo le
-              linee energetiche. Riequilibrante. Gli arti vengono allungati in
-              posizioni di yoga passivo. Ti sentirai rinvigorito! <br />
-              80 minuti <br />
-              €80
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Massaggio svedese intensivo schiena</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Massaggio svedese intensivo schiena</div>
+                </div>
+                <img src="../media/card/card3.jpg"/>
               </div>
-              <img src="../media/card/card3.jpg"/>
+              <p class="card-back">
+                Un toccasana che scioglie le tensioni muscolari. Con coppettazione
+                e olio di arnica. <br />
+                60 minuti <br /> 
+                €70
+              </p>
             </div>
-            <p class="card-back">
-              Un toccasana che scioglie le tensioni muscolari. Con coppettazione
-              e olio di arnica. <br />
-              60 minuti <br /> 
-              €70
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Riflessologia facciale vietnamita Dien Chan</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Riflessologia facciale vietnamita Dien Chan</div>
+                </div>
+                <img src="../media/card/card4.jpg"/>
               </div>
-              <img src="../media/card/card4.jpg"/>
+              <p class="card-back">
+                Viene fatto da seduti. Può lenire una vasta gamma di
+                disturbi. Risolutivo. <br />
+                30 minuti <br /> 
+                €30
+              </p>
             </div>
-            <p class="card-back">
-              Viene fatto da seduti. Può lenire una vasta gamma di
-              disturbi. Risolutivo. <br />
-              30 minuti <br /> 
-              €30
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Massaggio al miele</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Massaggio al miele</div>
+                </div>
+                <img src="../media/card/card5.jpg"/>
               </div>
-              <img src="../media/card/card5.jpg"/>
+              <p class="card-back">
+                Viene fatto sulla schiena. Esfoliante, disintossicante, dona
+                leggerezza e rilassamento. Impacco caldo finale. <br />
+                50 minuti <br /> 
+                €60
+              </p>
             </div>
-            <p class="card-back">
-              Viene fatto sulla schiena. Esfoliante, disintossicante, dona
-              leggerezza e rilassamento. Impacco caldo finale. <br />
-              50 minuti <br /> 
-              €60
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Linfodrenaggio Vodder</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Linfodrenaggio Vodder</div>
+                </div>
+                <img src="../media/card/card6.jpg"/>
               </div>
-              <img src="../media/card/card6.jpg"/>
+              <p class="card-back">
+                Molto delicato, molto efficace. Combatte il gonfiore,
+                antidolorifico, supporta il sistema immunitario. <br />
+                80 minuti <br /> 
+                €75
+              </p>
             </div>
-            <p class="card-back">
-              Molto delicato, molto efficace. Combatte il gonfiore,
-              antidolorifico, supporta il sistema immunitario. <br />
-              80 minuti <br /> 
-              €75
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Pacchetto 5 massaggi</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Pacchetto 5 massaggi</div>
+                </div>
+                <img src="../media/card/card7.jpg"/>
               </div>
-              <img src="../media/card/card7.jpg"/>
+              <p class="card-back">
+                Un percorso che può portare benefici duraturi. <br />
+                €240
+              </p>
             </div>
-            <p class="card-back">
-              Un percorso che può portare benefici duraturi. <br />
-              €240
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
 
-        <li class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-name-container">
-                <div class="card-name">Pacchetto 3 trattamenti</div>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-name-container">
+                  <div class="card-name">Pacchetto 3 trattamenti</div>
+                </div>
+                <img src="../media/card/card8.jpg"/>
               </div>
-              <img src="../media/card/card8.jpg"/>
+              <p class="card-back">
+                Un investimento in salute <br />
+                €170
+              </p>
             </div>
-            <p class="card-back">
-              Un investimento in salute <br />
-              €170
-            </p>
-          </div>
-          <div class="button-container">
-            <p class="button-text">Per maggiori informazioni: </p>
-            <input type="button" value="PDF" onclick="" />
-          </div> 
-        </li>
-      </ul>
+            <div class="button-container">
+              <p class="button-text">Per maggiori informazioni: </p>
+              <input type="button" value="PDF" onclick="" />
+            </div> 
+          </li>
+        </ul>
 
-    </main>
-    <!--    FOOTER    -->
-    <footer>
-      <p><a href = "../html/contatti.html"> contattami </a></p>
-      <!-- Icone social -->
-      <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
-  </footer>
+      </main>
+      <!--    FOOTER    -->
+      <footer>
+        <p><a href = "../html/contatti.html"> contattami </a></p>
+        <!-- Icone social -->
+        <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+    </footer>
   </body>
 </html>

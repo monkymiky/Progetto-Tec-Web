@@ -1,44 +1,80 @@
-Home
--	mettere background-color a descrizione anna pagina home (sopra la foto)
--	su idee regalo in fondo cambiare lo stile (mettere immagine di sfondo per ogni idea regalo, evitiamo per ora di farlo dinamico)
--	mettere l'immagine del logo a sx rispetto alla lista nella home. 
-
-Header
+HTML
+-	Uniformare politica assegnamento H1, H2 nelle pagine
+	HEADER
 -	inserire link per non vedenti per saltare la navbar
--	dropdown-list per prestazioni (fisioterapia.html massaggi.html danza.html corsi.html )
-	link per dropdown accessibile : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/
-Footer
+	FOOTER
+-	inserire social in tutte le pagine
+	HOME
+-	card
+-	spostare link "prenota un massaggio"
+-	aggiungere link "fisioterapia" vicino alla foto e ai link massaggi 
+	ERROR 404 e 500
+-	creare pagine
+	PRENOTAZIONI e ADMIN e CONTATTI
+-	mettere ogni input in uno <span></span>
+	MASSAGGI
+-	sostituire le immagini in html con css
+
+
+CSS -> tutto responsive!
+-	Decidere per una palette definitiva
+-	eliminare codice inutilizzato (es: immagine carrello)
+	HEADER
+-	dropdown-list per prestazioni
+-	position sticky navbar + breadcrumb
+-	link visitati distinguibili
+	FOOTER
 -   	inserire social nel footer
+	HOME
+-	card
+-	rendere responsive
+-	immagine anna neve più sottile
+	ANNA - FISIOTERAPIA - CORSI - DANZA
+-	inserire immagini con float left
+-	fare css responsive
+	CONTATTI
+-	fare css responsive
+	PRENOTAZIONI - ADMIN
+-	css responsive 
+-	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
+-	form
+	ERROR 404 e 500
+-	css responsive
+	MASSAGGI
+-	sostituire le immagini in html con css
+-	dropdown diventa brutto
+-	incorporare file temporanei
+
+CSS mobile
+
+PHP
+-	debug funzionalità mese sucessivo/precedente calendario e miglioramento estetica/disorientamento
+
+JS
+	ADMIN
+-	js controlli input
+-	js mostra dati prenotazione
+	PRENOTAZIONI
+-	js controlli input 
+-	js riempi campo data
+-	js scomparsa/comparsa fieldset "dati carta"
+	HEADER
+-	js aria-expanded="true"
+	CONTATTI
+-	js controlli input
 
 
-distribuire carico css
--	fare css mobile 
--	fare css desktop 
--	fare css print 
+RELAZIONE PROGETTO
 
-
- uniformare e sistemare HTML
-> iniziare CSS mobile
-> ultimare CSS desktop
-    • carrello
-    • prenotazioni
-    • prestazioni (...)
-    • pagina anna
-    • admin
-    • contatti
-> Gestione animazioni a scomparsa per inserimento dati carta (JavaScript)
-
-
-gestire gli errori 404 e 500 (emotional desig) con pagine html apposite
-
+Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
+Luca Parise - luca.parise.3@studenti.unipd.it -2043677 
+Marco Cristo - marco.cristo@studenti.unipd.it - 1232582
+Elia 
 -------------------------------------------------------------------------------------------------------
 chiedere alla prof:
--	come bisogna gestire quei pochi dati che salviamo degli utenti. si può mettere un banner dicendo che se vogliono possono scrivere un email per modificare/cancellare i dati? potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
+-	come bisogna gestire quei pochi dati che salviamo degli utenti. 
+	si può mettere un banner "se vuoi puoi scrivere un email per modificare/cancellare i dati"?
+	potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
 -	come gestire la breadcrumb (danza o prestazioni>danza ? -- home>anna o anna? )
------------------------------------- PHP ------------------------------------------
 
-controllo disponibilità slot prima di prenotare (concorrenza tra clienti) // non essenziale direi 
-controllare che gli errori connessione siano accessibili es: ul con almento un li dentro, errori in tag html validi
-casse :target css display: default per il giorno che si vuole visualizzare none per tutti gli altri giorni
------------------------------------------------------------------------------------
 

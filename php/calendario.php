@@ -1,7 +1,7 @@
 <?php
 require_once ("connessione.php");
 USE DB\DBAccess;
-$connessione = new DBAccess();
+
 ini_set('display_errors',1);
 ini_set("display_startup_errors",1);
 setlocale(LC_ALL, 'it_IT');
@@ -31,6 +31,7 @@ Class Calendario{
     private $stringaSlot;
 
     function __construct(bool $admin,int $mese){
+        $connessione = new DBAccess();
         $this->admin = $admin;
         $adesso =  strtotime("+$mese mounth", date("Y-m")."-01"); // aggiunge $mese mesi alla data odierna
         $giorniDelMese = date("t");
@@ -52,12 +53,10 @@ Class Calendario{
         $this->giorno = array();
         $k = 0;
         $slotPrecedenteDisponibile = false;
-
         if($admin){
             $connessione->openDBConnection();
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
             $connessione->closeConnection();
-
             $i = 0;
             $considera = true;
             foreach( $prenotazioni as $prenotaz ){ // per non dover cambiare tutto il codice ricostruisco le non disponibilità dalle prenotazioni
@@ -91,9 +90,9 @@ Class Calendario{
                 }
             }
         }else{
-            $connection->openDBConnection();
-            $nonDisponibili = $connection->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
-            $connection->closeConnection();
+            $connessione->openDBConnection();
+            $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
+            $connessione->closeConnection();
 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
@@ -132,11 +131,10 @@ Class Calendario{
 
     private function setStringaCalendario(){
         
-        $this->stringaCalendario = "    
-                                        <p id='mese'>
-                                            <input type='submit' name='action' value ='".$mese-1."' form='formPrenota'>
-                                            <time datetime='".$anno."-".($nrMese-1)."'>".$anno."-".($this->$mesi[$nrMese-1])."</time>
-                                            <input type='submit' name='action' value ='".$mese+1."' form='formPrenota'>
+        $this->stringaCalendario = "    <p id='mese'>
+                                            <input type='submit' name='action' value ='".($mese-1)."' form='formPrenota'>
+                                            <time datetime='".($anno)."-".($nrMese-1)."'>".$anno."-".($this->$mesi[$nrMese-1])."</time>
+                                            <input type='submit' name='action' value ='".($mese+1)."' form='formPrenota'>
                                         </p>
                                         <ol id='calendario'>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
@@ -146,6 +144,7 @@ Class Calendario{
                                             <li class='labelgiorno'><abbr title='Venerdì'>Ven</abbr></li>
                                             <li class='labelgiorno'><abbr title='Sabato'>Sab</abbr></li>
                                             <li class='labelgiorno'><abbr title='Domenica'>Dom</abbr></li>";
+
         if($this->admin){
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $tuttodisponibile = true;
