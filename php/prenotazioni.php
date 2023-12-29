@@ -74,7 +74,8 @@ $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 //------------------------------------- clanedario ----------------------------------------------
 $stringMese = "0";
     if(!empty($_POST['action'])){
-        $calendario = new Calendario(false, controllaInput($_POST("action")));
+        controllaInput($_POST["action"]);
+        $calendario = new Calendario(false,$_POST["action"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
         $stringMese = $_POST['action'];

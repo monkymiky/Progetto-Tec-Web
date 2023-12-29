@@ -48,7 +48,7 @@ CSS -> tutto responsive!
 CSS mobile
 
 PHP
--	debug funzionalità mese sucessivo/precedente calendario e miglioramento estetica/disorientamento
+- 	testa isset e empty
 
 JS
 	ADMIN
@@ -67,9 +67,9 @@ JS
 RELAZIONE PROGETTO
 
 Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
-Luca Parise - luca.parise.3@studenti.unipd.it -2043677 
-Marco Cristo - marco.cristo@studenti.unipd.it - 1232582
-Elia 
+Parise Luca - luca.parise.3@studenti.unipd.it -2043677 
+Cristo Marco - marco.cristo@studenti.unipd.it - 1232582
+Leonetti Elia - elia.leo2000@gmail.com - 2009998
 -------------------------------------------------------------------------------------------------------
 chiedere alla prof:
 -	come bisogna gestire quei pochi dati che salviamo degli utenti. 

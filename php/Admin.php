@@ -103,7 +103,8 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
  //--------------------------- calendario -----------------------------------------------
     $stringMese = "0";
     if(isset($_POST['action']) && $_POST['action'] != "modifica"){
-        $calendario = new Calendario(false, controllaInput($_POST("action")));
+        controllaInput($_POST["action"]);
+        $calendario = new Calendario(false,$_POST["action"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
         $stringMese = $_POST['action'];

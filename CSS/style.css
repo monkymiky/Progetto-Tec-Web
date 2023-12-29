@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: CustomFont;
-    src: url(../media/Montserrat-Regular.ttf);
+    src: url(/media/Montserrat-Regular.ttf);
 }
 
 :root {
@@ -60,7 +60,7 @@ header {
 header h1 {
     margin-top:-0.1em;
     text-indent: -999em; 
-    background-image: url(../media/logo_nobg.png);
+    background-image: url(/media/logo_nobg.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -131,7 +131,7 @@ nav {
 
 #immagine-carrello {
     text-indent:-999em; 
-    background-image:url(../media/carrello.svg);
+    background-image:url(/media/carrello.svg);
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -233,7 +233,7 @@ main a:hover {
     grid-column:2;
     
     text-indent:-999em; 
-    background-image:url(../media/corso.jpg);
+    background-image:url(/media/corso.jpg);
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -254,7 +254,7 @@ main a:hover {
     grid-column:2;
     
     text-indent: -999em; 
-    background-image: url(../media/corso.jpg); /*credo manchi l'immagine relativa ai massaggi*/
+    background-image: url(/media/corso.jpg); /*credo manchi l'immagine relativa ai massaggi*/
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -278,7 +278,7 @@ main a:hover {
     flex-flow:column;
     align-items:end;
     
-    background-image:url(../media/Anna_2.0_rev.jpg);
+    background-image:url(/media/Anna_2.0_rev.jpg);
     background-size: cover;/*background-size: 100%;*/
     background-repeat: no-repeat;
     background-position: center;

@@ -72,17 +72,9 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
 
             <p>{calendario}</p>
             <p>{slot}</p>
-            <div class="disponibilita">
-                <div class="yellow-box"></div>
-                <p>Disponibile</p>
-            </div>
-            <div class="disponibilita">
-                <div class="orange-box"></div>
-                 <p>Occupato</p>
-            </div>
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
-            <form id="formPrenota">
+            <form id="formPrenota" method="post">
                 {messaggiForm}
                 <fieldset>
                     <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
@@ -182,7 +174,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         </select> 
                     </fieldset>
                 </fieldset>
-                <input type="submit" name="action" value="prenota">
+                <input type="submit"  name="action" value="prenota">
             </form>
         </main>
         <!--    FOOTER    -->

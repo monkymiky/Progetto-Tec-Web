@@ -9,6 +9,7 @@ date_default_timezone_set("Europe/Rome");// setta il fusorario giusto
 
 Class Giorno {
     public $stringData;
+    public $numero;
     public $data;
     public $disponibilitàSlot = [true,true,true,true,true,true,true,true,true];
     public $datiPrenotazioni;
@@ -19,6 +20,7 @@ Class Giorno {
     function __construct($data){
         $this->data = $data;
         $this->stringData = date("Y-M-d", $data);
+        $this->numero = date("d", $data);
     }
 }
 
@@ -26,33 +28,58 @@ Class Calendario{
     
     private $admin;
     private $giorno;
-    private $mesi = array("Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre");
+    private $mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
     private $stringaCalendario;
     private $stringaSlot;
+    private $nrMese ;
+    private $anno;
+    private $mesiInPiu;
 
     function __construct(bool $admin,int $mese){
+        $this->mesiInPiu = $mese;
         $connessione = new DBAccess();
         $this->admin = $admin;
-        $adesso =  strtotime("+$mese mounth", date("Y-m")."-01"); // aggiunge $mese mesi alla data odierna
-        $giorniDelMese = date("t");
-        $nrMese = date("m");
-        $anno= date("Y");
-        $ultimoDelMese = strtotime($anno."-".$nrMese."-".$giorniDelMese);
+        // calcolo date -------------------------------------------------------------------------------------
+        $oggi = date("Y-m-d", time());
+        // aggiunge $mesiInPiu mesi alla data odierna ------------------
+        $piuMese = explode("-", $oggi);
+        $piuMese[1] = $piuMese[1]+$this->mesiInPiu;
+        if($piuMese[1] > 12){
+            $piuMese[1] = $piuMese[1]-12; $piuMese[0] = $piuMese[0]+1;
+        }else{
+            if($piuMese[1] < 0){
+                $piuMese[1] = 12+$piuMese[1];$piuMese[0] = $piuMese[0]-1;
+            }
+        }
+        if(gettype($piuMese[1]) == "integer"){
+            if($piuMese[1] <10){$piuMese[1] = "0".(string)$piuMese[1];}
+            else{$piuMese[1] = (string)$piuMese[1];}
+        }
+        $oggiPiuMesiAggiunti = ((string)$piuMese[0])."-". $piuMese[1]."-01";
+        $timestampOggiPiuMA = strtotime($oggiPiuMesiAggiunti);
+        // --------------------------------------------------------
+        $giorniDelMese = date("t",$timestampOggiPiuMA);
+        $this->nrMese = date("m",$timestampOggiPiuMA);
+        $this->anno= date("Y",$timestampOggiPiuMA);
+        $ultimoDelMese = strtotime($this->anno."-".$this->nrMese."-".$giorniDelMese);
         $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
         if($giornoSettimanaUltimoDelMese != "7"){
-            $ultimoTab = strtotime(7-(int)$giornoSettimanaUltimoDelMese . $nrMese+1 . $anno);
+            if($nrmese != 12){$meseprox = $this->nrMese+1;$annoultimoTab= $this->anno;}else{$meseprox = 1;$annoultimoTab = $this->anno+1;}
+            $ultimoTab = strtotime($annoultimoTab."-".$meseprox."-".(7-$giornoSettimanaUltimoDelMese));
             $primoTab = strtotime("-34 day" ,$ultimoTab); 
         }else{
-            $ultimoTab = strtotime($giornoSettimanaUltimoDelMese."-". $nrMese ."-". $anno);
+            $ultimoTab = $ultimoDelMese;
             $primoTab = strtotime("-34 day", $ultimoTab); 
         }
         $SQLultimoTab = date("Y-m-d", $ultimoTab)." 00:00:00";
         $SQLprimoTab = date("Y-m-d", $primoTab)." 00:00:00";
-
+        // ---------------------------------------------------------------------------------------------------
         $nonDisponibili = array();
         $this->giorno = array();
         $k = 0;
         $slotPrecedenteDisponibile = false;
+
+
         if($admin){
             $connessione->openDBConnection();
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
@@ -70,57 +97,57 @@ Class Calendario{
             }
             if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
-                $this->$giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-                $this->$giorno[$i]->disponibile = false;
+                $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
+                $this->giorno[$i]->disponibile = false;
                 $tuttiSlotOccupati = false; 
                 for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                    while($k < count($nonDisponibili)-1 && strtotime($this->$giorno[$i]->stringData.$this->$giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                    while($k < count($nonDisponibili)-1 && strtotime($this->giorno[$i]->stringData.$this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                         $k++;
                     }
-                    if(strtotime($this->$giorno[$i]->data.$this->$giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-                        $this->$giorno[$i]->disponibilitàSlot[$j] = true;
-                        $this->$giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni["nome"],"indirizzo" => $prenotazioni["indirizzo"],"email" => $prenotazioni["email"],"cel" => $prenotazioni["cel"],"note" => $prenotazioni["note"],"tipo" => $prenotazioni["tipo"]];
-                        if($j==8 && $tuttiSlotOccupati){$this->$giorno[$i]->disponibile = true;}
+                    if(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
+                        $this->giorno[$i]->disponibilitàSlot[$j] = true;
+                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni["nome"],"indirizzo" => $prenotazioni["indirizzo"],"email" => $prenotazioni["email"],"cel" => $prenotazioni["cel"],"note" => $prenotazioni["note"],"tipo" => $prenotazioni["tipo"]];
+                        if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = true;}
                     }
                     else{
                         $tuttiSlotOccupati = true;
-                        $this->$giorno[$i]->disponibilitàSlot[$j] = false;
-                        $this->$giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cel" =>"","note" =>"","tipo" =>""];
+                        $this->giorno[$i]->disponibilitàSlot[$j] = false;
+                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cel" =>"","note" =>"","tipo" =>""];
                     }
                 }
             }
-        }else{
+        }else{ // utente non admin
             $connessione->openDBConnection();
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
-                $giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-                if($giorno[$i]->data >= strtotime("+2 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
-                    $giorno[$i]->disponibile = false;
-                    $giorno[$i]->disponibile3h = true;
+               $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
+                if($this->giorno[$i]->data >= strtotime("+2 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
+                   $this->giorno[$i]->disponibile = false;
+                   $this->giorno[$i]->disponibile3h = true;
                     $tuttiSlotOccupati = false; 
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                        while($dataora > startotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                        while($dataora > strtotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                             $k++;
                         }
-                        if($dataora == startotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-                            $giorno[$i]->disponibilitàSlot[$j] = true;
-                            if($j==8 && $tuttiSlotOccupati){$giorno[$i]->disponibile = true;}
+                        if($dataora == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
+                           $this->giorno[$i]->disponibilitàSlot[$j] = true;
+                            if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = true;}
                         }
                         else{
                             $tuttiSlotOccupati = true;
-                            $giorno[$i]->disponibilitàSlot[$j] = false;
-                            if($slotPrecedenteDisponibile == false){$giorno[$i]->disponibile3h = false;}
+                           $this->giorno[$i]->disponibilitàSlot[$j] = false;
+                            if($slotPrecedenteDisponibile == false){$this->giorno[$i]->disponibile3h = false;}
                             $slotPrecedenteDisponibile = false;
                         }
                     }
                 }
                 else{ // giorno intero non disponibile
-                    $giorno[$i]->disponibile = true;
-                    $giorno[$i]->disponibile3h = true;
+                    $this->giorno[$i]->disponibile = true;
+                    $this->giorno[$i]->disponibile3h = true;
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                        $giorno[$i]->disponibilitàSlot[$j] = true;
+                       $this->giorno[$i]->disponibilitàSlot[$j] = true;
                     }
                 }
             }
@@ -131,10 +158,13 @@ Class Calendario{
 
     private function setStringaCalendario(){
         
-        $this->stringaCalendario = "    <p id='mese'>
-                                            <input type='submit' name='action' value ='".($mese-1)."' form='formPrenota'>
-                                            <time datetime='".($anno)."-".($nrMese-1)."'>".$anno."-".($this->$mesi[$nrMese-1])."</time>
-                                            <input type='submit' name='action' value ='".($mese+1)."' form='formPrenota'>
+        $this->stringaCalendario = "    <p id='anno'> 
+                                            <time datetime='".$this->anno."'>".$this->anno."</time>
+                                        </p>
+                                        <p id='mese'>
+                                            <input type='submit' id='buttonIndietro' method='post' name='action' value ='".($this->mesiInPiu-1)."' form='formPrenota'>
+                                            <time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time>
+                                            <input type='submit' id='buttonAvanti' method='post' name='action' value ='".($this->mesiInPiu+1)."' form='formPrenota'>
                                         </p>
                                         <ol id='calendario'>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
@@ -148,27 +178,27 @@ Class Calendario{
         if($this->admin){
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $tuttodisponibile = true;
-                foreach ($giorno[$i]->disponibilitàSlot as $disp){
+                foreach ($this->giorno[$i]->disponibilitàSlot as $disp){
                     if(!$disp) {$tuttodisponibile = false;}
                 }
                 if(!$tuttodisponibile){
-                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$giorno[$i]->stringData.">$i</time></a></li>";
+                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
-                    $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$giorno[$i]->stringData.">$i</time></li>";
+                    $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }    
             }
         }
         else{ // utente non amministratore
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
-                if($giorno[$i]->disponibile){
-                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$giorno[$i]->stringData.">$i</time></a></li>";
+                if($this->giorno[$i]->disponibile){
+                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
-                    $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$giorno[$i]->stringData.">$i</time></li>";
+                    $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }
-                if($giorno[$i]->disponibile3h){
-                    $this->stringaCalendario .= "<li class='giorno3h'><a href=#slot3hGiorno$i><time datetime=".$giorno[$i]->stringData.">$i</time></a></li>";
+                if($this->giorno[$i]->disponibile3h){
+                    $this->stringaCalendario .= "<li class='giorno3h'><a href=#slot3hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
-                    $this->stringaCalendario .= "<li class='giorno3h'><time datetime=".$giorno[$i]->stringData.">$i</time></li>";
+                    $this->stringaCalendario .= "<li class='giorno3h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }
             }
         }
@@ -182,20 +212,20 @@ Class Calendario{
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
-                    if($giorno[$i]->disponibilitàSlot[$j]){
+                    if($this->giorno[$i]->disponibilitàSlot[$j]){
                         $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>disponibile</button></li>";
                     }else{
-                        if($giorno[$i]->datiPrenotazioni != NULL){ 
+                        if($this->giorno[$i]->datiPrenotazioni != NULL){ 
                             $this->stringaSlot .= " <li class='slotNonDisponibile'><button type='button'
-                                                    data-dataOra=\"".$giorno[$i]->stringData.$giorno[$i]->ORARIO_SLOT[$j]."\"
-                                                    data-nome=\"".$giorno[$i]->datiPrenotazioni["nome"]."\"  
-                                                    data-email=\"".$giorno[$i]->datiPrenotazioni["email"]."\"   
-                                                    data-cel=\"".$giorno[$i]->datiPrenotazioni["cel"]."\"
-                                                    data-note=\"".$giorno[$i]->datiPrenotazioni["note"]."\"
-                                                    data-indirizzo=\"".$giorno[$i]->datiPrenotazioni["indirizzo"]."\"
-                                                    data-tipo=\"".$giorno[$i]->datiPrenotazioni["tipo"]."\"
+                                                    data-dataOra=\"".$this->giorno[$i]->stringData.$this->giorno[$i]->ORARIO_SLOT[$j]."\"
+                                                    data-nome=\"".$this->giorno[$i]->datiPrenotazioni["nome"]."\"  
+                                                    data-email=\"".$this->giorno[$i]->datiPrenotazioni["email"]."\"   
+                                                    data-cel=\"".$this->giorno[$i]->datiPrenotazioni["cel"]."\"
+                                                    data-note=\"".$this->giorno[$i]->datiPrenotazioni["note"]."\"
+                                                    data-indirizzo=\"".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."\"
+                                                    data-tipo=\"".$this->giorno[$i]->datiPrenotazioni["tipo"]."\"
                                                     onclick='javascript:mostraDati_cliente()' ontouchend='javascript:mostraDati_cliente()'>
-                                                    <p>nome : ".$giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
+                                                    <p>nome : ".$this->giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
                                                     </button> </li>";
                         }
                         else{ // caso in cui il giorno è precedente ad oggi ma non era prenotato
@@ -211,7 +241,7 @@ Class Calendario{
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
-                    if($giorno[$i]->disponibilitàSlot[$j]){
+                    if($this->giorno[$i]->disponibilitàSlot[$j]){
                         $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
                     }else{
                         $this->stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
@@ -223,7 +253,7 @@ Class Calendario{
                 $libero = true; // per ogni slot guarda se il sucessivo è libero, se si è disponibile uno slot da 3 ore e il sucessivo viene disabilitato.
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($j!=8){
-                        if($libero && $giorno[$i]->disponibilitàSlot[$j] && $giorno[$i]->disponibilitàSlot[$j+1]){
+                        if($libero && $this->giorno[$i]->disponibilitàSlot[$j] && $this->giorno[$i]->disponibilitàSlot[$j+1]){
                             $this->stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
                             $libero = false;
                         }else{
