@@ -8,9 +8,9 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <meta charset="UTF-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
+        <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
+        <!--<link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">-->
         <!--tag style TEMPORANEO-->
         <style>
             .form-field {
@@ -19,6 +19,8 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 justify-content:start;
             }
         </style>
+
+        <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body>
                 <!--    HEADER    -->    
@@ -74,7 +76,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <p>{slot}</p>
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
-            <form id="formPrenota" method="post">
+            <form id="formPrenota" method="post" name="modulo">
                 {messaggiForm}
                 <fieldset>
                     <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
@@ -98,7 +100,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 <fieldset>
                     <legend>Dati di contatto</legend>
                     <div class="form-field">
-                        <input id="email" name="email" type="email" maxlength="20" value="{email}">
+                        <input id="email" name="email" type="email" maxlength="40" value="{email}">
                         <label for="email">Email:</label>
                     </div>
                     
@@ -122,9 +124,9 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
 
                 <fieldset> <!--Appare se selezionato "no" su gift card-->
                     <legend>Metodo di pagamento</legend>
-                    <input id="paypal" name="payment-method" type="radio">
+                    <input id="paypal" name="payment_method" type="radio">
                     <label for="paypal"><span lang="en">Paypal</span></label>
-                    <input id="credit-debit" name="payment-method" type="radio">
+                    <input id="credit-debit" name="payment_method" type="radio">
                     <label for="credit-debit">Carta di credito/debito</label>
                 </fieldset>
 
@@ -135,17 +137,14 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <label for="name-surname">Nome e cognome:</label>
                     </div>
                     <div class="form-field">
-                        <input id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
+                        <input id="card-number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
                         <label for="card-number">Numero della carta:</label>
                     </div>
                     <div class="form-field">
-                        <input id="card-CVV" name="card-CVV" type="number" max="999" min="000">
+                        <input id="card-CVV" name="card_cvv" type="number" max="999" min="000">
                         <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
                     </div>
-                    <div class="form-field">
-                        <input id="card-expiration" name="card-expiration" type="date"> <!--Verifica validità tramite PHP-->
-                        <label for="card-expiration">Data di scadenza:</label>
-                    </div>
+                    
                     <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
                         <legend><abbr title="Scadenza">Scad</abbr>.</legend>
                         <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
@@ -174,7 +173,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         </select> 
                     </fieldset>
                 </fieldset>
-                <input type="submit"  name="action" value="prenota">
+                <input type="submit"  name="action" value="prenota" onclick="">
             </form>
         </main>
         <!--    FOOTER    -->

@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: CustomFont;
-    src: url(/media/Montserrat-Regular.ttf);
+    src: url(../media/Montserrat-Regular.ttf);
 }
 
 :root {
@@ -60,7 +60,7 @@ header {
 header h1 {
     margin-top:-0.1em;
     text-indent: -999em; 
-    background-image: url(/media/logo_nobg.png);
+    background-image: url(../media/logo_nobg.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
