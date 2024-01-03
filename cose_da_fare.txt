@@ -1,8 +1,6 @@
 HTML
 	HOME
--	card
 -	spostare link "prenota un massaggio"
--	aggiungere link "fisioterapia" vicino alla foto e ai link massaggi 
 	ERROR 404 e 500
 -	creare pagine
 
