@@ -1,6 +1,4 @@
 HTML
-	HOME
--	spostare link "prenota un massaggio"
 	ERROR 404 e 500
 -	creare pagine
 
