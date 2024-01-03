@@ -1,5 +1,4 @@
 HTML
--	Uniformare politica assegnamento H1, H2 nelle pagine
 	HOME
 -	card
 -	spostare link "prenota un massaggio"
