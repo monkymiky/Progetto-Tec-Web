@@ -7,8 +7,6 @@ HTML
 -	creare pagine
 	PRENOTAZIONI e ADMIN e CONTATTI
 -	mettere ogni input in uno <span></span>
-	MASSAGGI
--	sostituire le immagini in html con css
 
 
 CSS -> tutto responsive!
