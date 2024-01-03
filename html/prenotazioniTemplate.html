@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<!--
-valutare rimozione div con classe "form-field", se si riesce a mantenere uguale lo stile
--->
-<html lang="it">
+<!DOCTYPE html><html lang="it">
     <head>
         <title>Prenotazioni</title>
         <meta charset="UTF-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
-        <!--<link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">-->
+
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
         <!--tag style TEMPORANEO-->
         <style>
             .form-field {
@@ -19,8 +16,6 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 justify-content:start;
             }
         </style>
-
-        <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body>
                 <!--    HEADER    -->    
@@ -57,124 +52,51 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         
                 <!--    BREADCRUMB    -->
                 <nav id="breadcrumb">
-                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
+                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Contatti</p>
                 </nav>
         
                 
         
         <main id="content">
-            <h1>Prenota una prestazione</h1>
-                <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
-            
-                <span id="spanDomicilioPrenota"><input id="domicilio" name="scelta-luogo" type="radio"></span>
-                <label for="domicilio">a domicilio</label>
-
-                <span id="spanStudioPrenota"><input id="studio" name="scelta-luogo" type="radio"></span>
-                <label for="studio">in studio</label>
-            
-
-            <p>{calendario}</p>
-            <p>{slot}</p>
-            <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
-            
-            <form id="formPrenota" method="post" name="modulo">
-                {messaggiForm}
+            <dl>
+                <dt>Numero di telefono:</dt>
+                <dd>3776639323</dd>
+                <dt>Indirizzo dello studio:</dt>
+                <dd>Via ...</dd>
+                <dt>Indirizzo email:</dt>
+                <dd>anna.nesler@gmail.com</dd>
+            </dl>
+            <p>Per le prenotazioni usare il <a href="/php/prenotazioni.php">calendario apposito</a>.</p>
+            <form id="contactForm" action="" method="get">
                 <fieldset>
-                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <span id="spanDomicilio"><input id="domicilio" name="aDomicilio" type="radio" value = "1" {checkedDomicilio}></span>
-                    <label for="domicilio">a domicilio</label>
-                    <span id="spanStudio"><input id="studio" name="aStudio" type="radio" value = "0" {checkedStudio}></span>
-                    <label for="studio">in studio</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Slot selezionato:</legend>
+                    <legend>Contatto rapido</legend>
+
                     <div class="form-field">
-                        <span id="spanDate"><input id="date" name="date" readonly value="{data}"></span> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="date">Giorno:</label>
+                        <span id="spanName"><input id="name" name="name" placeholder="Inserisci nome" maxlength="40"></span>>
+                        <label for="name">Nome:</label>
                     </div>
                     
                     <div class="form-field">
-                        <span id="spanTime"><input id="time" name="time" readonly value="{ora}"></span> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="time">Ora:</label>
+                        <span id="spanEmail"><input id="email" name="email" type="email" placeholder="Inserisci email" maxlength="40"></span>>
+                        <label for="email"><span lang="en">Email</span>:</label>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Dati di contatto</legend>
+
+                    
                     <div class="form-field">
-                        <span id="spanEmail"><input id="email" name="email" type="email" maxlength="40" value="{email}"></span>
-                        <label for="email">Email:</label>
+                        <span id="spanSubject"><input id="subject" name="subject" placeholder="Inserisci oggetto" maxlength="40"></span>
+                        <label for="subject">Oggetto:</label>
                     </div>
                     
                     <div class="form-field">
-                        <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
-                        <label for="cell">Numero di telefono:</label>
-                    </div>
-
-                    <div class="form-field">
-                        <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}"></span>
-                        <label for="indirizzo">Indirizzo:</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Note aggiuntive</legend>
-                    <div class="form-field">
-                        <span id="spanNote"><input id="note" name="note"  maxlength="500" value="{note}"></span>
-                        <label for="note">Note:</label>
-                    </div>
-                </fieldset>
-
-                <fieldset> <!--Appare se selezionato "no" su gift card-->
-                    <legend>Metodo di pagamento</legend>
-                    <span id="spanPaypal"><input id="paypal" name="payment_method" type="radio"></span>
-                    <label for="paypal"><span lang="en">Paypal</span></label>
-                    <span id="spanCreditDebit"><input id="credit-debit" name="payment_method" type="radio"></span>
-                    <label for="credit-debit">Carta di credito/debito</label>
-                </fieldset>
-
-                <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
-                    <legend>Dati carta</legend>
-                    <div class="form-field">
-                        <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40"></span>>
-                        <label for="name-surname">Nome e cognome:</label>
-                    </div>
-                    <div class="form-field">
-                        <span id="spanCardNumber"><input id="card-number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span> <!--Necessario pensare ad un metodo di formattazione input-->
-                        <label for="card-number">Numero della carta:</label>
-                    </div>
-                    <div class="form-field">
-                        <span id="spanCVV"><input id="card-CVV" name="card_cvv" type="number" max="999" min="000"></span>
-                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
+                        <textarea id="emailContent" name="emailContent" rows="5" cols="50"></textarea>
+                        <label for="emailContent">Scrivi qui:</label>
                     </div>
                     
-                    <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
-                        <legend><abbr title="Scadenza">Scad</abbr>.</legend>
-                        <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="month" name="month">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="year" name="year">
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                        </select> 
-                    </fieldset>
+                    <span id="spanInvia"><input id="sendButton" type="submit" value="Invia"></span>> <!--input con type submit è accessibile anche senza label (in teoria)-->
+
+                    <!--label segue tag input su suggerimento della Gaggi, va aggiustato ordine via CSS-->
+
                 </fieldset>
-                <span id="spanPrenota"><input type="submit"  name="action" value="prenota" onclick=""></span>
             </form>
         </main>
         <!--    FOOTER    -->
