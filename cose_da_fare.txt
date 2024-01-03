@@ -5,8 +5,6 @@ HTML
 -	aggiungere link "fisioterapia" vicino alla foto e ai link massaggi 
 	ERROR 404 e 500
 -	creare pagine
-	PRENOTAZIONI e ADMIN e CONTATTI
--	mettere ogni input in uno <span></span>
 
 
 CSS -> tutto responsive!
