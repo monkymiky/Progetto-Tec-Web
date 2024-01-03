@@ -1,6 +1,7 @@
         <!--    HEADER    -->    
         <header>                                                                
-            <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>
+            <a href="#content" class="skip-link">Salta al contenuto principale</a>                                        
         </header>
         <!--    NAVBAR    -->
         <nav id="menu">
@@ -37,6 +38,13 @@
         <!--    FOOTER    -->
         <footer>
             <p><a href = "../html/contatti.html"> contattami </a></p>
-            <!-- Icone social -->
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
