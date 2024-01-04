@@ -48,7 +48,10 @@ CSS -> tutto responsive!
 CSS mobile
 
 PHP
-- 	testa isset e empty
+-	testare tutto dopo aver riempito il DB
+
+SQL 
+-	popolare il DB
 
 JS
 	ADMIN

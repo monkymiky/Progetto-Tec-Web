@@ -25,7 +25,7 @@ CREATE TABLE Prenotazioni(
 );
 
 CREATE TABLE NonDisponibili(
-    Data_Ora_Inizio DATETIME PRIMARY KEY -- CHECK (Data_Ora_Inizio NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni)AND ADDTIME(Data_Ora_Inizio, "-1:30:0") NOT IN (SELECT Data_Ora_Inizio FROM Prenotazioni WHERE Tipo = false)),
+    Data_Ora_Inizio DATETIME PRIMARY KEY 
 ); 
 
 CREATE TABLE Login(

@@ -33,7 +33,7 @@
 }
 
 html {
-    font: size 100%;
+    font-size: 100%;
     font-family:var(--font);
     line-height:1.5em;
     margin:auto;
@@ -233,7 +233,7 @@ main a:hover {
     grid-column:2;
     
     text-indent:-999em; 
-    background-image:url(/media/corso.jpg);
+    background-image:url(../media/corso.jpg);
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -254,7 +254,7 @@ main a:hover {
     grid-column:2;
     
     text-indent: -999em; 
-    background-image: url(/media/corso.jpg); /*credo manchi l'immagine relativa ai massaggi*/
+    background-image: url(../media/corso.jpg); /*credo manchi l'immagine relativa ai massaggi*/
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -278,7 +278,7 @@ main a:hover {
     flex-flow:column;
     align-items:end;
     
-    background-image:url(/media/Anna_2.0_rev.jpg);
+    background-image:url(../media/Anna_2.0_rev.jpg);
     background-size: cover;/*background-size: 100%;*/
     background-repeat: no-repeat;
     background-position: center;
