@@ -1,137 +1,158 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <title>Admin</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
-    </head>
-    <body>
-                <!--    HEADER    -->    
-                <header>                                                                
-                    <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
-                </header>
-                <!--    NAVBAR    -->
-                <nav id="menu">
-                    <ul>
-                    <li lang="en"><a href="/html/index.html">Home</a></li>
-                    <li><a href="/html/anna.html">Anna</a></li>
-                    <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
-                            <!-- aria-expanded needs managed with Javascript -->
-                            <button
-                                type="button"
-                                class="dropdown__title"
-                                aria-expanded="false"
-                                aria-controls="Prestazioni-dropdown"
-                            >
-                                Prestazioni
-                            </button>
-                            <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                                <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
-                                <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                                <li><a href="/html/prestazioni/danza.html">Danza</a></li>
-                                <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
-                            </ul>
-                        </li>          
-                    <li><a href="/html/contatti.html">Contatti</a></li>
-                    <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
-                    </ul>
-                </nav>
-        
-                <!--    BREADCRUMB    -->
-                <nav id="breadcrumb">
-                    <p>Ti trovi in: Pagina amministratore</p>
-                </nav>
-        
-                
-        
+  <head>
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">
+  </head>
+  <body>
+    <!--    HEADER    -->
+    <header>
+      <h1 id="logo">Anna Nesler Fisioterapista</h1>
+      <a href="#content" class="skip-link">Salta al contenuto principale</a>  
+    </header>
+    <!--    NAVBAR    -->
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="/html/index.html">Home</a></li>
+        <li><a href="/html/anna.html">Anna</a></li>
+        <li class="dropdown">
+          <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+          <!-- aria-expanded needs managed with Javascript -->
+          <button
+            type="button"
+            class="dropdown__title"
+            aria-expanded="false"
+            aria-controls="Prestazioni-dropdown"
+          >
+            Prestazioni
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a>
+            </li>
+            <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
+            <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+            <li>
+              <a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/html/contatti.html">Contatti</a></li>
+        <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>
+      </ul>
+    </nav>
 
-        <main>
-            <h2>Pagina amministratore</h2>
-            <h3>{messaggiForm}</h3>
-            <p>Prenotazioni attive nel periodo corrente:</p>
-            <p>{calendario}</p>
-            <p>Slot occupati nel giorno selezionato:</p>
-            <p>{slot}</p>
+    <!--    BREADCRUMB    -->
+    <nav id="breadcrumb">
+      <p>Ti trovi in: Pagina amministratore</p>
+    </nav>
 
-            <p>Info prenotazione</p>
+    <main id="content">
+      <h1>Pagina amministratore</h1>
+      <h2>{messaggiForm}</h2>
+      <p>Prenotazioni attive nel periodo corrente:</p>
+      <p>{calendario}</p>
+      <p>Slot occupati nel giorno selezionato:</p>
+      <p>{slot}</p>
 
-            <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
-            <form action="../php/admin.php" method="post"> 
-                <fieldset>
-                    <input id="data" name="data" type="date">
-                    <label for="start-date">Data</label>
-                    <input id="ora" name="ora" type="time">
-                    <label for="ora">Ora</label>
-                    <input id="domicilio" name="scelta-luogo" type="radio" value = "domicilio">
-                    <label for="domicilio">a domicilio</label>
-                    <input id="studio" name="scelta-luogo" type="radio" value = "studio">
-                    <label for="studio">in studio</label>
-                </fieldset>
-                <input type="submit" name="submitCancella" value="cancella">
-            </form>
-            
-            <p>Modifica prenotazione:</p>
-            <form action="../php/admin.php" method="post" id="formPrenota">
-                <fieldset>
-                    <input id="mese" name="mese" type="hidden" value = "{mese}">
-                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <input id="domicilio" name="aDomicilio" type="radio" value = "1">
-                    <label for="domicilio">a domicilio</label>
-                    <input id="studio" name="aDomicilio" type="radio" value = "0">
-                    <label for="studio">in studio</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Slot selezionato:</legend>
-                    <div class="form-field">
-                        <input id="date" name="data" readonly value="{data}"> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="date">Giorno:</label>
-                    </div>
-                    
-                    <div class="form-field">
-                        <input id="time" name="ora" readonly value="{ora}"> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="time">Ora:</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Dati di contatto</legend>
-                    <div class="form-field">
-                        <input id="name-surname" name="nome" maxlength="40">
-                        <label for="name-surname">Nome e cognome:</label>
-                    </div>
-                    <div class="form-field">
-                        <input id="email" name="email" type="email" maxlength="20" value="{email}">
-                        <label for="email">Email:</label>
-                    </div>
-                    
-                    <div class="form-field">
-                        <input id="cell" name="cel" type="tel" maxlength="15" value="{cel}">
-                        <label for="cell">Numero di telefono:</label>
-                    </div>
+      <p>Info prenotazione</p>
 
-                    <div class="form-field">
-                        <input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}">
-                        <label for="indirizzo">Indirizzo:</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Note aggiuntive</legend>
-                    <div class="form-field">
-                        <input id="note" name="note"  maxlength="500" value="{note}">
-                        <label for="email">Note:</label>
-                    </div>
-                </fieldset>
-                <input type="submit" name="action" value="modifica">
-            </form>
-        </main>
-        <!--    FOOTER    -->
-        <footer>
-            <p><a href = "../html/contatti.html"> contattami </a></p>
-            <!-- Icone social -->
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
-        </footer>
-    </body>
+      <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
+      <form action="../php/admin.php" method="post">
+        <fieldset>
+          <span id="spanDataElimina"><input id="dataElimina" name="data" type="date" /></span>
+          <label for="start-date">Data</label>
+          <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
+          <label for="ora">Ora</label>
+          <span id="spanDomicilioElimina"><input id="domicilioElimina" name="scelta-luogo" type="radio" value="domicilio"/></span>
+          <label for="domicilio">a domicilio</label>
+          <span id="spanStudioElimina"><input id="studioElimina" name="scelta-luogo" type="radio" value="studio" /></span>
+          <label for="studio">in studio</label>
+        </fieldset>
+        <span id="spanCancella"><input type="submit" name="submitCancella" value="cancella" /></span>
+      </form>
+
+      <p>Modifica prenotazione:</p>
+      <form action="../php/admin.php" method="post" id="formPrenota">
+        <fieldset>
+          <span id="spanMese"><input id="mese" name="mese" type="hidden" value="{mese}" /></span>
+          <legend>
+            Seleziona il luogo delle prestazioni per visualizzare gli slot
+            disponibili:
+          </legend>
+          <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" /></span>
+          <label for="domicilio">a domicilio</label>
+          <span id="spanStudioModifica"><input id="studioModifica" name="aDomicilio" type="radio" value="0" /></span>>
+          <label for="studio">in studio</label>
+        </fieldset>
+        <fieldset>
+          <legend>Slot selezionato:</legend>
+          <div class="form-field">
+            <span id="spanDataModifica"><input id="dataModifica" name="data" readonly value="{data}" /></span>>
+            <!--Stringa recuperata tramite JScript dal calendario?-->
+            <label for="date">Giorno:</label>
+          </div>
+
+          <div class="form-field">
+            <span id="spanTime"><input id="time" name="ora" readonly value="{ora}" /></span>>
+            <!--Stringa recuperata tramite JScript dal calendario?-->
+            <label for="time">Ora:</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Dati di contatto</legend>
+          <div class="form-field">
+            <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40" /></span>>
+            <label for="name-surname">Nome e cognome:</label>
+          </div>
+          <div class="form-field">
+            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="20" value="{email}"/></span>>
+            <label for="email">Email:</label>
+          </div>
+
+          <div class="form-field">
+            <span id="spanCell"><input id="cell" name="cel" type="tel" maxlength="15" value="{cel}" /></span>>
+            <label for="cell">Numero di telefono:</label>
+          </div>
+
+          <div class="form-field">
+            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}" /></span>>
+            <label for="indirizzo">Indirizzo:</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Note aggiuntive</legend>
+          <div class="form-field">
+            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}" /></span>>
+            <label for="email">Note:</label>
+          </div>
+        </fieldset>
+        <span id="spanModifica"><input type="submit" name="action" value="modifica" /></span>>
+      </form>
+    </main>
+    <!--    FOOTER    -->
+    <footer>
+      <p><a href="../html/contatti.html"> contattami </a></p>
+      <div id="Icone-social">
+        <a href="http://instagram.com/iltuoaccount" class="icona-social">
+            <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+        </a>
+        <a href="http://facebook.com/iltuoaccount" class="icona-social">
+            <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+        </a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="/php/login.php"
+          ><span lang="en">login</span> amministratori</a
+        ></small
+      >
+    </footer>
+  </body>
 </html>

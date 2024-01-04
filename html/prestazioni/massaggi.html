@@ -7,16 +7,17 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="/css/massaggi.css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"> 
-    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
-    <link rel="stylesheet" href="/css/mini.css" type="text/css" media="screen and (max-width:600px)">
+    <link rel="stylesheet" type="text/css" href="../../CSS/massaggi.css" />
+    <link rel="stylesheet" href="../../CSS/style.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="../../CSS/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">
   </head>
 
   <body>
         <!--    HEADER    -->    
         <header>                                                                
-          <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+          <h1 id="logo">Anna Nesler Fisioterapista</h1>
+          <a href="#content" class="skip-link">Salta al contenuto principale</a>                                        
       </header>
       <!--    NAVBAR    -->
       <nav id="menu">
@@ -50,15 +51,14 @@
           <p>Ti trovi in: Massaggi</p>
       </nav>
   
-      <main>
+      <main id="content">
         <ul class="shop-items">
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img1">
                 <div class="card-name-container">
                   <div class="card-name">Massaggio hawaiiano Lomi Lomi Nui</div>
                 </div>
-                <img src="../media/card/card1.jpg"/>
               </div>
               <p class="card-back">
                 Le prese avvolgenti con olio di cocco e le pressioni gentili
@@ -75,11 +75,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img2">
                 <div class="card-name-container">
                   <div class="card-name">Massaggio Thai Yoga</div>
                 </div>
-                <img src="../media/card/card2.jpg"/>
               </div>
               <p class="card-back">
                 Viene fatto da vestiti sul materassino. Pressione decisa lungo le
@@ -97,11 +96,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img3">
                 <div class="card-name-container">
                   <div class="card-name">Massaggio svedese intensivo schiena</div>
                 </div>
-                <img src="../media/card/card3.jpg"/>
               </div>
               <p class="card-back">
                 Un toccasana che scioglie le tensioni muscolari. Con coppettazione
@@ -118,11 +116,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img4">
                 <div class="card-name-container">
                   <div class="card-name">Riflessologia facciale vietnamita Dien Chan</div>
                 </div>
-                <img src="../media/card/card4.jpg"/>
               </div>
               <p class="card-back">
                 Viene fatto da seduti. Può lenire una vasta gamma di
@@ -139,11 +136,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img5">
                 <div class="card-name-container">
                   <div class="card-name">Massaggio al miele</div>
                 </div>
-                <img src="../media/card/card5.jpg"/>
               </div>
               <p class="card-back">
                 Viene fatto sulla schiena. Esfoliante, disintossicante, dona
@@ -160,11 +156,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img6">
                 <div class="card-name-container">
                   <div class="card-name">Linfodrenaggio Vodder</div>
                 </div>
-                <img src="../media/card/card6.jpg"/>
               </div>
               <p class="card-back">
                 Molto delicato, molto efficace. Combatte il gonfiore,
@@ -181,11 +176,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img7">
                 <div class="card-name-container">
                   <div class="card-name">Pacchetto 5 massaggi</div>
                 </div>
-                <img src="../media/card/card7.jpg"/>
               </div>
               <p class="card-back">
                 Un percorso che può portare benefici duraturi. <br />
@@ -200,11 +194,10 @@
 
           <li class="card">
             <div class="card-inner">
-              <div class="card-front">
+              <div class="card-front" id="img8">
                 <div class="card-name-container">
                   <div class="card-name">Pacchetto 3 trattamenti</div>
                 </div>
-                <img src="../media/card/card8.jpg"/>
               </div>
               <p class="card-back">
                 Un investimento in salute <br />
@@ -222,8 +215,15 @@
       <!--    FOOTER    -->
       <footer>
         <p><a href = "../html/contatti.html"> contattami </a></p>
-        <!-- Icone social -->
-        <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+        <div id="Icone-social">
+          <a href="http://instagram.com/iltuoaccount" class="icona-social">
+              <img src="../../media/Instagram.png" width="30" height="30" alt="Instagram">
+          </a>
+          <a href="http://facebook.com/iltuoaccount" class="icona-social">
+              <img src="../../media/Facebook.png" width="30" height="30" alt="Facebook">
+          </a>
+      </div>
+        <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
     </footer>
   </body>
 </html>

@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<!--
-valutare rimozione div con classe "form-field", se si riesce a mantenere uguale lo stile
--->
-<html lang="it">
+<!DOCTYPE html><html lang="it">
     <head>
         <title>Prenotazioni</title>
         <meta charset="UTF-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
+
         <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
         <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
-        <!--<link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">-->
+        <link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">
         <!--tag style TEMPORANEO-->
         <style>
             .form-field {
@@ -19,13 +16,12 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 justify-content:start;
             }
         </style>
-
-        <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body>
                 <!--    HEADER    -->    
                 <header>                                                                
-                    <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+                    <h1 id="logo">Anna Nesler Fisioterapista</h1>
+                    <a href="#content" class="skip-link">Salta al contenuto principale</a>                                        
                 </header>
                 <!--    NAVBAR    -->
                 <nav id="menu">
@@ -56,132 +52,65 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         
                 <!--    BREADCRUMB    -->
                 <nav id="breadcrumb">
-                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
+                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Contatti</p>
                 </nav>
         
                 
         
-        <main>
-            <h2>Prenota una prestazione</h2>
-                <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
-            
-                <input id="domicilio" name="scelta-luogo" type="radio">
-                <label for="domicilio">a domicilio</label>
-
-                <input id="studio" name="scelta-luogo" type="radio">
-                <label for="studio">in studio</label>
-            
-
-            <p>{calendario}</p>
-            <p>{slot}</p>
-            <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
-            
-            <form id="formPrenota" method="post" name="modulo">
-                {messaggiForm}
+        <main id="content">
+            <dl>
+                <dt>Numero di telefono:</dt>
+                <dd>3776639323</dd>
+                <dt>Indirizzo dello studio:</dt>
+                <dd>Via ...</dd>
+                <dt>Indirizzo email:</dt>
+                <dd>anna.nesler@gmail.com</dd>
+            </dl>
+            <p>Per le prenotazioni usare il <a href="/php/prenotazioni.php">calendario apposito</a>.</p>
+            <form id="contactForm" action="" method="get">
                 <fieldset>
-                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <input id="domicilio" name="aDomicilio" type="radio" value = "1" {checkedDomicilio}>
-                    <label for="domicilio">a domicilio</label>
-                    <input id="studio" name="aDomicilio" type="radio" value = "0" {checkedStudio}>
-                    <label for="studio">in studio</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Slot selezionato:</legend>
+                    <legend>Contatto rapido</legend>
+
                     <div class="form-field">
-                        <input id="date" name="date" readonly value="{data}"> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="date">Giorno:</label>
+                        <span id="spanName"><input id="name" name="name" placeholder="Inserisci nome" maxlength="40"></span>>
+                        <label for="name">Nome:</label>
                     </div>
                     
                     <div class="form-field">
-                        <input id="time" name="time" readonly value="{ora}"> <!--Stringa recuperata tramite JScript dal calendario?-->
-                        <label for="time">Ora:</label>
+                        <span id="spanEmail"><input id="email" name="email" type="email" placeholder="Inserisci email" maxlength="40"></span>>
+                        <label for="email"><span lang="en">Email</span>:</label>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Dati di contatto</legend>
+
+                    
                     <div class="form-field">
-                        <input id="email" name="email" type="email" maxlength="40" value="{email}">
-                        <label for="email">Email:</label>
+                        <span id="spanSubject"><input id="subject" name="subject" placeholder="Inserisci oggetto" maxlength="40"></span>
+                        <label for="subject">Oggetto:</label>
                     </div>
                     
                     <div class="form-field">
-                        <input id="cell" name="cell" type="tel" maxlength="15" value="{cel}">
-                        <label for="cell">Numero di telefono:</label>
-                    </div>
-
-                    <div class="form-field">
-                        <input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}">
-                        <label for="indirizzo">Indirizzo:</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Note aggiuntive</legend>
-                    <div class="form-field">
-                        <input id="note" name="note"  maxlength="500" value="{note}">
-                        <label for="email">Note:</label>
-                    </div>
-                </fieldset>
-
-                <fieldset> <!--Appare se selezionato "no" su gift card-->
-                    <legend>Metodo di pagamento</legend>
-                    <input id="paypal" name="payment_method" type="radio">
-                    <label for="paypal"><span lang="en">Paypal</span></label>
-                    <input id="credit-debit" name="payment_method" type="radio">
-                    <label for="credit-debit">Carta di credito/debito</label>
-                </fieldset>
-
-                <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
-                    <legend>Dati carta</legend>
-                    <div class="form-field">
-                        <input id="name-surname" name="nome" maxlength="40">
-                        <label for="name-surname">Nome e cognome:</label>
-                    </div>
-                    <div class="form-field">
-                        <input id="card-number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"> <!--Necessario pensare ad un metodo di formattazione input-->
-                        <label for="card-number">Numero della carta:</label>
-                    </div>
-                    <div class="form-field">
-                        <input id="card-CVV" name="card_cvv" type="number" max="999" min="000">
-                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
+                        <textarea id="emailContent" name="emailContent" rows="5" cols="50"></textarea>
+                        <label for="emailContent">Scrivi qui:</label>
                     </div>
                     
-                    <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
-                        <legend><abbr title="Scadenza">Scad</abbr>.</legend>
-                        <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="month" name="month">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="year" name="year">
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                        </select> 
-                    </fieldset>
+                    <span id="spanInvia"><input id="sendButton" type="submit" value="Invia"></span>> <!--input con type submit è accessibile anche senza label (in teoria)-->
+
+                    <!--label segue tag input su suggerimento della Gaggi, va aggiustato ordine via CSS-->
+
                 </fieldset>
-                <input type="submit"  name="action" value="prenota" onclick="">
             </form>
         </main>
         <!--    FOOTER    -->
         <footer>
             <p><a href = "../html/contatti.html"> contattami </a></p>
-            <!-- Icone social -->
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
     </body>
 </html>
-    

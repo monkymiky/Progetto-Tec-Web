@@ -1,19 +1,6 @@
 HTML
--	Uniformare politica assegnamento H1, H2 nelle pagine
-	HEADER
--	inserire link per non vedenti per saltare la navbar
-	FOOTER
--	inserire social in tutte le pagine
-	HOME
--	card
--	spostare link "prenota un massaggio"
--	aggiungere link "fisioterapia" vicino alla foto e ai link massaggi 
 	ERROR 404 e 500
 -	creare pagine
-	PRENOTAZIONI e ADMIN e CONTATTI
--	mettere ogni input in uno <span></span>
-	MASSAGGI
--	sostituire le immagini in html con css
 
 
 CSS -> tutto responsive!

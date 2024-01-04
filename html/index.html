@@ -14,8 +14,9 @@
      <body>
     
         <!--    HEADER    -->    
-        <header>                                                               
-            <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
+        <header>                                                                
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>
+            <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                          
         </header>
         <!--    NAVBAR    -->
         <nav id="menu">
@@ -52,6 +53,7 @@
     
         <main id="homepage_main">
     
+            <a id="prenotazioni-home-main" href="prenotazioni.php">Prenota un massaggio</a>
     
             <div id="CosaOffro">
     
@@ -60,6 +62,7 @@
                 <a class="cosa-offro-links" id="link-massaggi" href="#messaggi">massaggi</a>
                 <a class="cosa-offro-links" id="link-corsi" href="#corsi_massaggi">corsi di massaggio</a>
                 <a class="cosa-offro-links" id="link-danza" href="#danza_libera">danza libera</a>
+                <a class="cosa-offro-links" id="link-fisioterapia" href="#fisioterapia">fisioterapia</a>
                 <div id="img-corso">Immagine corso di massaggi</div>
                 <div id="img-massaggio">Immagine danza</div>
             </div>
@@ -74,17 +77,18 @@
                   <a href="anna.html">Scopri di più</a> 
                 </div>
             </div>
-    
+
             <a id="prenotazioni-home-main" href="prenotazioni.php">Prenota un massaggio</a>
     
             <div id="idee_regalo">
                 <h2>idee regalo</h2>
                 <a href="Prestazioni.html">Vedi di piu'</a>
-                <ul>
+                <ul class="gift-cards">
                     <li>Gift card</li>                    <!--parte dinamica se intendiamo farla-->
-                    <li>idea regalo 1</li>
-                    <li>idea regalo 2</li>
-                    <li>idea regalo 3</li>
+                    <!-- Capire a cosa linkano (Se linkano a qualcosa)-->
+                    <li class="gift-card"><img src="../media/card/card1.jpg" alt="Idea Regalo 1"> idea regalo 1</li>
+                    <li class="gift-card"><img src="../media/card/card4.jpg" alt="Idea Regalo 2"> idea regalo 2</li>
+                    <li class="gift-card"><img src="../media/card/card6.jpg" alt="Idea Regalo 3"> idea regalo 3</li>
                 </ul>
             </div>
             
@@ -93,7 +97,6 @@
         <!--    FOOTER    -->
         <footer>
             <p><a href = "../html/contatti.html"> contattami </a></p>
-            <!-- Icone social -->
             <div id="Icone-social">
                 <a href="http://instagram.com/iltuoaccount" class="icona-social">
                     <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
@@ -102,7 +105,7 @@
                     <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
                 </a>
             </div>
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
      </body>
 </html>
