@@ -72,27 +72,27 @@
                     <legend>Contatto rapido</legend>
 
                     <div class="form-field">
-                        <input id="name" name="name" placeholder="Inserisci nome" maxlength="40">
                         <label for="name">Nome:</label>
+                        <span id="spanName"><input id="name" name="name" placeholder="Inserisci nome" maxlength="40" aria-required="true"></span>
                     </div>
                     
                     <div class="form-field">
-                        <input id="email" name="email" type="email" placeholder="Inserisci email" maxlength="40">
                         <label for="email"><span lang="en">Email</span>:</label>
+                        <span id="spanEmail"><input id="email" name="email" type="email" placeholder="Inserisci email" maxlength="40" aria-required="true"></span>
                     </div>
 
                     
                     <div class="form-field">
-                        <input id="subject" name="subject" placeholder="Inserisci oggetto" maxlength="40">
                         <label for="subject">Oggetto:</label>
+                        <span id="spanSubject"><input id="subject" name="subject" placeholder="Inserisci oggetto" maxlength="40" aria-required="true"></span>
                     </div>
                     
                     <div class="form-field">
-                        <textarea id="emailContent" name="emailContent" rows="5" cols="50"></textarea>
                         <label for="emailContent">Scrivi qui:</label>
+                        <textarea id="emailContent" name="emailContent" rows="5" cols="50" aria-required="true"></textarea>
                     </div>
                     
-                    <input id="sendButton" type="submit" value="Invia"> <!--input con type submit è accessibile anche senza label (in teoria)-->
+                    <span id="spanInvia"><input id="sendButton" type="submit" value="Invia"></span> <!--input con type submit è accessibile anche senza label (in teoria)-->
 
                     <!--label segue tag input su suggerimento della Gaggi, va aggiustato ordine via CSS-->
 
