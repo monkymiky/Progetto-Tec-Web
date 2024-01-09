@@ -30,6 +30,8 @@
     --cardWidth: 26.25em;
     --cardHeight: 38.44em;
     --cardBorderRadius: 1.25em;
+    --giftCardWidth: 18.75em;
+    --giftCardHeight: 18.75em;
 }
 
 html {
@@ -193,7 +195,7 @@ main a:hover {
     margin-left:10%;
     display:grid;
     grid-template-columns: 12em 65% 10%;
-    grid-template-rows: 2em 2em 2em 6em 15.3em;
+    grid-template-rows: 2em 2em 2em 2em 6em 15.3em;
 }
 
 #link-massaggi {
@@ -209,6 +211,15 @@ main a:hover {
 #link-danza {
     grid-row:3;
     grid-column:3;
+}
+
+#link-fisioterapia {
+    grid-row: 4;
+    grid-column: 3;
+}
+
+#CosaOffro h1 {
+    text-align: center;
 }
 
 .cosa-offro-links {
@@ -250,7 +261,7 @@ main a:hover {
     width:6em;
     height:3.75em;
     
-    grid-row:5;
+    grid-row:6;
     grid-column:2;
     
     text-indent: -999em; 
@@ -300,7 +311,7 @@ main a:hover {
     margin: 0.5em;
 }
 
-#prenotazioni-home-main {
+.prenotazioni-home {
     width:10em;
     margin:auto;
     margin-top:2em;
@@ -313,6 +324,15 @@ main a:hover {
     text-align:center;
 }
 
+#prenotazioni-home-top {
+    width: 15em;
+    margin-bottom: 5em;
+}
+
+#prenotazioni-home-bottom {
+    margin-bottom: 2em;
+}
+
 #foto-anna-home-descrizione {
     background-color: white;
     border-radius: 1em;
@@ -322,44 +342,137 @@ main a:hover {
     margin: 0.4em;
 }
 
+
+/********************************************
+SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
+********************************************/
+
 #idee_regalo {
-    width:50%;
-    margin:auto;
-    padding:2em;
-    margin-top:5em;
+    text-align: center;
+    margin-top: 2em;
+    }
     
-    border-top: solid 1px var(--borderColor);
-
-    text-align:center;
-}
-
 #idee_regalo>* {
     margin:1em;
 }
-
-#idee_regalo h2, #idee_regalo a {
-    display:inline-block
-}
-
-#idee_regalo h2 {
-    text-transform:capitalize;
-}
-
-#idee_regalo a {
+    
+#vedi-di-piu {
+    display:inline-block;
     width:6em;
     margin:auto;
     margin-top:2em;
     padding:1em;
-    
     background-color:var(--boxesBackground);
     border:0.05em solid var(--borderColor);
     border-radius: 3em;
 }
-
-#idee_regalo ul li {
-    margin:1em;
-    display:inline-block;
-    list-style-type:none;
+    
+#idee_regalo h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+    
+#idee_regalo a {
+    text-decoration: none;
+    color: var(--textColor);
+    font-size: 1.2em;
+}
+    
+.gift-card-container {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+    
+.gift-card {
+    max-width: 100%;
+    width: var(--giftCardWidth);
+    height: var(--giftCardHeight);
+    perspective: 62.5em; 
+    margin: 0.625em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+    
+.gift-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+    
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+}
+    
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25em;
+    border-radius: 15px;
+    background-color: var(--backgroundColor);
+}
+    
+.card-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 1.2em;
+}
+    
+.card-name-container {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 1.75em;
+    box-sizing: border-box;
+    text-align: center;
+}
+    
+.card-name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+    
+#img1-1.card-front {
+    background: url("../media/card/card1.jpg") no-repeat;
+    background-size: cover;
+}
+    
+    #img4-1.card-front {
+    background: url("../media/card/card4.jpg") no-repeat;
+    background-size: cover;
+    }
+    
+#img6-1.card-front {
+    background: url("../media/card/card6.jpg") no-repeat;
+    background-size: cover;
 }
 
 /********************************************
