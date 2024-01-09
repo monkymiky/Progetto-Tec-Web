@@ -279,7 +279,7 @@ main a:hover {
     align-items:end;
     
     background-image:url(../media/Anna_2.0_rev.jpg);
-    background-size: cover;/*background-size: 100%;*/
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     
