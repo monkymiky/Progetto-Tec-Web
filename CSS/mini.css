@@ -1,6 +1,55 @@
-#CosaOffro {
-    display:none;
+@media screen and (max-width: 520px), (max-device-width: 520px) {
+    #logo {
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    #menu ul {
+        width: 100%;
+    }
+
+    #menu li {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+    }
+
+    #menu a {
+        padding: 1em;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #menu a:hover {
+        background-color: var(--hoverLink);
+        border-radius: 0;
+    }
+
+    #menu ul ul {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+
+    #menu li:hover > ul {
+        display: none;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    #homepage_main{
+        display: none;
+    }
 }
-#breadcrumb{
-    background-color: blue;
-}
+
