@@ -7,9 +7,10 @@
         <!-- description da migliorare una volta ultimata la pagina-->
         <meta name="description" content="Anna Nesler è una fisioterapista di Bolzano che lavora anche a domicilio, offre trattamenti personalizzati sulla base delle problematiche.">
         
-        <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="../css/loginTemplate.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
     </head>
     <body>
         <!--    HEADER    -->    
@@ -49,14 +50,14 @@
         </nav>
         
         <main id="content">
-            <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
             <form method="POST" action="../php/login.php" >
-                <input type="text" id="user" name="user" maxlength="40">
                 <label for="user"><span lang="en">Username:</span></label>
-                <input type="password" id="password" name="password" maxlength="40">
+                <input type="text" id="user" name="user" maxlength="40">
                 <label for="password"><span lang="en">Password:</span></label>
+                <input type="password" id="password" name="password" maxlength="40">
                 <input type="submit" id="submit" name="submit" value="login"/>
             </form>
+            <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
         </main>
 
         <!--    FOOTER    -->
