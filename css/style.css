@@ -56,6 +56,7 @@ header {
     background-color: var(--headerBackground);
     color: var(--headerText);
     text-align: center;
+    text-indent: -999em;
     padding: 1em;
 }
 
@@ -69,6 +70,7 @@ header h1 {
     font-size: 7em;
     line-height: 1.5em;
 }
+
 
 
 /********************************************
@@ -156,11 +158,12 @@ nav a:hover {
 MAIN
 ********************************************/
 main {
-    display:flex;
+    display:flex;/*a cosa serve? è praticamente uguale senza.. a me pare che appesantisca il rendering e basta*/
     flex-direction:column;
     margin:auto;
     padding:2em;
     color:var(--textColor);
+    /*non pensi che sia non user-oriented? nel senso, uno imposta una dimensione del testo per avere quella, altrimenti la avrebbe scelta più grande da se... mi riferisco alla gerarchia che diceva la prof prima le impostazioni dell utente, poi altre robe e alla fine il programmatore e il browser*/
     font-size:1.2em; /*mi sembra meglio così rispetto ad 1 em*/
 }
 

@@ -3,3 +3,5 @@ giustificare la non buona usabilità della pagina admin dicendo che è un proget
 ho selto di non metter l'autocompletamento del form elimina prenotazione, in caso di compilazione errata del form per aumentare l'attenzione richiesta per svolgere l'operazione essendo molto delicata 
 
 anna.jpg è di contenuto in quanto quella pagina è dedicata alla presentazione di anna e l'immagine (e l'attrubuto alt) da informazioni su di lei che non sono presenti nel testo.
+
+ho inserito i link nella home alle varie prestazioni in un div in modo da rendere possibile inserire le immagini di sfondo dietro i "bottoni" per la visualizzazione mobile

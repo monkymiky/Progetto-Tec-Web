@@ -1,9 +1,29 @@
 @media screen and (max-width: 520px), (max-device-width: 520px) {
-    #logo {
-        text-align: left;
-        padding-left: 1em;
+    html{
+        line-height:1em;
+        width: 100%;
     }
-
+    header {
+        padding: 0.5em 0em 0.5em 0em;
+        width:100%;
+        margin: 0px;
+        position: sticky;
+        top: 0;
+    }
+    header h1 {
+        font-size: 4em;
+        background-position: left;
+        margin-left: 10%;
+    }
+    #menu-toggle{
+        position: relative;
+        top: -2em;
+        right: -30%;
+        width: 15%;
+        height: 15vw;
+        border-radius: 0.5em;
+        font-size: 2em;
+    }
     #menu {
         display: none;
         flex-direction: column;
@@ -21,8 +41,11 @@
         text-align: left;
         margin: 0;
     }
+    #menu li>ul>li{
+        text-indent: 20%;
+    }
 
-    #menu a {
+    #menu>* {
         padding: 1em;
         display: block;
         width: 100%;
@@ -48,8 +71,87 @@
         display: flex;
     }
 
-    #homepage_main{
-        display: none;
+    /*---------------
+    MAIN
+    ------------------*/
+    main{
+        padding:5%;
+        margin: 0px;
+        display: block; /* in style.css è flex*/
+        text-align: center;
+        font-size: 1em; /* in style.css è 1*/
     }
+    #prenotazioni-home{
+        margin: 0px;
+        width: 70%;
+        display: inline-block;
+    }
+    /*------ Cosa Offro -----*/
+    #CosaOffro{
+        display: block;
+        margin: 0px;
+        margin-top: 1em;
+        padding: 0px;
+        text-align: center;
+        border: 0px;
+        width: 100%;
+    }
+    #cosa-offro-links-massaggi{
+        background-image: url("../media/massaggi.jpg");
+    }
+    #cosa-offro-links-corsi{
+        background-image: url("../media/corso.jpg");
+    }
+    #cosa-offro-links-danza{
+        background-image: url("../media/danza.jpg");
+    }
+    #cosa-offro-links-fisioterapia{
+        background-image: url("../media/fisioterapia.jpg");
+    }
+    #CosaOffro div{
+        margin:auto;
+        margin-top: 1em;
+        padding-top:3.5em;
+        width: 80%;
+        height: 7em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: auto;
+        border-radius: 1em;
+    }
+    
+    #CosaOffro div a.cosa-offro-links{
+        margin: auto;
+        display: block;
+        opacity: 1;
+
+    }
+    #img-corso {display: none;}
+    #img-massaggio {display: none;}
+    /*------ Descrizione Anna -----*/
+    #foto-anna-home{
+        width: 100%;
+        height:37vw;
+        display: block;
+        margin: 0px;
+        padding:0px;
+        margin-top: 1em;
+        border-radius: 1em;
+        background-position:left top;
+        margin-bottom: 18em;
+    }
+    #foto-anna-home>div{
+        background-color: rgba(0,0,0,0);
+        border-radius: 1em;
+        padding: 0em;
+        width: 100%;
+        position: relative;
+        top: 41vw;
+    }
+    /*------ Card -----*/
+    #idee_regalo li{
+        width: 100%;
+    }
+    .gift-card {width: auto;}
 }
 
