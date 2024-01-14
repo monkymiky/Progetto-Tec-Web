@@ -8,10 +8,12 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <meta charset="UTF-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="../CSS/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="../CSS/print.css" type="text/css" media="print">
-        <!--<link rel="stylesheet" href="../CSS/mini.css" type="text/css" media="screen and (max-width:600px)">-->
-        <!--tag style TEMPORANEO-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
+        <script src="../javascript/navbar.js"></script>
         <!-- 
         differenze con il codice 
         <link rel="stylesheet" href="prenotazioni.css" type="text/css" media="screen">
@@ -29,42 +31,43 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body>
-                <!--    HEADER    -->    
-                <header>                                                                
-                    <h1 id="logo">Anna Nesler Fisioterapista</h1>
-                    <a href="#content" class="skip-link">Salta al contenuto principale</a>                                        
-                </header>
-                <!--    NAVBAR    -->
-                <nav id="menu">
-                    <ul>
-                    <li lang="en"><a href="/html/index.html">Home</a></li>
-                    <li><a href="/html/anna.html">Anna</a></li>
-                    <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
-                            <!-- aria-expanded needs managed with Javascript -->
-                            <button
-                                type="button"
-                                class="dropdown__title"
-                                aria-expanded="false"
-                                aria-controls="Prestazioni-dropdown"
-                            >
-                                Prestazioni
-                            </button>
-                            <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                                <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
-                                <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                                <li><a href="/html/prestazioni/danza.html">Danza</a></li>
-                                <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
-                            </ul>
-                        </li>          
-                    <li><a href="/html/contatti.html">Contatti</a></li>
-                    <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+                 <!--    HEADER    -->    
+        <header>  
+            <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>  
+            <button id="menu-toggle">☰</button>         
+        </header>
+        <!--    NAVBAR    -->
+        <nav id="menu">
+            <ul>
+            <li lang="en"><a href="/html/index.html">Home</a></li>
+            <li><a href="/html/anna.html">Anna</a></li>
+            <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                    <!-- aria-expanded needs managed with Javascript -->
+                    <button
+                        type="button"
+                        class="dropdown__title"
+                        aria-expanded="false"
+                        aria-controls="Prestazioni-dropdown"
+                    >
+                        Prestazioni
+                    </button>
+                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                        <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                        <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                        <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
-                </nav>
-        
-                <!--    BREADCRUMB    -->
-                <nav id="breadcrumb">
-                    <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
-                </nav>
+                </li>          
+            <li><a href="/html/contatti.html">Contatti</a></li>
+            <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+            </ul>
+        </nav>
+
+        <!--    BREADCRUMB    -->
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
+        </nav>
         
                 
         

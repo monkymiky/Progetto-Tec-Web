@@ -12,6 +12,7 @@
         height: 4em;
         text-align: left;
         text-indent: -999em;
+        z-index: 1;
     }
     header h1 {
         font-size: 3em;
@@ -36,6 +37,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 0;
+        z-index: 1;
     }
 
     #menu ul {
@@ -84,14 +86,13 @@
     main{
         padding:5%;
         margin: 0px;
-        display: block; /* in style.css è flex*/
         text-align: center;
-        font-size: 1em; /* in style.css è 1*/
+        font-size: 1em; /* in style.css è 1.5*/
+        flex-grow: 1; /*tiene il footer in fondo nel mobile*/
     }
     #prenotazioni-home{
-        margin: 0px;
+        margin: auto;
         width: 70%;
-        display: inline-block;
     }
     /*------ Cosa Offro -----*/
     #CosaOffro{
@@ -130,7 +131,6 @@
     #CosaOffro div a.cosa-offro-links{
         margin: auto;
         display: block;
-        opacity: 1;
         position: inherit;
     }
     #img-corso {display: none;}
@@ -171,9 +171,7 @@
     }
     .gift-card-container li{
         height: 15em;
-    }
-    #idee_regalo{
-        display: none;
+        margin-top: 2em;
     }
     /*-------
     FOOTER
@@ -201,7 +199,22 @@
     #content dl *, #content ul *{
         text-align: left;
     }
-    
+    /*-------
+    MASSAGGI
+    ----------*/
+    .shop-items h2{
+        margin :auto;
+    }
+    .shop-items li{
+        width: 100%;
+    }
+    .card {
+        width: auto;
+        height: 80vw;
+    }
+    .card-container li{
+        height: 15em;
+    }
 }
 
 

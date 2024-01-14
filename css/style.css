@@ -71,7 +71,9 @@ header h1 {
     line-height: 1.5em;
 }
 
-
+#menu-toggle{
+    display: none;
+}
 
 /********************************************
 NAV
