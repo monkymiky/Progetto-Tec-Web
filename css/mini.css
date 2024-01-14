@@ -9,23 +9,30 @@
         margin: 0px;
         position: sticky;
         top: 0;
+        height: 4em;
+        text-align: left;
+        text-indent: -999em;
     }
     header h1 {
-        font-size: 4em;
+        font-size: 3em;
         background-position: left;
-        margin-left: 10%;
+        margin-left: 5%;
+        margin-top: -0.4em;
     }
     #menu-toggle{
         position: relative;
-        top: -2em;
-        right: -30%;
-        width: 15%;
-        height: 15vw;
+        top: -1.9em;
+        left: 75%;
+        width: 1.5em;
+        height: 1.5em;
         border-radius: 0.5em;
         font-size: 2em;
+        display: inline;
     }
     #menu {
         display: none;
+        position: sticky;
+        top: 4.9em;
         flex-direction: column;
         align-items: flex-start;
         padding: 0;
@@ -111,9 +118,9 @@
     #CosaOffro div{
         margin:auto;
         margin-top: 1em;
-        padding-top:3.5em;
+        padding-top:4em;
         width: 80%;
-        height: 7em;
+        height: 6em;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: auto;
@@ -124,7 +131,7 @@
         margin: auto;
         display: block;
         opacity: 1;
-
+        position: inherit;
     }
     #img-corso {display: none;}
     #img-massaggio {display: none;}
@@ -145,13 +152,28 @@
         border-radius: 1em;
         padding: 0em;
         width: 100%;
-        position: relative;
-        top: 41vw;
+        padding-top: 41vw;
+    }
+    #foto-anna-home p{
+        max-height:10em;
+        overflow: clip;
     }
     /*------ Card -----*/
+    #idee_regalo h2{
+        margin :auto;
+    }
     #idee_regalo li{
         width: 100%;
     }
-    .gift-card {width: auto;}
+    .gift-card {
+        width: auto;
+        height: 60vw;
+    }
+    .gift-card-container li{
+        height: 15em;
+    }
+    #idee_regalo{
+        display: none;
+    }
 }
 
