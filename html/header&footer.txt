@@ -1,14 +1,33 @@
+       <!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
+        <script src="../javascript/navbar.js"></script>
+     </head>
+    
+     <body>
+    
         <!--    HEADER    -->    
-        <header>                                                                
-            <h1 id="logo">Anna Nesler Fisioterapista</h1>
-            <a href="#content" class="skip-link">Salta al contenuto principale</a>                                        
+        <header>  
+            <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>  
+            <button id="menu-toggle">☰</button>         
         </header>
         <!--    NAVBAR    -->
+        
         <nav id="menu">
             <ul>
-            <li lang="en"><a href="/html/index.html">Home</a></li>
-            <li><a href="/html/anna.html">Anna</a></li>
-            <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+               <li lang="en">Home</li>
+               <li><a href="../html/anna.html">Anna</a></li>
+               <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
                     <!-- aria-expanded needs managed with Javascript -->
                     <button
                         type="button"
@@ -21,19 +40,20 @@
                     <ul class="dropdown__menu" id="Prestazioni-dropdown">
                         <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
                         <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                        <li><a href="/html/prestazioni/danza.html">Danza Libera</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
                         <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
                 </li>          
-            <li><a href="/html/contatti.html">Contatti</a></li>
-            <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+               <li><a href="/html/contatti.html">Contatti</a></li>
+               <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
             </ul>
         </nav>
-
         <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
             <p>Ti trovi in: <span lang="en">Home</span></p>
         </nav>
+    
+        <!--    MAIN    -->
 
         <!--    FOOTER    -->
         <footer>

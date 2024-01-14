@@ -10,10 +10,7 @@ CSS -> tutto responsive!
 -	dropdown-list per prestazioni
 -	position sticky navbar + breadcrumb
 -	link visitati distinguibili
-	FOOTER
--   	inserire social nel footer
 	HOME
--	card
 -	rendere responsive
 -	immagine anna neve più sottile
 	ANNA - FISIOTERAPIA - CORSI - DANZA
@@ -33,6 +30,9 @@ CSS -> tutto responsive!
 -	incorporare file temporanei
 
 CSS mobile
+-	min-width-heigh pulsanti 
+-	eliminare bottone da style.css
+-	dropdown list sempre aperta
 
 PHP
 -	testare tutto dopo aver riempito il DB

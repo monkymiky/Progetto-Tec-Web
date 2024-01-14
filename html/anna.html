@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
+        <title>Home</title>
         <meta charset="UTF-8">
-        <title>Fisioterapista Anna Nesler</title>
-        <meta name="keywords" content=""> 
-        <!-- description da migliorare una volta ultimata la pagina-->
-        <meta name="description" content="Anna Nesler è una fisioterapista di Bolzano che lavora anche a domicilio, offre trattamenti personalizzati sulla base delle problematiche.">
-        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-    </head>
-    <body>
-                <!--    HEADER    -->    
-                <header>                                                                
-                    <h1 id="logo">Anna Nesler Fisioterapista</h1>                                        
-                </header>
-                <!--    NAVBAR    -->
-                <nav id="menu">
-                    <ul>
-                    <li lang="en"><a href="/html/index.html">Home</a></li>
-                    <li>Anna</li>
-                    <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
-                            <!-- aria-expanded needs managed with Javascript -->
-                            <button
-                                type="button"
-                                class="dropdown__title"
-                                aria-expanded="false"
-                                aria-controls="Prestazioni-dropdown"
-                            >
-                                Prestazioni
-                            </button>
-                            <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                                <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
-                                <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                                <li><a href="/html/prestazioni/danza.html">Danza</a></li>
-                                <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
-                            </ul>
-                        </li>          
-                    <li><a href="/html/contatti.html">Contatti</a></li>
-                    <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
+        <script src="../javascript/navbar.js"></script>
+     </head>
+    
+     <body>
+    
+        <!--    HEADER    -->    
+        <header>  
+            <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
+            <h1 id="logo">Anna Nesler Fisioterapista</h1>  
+            <button id="menu-toggle">☰</button>         
+        </header>
+        <!--    NAVBAR    -->
+        
+        <nav id="menu">
+            <ul>
+               <li lang="en"><a href="../html/index.html">Home</a></li>
+               <li>Anna</li>
+               <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
+                    <!-- aria-expanded needs managed with Javascript -->
+                    <button
+                        type="button"
+                        class="dropdown__title"
+                        aria-expanded="false"
+                        aria-controls="Prestazioni-dropdown"
+                    >
+                        Prestazioni
+                    </button>
+                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                        <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                        <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                        <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
-                </nav>
-        
-                <!--    BREADCRUMB    -->
-                <nav id="breadcrumb">
-                    <p>Ti trovi in: <span lang="en">Anna</span></p>
-                </nav>
-        
-                
+                </li>          
+               <li><a href="/html/contatti.html">Contatti</a></li>
+               <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+            </ul>
+        </nav>
+        <!--    BREADCRUMB    -->
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+    
+        <!--    MAIN    -->
         
         <main id="content">
-            <img src="/media/anna.jpg" alt="Anna, con un grande sorriso, atletica, ha gli occhiali e una polo blu">
+            <img src="../media/anna.jpg" alt="Anna, con un grande sorriso, atletica, ha gli occhiali e una polo blu">
             <h1>Anna Nesler</h1><!-- adotto la strategia di mettere un h1 (al massimo) per ogni sezione della pagina-->
             <p>Sono Anna Nesler, dottoressa in fisioterapia,   mi sono laureata nel 2010 presso la Claudiana di Bolzano. <!-- testo provvisorio (ripetizioni)-->
                 Ho lavorato per quattro anni come fisioterapista in ambito geriatrico. Sono libera professionista dal 2023. 
