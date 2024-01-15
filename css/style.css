@@ -345,12 +345,9 @@ SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
 ********************************************/
 
 #idee_regalo {
+    border-top: 1px solid var(--borderColor);
     text-align: center;
     margin-top: 2em;
-    }
-    
-#idee_regalo>* {
-    margin:1em;
 }
     
 #vedi-di-piu {
@@ -367,6 +364,7 @@ SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
 #idee_regalo h2 {
     font-size: 2em;
     margin-bottom: 0.5em;
+    margin-top: 2em;
 }
     
 #idee_regalo a {
