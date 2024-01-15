@@ -2,17 +2,24 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
-    margin-top: 5em;
+    height: 100%;
+    margin-top: 1em;
+}
+
+
+p {
+    margin-top: 1em;
 }
 
 form {
+    margin-top: 1em;
     width: 100%;
     max-width: 25em;
     padding: 1.25em;
     box-sizing: border-box;
     border: 0.0625em solid;
     border-radius: 0.5em;
+    background-color: #fff;
 }
 
 label {
@@ -40,8 +47,4 @@ input {
 
 #submit:hover {
     background-color: #1d8623;
-}
-
-p {
-    margin-top: 5em;
 }
