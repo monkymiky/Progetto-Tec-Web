@@ -50,6 +50,8 @@
         </nav>
         
         <main id="content">
+        <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
+
             <form method="POST" action="../php/login.php" >
                 <label for="user"><span lang="en">Username:</span></label>
                 <input type="text" id="user" name="user" maxlength="40">
@@ -57,14 +59,20 @@
                 <input type="password" id="password" name="password" maxlength="40">
                 <input type="submit" id="submit" name="submit" value="login"/>
             </form>
-            <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
         </main>
 
         <!--    FOOTER    -->
         <footer>
             <p><a href = "../html/contatti.html"> contattami </a></p>
-            <!-- Icone social -->
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Instagram.png" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Facebook.png" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
     </body>
 </html>
