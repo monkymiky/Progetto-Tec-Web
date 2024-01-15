@@ -486,11 +486,12 @@ footer {
 /********************************************
 ANNA
 ********************************************/
-img {
+#anna-img {
     width: 30%;
     float: right ;
     margin-top: 2em;
 }
+
 #content h2, #content h1, #content h3{
     padding : 1em 0 1em 0;
 }
