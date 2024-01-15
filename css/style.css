@@ -203,31 +203,33 @@ main a:hover {
     grid-template-rows: 2em 2em 2em 2em 6em 15.3em;
 }
 
-#link-massaggi {
-    grid-row:1;
-    grid-column:3
+#cosa-offro-links-massaggi {
+    grid-row: 1;
+    grid-column: 3;
 }
 
-#link-corsi {
-    grid-row:2;
-    grid-column:3;
+#cosa-offro-links-corsi {
+    grid-row: 2;
+    grid-column: 3;
 }
 
-#link-danza {
-    grid-row:3;
-    grid-column:3;
+#cosa-offro-links-danza {
+    grid-row: 3;
+    grid-column: 3;
 }
 
-#link-fisioterapia {
+#cosa-offro-links-fisioterapia {
     grid-row: 4;
     grid-column: 3;
 }
+
 
 #CosaOffro h1 {
     text-align: center;
 }
 
 .cosa-offro-links {
+    white-space: nowrap;
     width:10em;
     line-height:1.3em;
     padding:0.3em;
