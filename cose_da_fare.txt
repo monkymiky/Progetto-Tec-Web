@@ -1,17 +1,21 @@
 HTML
-	ERROR 404 e 500
--	creare pagine
+-	card senza link
+-	liunk zsoto le card al pdf
+	MASSAGGI 
+-	mettere un unico link al pdf	
+
 
 
 CSS -> tutto responsive!
--	Decidere per una palette definitiva
+-	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	eliminare codice inutilizzato (es: immagine carrello)
 	HEADER
--	dropdown-list per prestazioni
+-	dropdown-list per prestazioni stilizzare bottone
 -	position sticky navbar + breadcrumb
--	link visitati distinguibili
+-	link visitati distinguibili 
+-	link sottolineati
 	HOME
--	rendere responsive
+-	rendere responsive cossa offro
 -	immagine anna neve più sottile
 	ANNA - FISIOTERAPIA - CORSI - DANZA
 -	inserire immagini con float left
@@ -31,10 +35,10 @@ CSS -> tutto responsive!
 
 CSS mobile
 -	min-width-heigh pulsanti 
--	eliminare bottone da style.css
 -	dropdown list sempre aperta
+-	stilizzare prenotazioni.html
 
-PHP
+TEST
 -	testare tutto dopo aver riempito il DB
 
 SQL 
@@ -50,8 +54,7 @@ JS
 -	js scomparsa/comparsa fieldset "dati carta"
 	HEADER
 -	js aria-expanded="true"
-	CONTATTI
--	js controlli input
+
 
 
 RELAZIONE PROGETTO
