@@ -1,174 +1,354 @@
+/*
+    Questo codice si occupa del controllo della correttezza del form delle prenotazioni. In poche parole controlla che gli input inseriti dall'utente siano corretti e nel caso
+    non lo siano blocca il submit di tale form e segnala un messaggio di errore a fianco dell'input non corretto. 
+
+
+    */
+
+//variaibili di controllo / espressioni regolari 
+var controllo_email = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+var controllo_nome_e_cognome = /^[a-zA-Z]+ [a-zA-Z]+$/;
+var controllo_numero_carta = /^(\d{4} ){3}\d{4}$/;
+var controllo_cvv = /^\d{3}$/;
+var controllo_telefono = /^\d{1,11}$/;
+
+//funzioni utili per fare controlli, ritornano rispettivamente l'anno, il mese e il giorno corrente al momento dell'esecuzione della funzione 
+
 function anno_corrente() {
     var data = new Date();
     var anno = data.getFullYear();
     return anno;
 }
+function mese_corrente() {
+    var data = new Date(); 
+    var mese = data.getMonth();
+    return mese+1
+}
+function giorno_corrente() {
+    var data = new Date();
+    var giorno = data.getDay();
+    return giorno;
+}
 
-function controllo_form(e) {
 
-    var luogo               =document.modulo.aDomicilio.value; // ok
-    //var giorno            =document.modulo.date.value;   // ! quando il calendario sarà finito 
-    //var ora               =document.modulo.time.value;   // ! quando il calendario sarà finito
-    var email               =document.modulo.email.value;      // test ok
-    var numero_di_telefono  =document.modulo.cell.value;       
-    var indirizzo           =document.modulo.indirizzo.value;
-    var note                =document.modulo.note.value;        //forse da togliere nella parte di js perchè non utilizzato
-    var nome_e_cognome      =document.modulo.nome.value;        //test ok
-    var numero_della_carta  =document.modulo.card_number.value;
-    var cvv                 =document.modulo.card_cvv.value;
-    var mese_scadenza_carta =document.modulo.month.value;
-    var anno_scadenza_carta =document.modulo.year.value;
-    var metodo_di_pagamento =document.modulo.payment_method.value;
 
-    var email_controllo = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
-    var controllo_nome_e_cognome = /^[a-zA-Z]+ [a-zA-Z]+$/;
-    var controllo_numero_carta = /^(\d{4} ){3}\d{4}$/;
-    var controllo_cvv = /^\d{3}$/;
-    var controllo_telefono = /^\d{1,11}$/;
-    
-                                    /*CONTROLLO SLOT DISPONIBILITA*/
-    //controllo scelta luogo (non vuoto)
-    if(luogo=="" || luogo=="undefined") {
-        alert("Scegli se vuoi prenotare una prestazione a domicilio o in studio");
-        document.modulo.aDomicilio.focus();
-        document.modulo.aDomicilio.select();
+//controllo email
+function controllo_email() { 
+
+    var email       = document.getElementById("email");
+    var valoreEmail = email.value;
+    //verifica la presenza di errori
+    var existing_err_elem = email.parentNode.querySelector(".err_elem");
+
+    if(valoreEmail==="" || valoreEmail===undefined || !controllo_email.test(valoreEmail)) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci un indirizzo email valido";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        email.insertAdjacentElement('beforebegin', err_elem);
         return false;
     }
-    
+    else {
+        // Rimuovi l'errore se esiste
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+};
 
-                                    /*CONTROLLO SLOT GIORNO-ORA */
-    //controllo slot giorno e ora 
-    //da fare
+//controllo numero di telefono
+function controllo_numero_telefono() {
 
+    var numero_di_telefono      = document.getElementById("cell");
+    var valoreNumeroDiTelefono = numero_di_telefono.value;
 
+    var existing_err_elem = numero_di_telefono.parentNode.querySelector(".err_elem");
 
-                                    /*CONTROLLO DATI DI CONTATTO */
-    //controllo mail
-    if(!email_controllo.test(email) || (email=="") || (email=="undefined")) {
-        alert("Inserire un indirizzo email corretto");
-        document.modulo.email.select();
-        document.modulo.nome.focus();
+    if(valoreNumeroDiTelefono==="" || valoreNumeroDiTelefono===undefined || !controllo_telefono.test(valoreNumeroDiTelefono)) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem"); 
+        err_elem.textContent = "Inserire un numero valido";
+        err_elem.style.color = "red";
+        err_elem.style.fontSize = "0.7em";
+        numero_di_telefono.insertAdjacentElement('beforebegin', err_elem);
         return false;
     }
-    //controllo numero di telefono
-    if(!controllo_telefono.test(numero_di_telefono) || (numero_di_telefono=="") || (numero_di_telefono=="undefined")){
-        alert("inserisci un numero");
-        document.modulo.cell.select();
-        document.modulo.cell.focus();
-        return false;
-    }
-    //controllo indirizzo (non vuoto)
-    if(indirizzo=="" || indirizzo=="undefined"){
-        alert("Inserisci un indirizzo, per esempio: \"Via Trieste, 63, 35121 Padova PD\"");
-        document.modulo.indirizzo.select();
-        document.modulo.indirizzo.focus();
-        return false;
-    }
-
-
-                                    /*CONTROLLO METODO DI PAGAMENTO */
-    if(metodo_di_pagamento=="" || metodo_di_pagamento=="undefined") {
-        alert ("scegli un metodo di pagamento");
-        document.modulo.payment_method.focus();
-        document.modulo.payment_method.select();
-        return false;
-    }
-
-
-
-
-                                    /*CONTROLLO DATI CARTA */
-    //controllo nome e cognome
-    if(!controllo_nome_e_cognome.test(nome_e_cognome) || (nome_e_cognome=="") || (nome_e_cognome=="undefined")){
-        alert("Inserire sia il nome che il cognome. Per esempio: \"Mario Rossi\"");
-        document.modulo.nome.select();
-        document.modulo.nome.focus();
-        return false;
-    }
-    //controllo numero carta 
-    if(!controllo_numero_carta.test(numero_della_carta) || (numero_della_carta=="") || (numero_della_carta=="undefined")){
-        alert("numero inserito non corretto, inserire un numero in questo formato: \"xxxx xxxx xxxx xxxx\", dove al posto delle x ci sono i numeri della vostra carta. Ogni 4 cifre lasciare uno spazio vuoto");
-        document.modulo.card_number.select();
-        document.modulo.card_number.focus();
-        return false;
-    }
-    //controllo cvv
-    if(!controllo_cvv.test(cvv) || (cvv="") || (cvv=="undefined")) {
-        alert("Inserisci tre cifre corrispondenti al cvv della tua carta. Solitamente si trova sul retro ed è composto da tre cifre");
-        document.modulo.card_cvv.select();
-        document.modulo.card_cvv.focus();
-        return false;
-    }
-    //controllo mese di scadenza della carta 
-    if( (mese_scadenza_carta>12) || (mese_scadenza_carta<1) || (mese_scadenza_carta=="") || (mese_scadenza_carta=="undefined")) {
-        alert("numero mese inserito non valido");
-        document.modulo.month.select();
-        document.modulo.month.focus();
-        return false;
-    }
-    //controllo anno di scadenza della carta 
-    if(anno_scadenza_carta<anno_corrente() || (anno_scadenza_carta=="") || (anno_scadenza_carta=="undefined")) {
-        alert("anno inserito non valido");
-        document.modulo.year.select();
-        document.modulo.year.focus();
-        return false;
+    else {
+        if(existing_err_elem){
+            existing_err_elem.remove();
+            return true;
+        }
     }
     
+};
 
-    alert("Dati inseriti correttamente, questi verranno salvati sul tuo browser in modo che alla prossima visita la signoria vostra non debba ripetere il tedioso compito di ricompilare tutto il form. Nel caso non voleste che cio succeda, potete facilmente risolvere eliminando la cronologia del browser. Nessun dato sarà salvato su server esterni o simili ma solamente sul vostro dispositivo. Per Aspera ad Astra");
-    console.log("Submit completato");
+//controllo indirizzo
+function controllo_indirizzo() {
+    var indirizzo       = document.getElementById("indirizzo");
+    var valoreIndirizzo = indirizzo.value;
 
-    return true;
-} 
+    var existing_err_elem=indirizzo.parentNode.querySelector(".err_elem");
 
-
-                                /*SALVATAGGIO DATI SUL DISPOSITIVO DELL'UTENTE  */
-document.addEventListener('DOMContentLoaded', function () {
-    // Verifica se ci sono dati salvati nel localStorage
-    var savedFormData = localStorage.getItem('moduloData');
-
-    if (savedFormData) {
-        // Se ci sono dati salvati, popola i campi del modulo
-        var formData = JSON.parse(savedFormData);
-
-        document.modulo.aDomicilio.value = formData.luogo;
-        //document.modulo.date.value = formData.giorno;
-        //document.modulo.time.value = formData.ora;
-        document.modulo.email.value = formData.email;
-        document.modulo.cell.value = formData.numero_di_telefono;
-        document.modulo.indirizzo.value = formData.indirizzo;
-        document.modulo.note.value = formData.note;
-        document.modulo.nome.value = formData.nome_e_cognome;
-        document.modulo.card_number.value = formData.numero_della_carta;
-        document.modulo.card_cvv.value = formData.cvv;
-        document.modulo.month.value = formData.mese_scadenza_carta;
-        document.modulo.year.value = formData.anno_scadenza_carta;
+    if(valoreIndirizzo==="" || valoreIndirizzo===undefined) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci un indirizzo";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        indirizzo.insertAdjacentElement('beforebegin', err_elem);
+        return false;
     }
-});
-                                /*CARICA I DATI DISPONIBILI SUL DISPOSITIVO DELL'UTENTE */
-document.modulo.addEventListener('submit', function(e) {
-    e.preventDefault();    
-    var isValid = controllo_form();
-    var formData;
-    if(isValid) {
-        formData = {
-            luogo: document.modulo.aDomicilio.value,
-            //giorno: document.modulo.date.value,
-            //ora: document.modulo.time.value,
-            email: document.modulo.email.value,
-            numero_di_telefono: document.modulo.cell.value,
-            indirizzo: document.modulo.indirizzo.value,
-            note: document.modulo.note.value,
-            nome_e_cognome: document.modulo.nome.value,
-            numero_della_carta: document.modulo.card_number.value,
-            cvv: document.modulo.card_cvv.value,
-            mese_scadenza_carta: document.modulo.month.value,
-            anno_scadenza_carta: document.modulo.year.value
-        };
+    else {
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
     }
 
-    localStorage.setItem('moduloData', JSON.stringify(formData));
-});
+};
+
+//controllo note non necessario (non per i nostri scopi)
+
+//controllo dati carta 
+function controllo_nome_e_cognome() {
+    var nome_e_cognome     = document.getElementById("name_surname");
+    var valoreNomeECognome = nome_e_cognome.value;
+    
+    var existing_err_elem = nome_e_cognome.parentNode.querySelector(".err_elem");
+
+    if(valoreNomeECognome==="" || valoreNomeECognome===undefined || !controllo_nome_e_cognome.test(valoreNomeECognome)){
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci il nome e il cognome";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        nome_e_cognome.insertAdjacentElement('beforebegin', err_elem);
+        return false;
+    }
+    else {
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+
+};
+
+//controllo numero della carta  
+function controllo_numero_carta() {
+    var numero_della_carta      = document.getElementById("card_number");
+    var valoreNumeroDellaCarta = numero_della_carta.value;
+    
+    var existing_err_elem = numero_della_carta.parentNode.querySelector(".err_elem");
+
+    if (valoreNumeroDellaCarta==="" || valoreNumeroDellaCarta===undefined || !controllo_numero_carta.test(valoreNumeroDellaCarta)) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci il numero della carta in questo formato: xxxx xxxx xxxx xxxx";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        numero_della_carta.insertAdjacentElement('beforebegin', err_elem);
+        return false;
+    }
+    else {
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+
+};
+
+//controllo cvv
+function controllo_cvv() {
+    var cvv       = document.getElementById("id_card_cvv");
+    var valoreCVV = cvv.value;
+    
+    var existing_err_elem = email.parentNode.querySelector(".err_elem");
+
+    if(valoreCVV === "" || valoreCVV===undefined || !controllo_cvv.test(valoreCVV)) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci le 3 cifre del cvv";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        cvv.insertAdjacentElement('beforebegin', err_elem);
+        return false;
+    }
+    else {
+        if(existing_err_elem){
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+};
+
+function controllo_scadenza_carta() {
+    var mese_scadenza_carta     = document.getElementById("month");
+    var anno_scadenza_carta     = document.getElementById("year");
+
+    var valoreMeseScadenzaCarta = mese_scadenza_carta.value;
+    var valoreAnnoScadenzaCarta = anno_scadenza_carta.value;
+
+    var existing_err_elem = mese_scadenza_carta.parentNode.querySelector(".err_elem");
+
+    if((anno_corrente() > valoreAnnoScadenzaCarta) || (anno_corrente() === valoreAnnoScadenzaCarta && mese_corrente()>valoreMeseScadenzaCarta)) {
+        //nope
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci una data corretta";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        email.insertAdjacentElement('beforebegin', err_elem);
+        return false;
+    }
+    else {
+        //ok
+        if(existing_err_elem){
+            existing_err_elem.remove();
+        }
+        return true;
+
+    }
+
+};
+
+function controllo_metodo_di_pagamento() {
+    var metodo_paypal      = document.getElementById("paypal");
+    var metodo_carta       = document.getElementById("credit_debit");
+
+    //var valoreMetodoPaypal = metodo_paypal.checked;
+    //var valoreMetodoCarta  = metodo_carta.checked;
+
+    var existing_err_elem  = metodo_paypal.parentNode.querySelector(".err_elem");
+
+    if(!metodo_carta.checked && !metodo_paypal.checked) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Scegli un metodo di pagamento";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        metodo_paypal.insertAdjacentElement('beforebegin', err_elem);
+        return  false;
+    }
+    else {
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+}
+
+function controllo_luogo_selezioanato() {
+    var domicilio               = document.getElementById("domicilio");
+    var studio                  = document.getElementById("studio");
+
+    //var valoreDomicilio = domicilio.value;
+    //var valoreStudio = studio.value;
+
+    var existing_err_elem = domicilio.parentNode.querySelector(".err_elem");
+
+    if(!domicilio.checked && !studio.checked) {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Scegli un luogo per la prestazione";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        domicilio.insertAdjacentElement('beforebegin', err_elem);
+        return false;
+    }
+    else {
+        if(existing_err_elem) {
+            existing_err_elem.remove();
+            return true;
+        }
+    }
+}
+
+function controllo_giorno() {
+    
+    var date=document.getElementById("date"); 
+    //var time=document.getElementById("time");
+
+    var valoreDate = date.value;
+    var dataInserita = new Date(valoreDate);
+    var giornoInserito = dataInserita.getDay();
+    var meseInserito = dataInserita.getMonth();
+    var annoInserito = dataInserita.getFullYear(); 
+        
+    var existing_err_elem = date.parentNode.querySelector(".err_elem");
+    //ora, grazie alle funzioni sopra posso confrontare i valori dei tre campi sopra e assicurarmi che non siano nel passato. Per esempio annoInserito > (annoCorrente-1). La logica in questo if è invertita rispetto agli altri 
+    if( annoInserito>=anno_corrente()   &&  meseInserito>=mese_corrente()   &&  giornoInserito>=giorno_corrente()) {
+        if(existing_err_elem){
+            existing_err_elem.remove();
+        }
+        return true;
+    }    
+    else {
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent="Inserisci una data che non sia già passata";
+        err_elem.style.color="red";
+        err_elem.style.fontSize="0.7em";
+        date.insertAdjacentElement('beforebegin', err_elem);
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    controllo_luogo_selezioanato();
+    controllo_giorno();
+    controllo_email();
+    controllo_numero_telefono();
+    controllo_indirizzo();
+    controllo_metodo_di_pagamento();
+    controllo_nome_e_cognome(); 
+    controllo_numero_carta(); 
+    controllo_cvv();
+    controllo_scadenza_carta();
+
+    
+    document.addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        var submit_button = document.getElementById("submit_button");
+        var existing_err_elem = submit_button.parentNode.querySelector(".err_elem");
+        
+        if (controllo_luogo_selezioanato() && controllo_giorno() &&
+            controllo_email() && controllo_numero_telefono() &&
+            controllo_indirizzo() && controllo_metodo_di_pagamento() &&
+            controllo_nome_e_cognome() && controllo_numero_carta() && 
+            controllo_cvv() && controllo_scadenza_carta()) {
+                if(existing_err_elem) {
+                    existing_err_elem.remove();
+                }
+                var sub_completed_elem = document.createElement("span");
+                sub_completed_elem.textContent="Inserimento Completato!";
+                sub_completed_elem.style.color="green";
+                sub_completed_elem.style.fontSize="0.7em";
+                submit_button.insertAdjacentElement('afterend',sub_completed_elem);
+                event.target.submit();
+            }
+        else {
+            
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Submit non completata, controlla che tutti i valori del form siano stati inseriti correttamente";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            submit_button.insertAdjacentElement('afterend', err_elem);
+
+        }
+
+    })
+})
+
+
+
 
 
 
