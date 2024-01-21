@@ -6,10 +6,10 @@
     */
 
 //variaibili di controllo / espressioni regolari 
-var controllo_email = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
-var controllo_nome_e_cognome = /^[a-zA-Z]+ [a-zA-Z]+$/;
-var controllo_numero_carta = /^(\d{4} ){3}\d{4}$/;
-var controllo_cvv = /^\d{3}$/;
+var controllo_email_regex = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+var controllo_nome_e_cognome_regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+var controllo_numero_carta_regex = /^(\d{4} ){3}\d{4}$/;
+var controllo_cvv_regex = /^\d{3}$/;
 var controllo_telefono = /^\d{1,11}$/;
 
 //funzioni utili per fare controlli, ritornano rispettivamente l'anno, il mese e il giorno corrente al momento dell'esecuzione della funzione 
@@ -34,19 +34,22 @@ function giorno_corrente() {
 
 //controllo email
 function controllo_email() { 
-
+    console.log("controllo_email");
     var email       = document.getElementById("email");
     var valoreEmail = email.value;
     //verifica la presenza di errori
     var existing_err_elem = email.parentNode.querySelector(".err_elem");
 
-    if(valoreEmail==="" || valoreEmail===undefined || !controllo_email.test(valoreEmail)) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci un indirizzo email valido";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        email.insertAdjacentElement('beforebegin', err_elem);
+    if(valoreEmail==="" || valoreEmail===undefined || !controllo_email_regex.test(valoreEmail)) {
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Inserisci un indirizzo email valido";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            email.insertAdjacentElement('beforebegin', err_elem);
+        }
+        
         return false;
     }
     else {
@@ -61,18 +64,22 @@ function controllo_email() {
 //controllo numero di telefono
 function controllo_numero_telefono() {
 
+    console.log("controllo_telefono");
     var numero_di_telefono      = document.getElementById("cell");
     var valoreNumeroDiTelefono = numero_di_telefono.value;
 
     var existing_err_elem = numero_di_telefono.parentNode.querySelector(".err_elem");
 
     if(valoreNumeroDiTelefono==="" || valoreNumeroDiTelefono===undefined || !controllo_telefono.test(valoreNumeroDiTelefono)) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem"); 
-        err_elem.textContent = "Inserire un numero valido";
-        err_elem.style.color = "red";
-        err_elem.style.fontSize = "0.7em";
-        numero_di_telefono.insertAdjacentElement('beforebegin', err_elem);
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem"); 
+            err_elem.textContent = "Inserire un numero valido";
+            err_elem.style.color = "red";
+            err_elem.style.fontSize = "0.7em";
+            numero_di_telefono.insertAdjacentElement('beforebegin', err_elem);
+        }
+        
         return false;
     }
     else {
@@ -86,18 +93,22 @@ function controllo_numero_telefono() {
 
 //controllo indirizzo
 function controllo_indirizzo() {
+    console.log("controllo indirizzo");
     var indirizzo       = document.getElementById("indirizzo");
     var valoreIndirizzo = indirizzo.value;
 
     var existing_err_elem=indirizzo.parentNode.querySelector(".err_elem");
 
     if(valoreIndirizzo==="" || valoreIndirizzo===undefined) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci un indirizzo";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        indirizzo.insertAdjacentElement('beforebegin', err_elem);
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Inserisci un indirizzo";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            indirizzo.insertAdjacentElement('beforebegin', err_elem);
+        }
+        
         return false;
     }
     else {
@@ -113,79 +124,112 @@ function controllo_indirizzo() {
 
 //controllo dati carta 
 function controllo_nome_e_cognome() {
-    var nome_e_cognome     = document.getElementById("name_surname");
-    var valoreNomeECognome = nome_e_cognome.value;
-    
-    var existing_err_elem = nome_e_cognome.parentNode.querySelector(".err_elem");
+    console.log("controllo nome e cognome");
+    var nome_e_cognome = document.getElementById("name_surname");
 
-    if(valoreNomeECognome==="" || valoreNomeECognome===undefined || !controllo_nome_e_cognome.test(valoreNomeECognome)){
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci il nome e il cognome";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        nome_e_cognome.insertAdjacentElement('beforebegin', err_elem);
+    // Verifica se l'elemento è presente prima di accedere alla proprietà 'value'
+    if (nome_e_cognome) {
+        var valoreNomeECognome = nome_e_cognome.value;
+
+        var existing_err_elem = nome_e_cognome.parentNode.querySelector(".err_elem");
+
+        if (valoreNomeECognome === "" || valoreNomeECognome === undefined || !controllo_nome_e_cognome_regex.test(valoreNomeECognome)) {
+            if (!existing_err_elem) {
+                var err_elem = document.createElement("span");
+                err_elem.classList.add("err_elem");
+                err_elem.textContent = "Inserisci il nome e il cognome";
+                err_elem.style.color = "red";
+                err_elem.style.fontSize = "0.7em";
+                nome_e_cognome.insertAdjacentElement('beforebegin', err_elem);
+            }
+
+            return false;
+        } else {
+            if (existing_err_elem) {
+                existing_err_elem.remove();
+                return true;
+            }
+        }
+    } else {
+        console.error("Elemento non trovato. Assicurati che l'elemento con l'ID 'name_surname' esista nel tuo HTML.");
         return false;
     }
-    else {
-        if(existing_err_elem) {
-            existing_err_elem.remove();
-            return true;
-        }
-    }
+}
 
-};
 
 //controllo numero della carta  
 function controllo_numero_carta() {
-    var numero_della_carta      = document.getElementById("card_number");
-    var valoreNumeroDellaCarta = numero_della_carta.value;
-    
-    var existing_err_elem = numero_della_carta.parentNode.querySelector(".err_elem");
+    console.log("controllo numero carta");
 
-    if (valoreNumeroDellaCarta==="" || valoreNumeroDellaCarta===undefined || !controllo_numero_carta.test(valoreNumeroDellaCarta)) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci il numero della carta in questo formato: xxxx xxxx xxxx xxxx";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        numero_della_carta.insertAdjacentElement('beforebegin', err_elem);
+    var numero_della_carta = document.getElementById("card_number");
+
+    // Verifica se l'elemento è presente prima di accedere alla proprietà 'value'
+    if (numero_della_carta) {
+        var valoreNumeroDellaCarta = numero_della_carta.value;
+
+        var existing_err_elem = numero_della_carta.parentNode.querySelector(".err_elem");
+
+        if (valoreNumeroDellaCarta === "" || valoreNumeroDellaCarta === undefined || !controllo_numero_carta_regex.test(valoreNumeroDellaCarta)) {
+            if (!existing_err_elem) {
+                var err_elem = document.createElement("span");
+                err_elem.classList.add("err_elem");
+                err_elem.textContent = "Inserisci il numero della carta in questo formato: xxxx xxxx xxxx xxxx";
+                err_elem.style.color = "red";
+                err_elem.style.fontSize = "0.7em";
+                numero_della_carta.insertAdjacentElement('beforebegin', err_elem);
+            }
+
+            return false;
+        } else {
+            if (existing_err_elem) {
+                existing_err_elem.remove();
+                return true;
+            }
+        }
+    } else {
+        console.error("Elemento non trovato. Assicurati che l'elemento con l'ID 'card_number' esista nel tuo HTML.");
         return false;
     }
-    else {
-        if(existing_err_elem) {
-            existing_err_elem.remove();
-            return true;
-        }
-    }
+}
 
-};
 
 //controllo cvv
 function controllo_cvv() {
-    var cvv       = document.getElementById("id_card_cvv");
-    var valoreCVV = cvv.value;
-    
-    var existing_err_elem = email.parentNode.querySelector(".err_elem");
+    console.log("controllo cvv");
+    var cvv = document.getElementById("id_card_cvv");
 
-    if(valoreCVV === "" || valoreCVV===undefined || !controllo_cvv.test(valoreCVV)) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci le 3 cifre del cvv";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        cvv.insertAdjacentElement('beforebegin', err_elem);
+    // Verifica se l'elemento è presente prima di accedere alla proprietà 'value'
+    if (cvv) {
+        var valoreCVV = cvv.value;
+
+        var existing_err_elem = cvv.parentNode.querySelector(".err_elem");
+
+        if (valoreCVV === "" || valoreCVV === undefined || !controllo_cvv_regex.test(valoreCVV)) {
+            if (!existing_err_elem) {
+                var err_elem = document.createElement("span");
+                err_elem.classList.add("err_elem");
+                err_elem.textContent = "Inserisci le 3 cifre del CVV";
+                err_elem.style.color = "red";
+                err_elem.style.fontSize = "0.7em";
+                cvv.insertAdjacentElement('beforebegin', err_elem);
+            }
+
+            return false;
+        } else {
+            if (existing_err_elem) {
+                existing_err_elem.remove();
+                return true;
+            }
+        }
+    } else {
+        console.error("Elemento non trovato. Assicurati che l'elemento con l'ID 'id_card_cvv' esista nel tuo HTML.");
         return false;
     }
-    else {
-        if(existing_err_elem){
-            existing_err_elem.remove();
-            return true;
-        }
-    }
-};
+}
+
 
 function controllo_scadenza_carta() {
+    console.log("controllo scadenza carta");
     var mese_scadenza_carta     = document.getElementById("month");
     var anno_scadenza_carta     = document.getElementById("year");
 
@@ -196,12 +240,15 @@ function controllo_scadenza_carta() {
 
     if((anno_corrente() > valoreAnnoScadenzaCarta) || (anno_corrente() === valoreAnnoScadenzaCarta && mese_corrente()>valoreMeseScadenzaCarta)) {
         //nope
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci una data corretta";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        email.insertAdjacentElement('beforebegin', err_elem);
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Inserisci una data corretta";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            mese_scadenza_carta.insertAdjacentElement('beforebegin', err_elem);
+        }
+
         return false;
     }
     else {
@@ -216,32 +263,40 @@ function controllo_scadenza_carta() {
 };
 
 function controllo_metodo_di_pagamento() {
-    var metodo_paypal      = document.getElementById("paypal");
-    var metodo_carta       = document.getElementById("credit_debit");
+    console.log("controllo metodo di pagamento");
 
-    //var valoreMetodoPaypal = metodo_paypal.checked;
-    //var valoreMetodoCarta  = metodo_carta.checked;
+    var metodo_paypal = document.getElementById("paypal");
+    var metodo_carta = document.getElementById("credit_debit");
 
-    var existing_err_elem  = metodo_paypal.parentNode.querySelector(".err_elem");
+    if (metodo_paypal && metodo_carta) {
+        var existing_err_elem = metodo_paypal.parentNode.querySelector(".err_elem");
 
-    if(!metodo_carta.checked && !metodo_paypal.checked) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Scegli un metodo di pagamento";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        metodo_paypal.insertAdjacentElement('beforebegin', err_elem);
-        return  false;
-    }
-    else {
-        if(existing_err_elem) {
-            existing_err_elem.remove();
+        if (!metodo_carta.checked && !metodo_paypal.checked) {
+            if (!existing_err_elem) {
+                var err_elem = document.createElement("span");
+                err_elem.classList.add("err_elem");
+                err_elem.textContent = "Scegli un metodo di pagamento";
+                err_elem.style.color = "red";
+                err_elem.style.fontSize = "0.7em";
+                metodo_paypal.insertAdjacentElement('beforebegin', err_elem);
+            }
+
+            return false;
+        } else {
+            if (existing_err_elem) {
+                existing_err_elem.remove();
+            }
             return true;
         }
+    } 
+    else {
+        return false;
     }
 }
 
-function controllo_luogo_selezioanato() {
+
+function controllo_luogo_selezionato() {
+    console.log("controllo luogo selezionato");
     var domicilio               = document.getElementById("domicilio");
     var studio                  = document.getElementById("studio");
 
@@ -251,12 +306,15 @@ function controllo_luogo_selezioanato() {
     var existing_err_elem = domicilio.parentNode.querySelector(".err_elem");
 
     if(!domicilio.checked && !studio.checked) {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Scegli un luogo per la prestazione";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        domicilio.insertAdjacentElement('beforebegin', err_elem);
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Scegli un luogo per la prestazione";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            domicilio.insertAdjacentElement('beforebegin', err_elem);
+        }
+        
         return false;
     }
     else {
@@ -268,7 +326,7 @@ function controllo_luogo_selezioanato() {
 }
 
 function controllo_giorno() {
-    
+    console.log("controllo giorno");
     var date=document.getElementById("date"); 
     //var time=document.getElementById("time");
 
@@ -287,65 +345,81 @@ function controllo_giorno() {
         return true;
     }    
     else {
-        var err_elem = document.createElement("span");
-        err_elem.classList.add("err_elem");
-        err_elem.textContent="Inserisci una data che non sia già passata";
-        err_elem.style.color="red";
-        err_elem.style.fontSize="0.7em";
-        date.insertAdjacentElement('beforebegin', err_elem);
+        if(!existing_err_elem) {
+            var err_elem = document.createElement("span");
+            err_elem.classList.add("err_elem");
+            err_elem.textContent="Inserisci una data che non sia già passata";
+            err_elem.style.color="red";
+            err_elem.style.fontSize="0.7em";
+            date.insertAdjacentElement('beforebegin', err_elem);
+        }
+        return false;
+        
     }
 }
 
+function controllo_campi() {
+    console.log("controllo campi");
 
-document.addEventListener("DOMContentLoaded", function() {
+    var controlli = [
+        controllo_email(),
+        controllo_numero_telefono(),
+        controllo_indirizzo(),
+        controllo_metodo_di_pagamento(),
+        controllo_nome_e_cognome(),
+        controllo_numero_carta(),
+        controllo_cvv(),
+        controllo_scadenza_carta(),
+        controllo_luogo_selezionato(),
+        controllo_giorno()
+    ];
+
+    var risultato = controlli.every(function (controllo) {
+        return controllo;
+    });
+
+    return risultato;
+}
+
+
+
+var form_pointer = document.getElementById("formPrenota"); 
+form_pointer.addEventListener('submit', function(event){
+   console.log("si è verificato un submit");
+    event.preventDefault();
+
+    var submit_button = event.target.querySelector('[type="submit"]'); // Ottenere il pulsante di invio all'interno del form
     
-    controllo_luogo_selezioanato();
-    controllo_giorno();
-    controllo_email();
-    controllo_numero_telefono();
-    controllo_indirizzo();
-    controllo_metodo_di_pagamento();
-    controllo_nome_e_cognome(); 
-    controllo_numero_carta(); 
-    controllo_cvv();
-    controllo_scadenza_carta();
+    if (controllo_campi()) {
+        // I campi sono validi
+        var existing_err_elems = submit_button.parentNode.querySelectorAll(".err_elem");
+        existing_err_elems.forEach(function(err_elem) {
+            err_elem.remove();
+        });
 
-    
-    document.addEventListener("submit", function(event){
+        var sub_completed_elem = document.createElement("span");
+        sub_completed_elem.textContent = "Inserimento Completato!";
+        sub_completed_elem.style.color = "green";
+        sub_completed_elem.style.fontSize = "0.7em";
+        submit_button.insertAdjacentElement('afterend', sub_completed_elem);
+    }
+    else {
+        // Campi non validi
+        var existing_err_elems = submit_button.parentNode.querySelectorAll(".err_elem");
+        existing_err_elems.forEach(function(err_elem) {
+            err_elem.remove();
+        });
 
-        event.preventDefault();
+        var err_elem = document.createElement("span");
+        err_elem.classList.add("err_elem");
+        err_elem.textContent = "Submit non completata, controlla che tutti i valori del form siano stati inseriti correttamente";
+        err_elem.style.color = "red";
+        err_elem.style.fontSize = "0.7em";
+        submit_button.insertAdjacentElement('afterend', err_elem);
+    }
 
-        var submit_button = document.getElementById("submit_button");
-        var existing_err_elem = submit_button.parentNode.querySelector(".err_elem");
-        
-        if (controllo_luogo_selezioanato() && controllo_giorno() &&
-            controllo_email() && controllo_numero_telefono() &&
-            controllo_indirizzo() && controllo_metodo_di_pagamento() &&
-            controllo_nome_e_cognome() && controllo_numero_carta() && 
-            controllo_cvv() && controllo_scadenza_carta()) {
-                if(existing_err_elem) {
-                    existing_err_elem.remove();
-                }
-                var sub_completed_elem = document.createElement("span");
-                sub_completed_elem.textContent="Inserimento Completato!";
-                sub_completed_elem.style.color="green";
-                sub_completed_elem.style.fontSize="0.7em";
-                submit_button.insertAdjacentElement('afterend',sub_completed_elem);
-                event.target.submit();
-            }
-        else {
-            
-            var err_elem = document.createElement("span");
-            err_elem.classList.add("err_elem");
-            err_elem.textContent="Submit non completata, controlla che tutti i valori del form siano stati inseriti correttamente";
-            err_elem.style.color="red";
-            err_elem.style.fontSize="0.7em";
-            submit_button.insertAdjacentElement('afterend', err_elem);
+});
 
-        }
-
-    })
-})
 
 
 

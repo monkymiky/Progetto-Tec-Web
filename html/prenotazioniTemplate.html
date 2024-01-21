@@ -230,15 +230,15 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
-                        <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40"></span>>
+                        <span id="spanNameSurname"><input id="name_surname" name="nome" maxlength="40"></span>>
                         <label for="name-surname">Nome e cognome:</label>
                     </div>
                     <div class="form-field">
-                        <span id="spanCardNumber"><input id="card-number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span> <!--Necessario pensare ad un metodo di formattazione input-->
+                        <span id="spanCardNumber"><input id="card_number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span> <!--Necessario pensare ad un metodo di formattazione input-->
                         <label for="card-number">Numero della carta:</label>
                     </div>
                     <div class="form-field">
-                        <span id="spanCVV"><input id="card-CVV" name="card_cvv" type="number" max="999" min="000"></span>
+                        <span id="spanCVV"><input id="id_card_cvv" name="card_cvv" type="number" max="999" min="000"></span>
                         <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
                     </div>
                     
@@ -261,6 +261,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         </select>
                         <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
                         <select id="year" name="year">
+                            <option value="2023">2023</option>
                             <option value="2024">2024</option>
                             <option value="2025">2025</option>
                             <option value="2026">2026</option>
