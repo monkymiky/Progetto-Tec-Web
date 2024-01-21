@@ -88,6 +88,8 @@
         margin: 0px;
         text-align: center;
         font-size: 1em; /* in style.css è 1.5*/
+        display: flex;
+        flex-direction: column;
         flex-grow: 1; /*tiene il footer in fondo nel mobile*/
     }
     #prenotazioni-home{
@@ -96,6 +98,8 @@
     }
     /*------ Cosa Offro -----*/
     #CosaOffro{
+        height: auto;
+        max-height: none;
         display: block;
         margin: 0px;
         margin-top: 1em;
@@ -119,19 +123,21 @@
     #CosaOffro div{
         margin:auto;
         margin-top: 1em;
-        padding-top:4em;
+        padding-top:4.4em;
         width: 80%;
         height: 6em;
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: auto;
         border-radius: 1em;
     }
-    
-    #CosaOffro div a.cosa-offro-links{
-        margin: auto;
+    #CosaOffro div a{
         display: block;
-        position: inherit;
+        background-color: white;
+        margin:auto;
+        padding:0.2em;
+        width: 10em;
+        border-radius: 0.5em;
+        border: 1px solid var(--borderColor);
     }
     #img-corso {display: none;}
     #img-massaggio {display: none;}
@@ -145,7 +151,7 @@
         margin-top: 1em;
         border-radius: 1em;
         background-position:left top;
-        margin-bottom: 18em;
+        margin-bottom: 19em;
     }
     #foto-anna-home>div{
         background-color: rgba(0,0,0,0);
@@ -154,13 +160,22 @@
         width: 100%;
         padding-top: 41vw;
     }
-    #foto-anna-home p{
+    #foto-anna-home-descrizione{
         max-height:10em;
-        overflow: clip;
+        position: inherit;
+    }
+    #foto-anna-home-descrizione p{
+        height: auto;
     }
     /*------ Card -----*/
+    #idee_regalo{
+        margin-top: 0em;
+    }
+   
     #idee_regalo h2{
         margin :auto;
+        margin-top: 1em;
+        height: 100%;
     }
     #idee_regalo li{
         width: 100%;
@@ -169,10 +184,7 @@
         width: auto;
         height: 60vw;
     }
-    .gift-card-container li{
-        height: 15em;
-        margin-top: 2em;
-    }
+    
     /*-------
     FOOTER
     ----------*/
