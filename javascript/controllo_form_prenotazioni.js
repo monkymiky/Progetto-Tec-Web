@@ -169,7 +169,7 @@ function controllo_numero_carta() {
 
         var existing_err_elem = numero_della_carta.parentNode.querySelector(".err_elem");
 
-        if (valoreNumeroDellaCarta === "" || valoreNumeroDellaCarta === undefined || !controllo_numero_carta.test(valoreNumeroDellaCarta)) {
+        if (valoreNumeroDellaCarta === "" || valoreNumeroDellaCarta === undefined || !controllo_numero_carta_regex.test(valoreNumeroDellaCarta)) {
             if (!existing_err_elem) {
                 var err_elem = document.createElement("span");
                 err_elem.classList.add("err_elem");
