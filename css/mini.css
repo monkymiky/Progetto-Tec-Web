@@ -87,10 +87,8 @@
         padding:5%;
         margin: 0px;
         text-align: center;
-        font-size: 1em; /* in style.css è 1.5*/
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1; /*tiene il footer in fondo nel mobile*/
+        font-size: 1em; /* in style.css è 1.5*/   
+        flex-grow: 1;/*tiene il footer in fondo nel mobile*/
     }
     #prenotazioni-home{
         margin: auto;
