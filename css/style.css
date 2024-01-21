@@ -497,3 +497,12 @@ ANNA
 #content h2, #content h1, #content h3{
     padding : 1em 0 1em 0;
 }
+
+
+/*-----------------------------------------*/
+.err_elem {
+    display: inline;
+    color: red;
+    font-size: 0.7em;
+    /* Altri stili se necessari */
+}
