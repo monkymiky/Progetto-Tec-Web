@@ -447,10 +447,13 @@ SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
 .card-name-container {
     position: absolute;
     bottom: 10%;
-    left: 0;
+    left: 50%; /* Lo faccio partire da metà */
+    transform: translateX(-50%); /* poi lo sposto verso sinistra per centrarlo*/
     right: 0;
-    background-color: transparent;
+    background-color: white;
+    width: 90%;
     padding: 1.75em;
+    border-radius: 15px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -462,7 +465,7 @@ SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
     left: 0;
     right: 0;
     text-align: center;
-    color: white;
+    color: black;
 }
     
 #img1-1.card-front {
