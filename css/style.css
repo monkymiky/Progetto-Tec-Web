@@ -13,11 +13,11 @@
     --headerText:#262626;
 
     --backgroundColor:#F2DC9B;
-    --textColor:#262626;
+    --textColor:#4e4a4a;
     --borderColor:#E0A841;
 
     --link:#3C2C23;
-    --visitedLink:#6D5940;
+    --visitedLink:#b44b00;
     --hoverLink:#E0A841;
 
     --footerBackground:black;
@@ -88,12 +88,14 @@ nav {
 }
 
 #menu {
-    padding:auto;
     list-style-type: none;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
 }
 
 #menu a {
-    text-decoration: none;
     padding: 0.5em;
     color: var(--link);
 }
@@ -114,8 +116,11 @@ nav {
 }
 
 #menu ul a:hover {
-    background-color: #403B33;
+    background-color: #e4c99e;
     border-radius:1em;
+}
+#menu ul a:visited {
+    color: var(--visitedLink);
 }
 
 #menu ul ul {
@@ -133,14 +138,10 @@ nav {
 
 #breadcrumb {
     text-align:left;
-}
-
-#immagine-carrello {
-    text-indent:-999em; 
-    background-image:url(/media/carrello.svg);
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
+    position: sticky;
+    top: 4em;
+    left: 0px;
+    z-index: 1;
 }
 
 nav a:link {
@@ -155,6 +156,24 @@ nav a:hover {
     color:var(--hoverLink);
 }
 
+button.dropdown__title{
+        padding: 0.5em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        background-color: var(--backgroundColor);
+        border: solid 2px var(--borderColor);
+        border-radius: 0.5em;
+        font-family: var(--font);
+        font-size: 1em;
+        
+}
+#Prestazioni-dropdown{
+    width: max-content;
+    border-radius: 1em;
+}
+ul#Prestazioni-dropdown li{
+    display: block;
+}
 
 /********************************************
 MAIN
@@ -303,12 +322,16 @@ main a:hover {
     border: 0.05em solid var(--borderColor);
     border-radius:0.3em;
 }
-
+#chi-sono{
+    height: 37vw;
+    max-height: 430px;
+}
 #foto-anna-home {
     margin:auto;
     margin-top:2em;
     padding:2em;
-    
+    height: 30vw;
+    max-height: 360px;
     background-image:url(../media/Anna_2.0_rev.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -318,12 +341,15 @@ main a:hover {
 }
 
 #foto-anna-home-descrizione {
+    display: flex;
+    flex-direction: column;
     padding:0.5em;
     width:30%;
     height: 28vw;
     max-height: 336px;
     position: relative;
     left: 65%;
+    top: calc(min(1200px , 100vw)/100 * -33 );
 }
 #foto-anna-home-descrizione p{
     height: 15vw;

@@ -1,41 +1,28 @@
 HTML
+-	verificare h1 h2 etc
 -	card senza link
--	liunk zsoto le card al pdf
+-	link sotto le card al pdf
 	MASSAGGI 
 -	mettere un unico link al pdf	
+	HEADER
+-	modificare tutte le pagine con ad esempio Home >> Anna al posto di solo "ANNA"
 
 
 
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
--	eliminare codice inutilizzato (es: immagine carrello)
-	HEADER
--	dropdown-list per prestazioni stilizzare bottone
--	position sticky navbar + breadcrumb
--	link visitati distinguibili 
--	link sottolineati
+-	rendere elegante il codice - eliminare codice inutilizzato - fondere file css
 	HOME
--	rendere responsive cossa offro
--	immagine anna neve più sottile
+-	aggiungere sfondo al testo nelle card
 	ANNA - FISIOTERAPIA - CORSI - DANZA
--	inserire immagini con float left
--	fare css responsive
+-	fare css carino
 	CONTATTI
 -	fare css responsive
 	PRENOTAZIONI - ADMIN
 -	css responsive 
 -	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
--	form
-	ERROR 404 e 500
--	css responsive
-	MASSAGGI
--	sostituire le immagini in html con css
--	dropdown diventa brutto
--	incorporare file temporanei
 
 CSS mobile
--	min-width-heigh pulsanti 
--	dropdown list sempre aperta
 -	stilizzare prenotazioni.html
 
 TEST
@@ -52,8 +39,7 @@ JS
 -	js controlli input 
 -	js riempi campo data
 -	js scomparsa/comparsa fieldset "dati carta"
-	HEADER
--	js aria-expanded="true"
+
 
 
 

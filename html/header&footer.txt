@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/medium.css" type="text/css" media="screen and (max-width:768px)">
         <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
         <script src="../javascript/navbar.js"></script>
      </head>
@@ -26,7 +27,7 @@
         <nav id="menu">
             <ul>
                <li lang="en">Home</li>
-               <li><a href="../html/anna.html">Anna</a></li>
+               <li><a href="../html/anna.html">Chi sono</a></li>
                <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
                     <!-- aria-expanded needs managed with Javascript -->
                     <button
@@ -40,7 +41,7 @@
                     <ul class="dropdown__menu" id="Prestazioni-dropdown">
                         <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
                         <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza libera</a></li>
                         <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
                 </li>          

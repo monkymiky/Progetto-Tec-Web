@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/medium.css" type="text/css" media="screen and (max-width:768px)">
         <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
         <script src="../javascript/navbar.js"></script>
      </head>
@@ -30,6 +31,7 @@
                <li class="dropdown"> <!-- preso da : https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/ -->
                     <!-- aria-expanded needs managed with Javascript -->
                     <button
+                        id = "prestazioni"
                         type="button"
                         class="dropdown__title"
                         aria-expanded="false"
@@ -40,7 +42,7 @@
                     <ul class="dropdown__menu" id="Prestazioni-dropdown">
                         <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
                         <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                        <li><a href="/html/prestazioni/danza.html">Danza</a></li>
+                        <li><a href="/html/prestazioni/danza.html">Danza libera</a></li>
                         <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
                 </li>          
@@ -68,7 +70,8 @@
                 <div id="img-massaggio"></div>
             </div>
             
-            <div id="foto-anna-home">
+            <div id="chi-sono">
+                <div id="foto-anna-home"></div>
                 <div id="foto-anna-home-descrizione">
                     <h2>Anna Nesler</h2>
                     <h3>Fisioterapista e Massaggiatrice</h3>
@@ -80,10 +83,11 @@
                     nulla nisl, hendrerit a molestie.</p>
                     <a href="anna.html">Scopri di più</a>
                 </div>
-            </div>            
+            </div>
+           
+                     
             <div id="idee_regalo">
                 <h2>Idee regalo</h2>
-                <a href="Prestazioni.html" id="vedi-di-piu">Vedi di più</a>
                 <ul class="gift-card-container">
                     <!-- Gift Card 1 -->
                     <li id="gift-card-1">
@@ -125,6 +129,7 @@
                         </a>
                     </li>
                 </ul>
+                <a href="Prestazioni.html" id="vedi-di-piu">Vedi di più</a>
             </div>
         </main>
     

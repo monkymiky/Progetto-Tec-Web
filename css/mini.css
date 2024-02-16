@@ -29,6 +29,8 @@
         border-radius: 0.5em;
         font-size: 2em;
         display: inline;
+        min-width: 24px;
+        min-height: 24px;
     }
     #menu {
         display: none;
@@ -79,7 +81,15 @@
     #menu.active {
         display: flex;
     }
-
+    #breadcrumb.active{
+        top:24em;
+    }
+    #breadcrumb{
+        top:5em;
+    }
+    #menu ul ul {
+        display: inherit;
+    }
     /*---------------
     MAIN
     ------------------*/
@@ -89,6 +99,10 @@
         text-align: center;
         font-size: 1em; /* in style.css è 1.5*/   
         flex-grow: 1;/*tiene il footer in fondo nel mobile*/
+    }
+    a , button{
+        min-width: 24px;
+        min-height: 24px;
     }
     #prenotazioni-home{
         margin: auto;
@@ -140,6 +154,10 @@
     #img-corso {display: none;}
     #img-massaggio {display: none;}
     /*------ Descrizione Anna -----*/
+    #chi-sono{
+        height: 25em;
+
+    }
     #foto-anna-home{
         width: 100%;
         height:37vw;
@@ -149,14 +167,14 @@
         margin-top: 1em;
         border-radius: 1em;
         background-position:left top;
-        margin-bottom: 19em;
     }
-    #foto-anna-home>div{
+    #foto-anna-home-descrizione{
+        display: block;
+        z-index: 2;
         background-color: rgba(0,0,0,0);
         border-radius: 1em;
         padding: 0em;
         width: 100%;
-        padding-top: 41vw;
     }
     #foto-anna-home-descrizione{
         max-height:10em;
@@ -164,6 +182,7 @@
     }
     #foto-anna-home-descrizione p{
         height: auto;
+        max-height: 7em;
     }
     /*------ Card -----*/
     #idee_regalo{
@@ -174,6 +193,7 @@
         margin :auto;
         margin-top: 1em;
         height: 100%;
+        margin-bottom: 1em;
     }
     #idee_regalo li{
         width: 100%;

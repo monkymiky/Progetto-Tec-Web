@@ -12,15 +12,23 @@ body {
   main {
     text-align: center;
     animation: fadeIn 1s ease-in-out;
+    
   }
   
   .messaggio-errore-404 {
+    margin-top: 2em;
     font-size: 3em;
+    
     color: #d90429;
     margin-bottom: 0.5em;
   }
-  
+  .messaggio-errore-500 {
+    margin-top: 2em;
+    line-height: 1em;
+  }
+  h1{margin-bottom: 0.4em;line-height: 1em;}
   h2 {
+    line-height: 1em;
     color: #6a0572;
   }
   

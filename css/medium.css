@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px), (max-device-width: 768px) {
+    #foto-anna-home {
+        height: 25vw;
+        border-radius:30px;
+    }
+    #foto-anna-home-descrizione {
+        
+        max-height: 23vw;
+        padding:0.5em;
+        width:40%;
+        max-height: 336px;
+        position: relative;
+        left: 50%;
+        top: -32vw;
+    }
+    #foto-anna-home-descrizione p{
+        overflow :hidden;
+    }
+    #descrizione-foto-anna-home {
+        background-color: white;
+        border-radius: 1em;
+    }
+    
+}
