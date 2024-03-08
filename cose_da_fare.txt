@@ -1,8 +1,6 @@
 HTML
 -	verificare h1 h2 etc
 -	link sotto le card al pdf
-	MASSAGGI 
--	mettere un unico link al pdf
 
 
 
