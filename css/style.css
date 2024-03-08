@@ -525,14 +525,54 @@ footer {
 /********************************************
 ANNA
 ********************************************/
-#anna-img {
-    width: 30%;
-    float: right ;
+.anna-page #anna-img {
+    width: 100%;
+    max-width: 400px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--cardBorderRadius);
+}
+
+.anna-page #content h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: var(--headerText);
+}
+
+.anna-page #content h2 {
+    color: var(--headerText);
     margin-top: 2em;
 }
 
-#content h2, #content h1, #content h3{
-    padding : 1em 0 1em 0;
+.anna-page #content p, 
+.anna-page #content dl, 
+.anna-page #content ul {
+    margin-bottom: 1em;
+    font-size: 1em; 
+    line-height: 1.5em;
+}
+
+.anna-page dl dt {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.anna-page dl dd {
+    margin-left: 20px;
+}
+
+.anna-page h3 {
+    margin-top: 2em;
+    color: var(--headerText);
+}
+
+.anna-page ul {
+    margin-left: 20px;
+}
+
+.anna-page li {
+    margin-bottom: 0.5em;
 }
 
 
