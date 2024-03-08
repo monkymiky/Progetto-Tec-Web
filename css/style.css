@@ -575,6 +575,90 @@ ANNA
     margin-bottom: 0.5em;
 }
 
+/********************************************
+CONTATTI
+********************************************/
+.contact-page #contactForm {
+    max-width: 37.5em;
+    margin: 1.25em auto;
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 0.5em;
+}
+
+.contact-page legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.contact-page fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-page .form-field {
+    margin-bottom: 1em;
+}
+
+.contact-page label {
+    display: block;
+    font-weight: bold;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border: 0.0625em solid;
+    border-radius: 0.25em;
+}
+
+.contact-page #sendButton {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.625em 0.9375em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.contact-page #sendButton:hover {
+    background-color: #1d8623;
+}
+
+.contact-page #content h1, 
+.contact-page #content h2, 
+.contact-page #content h3, 
+.contact-page #content p, 
+.contact-page #content dl, 
+.contact-page #content ul {
+    color: var(--headerText);
+    margin-top: 1em;
+    font-size: 1em; 
+    line-height: 1.5em;
+}
+
+.contact-page #content dl dt {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.contact-page #content dl dd {
+    margin-left: 20px;
+}
+
+.contact-page #content ul {
+    margin-left: 20px;
+}
+
+.contact-page #content li {
+    margin-bottom: 0.5em;
+}
+
+
 
 /*-----------------------------------------*/
 .err_elem {
