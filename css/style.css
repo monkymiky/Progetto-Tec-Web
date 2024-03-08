@@ -658,6 +658,138 @@ CONTATTI
     margin-bottom: 0.5em;
 }
 
+/********************************************
+MASSAGGI
+********************************************/
+.massages-page .shop-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .massages-page .card-name-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: white;
+    padding: 1.75em;
+    border-radius: var(--cardBorderRadius);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 60%;
+  }
+  
+  
+  .massages-page .card-name {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+  }
+  
+  
+  .massages-page .card {
+    max-width: 100%;
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    perspective: 62.5em;
+    margin: 0.625em;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .massages-page .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+  }
+  
+  .massages-page .card-front,
+  .massages-page .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25em;
+  }
+  
+  .massages-page .card-front {
+    border-radius: var(--cardBorderRadius);
+  }
+  
+  .massages-page .card-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 1.2em;
+  }
+  
+  .massages-page .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .massages-page .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .massages-page .button-text {
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    color: black;
+  }
+  
+  .massages-page input[type="button"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 1em 2em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3125em;
+    cursor: pointer;
+  }
+  
+  .massages-page input[type="button"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Immagini dei massaggi */
+  .massages-page #img1.card-front, .massages-page #img2.card-front, .massages-page #img3.card-front, .massages-page #img4.card-front, .massages-page #img5.card-front, .massages-page #img6.card-front, .massages-page #img7.card-front, .massages-page #img8.card-front {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .massages-page #img1.card-front { background-image: url("../media/card/card1.jpg"); }
+  .massages-page #img2.card-front { background-image: url("../media/card/card2.jpg"); }
+  .massages-page #img3.card-front { background-image: url("../media/card/card3.jpg"); }
+  .massages-page #img4.card-front { background-image: url("../media/card/card4.jpg"); }
+  .massages-page #img5.card-front { background-image: url("../media/card/card5.jpg"); }
+  .massages-page #img6.card-front { background-image: url("../media/card/card6.jpg"); }
+  .massages-page #img7.card-front { background-image: url("../media/card/card7.jpg"); }
+  .massages-page #img8.card-front { background-image: url("../media/card/card8.jpg"); }
+  
 
 
 /*-----------------------------------------*/
