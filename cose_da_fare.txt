@@ -4,10 +4,9 @@ HTML
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	rendere elegante il codice - eliminare codice inutilizzato 
--	invertire ordine label e input
 	PRENOTAZIONI - ADMIN
 -	css responsive 
--	css form
+-	css form (ritocchi)
 -	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
 
 CSS mobile
