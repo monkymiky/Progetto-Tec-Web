@@ -4,7 +4,6 @@ HTML
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	rendere elegante il codice - eliminare codice inutilizzato 
-- 	fondere file css login errori 
 -	invertire ordine label e input
 	PRENOTAZIONI - ADMIN
 -	css responsive 
