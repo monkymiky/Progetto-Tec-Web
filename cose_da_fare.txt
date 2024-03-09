@@ -2,20 +2,12 @@ HTML
 -	verificare h1 h2 etc
 -	card senza link
 -	link sotto le card al pdf
-	MASSAGGI 
--	mettere un unico link al pdf	
 	HEADER
 -	modificare tutte le pagine con ad esempio Home >> Anna al posto di solo "ANNA"
 
-
-
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
--	rendere elegante il codice - eliminare codice inutilizzato - fondere file css
-	HOME
--	aggiungere sfondo al testo nelle card
-	ANNA - FISIOTERAPIA - CORSI - DANZA
--	fare css carino
+-	rendere elegante il codice - eliminare codice inutilizzato - fondere file css login admin errori 
 	CONTATTI
 -	fare css responsive
 	PRENOTAZIONI - ADMIN
