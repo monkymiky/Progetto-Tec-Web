@@ -8,14 +8,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type="text/css" href="../../css/massaggi.css" >
     <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen"> 
     <link rel="stylesheet" href="../../css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="../../css/mini.css" type="text/css" media="screen and (max-width:520px)">
     <script src="../../javascript/navbar.js"></script>
  </head>
 
- <body>
+ <body class="massages-page">
 
     <!--    HEADER    -->    
     <header>  
@@ -52,7 +51,7 @@
 
       <!--    BREADCRUMB    -->
       <nav id="breadcrumb">
-          <p>Ti trovi in: Massaggi</p>
+          <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prestazioni>Massaggi</p>
       </nav>
   
       <main id="content">
@@ -70,11 +69,7 @@
                 80 minuti <br />
                 €75
               </p>
-            </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div>          
+            </div>         
           </li>
 
           <li class="card">
@@ -92,10 +87,6 @@
                 €80
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -112,10 +103,6 @@
                 €70
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -132,10 +119,6 @@
                 €30
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -152,10 +135,6 @@
                 €60
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -172,10 +151,6 @@
                 €75
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -190,10 +165,6 @@
                 €240
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
 
           <li class="card">
@@ -208,12 +179,13 @@
                 €170
               </p>
             </div>
-            <div class="button-container">
-              <p class="button-text">Per maggiori informazioni: </p>
-              <input type="button" value="PDF" onclick="" />
-            </div> 
           </li>
         </ul>
+
+        <div class="button-container">
+          <p class="button-text">Per maggiori informazioni:</p>
+          <input type="button" value="PDF" onclick="window.open('Prestazioni.pdf', '_blank')" />
+      </div>
 
       </main>
       <!--    FOOTER    -->

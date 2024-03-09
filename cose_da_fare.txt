@@ -1,17 +1,14 @@
 HTML
 -	verificare h1 h2 etc
--	card senza link
--	link sotto le card al pdf
-	HEADER
--	modificare tutte le pagine con ad esempio Home >> Anna al posto di solo "ANNA"
 
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
--	rendere elegante il codice - eliminare codice inutilizzato - fondere file css login admin errori 
-	CONTATTI
--	fare css responsive
+-	rendere elegante il codice - eliminare codice inutilizzato 
+- 	fondere file css login errori 
+-	invertire ordine label e input
 	PRENOTAZIONI - ADMIN
 -	css responsive 
+-	css form
 -	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
 
 CSS mobile
@@ -33,8 +30,6 @@ JS
 -	js scomparsa/comparsa fieldset "dati carta"
 
 
-
-
 RELAZIONE PROGETTO
 
 Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
@@ -42,10 +37,5 @@ Parise Luca - luca.parise.3@studenti.unipd.it -2043677
 Cristo Marco - marco.cristo@studenti.unipd.it - 1232582
 Leonetti Elia - elia.leo2000@gmail.com - 2009998
 -------------------------------------------------------------------------------------------------------
-chiedere alla prof:
--	come bisogna gestire quei pochi dati che salviamo degli utenti. 
-	si può mettere un banner "se vuoi puoi scrivere un email per modificare/cancellare i dati"?
-	potrebbe bastare introdrre una funzionalità che elimina tutti i dati del passato? 
--	come gestire la breadcrumb (danza o prestazioni>danza ? -- home>anna o anna? )
 
 

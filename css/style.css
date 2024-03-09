@@ -525,15 +525,271 @@ footer {
 /********************************************
 ANNA
 ********************************************/
-#anna-img {
-    width: 30%;
-    float: right ;
+.anna-page #anna-img {
+    width: 100%;
+    max-width: 400px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--cardBorderRadius);
+}
+
+.anna-page #content h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: var(--headerText);
+}
+
+.anna-page #content h2 {
+    color: var(--headerText);
     margin-top: 2em;
 }
 
-#content h2, #content h1, #content h3{
-    padding : 1em 0 1em 0;
+.anna-page #content p, 
+.anna-page #content dl, 
+.anna-page #content ul {
+    margin-bottom: 1em;
+    font-size: 1em; 
+    line-height: 1.5em;
 }
+
+.anna-page dl dt {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.anna-page dl dd {
+    margin-left: 20px;
+}
+
+.anna-page h3 {
+    margin-top: 2em;
+    color: var(--headerText);
+}
+
+.anna-page ul {
+    margin-left: 20px;
+}
+
+.anna-page li {
+    margin-bottom: 0.5em;
+}
+
+/********************************************
+CONTATTI
+********************************************/
+.contact-page #contactForm {
+    max-width: 37.5em;
+    margin: 1.25em auto;
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 0.5em;
+}
+
+.contact-page legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.contact-page fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-page .form-field {
+    margin-bottom: 1em;
+}
+
+.contact-page label {
+    display: block;
+    font-weight: bold;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border: 0.0625em solid;
+    border-radius: 0.25em;
+}
+
+.contact-page #sendButton {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.625em 0.9375em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.contact-page #sendButton:hover {
+    background-color: #1d8623;
+}
+
+.contact-page #content h1, 
+.contact-page #content h2, 
+.contact-page #content h3, 
+.contact-page #content p, 
+.contact-page #content dl, 
+.contact-page #content ul {
+    color: var(--headerText);
+    margin-top: 1em;
+    font-size: 1em; 
+    line-height: 1.5em;
+}
+
+.contact-page #content dl dt {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.contact-page #content dl dd {
+    margin-left: 20px;
+}
+
+.contact-page #content ul {
+    margin-left: 20px;
+}
+
+.contact-page #content li {
+    margin-bottom: 0.5em;
+}
+
+/********************************************
+MASSAGGI
+********************************************/
+.massages-page .shop-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .massages-page .card-name-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: white;
+    padding: 1.75em;
+    border-radius: var(--cardBorderRadius);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 60%;
+  }
+  
+  
+  .massages-page .card-name {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+  }
+  
+  
+  .massages-page .card {
+    max-width: 100%;
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    perspective: 62.5em;
+    margin: 0.625em;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .massages-page .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+  }
+  
+  .massages-page .card-front,
+  .massages-page .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25em;
+  }
+  
+  .massages-page .card-front {
+    border-radius: var(--cardBorderRadius);
+  }
+  
+  .massages-page .card-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 1.2em;
+  }
+  
+  .massages-page .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .massages-page .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .massages-page .button-text {
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    color: black;
+  }
+  
+  .massages-page input[type="button"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 1em 2em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3125em;
+    cursor: pointer;
+  }
+  
+  .massages-page input[type="button"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Immagini dei massaggi */
+  .massages-page #img1.card-front, .massages-page #img2.card-front, .massages-page #img3.card-front, .massages-page #img4.card-front, .massages-page #img5.card-front, .massages-page #img6.card-front, .massages-page #img7.card-front, .massages-page #img8.card-front {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .massages-page #img1.card-front { background-image: url("../media/card/card1.jpg"); }
+  .massages-page #img2.card-front { background-image: url("../media/card/card2.jpg"); }
+  .massages-page #img3.card-front { background-image: url("../media/card/card3.jpg"); }
+  .massages-page #img4.card-front { background-image: url("../media/card/card4.jpg"); }
+  .massages-page #img5.card-front { background-image: url("../media/card/card5.jpg"); }
+  .massages-page #img6.card-front { background-image: url("../media/card/card6.jpg"); }
+  .massages-page #img7.card-front { background-image: url("../media/card/card7.jpg"); }
+  .massages-page #img8.card-front { background-image: url("../media/card/card8.jpg"); }
+  
 
 
 /*-----------------------------------------*/
