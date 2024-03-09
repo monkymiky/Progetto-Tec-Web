@@ -52,10 +52,14 @@
         <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
 
             <form method="POST" action="../php/login.php" >
-                <label for="user"><span lang="en">Username:</span></label>
-                <input type="text" id="user" name="user" maxlength="40">
-                <label for="password"><span lang="en">Password:</span></label>
-                <input type="password" id="password" name="password" maxlength="40">
+                <div class="form-field">
+                    <input type="text" id="user" name="user" maxlength="40">
+                    <label for="user"><span lang="en">Username:</span></label>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" name="password" maxlength="40">
+                    <label for="password"><span lang="en">Password:</span></label>
+                </div>
                 <input type="submit" id="submit" name="submit" value="login"/>
             </form>
         </main>
