@@ -599,6 +599,8 @@ CONTATTI
 }
 
 .contact-page .form-field {
+    display: flex;
+    flex-direction: column-reverse;
     margin-bottom: 1em;
 }
 
