@@ -882,6 +882,13 @@ ADMIN LOGIN
     margin-top: 2em;
 }
 
+.login-page .form-field {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
 .login-page #content p {
     order: 2;
     margin-top: 1em;
@@ -889,18 +896,22 @@ ADMIN LOGIN
     max-width: 90%;
 }
 
-.login-page #content form {
-    order: 1;
+.login-page #content form,
+.login-page input {
     width: 100%;
-    max-width: 25em;
-    padding: 1.25em;
+    padding: 0.5em;
     box-sizing: border-box;
+}
+
+.login-page #content form {
+    max-width: 25em;
     border: 0.0625em solid;
     border-radius: 0.5em;
     background-color: #fff;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1em;
+    padding: 1em;
 }
 
 .login-page label {
@@ -909,27 +920,23 @@ ADMIN LOGIN
 }
 
 .login-page input {
-    width: 100%;
-    padding: 0.5em;
-    box-sizing: border-box;
-    border: 0.0625em solid;
     border-radius: 0.25em;
+    border: 0.0625em solid;
 }
 
 .login-page #submit {
-    margin-top: 0.5em;
     background-color: #4caf50;
     color: #fff;
-    padding: 0.625em 0.9375em;
     border: none;
     border-radius: 0.25em;
     cursor: pointer;
+    display: block;
+    margin: 0.5em auto;
 }
 
 .login-page #submit:hover {
     background-color: #1d8623;
 }
-
 /********************************************
 FORM PRENOTAZIONI
 ********************************************/
