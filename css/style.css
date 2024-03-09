@@ -790,7 +790,84 @@ MASSAGGI
   .massages-page #img7.card-front { background-image: url("../media/card/card7.jpg"); }
   .massages-page #img8.card-front { background-image: url("../media/card/card8.jpg"); }
   
-
+/********************************************
+ERRORI
+********************************************/
+.error-page body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7d794;
+    color: #6a0572;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+  
+.error-page main {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+  
+.error-page .messaggio-errore-404 {
+    margin-top: 2em;
+    font-size: 3em;   
+    color: #d90429;
+    margin-bottom: 0.5em;
+}
+.error-page .messaggio-errore-500 {
+    margin-top: 2em;
+    line-height: 1em;
+}
+.error-page h1 {
+    margin-bottom: 0.4em;
+    line-height: 1em;
+}
+.error-page h2 {
+    line-height: 1em;
+    color: #6a0572;
+}
+  
+.error-page p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    color: #6a0572;
+}
+  
+.error-page .home-button-container {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 2em;
+    background-color: #833471;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.8em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+  
+.error-page .home-button-container:hover,
+.error-page .home-button-container:focus {
+    background-color: #6a0572;
+    outline: none;
+}
+  
+.error-page .messaggio-errore-404, .error-page h2, .error-page p, .error-page .home-button-container {
+    outline: none;
+}
+  
+.error-page .home-button-container:focus {
+    box-shadow: 0 0 0 0.2em #d90429, 0 0 0 0.4em #f7d794;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
 
 /*-----------------------------------------*/
 .err_elem {
