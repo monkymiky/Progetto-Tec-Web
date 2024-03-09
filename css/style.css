@@ -928,6 +928,83 @@ ADMIN LOGIN
     background-color: #1d8623;
 }
 
+/********************************************
+FORM PRENOTAZIONI
+********************************************/
+.reservation-page #formPrenota {
+    max-width: 37.5em;
+    margin: 1.25em auto;
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 0.5em;
+}
+
+.reservation-page legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.reservation-page fieldset {
+    border: none;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}
+
+.reservation-page .form-field {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.reservation-page label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.reservation-page input[type="text"],
+.reservation-page input[type="password"],
+.reservation-page input[type="email"],
+.reservation-page input[type="tel"],
+.reservation-page input[type="number"],
+.reservation-page textarea,
+.reservation-page select {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.reservation-page #submit_button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.625em 0.9375em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 1em auto 0;
+}
+
+.reservation-page #submit_button:hover {
+    background-color: #1d8623;
+}
+
+.reservation-page input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+.reservation-page select {
+    padding: 0.5em;
+    background-color: #f9f9f9;
+}
 
 /*-----------------------------------------*/
 .err_elem {
