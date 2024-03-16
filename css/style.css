@@ -799,3 +799,8 @@ MASSAGGI
     font-size: 0.7em;
     /* Altri stili se necessari */
 }
+
+#login_error {
+    color: red;
+    display: none;
+}
