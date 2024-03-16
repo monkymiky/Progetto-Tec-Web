@@ -599,6 +599,8 @@ CONTATTI
 }
 
 .contact-page .form-field {
+    display: flex;
+    flex-direction: column-reverse;
     margin-bottom: 1em;
 }
 
@@ -790,7 +792,388 @@ MASSAGGI
   .massages-page #img7.card-front { background-image: url("../media/card/card7.jpg"); }
   .massages-page #img8.card-front { background-image: url("../media/card/card8.jpg"); }
   
+/********************************************
+ERRORI
+********************************************/
+.error-page body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7d794;
+    color: #6a0572;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+  
+.error-page main {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+  
+.error-page .messaggio-errore-404 {
+    margin-top: 2em;
+    font-size: 3em;   
+    color: #d90429;
+    margin-bottom: 0.5em;
+}
+.error-page .messaggio-errore-500 {
+    margin-top: 2em;
+    line-height: 1em;
+}
+.error-page h1 {
+    margin-bottom: 0.4em;
+    line-height: 1em;
+}
+.error-page h2 {
+    line-height: 1em;
+    color: #6a0572;
+}
+  
+.error-page p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    color: #6a0572;
+}
+  
+.error-page .home-button-container {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 2em;
+    background-color: #833471;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.8em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+  
+.error-page .home-button-container:hover,
+.error-page .home-button-container:focus {
+    background-color: #6a0572;
+    outline: none;
+}
+  
+.error-page .messaggio-errore-404, .error-page h2, .error-page p, .error-page .home-button-container {
+    outline: none;
+}
+  
+.error-page .home-button-container:focus {
+    box-shadow: 0 0 0 0.2em #d90429, 0 0 0 0.4em #f7d794;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
 
+/********************************************
+ADMIN LOGIN
+********************************************/
+.login-page #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.login-page .form-field {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.login-page #content p {
+    order: 2;
+    margin-top: 1em;
+    text-align: center;
+    max-width: 90%;
+}
+
+.login-page #content form,
+.login-page input {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.login-page #content form {
+    max-width: 25em;
+    border: 0.0625em solid;
+    border-radius: 0.5em;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.login-page label {
+    display: block;
+    font-weight: bold;
+}
+
+.login-page input {
+    border-radius: 0.25em;
+    border: 0.0625em solid;
+}
+
+.login-page #submit {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    display: block;
+    margin: 0.5em auto;
+}
+
+.login-page #submit:hover {
+    background-color: #1d8623;
+}
+/********************************************
+FORM PRENOTAZIONI
+********************************************/
+.reservation-page #formPrenota {
+    max-width: 37.5em;
+    margin: 1.25em auto;
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 0.5em;
+}
+
+.reservation-page legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.reservation-page fieldset {
+    border: none;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}
+
+.reservation-page .form-field {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.reservation-page label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.reservation-page input[type="text"],
+.reservation-page input[type="password"],
+.reservation-page input[type="email"],
+.reservation-page input[type="tel"],
+.reservation-page input[type="number"],
+.reservation-page textarea,
+.reservation-page select {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.reservation-page #submit_button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.625em 0.9375em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 1em auto 0;
+}
+
+.reservation-page #submit_button:hover {
+    background-color: #1d8623;
+}
+
+.reservation-page input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+.reservation-page select {
+    padding: 0.5em;
+    background-color: #f9f9f9;
+}
+
+/********************************************
+CALENDARIO
+********************************************/
+/*Gestione allineamento calendario / box selezione slot*/
+#calendario-slot {
+    display:flex;
+    flex-direction:row;
+    flex-shrink:1;
+}
+
+@media (max-width: 690px) {
+    #calendario-slot {
+        flex-direction: column;
+    }
+}
+
+/*Stile calendario + intestazione + controlli*/
+#calendario {
+    margin:auto;
+    list-style-type:none;
+
+    display:grid;
+    grid-template-columns:repeat(7, 1fr); /*old: 5em*/
+    grid-template-rows:repeat(8, 1fr); /*old: 1.8em*/
+
+    background-color:lightgrey;
+    grid-gap:0.3em;
+    border: solid 0.05em grey;
+    text-align:center;
+}
+
+#calendario a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+#calendario li {
+    scroll-behavior:smooth;
+}
+
+#anno {
+    grid-row:1;
+    grid-column:1/8;
+}
+
+#mese {
+    grid-column:2/7
+}
+
+#buttonAvanti, #buttonIndietro {
+    width:100%;
+    height:100%;
+    border:0em;
+    background-color:white;
+    transition-duration:0.5s;
+}
+
+#buttonAvanti:hover, #buttonIndietro:hover {
+    background-color:grey;
+    color:white;
+}
+
+/*Stili tag giorni del mese*/
+
+#calendario .labelgiorno {
+    background-color: black;
+    color:white;
+    grid-row:3;
+}
+
+ol {
+    list-style-type:none;
+    margin:auto;
+    padding:0.5em;
+}
+
+#calendario li {
+    background-color: white;
+    transition-duration:0.5s;
+}
+
+#calendario li:not(.nextMonth, .labelgiorno, #mese, #anno):hover {
+    cursor:pointer;
+    background-color:darkgray;
+    color:white;
+}
+
+/*Stili box di selezione slot*/
+
+#selettoreSlot {
+    background-color: white;
+    border: solid 0.05em grey;
+    border-radius:0.5em;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#selettoreSlot>li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
+    display:none;
+}
+
+#selettoreSlot>li:target:not(#slotTitle1) {
+    display:block;
+    grid-row:2;
+    grid-column:2;
+}
+
+#listaOrari1h {
+    grid-row:2;
+    grid-column:1;
+}
+
+.slotDisponibile button, .slotDisponibile3h button {
+    width:100%;
+    font:--var(font);
+    border: solid 0.05em lightgrey;
+    background-color:lightgreen;
+}
+
+.slotNonDisponibile button {
+    width:100%;
+    font:--var(font);
+    border: solid 0.05em lightgrey;
+    background-color:bisque;
+}
+
+.slotDisponibile button:hover, .slotDisponibile3h button:hover {
+    background-color:darkgreen;
+    color:white;
+}
+
+/*TEMP*/
+#testoPlaceholder {
+    display:none;
+}
+
+#slotTitle1 {
+    grid-row:1;
+    grid-column:1/3;
+}
+
+/***********************************************
+CALENDARIO / JS-related
+***********************************************/
+.nextMonth a {
+    background-color: bisque;
+
+    display:inline-block;
+    pointer-events: none;
+    text-decoration: none;
+    color: currentColor;
+}
+
+.hiddenObj {
+    display:none;
+}
 
 /*-----------------------------------------*/
 .err_elem {
