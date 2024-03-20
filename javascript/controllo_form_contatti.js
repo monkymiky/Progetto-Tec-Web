@@ -1,125 +1,117 @@
-document.addEventListener("DOMContentLoaded", function(){
-    var nome = document.getElementById("name");
-    var email = document.getElementById("email");
-    var oggetto = document.getElementById("subject");
-    var messaggio = document.getElementById("emailContent");
-    var form = document.getElementById("contactForm");
-    var email_regex = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
-    
-
-    nome.addEventListener("input", function(){
-        var input_nome = nome.value;
-
-        // Verifica se esiste già un errore
-        var existing_err_elem = nome.parentNode.querySelector(".err_elem");
-        if(input_nome === "" || input_nome === undefined){
-            if(!existing_err_elem) {
-                // Crea e inserisce un messaggio di errore
-                var err_elem = document.createElement("span");
-                err_elem.classList.add("err_elem");
-                err_elem.textContent = "Inserire un nome";
-                err_elem.style.color = "red";
-                err_elem.style.fontSize = "0.7em";
-                nome.insertAdjacentElement('beforebegin', err_elem);
-            }
-            
-        } else {
-            // Rimuovi l'errore se esiste
-            if(existing_err_elem) {
-                existing_err_elem.remove();
-            }
-        }
-    });
-
-    email.addEventListener("input", function(){
-        var input_email = email.value;
-
-        // Verifica se esiste già un errore
-        var existing_err_elem = email.parentNode.querySelector(".err_elem");
-        if(input_email === "" || input_email === undefined || !email_regex.test(input_email)){
-            if(!existing_err_elem) {
-                // Crea e inserisce un messaggio di errore
-                var err_elem = document.createElement("span");
-                err_elem.classList.add("err_elem");
-                err_elem.textContent="Inserire e-mail valida";
-                err_elem.style.color = "red";
-                err_elem.style.fontSize = "0.7em";
-                err_elem.style.marginLeft = "1em";
-                email.insertAdjacentElement('beforebegin', err_elem);
-            }
-            
-        } else {
-            // Rimuovi l'errore se esiste
-            if(existing_err_elem) {
-                existing_err_elem.remove();
-            }
-            
-        }
-    });
-
-    oggetto.addEventListener("input", function(){
-        var input_oggetto = oggetto.value;
-
-        // Verifica se esiste già un errore
-        var existing_err_elem = oggetto.parentNode.querySelector(".err_elem");
-        if(input_oggetto === "" || input_oggetto === undefined){
-            if(!existing_err_elem) {
-                // Crea e inserisce un messaggio di errore
-                var err_elem = document.createElement("span");
-                err_elem.classList.add("err_elem");
-                err_elem.textContent = "Inserisci un oggetto";
-                err_elem.style.color = "red";
-                err_elem.style.fontSize = "0.7em";
-                err_elem.style.marginLeft = "1em";
-                oggetto.insertAdjacentElement('beforebegin', err_elem);
-            }
-            
-        } else {
-            // Rimuovi l'errore se esiste
-            if(existing_err_elem) {
-                existing_err_elem.remove();
-            }
-            
-        }
-    });
-
-    messaggio.addEventListener("input", function(){
-        var input_messaggio = messaggio.value;
-
-        // Verifica se esiste già un errore
-        var existing_err_elem = messaggio.parentNode.querySelector(".err_elem");
-        if(input_messaggio === "" || input_messaggio === undefined){
-            if(!existing_err_elem) {
-                // Crea e inserisce un messaggio di errore
-                var err_elem = document.createElement("span");
-                err_elem.classList.add("err_elem");
-                err_elem.textContent = "Scrivi qualcosa :)";
-                err_elem.style.color = "red";
-                err_elem.style.fontSize = "0.7em";
-                err_elem.style.marginLeft = "1em";
-                messaggio.insertAdjacentElement('beforebegin', err_elem);
-            }
-        } else {
-            // Rimuovi l'errore se esiste
-            if(existing_err_elem) {
-                existing_err_elem.remove();
-            }
-
-        }
-    });
-
-    //id sendButton
-    form.addEventListener("submit", function(e){
-        e.preventDefault();
-        var errorElements = form.querySelectorAll(".err_elem");
-        if(errorElements.length > 0) {
-            alert("Completa tutti i campi correttamente prima dell'invio");
-        }
-        else {
-            form.submit();
-            alert("Invio completato");
-        }
-    });
 
 
-});
+
+var email_regex = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+var nome_regex = /^[a-zA-Z0-9\s]+$/;
+var regex = /^[a-zA-Z0-9\s.,?!@#&$%*()+-]+$/;
+//form________________________________________________________
+var elNome = document.getElementById('name');
+var elEmail = document.getElementById('email');
+var elOggetto = document.getElementById('subject');
+var elScriviQui = document.getElementById('emailContent');
+var submit = document.getElementById('sendButton');
+//____________________________________________________________
+
+//disabilito la possibilità di inviare cosi posso fare i controlli
+
+
+/*
+    Come fare a fare i controlli ? 
+    creo prima di tutto delle funzioni che controllino i valori contenuti in ogni campo
+    in particolare la email dovrà rispettare un certo tipo di espressione regolare 
+
+*/
+var tmp1;
+var tmp2;
+
+function checkNome(){
+    tmp1 = document.getElementById('errContattiNome');
+    tmp2 = document.getElementById('noErrContattiNome');
+    if(elNome.value===undefined || elNome.value==="" || !nome_regex.test(elNome.value)){
+        tmp1.style.display='inline';
+        tmp2.style.display='none';
+        return false;
+    }
+    else {
+        tmp1.style.display='none';
+        tmp2.style.display='inline';
+        return true;
+    }
+};
+
+function checkEmail() {
+    tmp1 = document.getElementById('errContattiEmail');
+    tmp2 = document.getElementById('noErrContattiEmail');
+    if(elEmail.value=="" || elEmail==undefined || !email_regex.test(elEmail.value)) {
+        tmp1.style.display='inline';
+        tmp2.style.display='none';
+        return false;
+    }
+    else {
+        tmp1.style.display='none';
+        tmp2.style.display='inline';
+        return true;
+    }
+}
+
+function checkOggetto() {
+    tmp1 = document.getElementById('errContattiOggetto');
+    tmp2 = document.getElementById('noErrContattiOggetto');
+    if(elOggetto.value=="" || elOggetto.value==undefined || !nome_regex.test(elOggetto.value)) {
+        tmp1.style.display = 'inline';
+        tmp2.style.display = 'none';
+        return false;
+    }
+    else {
+        tmp1.style.display = 'none';
+        tmp2.style.display = 'inline';
+        return true;
+    }
+}
+
+function checkScriviQui() {
+    tmp1 = document.getElementById('errContattiScriviQui');
+    tmp2 = document.getElementById('noErrContattiScriviQui');
+    if(elScriviQui.value=="" || elScriviQui.value==undefined || !regex.test(elScriviQui.value)) {
+        tmp1.style.display='inline';
+        tmp2.style.display='none';
+        return false;
+    }
+    else {
+        tmp1.style.display = 'none';
+        tmp2.style.display = 'inline';
+        return true;
+    }
+}
+
+function checkGenerale() {
+    var A = checkNome();
+    var B = checkEmail();
+    var C = checkOggetto(); 
+    var D = checkScriviQui();
+    if(A && B && C && D) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+elNome.addEventListener('blur', checkNome, false);
+elEmail.addEventListener('blur', checkEmail, false);
+elOggetto.addEventListener('blur', checkOggetto, false);
+elScriviQui.addEventListener('blur', checkScriviQui, false);
+
+
+submit.addEventListener('submit',  function (event) {
+    event.preventDefault();
+    if(checkGenerale()){
+        this.submit();
+    }
+    else {
+        alert("Controlla tutti i campi");
+        elNome.focus();
+    }
+}, false);

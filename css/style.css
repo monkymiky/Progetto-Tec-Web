@@ -1182,3 +1182,16 @@ CALENDARIO / JS-related
     font-size: 0.7em;
     /* Altri stili se necessari */
 }
+
+.errContatti {
+    display: none;
+    text-align: right;
+    color: red;
+    font-size: 0.8em;
+}
+
+.noErrContatti{
+    display: none;
+    text-align: right;
+    color: green;
+}
