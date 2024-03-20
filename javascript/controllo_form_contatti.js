@@ -10,6 +10,7 @@ var elEmail = document.getElementById('email');
 var elOggetto = document.getElementById('subject');
 var elScriviQui = document.getElementById('emailContent');
 var submit = document.getElementById('sendButton');
+var form = document.getElementById('contactForm');
 //____________________________________________________________
 
 //disabilito la possibilità di inviare cosi posso fare i controlli
@@ -105,13 +106,13 @@ elOggetto.addEventListener('blur', checkOggetto, false);
 elScriviQui.addEventListener('blur', checkScriviQui, false);
 
 
-submit.addEventListener('submit',  function (event) {
-    event.preventDefault();
-    if(checkGenerale()){
-        this.submit();
+form.addEventListener('submit',function(e) {
+    e.preventDefault();
+    if(checkGenerale()) {
+        form.submit();
     }
     else {
-        alert("Controlla tutti i campi");
+        alert("Controlla i campi");
         elNome.focus();
     }
-}, false);
+})
