@@ -36,20 +36,29 @@ function checkPassword() {
     }
 }
 
+function checkGenerale() {
+    var A = checkUsername();
+    var B = checkPassword();
+    if(A && B) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 elUsername.addEventListener('blur', checkUsername, false);
 elPassword.addEventListener('blur', checkPassword, false);
 loginForm.addEventListener('submit', function(event) {
+    
     event.preventDefault();
-    var A = checkUsername();
-    var B = checkPassword();
-    var result = A&&B;
-    if (!result) {
-        alert("controlla i campi");
-        elUsername.focus();
+    if (checkGenerale()) {
+        loginForm.submit();
     }
     else {
-        loginForm.submit();
+        alert("Controlla i campi");
+        elUsername.focus();
     }
     
 }, false);

@@ -924,7 +924,7 @@ ADMIN LOGIN
     border: 0.0625em solid;
 }
 
-.login-page #submit {
+.login-page #loginSubmit {
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -934,7 +934,7 @@ ADMIN LOGIN
     margin: 0.5em auto;
 }
 
-.login-page #submit:hover {
+.login-page #loginSubmit:hover {
     background-color: #1d8623;
 }
 /********************************************
