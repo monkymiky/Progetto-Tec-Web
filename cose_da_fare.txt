@@ -27,6 +27,9 @@ JS
 -	js riempi campo data
 -	js scomparsa/comparsa fieldset "dati carta"
 
+PHP
+- 	controllare invio submit pagina login (da altervista non trova la pagina)
+
 
 RELAZIONE PROGETTO
 
