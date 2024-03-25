@@ -21,7 +21,7 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
   header("Location: http://$host$uri/$extra");// redirect ad admin.php
   exit;
 }else{ // login da fare
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['loginSubmit'])) {
     if(!isset($_POST["user"]) && !isset($_POST["password"])){
       controllaInput($_POST["user"]) ; 
       controllaInput($_POST["password"]);
