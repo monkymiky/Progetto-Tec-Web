@@ -207,6 +207,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                     <span id="spanStudio"><input id="studio" name="aStudio" type="radio" value = "0" {checkedStudio}></span>
                     <label for="studio">in studio</label>
                 </fieldset>
+
                 <fieldset>
                     <legend>Slot selezionato:</legend>
                     <div class="form-field">
@@ -219,23 +220,34 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <label for="time">Ora:</label>
                     </div>
                 </fieldset>
+                <!--DATI DI CONTATTO: EMAIL, TELEFONO E INDIRIZZO-->
                 <fieldset>
                     <legend>Dati di contatto</legend>
                     <div class="form-field">
+                        
                         <span id="spanEmail"><input id="email" name="email" type="email" maxlength="40" value="{email}"></span>
                         <label for="email">Email:</label>
+                        <span id="errPrenotazioniEmail" class="errContatti">Inserire una mail valida</span>
+                        <span id="noErrPrenotazioniEmail" class="noErrContatti">&#10003;</span>
                     </div>
                     
                     <div class="form-field">
+                        
                         <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
                         <label for="cell">Numero di telefono:</label>
+                        <span id="errPrenotazioniTelefono" class="errContatti">Inserire un numero di telefono valido</span>
+                        <span id="noErrPrenotazioniTelefono" class="noErrContatti">&#10003;</span>
                     </div>
 
                     <div class="form-field">
+                        
                         <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}"></span>
                         <label for="indirizzo">Indirizzo:</label>
+                        <span id="errPrenotazioniIndirizzo" class="errContatti">Inserire un indirizzo</span>
+                        <span id="noErrPrenotazioniIndirizzo" class="noErrContatti">&#10003;</span>
                     </div>
                 </fieldset>
+                <!--NOTE AGGIUNTIVE-->
                 <fieldset>
                     <legend>Note aggiuntive</legend>
                     <div class="form-field">
@@ -243,7 +255,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <label for="note">Note:</label>
                     </div>
                 </fieldset>
-
+                <!--METODO DI PAGAMENTO, PAYPAL/CARTA DI CREDITO-->
                 <fieldset> <!--Appare se selezionato "no" su gift card-->
                     <legend>Metodo di pagamento</legend>
                     <span id="spanPaypal"><input id="paypal" name="payment_method" type="radio"></span>
@@ -251,7 +263,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                     <span id="spanCreditDebit"><input id="credit-debit" name="payment_method" type="radio"></span>
                     <label for="credit-debit">Carta di credito/debito</label>
                 </fieldset>
-
+                <!--DATI DELLA CARTA DA USARE-->
                 <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
@@ -266,7 +278,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <span id="spanCVV"><input id="id_card_cvv" name="card_cvv" type="number" max="999" min="000"></span>
                         <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
                     </div>
-                    
+                    <!--INSERIRE SCADENZA DELLA CARTA -->
                     <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
                         <legend><abbr title="Scadenza">Scad</abbr>.</legend>
                         <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->

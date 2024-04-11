@@ -1176,12 +1176,7 @@ CALENDARIO / JS-related
 }
 
 /*-----------------------------------------*/
-.err_elem {
-    display: inline;
-    color: red;
-    font-size: 0.7em;
-    /* Altri stili se necessari */
-}
+
 
 .errContatti {
     display: none;
