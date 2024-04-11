@@ -10,6 +10,7 @@ CSS -> tutto responsive!
 -	css responsive 
 -	css form (ritocchi)
 -	rivedere print
+-	sistemare grid responsive pagina prenotazioni
 
 CSS mobile
 -	stilizzare prenotazioni.html
