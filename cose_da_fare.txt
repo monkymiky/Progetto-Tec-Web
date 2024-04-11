@@ -7,7 +7,6 @@ CSS -> tutto responsive!
 	PRENOTAZIONI - ADMIN
 -	css responsive 
 -	css form (ritocchi)
--	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
 
 CSS mobile
 -	stilizzare prenotazioni.html
