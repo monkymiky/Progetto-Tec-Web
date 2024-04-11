@@ -1,5 +1,6 @@
 HTML
 -	verificare h1 h2 etc
+-       sostituire testo placeholder #chi-sono della home con un paragrafo vero 
 
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
