@@ -1,7 +1,7 @@
 HTML
 -	verificare h1 h2 etc
 -       sostituire testo placeholder #chi-sono della home con un paragrafo vero 
--	rimuovere html del calendario (la parte generata da php)
+-	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
 
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
