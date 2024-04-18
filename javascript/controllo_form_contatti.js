@@ -106,10 +106,10 @@ elOggetto.addEventListener('blur', checkOggetto, false);
 elScriviQui.addEventListener('blur', checkScriviQui, false);
 
 
-form.addEventListener('submit',function(e) {
+elForm.addEventListener('submit',function(e) {
     e.preventDefault();
     if(checkGenerale()) {
-        form.submit();
+        elForm.submit();
     }
     else {
         alert("Controlla i campi");
