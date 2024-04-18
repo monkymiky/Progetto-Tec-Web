@@ -158,15 +158,14 @@ Class Calendario{
 
     private function setStringaCalendario(){
         
-        $this->stringaCalendario = "    <p id='anno'> 
+        $this->stringaCalendario = "     <ol id='calendario'>
+                                            <li id='anno'> 
                                             <time datetime='".$this->anno."'>".$this->anno."</time>
-                                        </p>
-                                        <p id='mese'>
-                                            <input type='submit' id='buttonIndietro' method='post' name='action' value ='".($this->mesiInPiu-1)."' form='formPrenota'>
-                                            <time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time>
-                                            <input type='submit' id='buttonAvanti' method='post' name='action' value ='".($this->mesiInPiu+1)."' form='formPrenota'>
-                                        </p>
-                                        <ol id='calendario'>
+                                            </li>
+                                            
+                                            <li><input type='submit' id='buttonIndietro' method='post' name='action' value ='".($this->mesiInPiu-1)."' form='formPrenota'></li>
+                                            <li id='mese'><time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
+                                            <li><input type='submit' id='buttonAvanti' method='post' name='action' value ='".($this->mesiInPiu+1)."' form='formPrenota'></li>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                                             <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                                             <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
