@@ -87,19 +87,19 @@
           </legend>
           <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" /></span>
           <label for="domicilio">a domicilio</label>
-          <span id="spanStudioModifica"><input id="studioModifica" name="aDomicilio" type="radio" value="0" /></span>>
+          <span id="spanStudioModifica"><input id="studioModifica" name="aDomicilio" type="radio" value="0" /></span>
           <label for="studio">in studio</label>
         </fieldset>
         <fieldset>
           <legend>Slot selezionato:</legend>
           <div class="form-field">
-            <span id="spanDataModifica"><input id="dataModifica" name="data" readonly value="{data}" /></span>>
+            <span id="spanDataModifica"><input id="dataModifica" name="data" readonly value="{data}" /></span>
             <!--Stringa recuperata tramite JScript dal calendario?-->
             <label for="date">Giorno:</label>
           </div>
 
           <div class="form-field">
-            <span id="spanTime"><input id="time" name="ora" readonly value="{ora}" /></span>>
+            <span id="spanTime"><input id="time" name="ora" readonly value="{ora}" /></span>
             <!--Stringa recuperata tramite JScript dal calendario?-->
             <label for="time">Ora:</label>
           </div>
@@ -107,32 +107,37 @@
         <fieldset>
           <legend>Dati di contatto</legend>
           <div class="form-field">
-            <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40" /></span>>
+            <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40" /></span>
             <label for="name-surname">Nome e cognome:</label>
+            <span id="errNomeCognome" class="errContatti">X</span>
           </div>
           <div class="form-field">
-            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="20" value="{email}"/></span>>
+            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="20" value="{email}"/></span>
             <label for="email">Email:</label>
+            <span id="errEmail" class="errContatti">X</span>
           </div>
 
           <div class="form-field">
-            <span id="spanCell"><input id="cell" name="cel" type="tel" maxlength="15" value="{cel}" /></span>>
+            <span id="spanCell"><input id="cell" name="cel" type="tel" maxlength="15" value="{cel}" /></span>
             <label for="cell">Numero di telefono:</label>
+            <span id="errTelefono" class="errContatti">X</span>
           </div>
 
           <div class="form-field">
-            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}" /></span>>
+            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}" /></span>
             <label for="indirizzo">Indirizzo:</label>
+            <span id="errIndirizzo" class="errContatti">X</span>
           </div>
         </fieldset>
         <fieldset>
           <legend>Note aggiuntive</legend>
           <div class="form-field">
-            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}" /></span>>
+            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}" /></span>
             <label for="email">Note:</label>
           </div>
         </fieldset>
-        <span id="spanModifica"><input type="submit" name="action" value="modifica" /></span>>
+        <span id="spanModifica"><input type="submit" name="action" value="modifica" /></span>
+        <span id="errContattiAdmin" class="errContatti">Controlla che tutti i campi siano stati inseriti e siano completi</span>
       </form>
     </main>
     <!--    FOOTER    -->
@@ -154,5 +159,6 @@
         ></small
       >
     </footer>
+    <script src="../javascript/controllo_form_admin"></script>
   </body>
 </html>
