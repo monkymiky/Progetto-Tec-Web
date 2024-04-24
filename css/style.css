@@ -18,10 +18,10 @@
 
     --link:#3C2C23;
     --visitedLink:#b44b00;
-    --hoverLink:#E0A841;
+    --hoverLink:#6f1690;
 
-    --footerBackground:black;
-    --footerText:white;
+    --footerBackground:#F2EDE4;
+    --footerText:#262626;
 
     --boxesBackground:white;
 
@@ -95,7 +95,7 @@ nav {
     z-index: 2;
 }
 
-#menu a {
+#menu a ,footer a{
     padding: 0.5em;
     color: var(--link);
 }
@@ -119,7 +119,7 @@ nav {
     background-color: #e4c99e;
     border-radius:1em;
 }
-#menu ul a:visited {
+#menu ul a:visited , footer a:visited{
     color: var(--visitedLink);
 }
 
@@ -152,7 +152,7 @@ nav a:visited {
     color:var(--visitedLink);
 }
 
-nav a:hover {
+nav a:hover, footer a:hover {
     color:var(--hoverLink);
 }
 
