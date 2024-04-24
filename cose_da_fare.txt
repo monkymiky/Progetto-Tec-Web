@@ -1,9 +1,15 @@
+discutere su come giustificare la sezione "idee regalo"?
+
 HTML
--	verificare h1 h2 etc
+-	breadcrumb ordred list con link alla home (eccetto nella home) e inserire frecce tramite css
+
+-	verificare header (non aggiornato in admin)
 
 CSS -> tutto responsive!
 -	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	rendere elegante il codice - eliminare codice inutilizzato 
+	MASSAGGI
+-	rendere le card responsive (dimensioni ridotte per schermi medio-piccoli)
 	PRENOTAZIONI - ADMIN
 -	css responsive 
 -	css form (ritocchi)
@@ -19,6 +25,8 @@ SQL
 -	popolare il DB
 
 JS
+	CARD
+-	(optional) far si che da mobile dopo averle girate cliccandoci sopra tornino girate
 	ADMIN
 -	js controlli input
 -	js mostra dati prenotazione
