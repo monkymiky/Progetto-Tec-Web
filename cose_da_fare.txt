@@ -13,7 +13,8 @@ CSS -> tutto responsive!
 	PRENOTAZIONI - ADMIN
 -	css responsive 
 -	css form (ritocchi)
--	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
+-	rivedere print
+-	sistemare grid responsive pagina prenotazioni
 
 CSS mobile
 -	stilizzare prenotazioni.html
@@ -34,6 +35,9 @@ JS
 -	js controlli input 
 -	js riempi campo data
 -	js scomparsa/comparsa fieldset "dati carta"
+
+PHP
+- 	controllare invio submit pagina login (da altervista non trova la pagina)
 
 
 RELAZIONE PROGETTO

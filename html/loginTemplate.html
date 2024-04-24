@@ -51,16 +51,18 @@
         <main id="content">
         <p>Questa pagina è riservata agli amministratori del sito, se non lo sei continua a navigare tramite la barra di navigazione oppure torna alla <a href="/html/index.html" lang="en">Home</a>.</p>
 
-            <form method="POST" action="../php/login.php" >
+            <form method="POST" action="../php/login.php" id="login_form">
                 <div class="form-field">
                     <input type="text" id="user" name="user" maxlength="40">
                     <label for="user"><span lang="en">Username:</span></label>
+                    <span class="errContatti" id="errLoginUsername">Inserisci un nome utente</span>
                 </div>
                 <div class="form-field">
                     <input type="password" id="password" name="password" maxlength="40">
                     <label for="password"><span lang="en">Password:</span></label>
+                    <span class="errContatti" id="errLoginPassword">Inserisci una password</span>
                 </div>
-                <input type="submit" id="submit" name="submit" value="login"/>
+                <input type="submit" id="loginSubmit" name="loginSubmit" value="login"/>
             </form>
         </main>
 
@@ -77,5 +79,9 @@
             </div>
             <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="/php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
+
+        <script src="../javascript/controllo_form_loginTemplate.js"></script>
     </body>
 </html>
+
+
