@@ -10,7 +10,8 @@ HTML
 
 
 CSS -> tutto responsive!
--	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
+-	Eliminare regole ridondanti (vedi ad esempio nav)
+-	Palette Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	rendere elegante il codice - eliminare codice inutilizzato 
 	MASSAGGI
 -	rendere le card responsive (dimensioni ridotte per schermi medio-piccoli)
