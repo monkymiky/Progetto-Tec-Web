@@ -9,3 +9,5 @@ ho inserito i link nella home alle varie prestazioni in un div in modo da render
 visualizzazione mobile funziona con dispositivi di almeno 250px width
 
 Menu di inserimento dati carta è a sparizione (nel form prenotazioni) per semplificare il consumo del form
+
+Giustificare bassa accessibilità colore hover sui link (è poco rilevante che lo sia)
