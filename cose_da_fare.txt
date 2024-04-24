@@ -6,6 +6,7 @@ HTML
 -	verificare header (non aggiornato in admin)
 - 	 sostituire testo placeholder #chi-sono della home con un paragrafo vero 
 -	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
+-	aggiungere card con info corsi sulla pagina Corsi 
 
 
 CSS -> tutto responsive!
@@ -17,6 +18,8 @@ CSS -> tutto responsive!
 -	css responsive 
 -	css form (ritocchi)
 -	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
+	PRESTAZIONI 
+-	migliorare estetica pagine fisioterapia, corsi, danza libera
 
 CSS mobile
 -	stilizzare prenotazioni.html
@@ -36,7 +39,7 @@ JS
 	PRENOTAZIONI
 -	js controlli input 
 -	js riempi campo data
--	js scomparsa/comparsa fieldset "dati carta"
+-	js scomparsa/comparsa fieldset "dati carta" -> non implementabile con CSS
 
 
 RELAZIONE PROGETTO
