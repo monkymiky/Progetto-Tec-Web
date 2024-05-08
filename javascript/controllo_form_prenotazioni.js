@@ -11,10 +11,18 @@ var elEmail = document.getElementById('email');
 var elCell = document.getElementById('cell');
 var elIndirizzo = document.getElementById('indirizzo');
 
+
+var elPaypal = document.getElementById("paypal");
+var elCarta = document.getElementById("creditDebit");
+
+var elNomeCarta = document.getElementById("name_surname");
+var elNumeroCarta = document.getElementById("card_number");
+var elCVVCarta = document.getElementById("id_card_cvv"); 
+
 var err;
 var noerr;
 
-
+ console.log("elNomeCarta = " + elNomeCarta.value);
 
 function checkEmail() {
     err = document.getElementById('errPrenotazioniEmail');
@@ -58,7 +66,24 @@ function checkIndirizzo() {
     }
 };
 
+function checkNomeCarta() {
+    console.log("nome della carta inserito = " + elNomeCarta.value);
+    err = document.getElementById('errPrenotazioniNomeCognome');
+    noerr = document.getElementById('noErrPrenotazioniNomeCognome');
+    if(elNomeCarta.value=="" || elNomeCarta==undefined || !nome_regex.test(elNomeCarta.value)) {
+        err.style.display = 'inline';
+        noerr.style.display = 'none';
+        return false;
+    }
+    else {
+        err.style.display = 'none';
+        noerr.style.display = 'inline';
+        return true;
+    }
+};
+
+
 elEmail.addEventListener('blur', checkEmail, false);
 elCell.addEventListener('blur', checkCell, false);
 elIndirizzo.addEventListener('blur', checkIndirizzo, false);
-
+elNomeCarta.addEventListener('blur', checkNomeCarta, false);
