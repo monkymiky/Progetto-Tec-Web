@@ -43,6 +43,20 @@ JS
 -	js scomparsa/comparsa fieldset "dati carta" -> non implementabile con CSS
 
 
+ALTRO
+
+se vado su Home > prestazioni > Corsi di massaggio non posso cliccare sul link di Anna nell'header
+
+su prestazioni>Fisioterapia se clicco il link home nella navbar mi da errore. Bisogna correggere il link a cui si riferisce. Lo stesso
+per il link "Contattami". Vale anche per le altre pagine all'interno delle prestazioni. In sintesi, link home(navbar) e contattami(footer)
+
+Controllare tutti i link nel navbar. Di solito il link alla home non funziona
+
+
+
+
+
+
 RELAZIONE PROGETTO
 
 Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
