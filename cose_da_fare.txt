@@ -52,7 +52,7 @@ per il link "Contattami". Vale anche per le altre pagine all'interno delle prest
 
 Controllare tutti i link nel navbar. Di solito il link alla home non funziona
 
-
+Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)
 
 
 
