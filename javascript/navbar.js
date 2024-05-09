@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.classList.toggle('active');
         bradcrumb.classList.toggle('active');
         const element = document.getElementById('prestazioni');
-        if(element.getAttribute("aria-expanded") == "false") element.setAttribute("aria-expanded", "true"); 
-        else element.setAttribute("aria-expanded", "false"); 
+        if(element.getAttribute(aria-expanded) == "false") element.setAttribute("aria-expanded", "true"); 
+        else element.setAttribute(aria-expanded, "false"); 
     });
     
 });

@@ -57,12 +57,13 @@
     }
 
     #menu>* {
-        padding: 1em;
         display: block;
         width: 100%;
         box-sizing: border-box;
     }
+    .anna-page ul{
 
+    }
     #menu a:hover {
         background-color: var(--hoverLink);
         border-radius: 0;
@@ -71,24 +72,20 @@
     #menu ul ul {
         position: static;
         display: none;
-        width: 100%;
-    }
-
-    #menu li:hover > ul {
-        display: none;
+        width: 93%;
     }
 
     #menu.active {
         display: flex;
     }
     #breadcrumb.active{
-        top:24em;
+        top:22em;
     }
     #breadcrumb{
         top:5em;
     }
     #menu ul ul {
-        display: inherit;
+        display: block;
     }
     /*---------------
     MAIN
@@ -120,6 +117,7 @@
         border: 0px;
         width: 100%;
     }
+    
     #cosa-offro-links-massaggi{
         background-image: url("../media/massaggi.jpg");
     }
@@ -131,6 +129,9 @@
     }
     #cosa-offro-links-fisioterapia{
         background-image: url("../media/fisioterapia.jpg");
+    }
+    #CosaOffro h1{
+        line-height: 1em;
     }
     #CosaOffro div{
         margin:auto;
@@ -156,7 +157,6 @@
     /*------ Descrizione Anna -----*/
     #chi-sono{
         height: 25em;
-
     }
     #foto-anna-home{
         width: 100%;
@@ -188,7 +188,9 @@
     #idee_regalo{
         margin-top: 0em;
     }
-   
+    #idee_regalo h2{
+        line-height: 1em;
+    }
     #idee_regalo h2{
         margin :auto;
         margin-top: 1em;
@@ -246,9 +248,6 @@
         height: 15em;
     }
 }
-
-
-
 
 .errContatti {
     display: none;

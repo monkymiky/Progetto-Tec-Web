@@ -27,8 +27,8 @@
 
     --font: "CustomFont", "Segoe UI", "Arial", sans-serif;
   
-    --cardWidth: 26.25em;
-    --cardHeight: 38.44em;
+    --cardWidth: 22em;
+    --cardHeight: 22em;
     --cardBorderRadius: 1.25em;
     --giftCardWidth: 18.75em;
     --giftCardHeight: 18.75em;
@@ -326,6 +326,7 @@ main a:hover {
     height: 37vw;
     max-height: 430px;
 }
+
 #foto-anna-home {
     margin:auto;
     margin-top:2em;
@@ -356,15 +357,6 @@ main a:hover {
     max-height: 190px;
     overflow :hidden;
 }
-#descrizione-foto-anna-home {
-    background-color: white;
-    border-radius: 1em;
-}
-
-#descrizione-foto-anna-home > * {
-    margin: 0.5em;
-}
-
 #foto-anna-home-descrizione {
     background-color: white;
     border-radius: 1em;
@@ -567,11 +559,11 @@ ANNA
     color: var(--headerText);
 }
 
-.anna-page ul {
+.anna-page main ul {
     margin-left: 20px;
 }
 
-.anna-page li {
+.anna-page main li {
     margin-bottom: 0.5em;
 }
 
@@ -652,13 +644,6 @@ CONTATTI
     margin-left: 20px;
 }
 
-.contact-page #content ul {
-    margin-left: 20px;
-}
-
-.contact-page #content li {
-    margin-bottom: 0.5em;
-}
 
 /********************************************
 MASSAGGI

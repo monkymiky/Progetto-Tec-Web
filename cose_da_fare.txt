@@ -4,17 +4,18 @@ HTML
 -	breadcrumb ordred list con link alla home (eccetto nella home) e inserire frecce tramite css
 - 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
 -	verificare header (non aggiornato in admin)
-- 	 sostituire testo placeholder #chi-sono della home con un paragrafo vero 
+- 	sostituire testo placeholder #chi-sono della home con un paragrafo vero 
 -	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
 -	aggiungere card con info corsi sulla pagina Corsi 
+-	inserire testi mancanti (lorem ipsum) e nelle pagine che non hanno nulla
+-	inserire keyvord (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
+-	inserire description
+
 
 
 CSS -> tutto responsive!
--	Eliminare regole ridondanti (vedi ad esempio nav)
 -	Palette Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
--	rendere elegante il codice - eliminare codice inutilizzato 
-	MASSAGGI
--	rendere le card responsive (dimensioni ridotte per schermi medio-piccoli)
+-	rendere elegante il codice - eliminare codice inutilizzato - volendo anche ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css responsive 
 -	css form (ritocchi)
