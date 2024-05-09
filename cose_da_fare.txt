@@ -6,10 +6,12 @@ HTML
 -	verificare header (non aggiornato in admin)
 - 	 sostituire testo placeholder #chi-sono della home con un paragrafo vero 
 -	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
+-	aggiungere card con info corsi sulla pagina Corsi 
 
 
 CSS -> tutto responsive!
--	Colori Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
+-	Eliminare regole ridondanti (vedi ad esempio nav)
+-	Palette Accessibili (nav, link -visitati/non visitati (anche nel footer) etc...)
 -	rendere elegante il codice - eliminare codice inutilizzato 
 	MASSAGGI
 -	rendere le card responsive (dimensioni ridotte per schermi medio-piccoli)
@@ -17,6 +19,8 @@ CSS -> tutto responsive!
 -	css responsive 
 -	css form (ritocchi)
 -	calendario (:target css display: default per il giorno target, none per tutti gli altri giorni)
+	PRESTAZIONI 
+-	migliorare estetica pagine fisioterapia, corsi, danza libera
 
 CSS mobile
 -	stilizzare prenotazioni.html
@@ -36,7 +40,21 @@ JS
 	PRENOTAZIONI
 -	js controlli input 
 -	js riempi campo data
--	js scomparsa/comparsa fieldset "dati carta"
+-	js scomparsa/comparsa fieldset "dati carta" -> non implementabile con CSS
+
+
+ALTRO
+
+se vado su Home > prestazioni > Corsi di massaggio non posso cliccare sul link di Anna nell'header
+
+su prestazioni>Fisioterapia se clicco il link home nella navbar mi da errore. Bisogna correggere il link a cui si riferisce. Lo stesso
+per il link "Contattami". Vale anche per le altre pagine all'interno delle prestazioni. In sintesi, link home(navbar) e contattami(footer)
+
+Controllare tutti i link nel navbar. Di solito il link alla home non funziona
+
+Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)
+
+
 
 
 RELAZIONE PROGETTO

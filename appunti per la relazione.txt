@@ -7,3 +7,7 @@ anna.jpg è di contenuto in quanto quella pagina è dedicata alla presentazione 
 ho inserito i link nella home alle varie prestazioni in un div in modo da rendere possibile inserire le immagini di sfondo dietro i "bottoni" per la visualizzazione mobile
 
 visualizzazione mobile funziona con dispositivi di almeno 250px width
+
+Menu di inserimento dati carta è a sparizione (nel form prenotazioni) per semplificare il consumo del form
+
+Giustificare bassa accessibilità colore hover sui link (è poco rilevante che lo sia)
