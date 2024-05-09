@@ -61,9 +61,7 @@
         width: 100%;
         box-sizing: border-box;
     }
-    .anna-page ul{
 
-    }
     #menu a:hover {
         background-color: var(--hoverLink);
         border-radius: 0;
@@ -218,20 +216,6 @@
         height: 40px;
     }
     /*-------
-    ANNA
-    ----------*/
-    #content p{
-        margin-top: 1em;
-        text-align: left;
-    }
-    #content h2, #content h1, #content h3{
-        padding : 0.5em;
-        text-align: left;
-    }
-    #content dl *, #content ul *{
-        text-align: left;
-    }
-    /*-------
     MASSAGGI
     ----------*/
     .shop-items h2{
@@ -261,3 +245,32 @@
     text-align: right;
     color: green;
 }
+/*-------
+    Chi Sono - Fisioterapia - corsi di massaggio
+----------*/
+main section{
+    flex-direction: column;
+    padding: 1.5rem 0rem 1rem 0rem;
+}
+
+section div.text-container{
+    width: 100%;
+    order: 2;
+    padding:0px 0.7rem;
+    margin: auto;
+}
+.title{
+    font-size: 2rem;
+    margin-bottom: 0px;
+}
+.subtitle{
+    line-height: 1.5rem;
+}
+section div.img-container{
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 0%;
+    order:1 ;
+    margin-bottom: 1.5rem;
+}
+

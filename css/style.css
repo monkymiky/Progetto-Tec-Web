@@ -100,11 +100,6 @@ nav {
     color: var(--link);
 }
 
-#menu a:hover {
-    background-color: var(--hoverLink);
-    border-radius: 1em;
-}
-
 #menu ul li {
     display: inline-block;
     margin: 0.5em;
@@ -115,14 +110,15 @@ nav {
     padding:0.5em;
 }
 
-#menu ul a:hover {
-    background-color: #e4c99e;
-    border-radius:1em;
-}
+
 #menu ul a:visited , footer a:visited{
     color: var(--visitedLink);
 }
-
+#menu ul a:hover {
+    background-color: #e4c99e;
+    border-radius:1em;
+    color:var(--hoverLink);
+}
 #menu ul ul {
     display: none;
     position: absolute;
@@ -152,10 +148,6 @@ nav a:visited {
     color:var(--visitedLink);
 }
 
-nav a:hover, footer a:hover {
-    color:var(--hoverLink);
-}
-
 button.dropdown__title{
         padding: 0.5em;
         padding-top: 0.25em;
@@ -174,7 +166,9 @@ button.dropdown__title{
 ul#Prestazioni-dropdown li{
     display: block;
 }
-
+#breadcrumb a:hover, footer a:hover {
+    color:var(--hoverLink);
+}
 /********************************************
 MAIN
 ********************************************/
@@ -368,7 +362,7 @@ main a:hover {
 
 
 /********************************************
-SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
+MASSAGGI POPOLARI
 ********************************************/
 
 #idee_regalo {
@@ -376,7 +370,7 @@ SEZIONE MOMENTANEA IDEE REGALO DA UNIRE POI CON MASSAGGI.CSS
     text-align: center;
     margin-top: 2em;
 }
-    
+
 #vedi-di-piu {
     display:inline-block;
     width:6em;
@@ -1180,3 +1174,58 @@ CALENDARIO / JS-related
     color: green;
 }
 
+/***********************************************
+FISIOTERAPIA - CORSI DI MASSAGGIO - CHI SONO
+***********************************************/
+
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items:stretch;
+}
+
+section div.img-container{
+    width: 45%;
+    padding-left: 1rem ;
+    padding-right:  1rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+    box-sizing: border-box;
+    height: auto;
+    min-width: 18rem;
+}
+section div.text-container{
+    width: 55%;
+    max-width: 550px;
+    flex-grow: 0;
+    box-sizing: border-box;
+    
+}
+section li{
+    margin-left: 2rem ;
+}
+.ImgRight{ /** cambia in img-square**/
+    background-clip:content-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 16rem;
+    height: 16rem;
+    margin: auto;
+    display: block;
+}
+#fisio-img1{
+    background-image: url(../media/anna.jpg);
+}
+#fisio-img2{
+    background-image: url(../media/anna.jpg);
+}
+#fisio-img3{
+    background-image: url(../media/anna.jpg);
+}
+#fisio-img4{
+    background-image: url(../media/anna.jpg);
+}
