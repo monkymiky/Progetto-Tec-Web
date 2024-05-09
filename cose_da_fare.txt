@@ -1,5 +1,3 @@
-discutere su come giustificare la sezione "idee regalo"?
-
 HTML
 -	breadcrumb ordred list con link alla home (eccetto nella home) e inserire frecce tramite css
 - 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
@@ -28,6 +26,7 @@ CSS mobile
 
 TEST
 -	testare tutto dopo aver riempito il DB
+-	verificare che funzionino tutti i link dopo aver caricato il sito nel server dell'uni
 
 SQL 
 -	popolare il DB
@@ -46,24 +45,8 @@ JS
 
 ALTRO
 
-se vado su Home > prestazioni > Corsi di massaggio non posso cliccare sul link di Anna nell'header
-
-su prestazioni>Fisioterapia se clicco il link home nella navbar mi da errore. Bisogna correggere il link a cui si riferisce. Lo stesso
-per il link "Contattami". Vale anche per le altre pagine all'interno delle prestazioni. In sintesi, link home(navbar) e contattami(footer)
-
-Controllare tutti i link nel navbar. Di solito il link alla home non funziona
-
 Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)
 
-
-
-
-RELAZIONE PROGETTO
-
-Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
-Parise Luca - luca.parise.3@studenti.unipd.it -2043677 
-Cristo Marco - marco.cristo@studenti.unipd.it - 1232582
-Leonetti Elia - elia.leo2000@gmail.com - 2009998
 -------------------------------------------------------------------------------------------------------
 
 

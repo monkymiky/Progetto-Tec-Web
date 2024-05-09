@@ -8,6 +8,13 @@ ho inserito i link nella home alle varie prestazioni in un div in modo da render
 
 visualizzazione mobile funziona con dispositivi di almeno 250px width
 
-Menu di inserimento dati carta è a sparizione (nel form prenotazioni) per semplificare il consumo del form
+Menu di inserimento dati carta è a sparizione (nel form prenotazioni) per semplificare il consumo del form (veramente?)
 
 Giustificare bassa accessibilità colore hover sui link (è poco rilevante che lo sia)
+
+RELAZIONE PROGETTO
+
+Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
+Parise Luca - luca.parise.3@studenti.unipd.it -2043677 
+Cristo Marco - marco.cristo@studenti.unipd.it - 1232582
+Leonetti Elia - elia.leo2000@gmail.com - 2009998
