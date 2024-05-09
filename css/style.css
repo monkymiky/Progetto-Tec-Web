@@ -508,58 +508,7 @@ footer {
     width: 40px;
     height: 40px;
 }
-/********************************************
-ANNA
-********************************************/
-.anna-page #anna-img {
-    width: 100%;
-    max-width: 400px;
-    float: right;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    border-radius: var(--cardBorderRadius);
-}
 
-.anna-page #content h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: var(--headerText);
-}
-
-.anna-page #content h2 {
-    color: var(--headerText);
-    margin-top: 2em;
-}
-
-.anna-page #content p, 
-.anna-page #content dl, 
-.anna-page #content ul {
-    margin-bottom: 1em;
-    font-size: 1em; 
-    line-height: 1.5em;
-}
-
-.anna-page dl dt {
-    font-weight: bold;
-    margin-top: 0.5em;
-}
-
-.anna-page dl dd {
-    margin-left: 20px;
-}
-
-.anna-page h3 {
-    margin-top: 2em;
-    color: var(--headerText);
-}
-
-.anna-page main ul {
-    margin-left: 20px;
-}
-
-.anna-page main li {
-    margin-bottom: 0.5em;
-}
 
 /********************************************
 CONTATTI
@@ -1186,7 +1135,19 @@ section{
     justify-content: space-around;
     align-items:stretch;
 }
-
+.title{
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.subtitle{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 0em;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
 section div.img-container{
     width: 45%;
     padding-left: 1rem ;
@@ -1207,7 +1168,8 @@ section div.text-container{
 section li{
     margin-left: 2rem ;
 }
-.ImgRight{ /** cambia in img-square**/
+img{object-fit: cover;}
+.img-square{ 
     background-clip:content-box;
     background-position: center;
     background-size: cover;
@@ -1226,6 +1188,15 @@ section li{
 #fisio-img3{
     background-image: url(../media/anna.jpg);
 }
-#fisio-img4{
+#chi-sono-img2{
     background-image: url(../media/anna.jpg);
+}
+#chi-sono-img3{
+    background-image: url(../media/anna.jpg);
+}
+#chi-sono-img4{
+    background-image: url(../media/anna.jpg);
+}
+#danza-img1{
+    background-image: url(../media/danza.jpg);
 }

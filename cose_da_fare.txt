@@ -3,7 +3,6 @@ HTML
 - 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
 -	verificare header (non aggiornato in admin)
 -	aggiungere card con info corsi sulla pagina Corsi 
--	inserire testi mancanti (lorem ipsum) e nelle pagine che non hanno nulla
 -	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
 
@@ -37,6 +36,5 @@ ALTRO
 
 Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)
 
--------------------------------------------------------------------------------------------------------
 
 
