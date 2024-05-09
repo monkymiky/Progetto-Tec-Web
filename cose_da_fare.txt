@@ -3,10 +3,8 @@ HTML
 - 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
 -	verificare header (non aggiornato in admin)
 - 	sostituire testo placeholder #chi-sono della home con un paragrafo vero 
--	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
--	aggiungere card con info corsi sulla pagina Corsi 
 -	inserire testi mancanti (lorem ipsum) e nelle pagine che non hanno nulla
--	inserire keyvord (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
+-	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
 
 
@@ -40,7 +38,7 @@ JS
 	PRENOTAZIONI
 -	js controlli input 
 -	js riempi campo data
--	js scomparsa/comparsa fieldset "dati carta" -> non implementabile con CSS
+-	js scomparsa/comparsa fieldset "dati carta" con BOTTONE "AVANTI" -> non implementabile con CSS
 
 
 ALTRO
