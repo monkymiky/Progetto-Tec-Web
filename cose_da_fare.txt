@@ -2,7 +2,7 @@ discutere su come giustificare la sezione "idee regalo"?
 
 HTML
 -	breadcrumb ordred list con link alla home (eccetto nella home) e inserire frecce tramite css
-
+- 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
 -	verificare header (non aggiornato in admin)
 - 	 sostituire testo placeholder #chi-sono della home con un paragrafo vero 
 -	rimuovere html del calendario (la parte generata da php) + sincronizzare con html generato da php
