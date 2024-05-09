@@ -8,10 +8,11 @@ HTML
 
 
 
-CSS -> tutto responsive!
+CSS 
 -	rendere elegante il codice - eliminare codice inutilizzato - volendo anche ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
+-	freccetta in giu al posto del bottone che sembra sempre selezionato nella navbar
 
 TEST
 -	testare tutto dopo aver riempito il DB

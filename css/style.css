@@ -95,7 +95,7 @@ nav {
     z-index: 2;
 }
 
-#menu a ,footer a{
+#menu a {
     padding: 0.5em;
     color: var(--link);
 }
@@ -110,8 +110,7 @@ nav {
     padding:0.5em;
 }
 
-
-#menu ul a:visited , footer a:visited{
+#menu ul a:visited{
     color: var(--visitedLink);
 }
 #menu ul a:hover {
@@ -166,11 +165,35 @@ button.dropdown__title{
 ul#Prestazioni-dropdown li{
     display: block;
 }
-#breadcrumb a:hover, footer a:hover {
+#breadcrumb a:hover {
     color:var(--hoverLink);
 }
 /********************************************
-MAIN
+FOOTER
+********************************************/
+footer {
+    background-color: var(--footerBackground);
+    color: var(--footerText);
+    padding:1em;
+    text-align: center;
+}
+.icona-social{
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+}
+footer a:hover {
+    color:var(--hoverLink);
+}
+footer a:visited{
+    color: var(--visitedLink);
+}
+footer a{
+    padding: 0.5em;
+    color: var(--link);
+}
+/********************************************
+HOME
 ********************************************/
 
 main {
@@ -495,19 +518,6 @@ MASSAGGI POPOLARI
     background-size: cover;
 }
 
-/********************************************
-FOOTER
-********************************************/
-footer {
-    background-color: var(--footerBackground);
-    color: var(--footerText);
-    padding:1em;
-    text-align: center;
-}
-.icona-social{
-    width: 40px;
-    height: 40px;
-}
 
 
 /********************************************
