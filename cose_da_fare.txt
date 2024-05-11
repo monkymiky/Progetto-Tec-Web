@@ -11,7 +11,7 @@ HTML
 
 
 CSS 
--	rendere elegante il codice - eliminare codice inutilizzato - volendo anche ristrutturarlo...
+-	rendere elegante il codice  - (optional) volendo ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
 
