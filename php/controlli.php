@@ -23,7 +23,7 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
 function controllaADomicilio(&$aDomicilio, &$messaggiForm){
   if(!isset($aDomicilio) || NULL == filter_var($aDomicilio,FILTER_VALIDATE_BOOLEAN)){
 		$messaggiForm .= "<p> il campo \"a domicilio\" deve essere specificato </p>";
-    return NULL; // da verificare se viene tramutato in 0
+    return NULL; 
 	}
   else{
     return $aDomicilio;

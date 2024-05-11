@@ -6,7 +6,8 @@ HTML
 -	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
 -	inserire nella pagina 404 l'emotional design e scrivere una frase di scuse nella pagina 500
--	aggiornare header a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
+-	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
+-	convertire le immagini in formato webp
 
 
 

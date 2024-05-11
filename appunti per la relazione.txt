@@ -1,20 +1,8 @@
 giustificare la non buona usabilità della pagina admin dicendo che è un progetto accademico e perciò abbiamo ridotto le funzionalità in modo da rientrare nel monteore previsto, ma per un progetto reale lo avremmo fatto.
 
-ho selto di non metter l'autocompletamento del form elimina prenotazione, in caso di compilazione errata del form per aumentare l'attenzione richiesta per svolgere l'operazione essendo molto delicata 
-
-anna.jpg è di contenuto in quanto quella pagina è dedicata alla presentazione di anna e l'immagine (e l'attrubuto alt) da informazioni su di lei che non sono presenti nel testo.
-
-ho inserito i link nella home alle varie prestazioni in un div in modo da rendere possibile inserire le immagini di sfondo dietro i "bottoni" per la visualizzazione mobile
-
-visualizzazione mobile funziona con dispositivi di almeno 250px width
-
-Menu di inserimento dati carta è a sparizione (nel form prenotazioni) per semplificare il consumo del form (veramente?)
-
 Giustificare bassa accessibilità colore hover sui link (è poco rilevante che lo sia)
 
 min 320 px
-
-RELAZIONE PROGETTO
 
 Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
 Parise Luca - luca.parise.3@studenti.unipd.it -2043677 
