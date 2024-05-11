@@ -1,4 +1,4 @@
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
     <head>
         <title>Home</title>
@@ -20,38 +20,47 @@
         <header>  
             <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
             <h1 id="logo">Anna Nesler Fisioterapista</h1>  
-            <button id="menu-toggle">☰</button>         
+            <button 
+            id="menu-toggle" 
+            type="button" 
+            aria-expanded="false"
+            aria-controls="menu"
+            >
+            ☰
+            </button>         
         </header>
         <!--    NAVBAR    -->
         
         <nav id="menu">
             <ul>
                <li lang="en">Home</li>
-               <li><a href="../html/anna.html">Chi sono</a></li>
+               <li><a href="../html/anna.html">Chi Sono</a></li>
                <li class="dropdown">
                     <button
+                        id = "prestazioni"
                         type="button"
                         class="dropdown__title"
                         aria-expanded="false"
                         aria-controls="Prestazioni-dropdown"
                     >
-                        Prestazioni
+                        Prestazioni 
                     </button>
                     <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                        <li><a href="/html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
-                        <li><a href="/html/prestazioni/massaggi.html">Massaggi</a></li>
-                        <li><a href="/html/prestazioni/danza.html">Danza libera</a></li>
-                        <li><a href="/html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
+                        <li><a href="../html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
+                        <li><a href="../html/prestazioni/massaggi.html">Massaggi</a></li>
+                        <li><a href="../html/prestazioni/danza.html">Danza libera</a></li>
+                        <li><a href="../html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
                     </ul>
                 </li>          
-               <li><a href="/html/contatti.html">Contatti</a></li>
-               <li><a href="/php/prenotazioni.php">Prenotazioni</a></li>                
+               <li><a href="../html/contatti.html">Contatti</a></li>
+               <li><a href="../php/prenotazioni.php">Prenotazioni</a></li>                
             </ul>
         </nav>
         <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
             <p>Ti trovi in: <span lang="en">Home</span></p>
         </nav>
+    
     
         <!--    MAIN    -->
 

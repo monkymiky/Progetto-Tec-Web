@@ -83,7 +83,7 @@ nav {
     background-color: var(--headerBackground);
     color: var(--headerText);
     text-align:center;
-    padding:1em;
+    padding:0.25em;
     font-size:1em;
 }
 
@@ -113,7 +113,7 @@ nav {
 #menu ul a:visited{
     color: var(--visitedLink);
 }
-#menu ul a:hover {
+#menu ul a:hover, button.dropdown__title:hover {
     background-color: #e4c99e;
     border-radius:1em;
     color:var(--hoverLink);
@@ -134,9 +134,10 @@ nav {
 #breadcrumb {
     text-align:left;
     position: sticky;
-    top: 4em;
+    top: 3.5rem;
     left: 0px;
     z-index: 1;
+    padding-left: 2rem;
 }
 
 nav a:link {
@@ -148,16 +149,21 @@ nav a:visited {
 }
 
 button.dropdown__title{
+        border: none;
+        background-color: var(--headerBackground);
         padding: 0.5em;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-        background-color: var(--backgroundColor);
-        border: solid 2px var(--borderColor);
-        border-radius: 0.5em;
         font-family: var(--font);
         font-size: 1em;
-        
+        color: var(--link);
 }
+button.dropdown__title:after {
+    content: "";
+    border: 0.35rem solid transparent;
+    border-top-color: var(--link);
+    margin-left: 0.25em;
+    display: inline-block;
+    transform: translateY(0.15rem);
+  }
 #Prestazioni-dropdown{
     width: max-content;
     border-radius: 1em;
