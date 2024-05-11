@@ -6,6 +6,7 @@ HTML
 -	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
 -	inserire nella pagina 404 l'emotional design e scrivere una frase di scuse nella pagina 500
+-	aggiornare header a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
 
 
 
@@ -13,7 +14,6 @@ CSS
 -	rendere elegante il codice - eliminare codice inutilizzato - volendo anche ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
--	freccetta in giu al posto del bottone che sembra sempre selezionato nella navbar
 
 TEST
 -	testare tutto dopo aver riempito il DB
@@ -33,7 +33,8 @@ JS
 -	js riempi campo data
 -	js scomparsa/comparsa fieldset "dati carta" con BOTTONE "AVANTI" -> non implementabile con CSS
 
-
+PHP 
+-	form di contatto (anche mostrare errori agli utenti)
 ALTRO
 
 Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)

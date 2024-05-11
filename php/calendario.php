@@ -1,4 +1,6 @@
 <?php
+// la lunghezza dei trattini ------------- indica che quel commento si riferisce alla sezione di codice seguente, 
+// che è chiusa da una lunghezza di trattini equivalente
 require_once ("connessione.php");
 USE DB\DBAccess;
 
@@ -26,7 +28,7 @@ Class Giorno {
 
 Class Calendario{
     
-    private $admin;
+    private $admin; // sto creando il calendario per l'admin? true - false
     private $giorno;
     private $mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
     private $stringaCalendario;
@@ -36,9 +38,9 @@ Class Calendario{
     private $mesiInPiu;
 
     function __construct(bool $admin,int $mese){
-        $this->mesiInPiu = $mese;
+        $this->mesiInPiu = $mese; // l' utente può andare avanti o indietro rispetto al mese corrente nella visualizzazione dei mesi nel calendario
         $connessione = new DBAccess();
-        $this->admin = $admin;
+        $this->admin = $admin; 
         // calcolo date -------------------------------------------------------------------------------------
         $oggi = date("Y-m-d", time());
         // aggiunge $mesiInPiu mesi alla data odierna ------------------
@@ -57,7 +59,7 @@ Class Calendario{
         }
         $oggiPiuMesiAggiunti = ((string)$piuMese[0])."-". $piuMese[1]."-01";
         $timestampOggiPiuMA = strtotime($oggiPiuMesiAggiunti);
-        // --------------------------------------------------------
+        // ------------------------------------------------------------
         $giorniDelMese = date("t",$timestampOggiPiuMA);
         $this->nrMese = date("m",$timestampOggiPiuMA);
         $this->anno= date("Y",$timestampOggiPiuMA);
