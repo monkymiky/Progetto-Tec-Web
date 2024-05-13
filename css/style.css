@@ -963,6 +963,21 @@ FORM PRENOTAZIONI
     background-color: #f9f9f9;
 }
 
+#cardDataButton {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+button#cardDataButton:after {
+    content: "";
+    border: 0.35rem solid transparent;
+    border-top-color: var(--link);
+    margin-left: 0.25em;
+    display: inline-block;
+    transform: translateY(0.15rem);
+}
+
 /********************************************
 CALENDARIO
 ********************************************/
