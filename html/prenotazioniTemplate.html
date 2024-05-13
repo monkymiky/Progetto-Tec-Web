@@ -20,7 +20,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <script type="text/Javascript" src="prenotazioni_calendario.js"></script>
 
         -->
-
+        <script src="..javascript/prenotazioni_calendario.js"> 
         <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body class="reservation-page">
@@ -109,13 +109,6 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             
             <form id="formPrenota" method="post" name="modulo">
                 {messaggiForm}
-                <fieldset>
-                    <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
-                    <span id="spanDomicilio"><input id="domicilio" name="aDomicilio" type="radio" value = "1" {checkedDomicilio}></span>
-                    <label for="domicilio">a domicilio</label>
-                    <span id="spanStudio"><input id="studio" name="aStudio" type="radio" value = "0" {checkedStudio}></span>
-                    <label for="studio">in studio</label>
-                </fieldset>
 
                 <fieldset>
                     <legend>Slot selezionato:</legend>
