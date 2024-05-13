@@ -82,6 +82,9 @@ function checkNomeCarta() {
     }
 };
 
+function showCardData() {
+    document.getElementById("cardDataFieldset").classList.toggle("hiddenObj");
+}
 
 elEmail.addEventListener('blur', checkEmail, false);
 elCell.addEventListener('blur', checkCell, false);
