@@ -1,5 +1,4 @@
 HTML
--	(optional, ma è stato scritto nella relazione! )breadcrumb ordred list e inserire frecce tramite css
 - 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
 -	verificare header (non aggiornato in admin)
 -	aggiungere card con info corsi sulla pagina Corsi 

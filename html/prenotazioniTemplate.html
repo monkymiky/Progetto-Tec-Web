@@ -67,44 +67,45 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <h1>Prenota una prestazione</h1>
             <p>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</p>
             <form id="domicilio-studioSelection">
-    <div class="form-field">
-        <label for="domicilio">a domicilio</label>
-        <input id="domicilio" name="scelta-luogo" type="radio" onchange="toggleDomicilio()" onclick="_resetTarget('#domicilio-studioSelection')" checked>
-    </div>
-    <div class="form-field">
-        <label for="studio">in studio</label>
-        <input id="studio" name="scelta-luogo" type="radio" onchange="toggleStudio()" onclick="_resetTarget('#domicilio-studioSelection')">
-    </div>
-</form>
-<div id="calendario-slot">
-
-<p>
-    <ol id="selettoreSlot">
-        <li id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</li>
-        <li id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</li>
-        <li id="testoPlaceholder">Nessun giorno selezionato.</li>
-        <li id="listaOrari1h">
-            <ol >
-                <li>08:00 / 09:00</li>
-                <li>09:00 / 10:00</li>
-                <li>10:00 / 11:00</li>
-                <li>11:00 / 12:00</li>
-                <li>13:00 / 14:00</li>
-                <li>14:00 / 15:00</li>
-                <li>15:00 / 16:00</li>
-                <li>16:00 / 17:00</li>
-                <li>17:00 / 18:00</li>
-            </ol>
-        </li>
-        <li id="listaOrari3h">
-            <ol >
-                <li>08:00 / 11:00</li>
-                <li>11:00 / 14:00</li>
-                <li>14:00 / 17:00</li>
-                <li>17:00 / 20:00</li>
-            </ol>
-        </li>
-    </div>
+            <div class="form-field">
+                <label for="domicilio">a domicilio</label>
+                <input id="domicilio" name="scelta-luogo" type="radio" onchange="toggleDomicilio()" onclick="_resetTarget('#domicilio-studioSelection')">
+            </div>
+            <div class="form-field">
+                <label for="studio">in studio</label>
+                <input id="studio" name="scelta-luogo" type="radio" onchange="toggleStudio()" onclick="_resetTarget('#domicilio-studioSelection')">
+            </div>
+            </form>
+            <div id="calendario-slot">
+                {calendario}
+                <p id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</p>
+                <p id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</p>
+                <p id="testoPlaceholder">Nessun giorno selezionato.</p>
+                <ol id="selettoreSlot">
+                    <li id="listaOrari1h">
+                        <ol >
+                            <li>08:00 / 09:00</li>
+                            <li>09:00 / 10:00</li>
+                            <li>10:00 / 11:00</li>
+                            <li>11:00 / 12:00</li>
+                            <li>13:00 / 14:00</li>
+                            <li>14:00 / 15:00</li>
+                            <li>15:00 / 16:00</li>
+                            <li>16:00 / 17:00</li>
+                            <li>17:00 / 18:00</li>
+                        </ol>
+                    </li>
+                    <li id="listaOrari3h">
+                        <ol >
+                            <li>08:00 / 11:00</li>
+                            <li>11:00 / 14:00</li>
+                            <li>14:00 / 17:00</li>
+                            <li>17:00 / 20:00</li>
+                        </ol>
+                    </li>
+                    {slot}
+                </ol>
+            </div>
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form id="formPrenota" method="post" name="modulo">
