@@ -164,16 +164,9 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         <label for="note">Note:</label>
                     </div>
                 </fieldset>
-                <!--METODO DI PAGAMENTO, PAYPAL/CARTA DI CREDITO-->
-                <fieldset> <!--Appare se selezionato "no" su gift card-->
-                    <legend>Metodo di pagamento</legend>
-                    <span id="spanPaypal"><input id="paypal" name="payment_method" type="radio"></span>
-                    <label for="paypal"><span lang="en">Paypal</span></label>
-                    <span id="spanCreditDebit"><input id="credit-debit" name="payment_method" type="radio"></span>
-                    <label for="credit-debit">Carta di credito/debito</label>
-                </fieldset>
                 <!--DATI DELLA CARTA DA USARE-->
-                <fieldset> <!--Appare se selezionati Paypal o Carta come metodo di pagamento-->
+                <button id="cardDataButton">Paga con carta</button>
+                <fieldset id="cardDataFieldset" class="hiddenObj"> <!--Appare se cliccato il relativo bottone-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
                         <span id="spanNameSurname"><input id="name_surname" name="nome" maxlength="40"></span>
