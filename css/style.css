@@ -983,6 +983,7 @@ ADMIN LOGIN
 /********************************************
 FORM PRENOTAZIONI
 ********************************************/
+
 .reservation-page #formPrenota {
     max-width: 37.5em;
     margin: 1.25em auto;
@@ -1006,9 +1007,9 @@ FORM PRENOTAZIONI
 }
 
 .reservation-page .form-field {
-    margin-bottom: 1em;
     display: flex;
     flex-direction: column-reverse;
+    margin-bottom: 1em;
     align-items: flex-start;
 }
 
@@ -1018,34 +1019,77 @@ FORM PRENOTAZIONI
     margin-bottom: 0.5em;
 }
 
+.reservation-page #selectedSlot {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.reservation-page #contactData {
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+.reservation-page #contactData .email-and-phone-number,
+.reservation-page .dati-carta,
+.reservation-page #spanCVV,
+.reservation-page #scadenzaCarta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.reservation-page #spanCVV,
+.reservation-page #scadenzaCarta {
+    width: 50%;
+}
+
+.reservation-page #spanIndirizzo,
+.reservation-page #noteAggiuntive,
+.reservation-page #spanNote,
+.reservation-page #cardDataFieldset,
+.reservation-page #spanNameSurname {
+    width: 100%;
+}
+
+/* 
+In caso si possano aggiungere i tipi date e time senza che si rompa
+l'autofill dei campi dal calendario:
+.reservation-page input[type="date"],
+.reservation-page input[type="time"], */
+.reservation-page input[id="date"],
+.reservation-page input[id="time"],
 .reservation-page input[type="text"],
 .reservation-page input[type="password"],
 .reservation-page input[type="email"],
 .reservation-page input[type="tel"],
+.reservation-page input[type="addr"],
+.reservation-page input[type="name-surname"],
 .reservation-page input[type="number"],
 .reservation-page textarea,
 .reservation-page select {
     width: 100%;
-    padding: 0.5em;
+    padding: 1em;
     box-sizing: border-box;
     border: 0.0625em solid #ccc;
     border-radius: 0.25em;
     margin-bottom: 0.5em;
 }
 
-.reservation-page #submit_button {
+.reservation-page #submit_button, 
+.reservation-page #cardDataButton {
     background-color: #4caf50;
     color: #fff;
     padding: 0.625em 0.9375em;
     border: none;
     border-radius: 0.25em;
     cursor: pointer;
-    width: auto;
-    display: block;
-    margin: 1em auto 0;
 }
 
-.reservation-page #submit_button:hover {
+.reservation-page #submit_button:hover, 
+.reservation-page #cardDataButton:hover {
     background-color: #1d8623;
 }
 
@@ -1056,12 +1100,6 @@ FORM PRENOTAZIONI
 .reservation-page select {
     padding: 0.5em;
     background-color: #f9f9f9;
-}
-
-#cardDataButton {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
 }
 
 button#cardDataButton:after {
