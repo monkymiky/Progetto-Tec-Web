@@ -426,7 +426,7 @@ HOME
     grid-column:2;
     
     text-indent: -999em; 
-    background-image: url(../media/corso.jpg); /*credo manchi l'immagine relativa ai massaggi*/
+    background-image: url(../media/massaggi.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -486,10 +486,10 @@ HOME
 
 
 /********************************************
-MASSAGGI POPOLARI
+MASSAGGI POPOLARI 
 ********************************************/
 
-#idee_regalo {
+#massaggi_popolari {
     border-top: 1px solid var(--borderColor);
     text-align: center;
     margin-top: 2em;
@@ -508,26 +508,26 @@ MASSAGGI POPOLARI
     border-radius: 3em;
 }
     
-#idee_regalo h2 {
+#massaggi_popolari h2 {
     font-size: 2em;
     margin-bottom: 0.5em;
     margin-top: 1em;
 }
     
-#idee_regalo a {
+#massaggi_popolari a {
     text-decoration: none;
     color: var(--textColor);
     font-size: 1.2em;
 }
     
-.gift-card-container {
+.popular-card-container {
     list-style: none;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
     
-.gift-card {
+.popular-card {
     max-width: 100%;
     width: var(--giftCardWidth);
     height: var(--giftCardHeight);
@@ -536,11 +536,10 @@ MASSAGGI POPOLARI
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    overflow: hidden;
     box-sizing: border-box;
 }
     
-.gift-card:hover .card-inner {
+.popular-card:hover .card-inner {
     transform: rotateY(180deg);
 }
     
