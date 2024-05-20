@@ -63,7 +63,7 @@ header {
 header h1 {
     margin-top:-0.1em;
     text-indent: -999em; 
-    background-image: url(../media/logo_nobg.png);
+    background-image: url(../media/logo_nobg.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -302,28 +302,28 @@ img{object-fit: cover;}
     display: block;
 }
 #fisio-img1{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #fisio-img2{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #fisio-img3{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #chi-sono-img2{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #chi-sono-img3{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #chi-sono-img4{
-    background-image: url(../media/anna.jpg);
+    background-image: url(../media/anna.webp);
 }
 #danza-img1{
-    background-image: url(../media/danza.jpg);
+    background-image: url(../media/danza.webp);
 }
 #corsi-img1{
-    background-image: url(../media/corso.jpg);
+    background-image: url(../media/corso.webp);
 }
 /********************************************
 HOME
@@ -400,7 +400,7 @@ HOME
     grid-column:1;
     
     text-indent:-999em; 
-    background-image:url(../media/corso.jpg);
+    background-image:url(../media/corso.webp);
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
@@ -426,7 +426,7 @@ HOME
     grid-column:2;
     
     text-indent: -999em; 
-    background-image: url(../media/massaggi.jpg);
+    background-image: url(../media/massaggi.webp);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -451,7 +451,7 @@ HOME
     padding:2em;
     height: 30vw;
     max-height: 360px;
-    background-image:url(../media/Anna_2.0_rev.jpg);
+    background-image:url(../media/Anna_2.0_rev.webp);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -605,17 +605,17 @@ MASSAGGI POPOLARI
 }
     
 #img1-1.card-front {
-    background: url("../media/card/card1.jpg") no-repeat;
+    background: url("../media/card/card1.webp") no-repeat;
     background-size: cover;
 }
     
     #img4-1.card-front {
-    background: url("../media/card/card4.jpg") no-repeat;
+    background: url("../media/card/card4.webp") no-repeat;
     background-size: cover;
     }
     
 #img6-1.card-front {
-    background: url("../media/card/card6.jpg") no-repeat;
+    background: url("../media/card/card6.webp") no-repeat;
     background-size: cover;
 }
 
@@ -826,14 +826,14 @@ MASSAGGI
     background-repeat: no-repeat;
   }
   
-  .massages-page #img1.card-front { background-image: url("../media/card/card1.jpg"); }
-  .massages-page #img2.card-front { background-image: url("../media/card/card2.jpg"); }
-  .massages-page #img3.card-front { background-image: url("../media/card/card3.jpg"); }
-  .massages-page #img4.card-front { background-image: url("../media/card/card4.jpg"); }
-  .massages-page #img5.card-front { background-image: url("../media/card/card5.jpg"); }
-  .massages-page #img6.card-front { background-image: url("../media/card/card6.jpg"); }
-  .massages-page #img7.card-front { background-image: url("../media/card/card7.jpg"); }
-  .massages-page #img8.card-front { background-image: url("../media/card/card8.jpg"); }
+  .massages-page #img1.card-front { background-image: url("../media/card/card1.webp"); }
+  .massages-page #img2.card-front { background-image: url("../media/card/card2.webp"); }
+  .massages-page #img3.card-front { background-image: url("../media/card/card3.webp"); }
+  .massages-page #img4.card-front { background-image: url("../media/card/card4.webp"); }
+  .massages-page #img5.card-front { background-image: url("../media/card/card5.webp"); }
+  .massages-page #img6.card-front { background-image: url("../media/card/card6.webp"); }
+  .massages-page #img7.card-front { background-image: url("../media/card/card7.webp"); }
+  .massages-page #img8.card-front { background-image: url("../media/card/card8.webp"); }
   
 /********************************************
 ERRORI
@@ -1110,6 +1110,7 @@ button#cardDataButton:after {
     display: inline-block;
     transform: translateY(0.15rem);
 }
+
 
 /********************************************
 CALENDARIO
