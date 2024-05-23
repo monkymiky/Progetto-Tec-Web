@@ -839,8 +839,8 @@ MASSAGGI
 ERRORI
 ********************************************/
 .error-page body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7d794;
+    font-family: var(--font);
+    background-color: var(--backgroundColor);
     color: #6a0572;
     margin: 0;
     display: flex;
@@ -848,40 +848,46 @@ ERRORI
     justify-content: center;
     min-height: 100vh;
 }
-  
+
 .error-page main {
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
-  
+
 .error-page .messaggio-errore-404 {
     margin-top: 2em;
-    font-size: 3em;   
+    font-size: 3em;
     color: #d90429;
     margin-bottom: 0.5em;
 }
+
 .error-page .messaggio-errore-500 {
     margin-top: 2em;
     line-height: 1em;
 }
+
 .error-page h1 {
-    margin-bottom: 0.4em;
-    line-height: 1em;
+    font-size: 5em;
+    line-height: 1.2em;
 }
+
 .error-page h2 {
-    line-height: 1em;
+    font-size: 3em;
+    line-height: 1.2em;
     color: #6a0572;
+    margin-bottom: 2em;
 }
-  
+
 .error-page p {
     font-size: 1.2em;
     margin-top: 0.5em;
+    margin-bottom: 1em;
     color: #6a0572;
 }
-  
+
 .error-page .home-button-container {
     display: inline-block;
-    margin-top: 2em;
+    margin-top: 1em;
     padding: 1em 2em;
     background-color: #833471;
     color: #fff;
@@ -890,28 +896,82 @@ ERRORI
     transition: background-color 0.3s;
     cursor: pointer;
 }
-  
+
 .error-page .home-button-container:hover,
 .error-page .home-button-container:focus {
     background-color: #6a0572;
     outline: none;
 }
-  
-.error-page .messaggio-errore-404, .error-page h2, .error-page p, .error-page .home-button-container {
-    outline: none;
-}
-  
+
 .error-page .home-button-container:focus {
     box-shadow: 0 0 0 0.2em #d90429, 0 0 0 0.4em #f7d794;
 }
-  
+
 @keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
+}
+
+.error-page .dog-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.error-page #dog-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.error-page #pet-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #d90429;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-page #pet-button:hover,
+.error-page #pet-button:focus {
+    background-color: #6a0572;
+    outline: none;
+    transform: scale(1.05);
+}
+
+@keyframes petting {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.error-page .petting {
+    animation: petting 0.5s ease;
 }
 
 /********************************************
