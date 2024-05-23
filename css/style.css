@@ -974,6 +974,26 @@ ERRORI
     animation: petting 0.5s ease;
 }
 
+
+.error-page .tecnico-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.error-page #tecnico-image {
+    width: 500px;
+    height: 500px;
+    background-image: url(../media/tecnico-shiba.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20%;
+}
+
 /********************************************
 ADMIN LOGIN
 ********************************************/
