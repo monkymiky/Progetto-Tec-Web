@@ -25,7 +25,6 @@ var elCVVCarta = document.getElementById("id_card_cvv");
 var err;
 var noerr;
 
- console.log("elNomeCarta = " + elNomeCarta.value);
 
 function checkEmail() {
     err = document.getElementById('errPrenotazioniEmail');

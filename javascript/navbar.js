@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    const breadcrumb = document.getElementById('breadcrumb');
+    const breadcrumb = document.getElementById('breadcrumb'); 
 
     menuToggle.addEventListener('click', function () {
         menu.classList.toggle('active');
