@@ -33,7 +33,7 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
         header("Location: http://$host$uri/$extra");// redirect ad admin.php
         exit;
       }else {
-        $connessione->closeConnection();
+        $connessione->closeConnection(); 
       }
     }else{
       $messaggiForm .= "user o password non inserito";
