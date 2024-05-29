@@ -1302,12 +1302,12 @@ ol {
 
 #selettoreSlot>li:target:not(#slotTitle1) {
     display:block;
-    grid-row:2;
+    grid-row:1;
     grid-column:2;
 }
 
 #listaOrari1h {
-    grid-row:2;
+    grid-row:1;
     grid-column:1;
 }
 
