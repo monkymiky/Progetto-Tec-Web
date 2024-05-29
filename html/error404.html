@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <span lang="en"><title>Error 404</title></span>
-        
-        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <span lang="en"><title>Error 404</title></span>
+    
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
+</head>
 
-    <body class="error-page">
-        <main>
-            <div class="messaggio-errore-404">
-                <h1>404</h1>
-                <h2>Pagina non trovata</h2>
-            </div>
-            <p>La pagina che cerchi non è disponibile.</p>
-            <a class="home-button-container" id="torna-da-404" href="html/index.html">Torna alla <span lang="en">Home</span></a>
-        </main>
-    </body>
+<body class="error-page">
+    <main>
+        <div class="container">
+            <h1>404</h1>
+            <h2>Pagina non trovata.</h2>
+            <p>Sembra che il cane abbia mangiato la pagina che cercavi. Forse ha solo bisogno di attenzioni!</p>
+            <div class="dog-container">
+                <img id="dog-image" src="../media/shiba.webp" alt="Cane triste">
+                <button id="pet-button">Accarezza</button>
+            </div>        
+        </div>
+        <script src="../javascript/pet_dog.js"></script>
+        <p>Se lo hai già accarezzato,</p>
+        <a class="home-button-container" id="torna-da-404" href="index.html">Torna alla Home</a>
+    </main>
+</body>
 </html>

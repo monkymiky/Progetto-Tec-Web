@@ -4,10 +4,10 @@ HTML
 
 -	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
+-	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
--	convertire le immagini in formato webp
--	rendere il sito bilingue
--	inserire le parentesi in Chi sono (auto)guarigione (x2) tramite css <span> :before :afther + aggiungerlo in relazione sezione accessibilità 
+- 	rendere il sito bilingue
+-	convertire in webp le immagini ancora in jpg
 
 CSS 
 -	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...

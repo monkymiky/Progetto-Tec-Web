@@ -40,7 +40,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         type="button"
                         class="dropdown__title"
                         aria-expanded="false"
-                        aria-controls="Prestazioni-dropdown"
+                        aria-controls="Prestazioni-dropdown" 
                     >
                         Prestazioni
                     </button>
@@ -58,7 +58,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
 
         <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="home.html" lang="en">Home</a>&gt;Prenotazioni</p>
+            <p>Ti trovi in: <a href="../html/index.html" lang="en">Home</a>&gt;Prenotazioni</p>
         </nav>
         
                 
@@ -109,100 +109,109 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form id="formPrenota" method="post" name="modulo">
-                {messaggiForm}
-
-                <fieldset>
+                <fieldset id="selectedSlot">
                     <legend>Slot selezionato:</legend>
                     <div class="form-field">
+                        <!-- Si potrebbe aggiungere type = "date" ? -->
                         <span id="spanDate"><input id="date" name="date" readonly value="{data}"></span> <!--Stringa recuperata tramite JScript dal calendario?-->
                         <label for="date">Giorno:</label>
                     </div>
                     
                     <div class="form-field">
+                        <!-- Si potrebbe aggiungere type = "time" ? -->
                         <span id="spanTime"><input id="time" name="time" readonly value="{ora}"></span> <!--Stringa recuperata tramite JScript dal calendario?-->
                         <label for="time">Ora:</label>
                     </div>
                 </fieldset>
-                <!--DATI DI CONTATTO: EMAIL, TELEFONO E INDIRIZZO-->
-                <fieldset>
-                    <legend>Dati di contatto</legend>
-                    <div class="form-field">
-                        
-                        <span id="spanEmail"><input id="email" name="email" type="email" maxlength="40" value="{email}"></span>
-                        <label for="email">Email:</label>
-                        <span id="errPrenotazioniEmail" class="errContatti">Inserire una mail valida</span>
-                        <span id="noErrPrenotazioniEmail" class="noErrContatti">&#10003;</span>
-                    </div>
-                    
-                    <div class="form-field">
-                        
-                        <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
-                        <label for="cell">Numero di telefono:</label>
-                        <span id="errPrenotazioniTelefono" class="errContatti">Inserire un numero di telefono valido</span>
-                        <span id="noErrPrenotazioniTelefono" class="noErrContatti">&#10003;</span>
-                    </div>
 
-                    <div class="form-field">
+                <!--DATI DI CONTATTO: EMAIL, TELEFONO E INDIRIZZO-->
+                <fieldset id="contactData">
+                    <legend>Dati di contatto</legend>
+                    <div class="email-and-phone-number">
+                        <div class="form-field">
+                            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="40" value="{email}"></span>
+                            <label for="email">Email:</label>
+                            <span id="errPrenotazioniEmail" class="errContatti">Inserire una mail valida</span>
+                            <span id="noErrPrenotazioniEmail" class="noErrContatti">&#10003;</span>
+                        </div>
                         
-                        <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo"  maxlength="100" value="{indirizzo}"></span>
+                        <div class="form-field">
+                            <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
+                            <label for="cell">Numero di telefono:</label>
+                            <span id="errPrenotazioniTelefono" class="errContatti">Inserire un numero di telefono valido</span>
+                            <span id="noErrPrenotazioniTelefono" class="noErrContatti">&#10003;</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo"  type="addr" maxlength="100" value="{indirizzo}"></span>
                         <label for="indirizzo">Indirizzo:</label>
                         <span id="errPrenotazioniIndirizzo" class="errContatti">Inserire un indirizzo</span>
                         <span id="noErrPrenotazioniIndirizzo" class="noErrContatti">&#10003;</span>
                     </div>
                 </fieldset>
+
                 <!--NOTE AGGIUNTIVE-->
-                <fieldset>
+                <fieldset id="noteAggiuntive">
                     <legend>Note aggiuntive</legend>
                     <div class="form-field">
-                        <span id="spanNote"><input id="note" name="note"  maxlength="500" value="{note}"></span>
+                        <span id="spanNote"><textarea id="note" name="note" maxlength="500" value="{note}"></textarea></span>
                         <label for="note">Note:</label>
                     </div>
                 </fieldset>
+
                 <!--DATI DELLA CARTA DA USARE-->
                 <button type="button" id="cardDataButton" onclick="showCardData()" aria-expanded="false" aria-controls="cardDataFieldset">Paga con carta</button>
                 <fieldset id="cardDataFieldset" class="hiddenObj"> <!--Appare se cliccato il relativo bottone-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
-                        <span id="spanNameSurname"><input id="name_surname" name="nome" maxlength="40"></span>
+                        <span id="spanNameSurname"><input id="name_surname" type="name-surname" name="nome" maxlength="40"></span>
                         <label for="name-surname">Nome e cognome:</label>
+                        <span id="errPrenotazioniNomeCarta" class="errContatti">Inserire il nome sulla carta</span>
+                        <span id="noErrPrenotazioniNomeCarta" class="noErrContatti">&#10003;</span>
                     </div>
-                    <div class="form-field">
-                        <span id="spanCardNumber"><input id="card_number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span> <!--Necessario pensare ad un metodo di formattazione input-->
-                        <label for="card-number">Numero della carta:</label>
+                    <div class="dati-carta">
+                        <div class="form-field">
+                            <span id="spanCardNumber"><input id="card_number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span> <!--Necessario pensare ad un metodo di formattazione input-->
+                            <label for="card-number">Numero della carta:</label>
+                            <span id="errPrenotazioniNumeroCarta" class="errContatti">Inserire il numero della carta</span>
+                            <span id="noErrPrenotazioniNumeroCarta" class="noErrContatti">&#10003;</span>
+                        </div>
+                        <div class="form-field">
+                            <span id="spanCVV"><input id="id_card_cvv" name="card_cvv" type="number" max="999" min="000"></span>
+                            <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
+                            <span id="errPrenotazioniCVV" class="errContatti">Inserisci i numeri sul retro della carta</span>
+                            <span id="noErrPrenotazioniCVV" class="noErrContatti">&#10003;</span>
+                        </div>
+                        
+                        <!--INSERIRE SCADENZA DELLA CARTA -->
+                        <fieldset id="scadenzaCarta"> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
+                            <legend><abbr title="Scadenza">Scad</abbr>.</legend>
+                            <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                            <select id="month" name="month">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                            <select id="year" name="year">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                            </select> 
+                        </fieldset>
                     </div>
-                    <div class="form-field">
-                        <span id="spanCVV"><input id="id_card_cvv" name="card_cvv" type="number" max="999" min="000"></span>
-                        <label for="card-CVV"><abbr title="Codice di verifica o convalida">CVV</abbr>:</label>
-                    </div>
-                    <!--INSERIRE SCADENZA DELLA CARTA -->
-                    <fieldset> <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
-                        <legend><abbr title="Scadenza">Scad</abbr>.</legend>
-                        <label for="month">Mese:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="month" name="month">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <label for="year">Anno:</label> <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-                        <select id="year" name="year">
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                        </select> 
-                    </fieldset>
                 </fieldset>
                 <span id="spanPrenota"><input type="submit" id="submit_button"  name="action" value="prenota" onclick=""></span>
             </form>

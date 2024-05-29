@@ -42,7 +42,7 @@ function toggleStudio() { //carica gli orari studio
 
 function fixMonthDates(year, month) { //rende non cliccabili i giorni del mese successivo
     var daysInCurrentMonth = new Date(year, month, 0).getDate();
-    var list;
+    var list = [];
     if(document.getElementById("domicilio").checked)
         {
             list = document.querySelectorAll(".giorno3h");
