@@ -1,17 +1,16 @@
 HTML
-- 	sostituire i div nella home con <section> dove è opportuno (e anche nelle altre pagine)
--	verificare header (non aggiornato in admin)
 -	aggiungere card con info corsi sulla pagina Corsi 
+-	inserire nella pagina 404 l'emotional design e scrivere una frase di scuse nella pagina 500
+
 -	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
 -	inserire description
--	inserire nella pagina 404 l'emotional design e scrivere una frase di scuse nella pagina 500
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
 -	convertire le immagini in formato webp
-
-
+-	rendere il sito bilingue
+-	inserire le parentesi in Chi sono (auto)guarigione (x2) tramite css <span> :before :afther + aggiungerlo in relazione sezione accessibilità 
 
 CSS 
--	rendere elegante il codice  - (optional) volendo ristrutturarlo...
+-	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
 
@@ -29,15 +28,11 @@ JS
 -	js controlli input
 -	js mostra dati prenotazione
 	PRENOTAZIONI
--	js controlli input 
 -	js riempi campo data
--	js scomparsa/comparsa fieldset "dati carta" con BOTTONE "AVANTI" -> non implementabile con CSS
 
 PHP 
 -	form di contatto (anche mostrare errori agli utenti)
-ALTRO
-
-Sulle caselle di input nella pagina per prenotare una prestazione, metà di queste sono diverse dall'altra metà (in senso estetico, fanno a botte)
+-	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
 
 
 
