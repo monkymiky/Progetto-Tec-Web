@@ -75,6 +75,6 @@ function sanitize() { //la soluzione che segue è estremamente bifolca, ma per o
         }
 }
 
-function _resetTarget(target) { //se sono visualizzati degli slot e viene cambiata la tipologia studio/domicilio, gli slot spariscono
-    window.location.href = target; //potrebbe dare problemi di accessibilità (maledetti screenreader)
+function _resetTarget() { //se sono visualizzati degli slot e viene cambiata la tipologia studio/domicilio, gli slot spariscono
+    window.location.href = "#/"; //potrebbe dare problemi di accessibilità (maledetti screenreader)
 }
