@@ -40,6 +40,8 @@ html {
     line-height:1.5em;
     margin:auto;
     background-color: var(--backgroundColor);
+    scroll-behavior:smooth;
+    scroll-padding:10em;
 }
 
 body {
@@ -1180,7 +1182,13 @@ l'autofill dei campi dal calendario:
     background-color: #f9f9f9;
 }
 
-button#cardDataButton:after {
+.reservation-page button#cardDataButton {
+    width:auto;
+    margin-left:40%;
+    margin-right:40%;
+}
+
+.reservation-page button#cardDataButton:after {
     content: "";
     border: 0.35rem solid transparent;
     border-top-color: var(--link);
@@ -1296,12 +1304,12 @@ ol {
 
 #selettoreSlot>li:target:not(#slotTitle1) {
     display:block;
-    grid-row:2;
+    grid-row:1;
     grid-column:2;
 }
 
 #listaOrari1h {
-    grid-row:2;
+    grid-row:1;
     grid-column:1;
 }
 

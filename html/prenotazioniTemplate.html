@@ -20,7 +20,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <script type="text/Javascript" src="prenotazioni_calendario.js"></script>
 
         -->
-        <script src="..javascript/prenotazioni_calendario.js"> </script>
+        <script src="../javascript/prenotazioni_calendario.js"> </script>
         <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
     </head>
     <body class="reservation-page">
@@ -69,42 +69,44 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             <form id="domicilio-studioSelection">
             <div class="form-field">
                 <label for="domicilio">a domicilio</label>
-                <input id="domicilio" name="scelta-luogo" type="radio" onchange="toggleDomicilio()" onclick="_resetTarget('#domicilio-studioSelection')">
+                <input id="domicilio" name="scelta-luogo" type="radio" onchange="toggleDomicilio()" onclick="_resetTarget()">
             </div>
             <div class="form-field">
                 <label for="studio">in studio</label>
-                <input id="studio" name="scelta-luogo" type="radio" onchange="toggleStudio()" onclick="_resetTarget('#domicilio-studioSelection')">
+                <input id="studio" name="scelta-luogo" type="radio" onchange="toggleStudio()" onclick="_resetTarget()">
             </div>
             </form>
             <div id="calendario-slot">
                 {calendario}
-                <p id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</p>
-                <p id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</p>
-                <p id="testoPlaceholder">Nessun giorno selezionato.</p>
-                <ol id="selettoreSlot">
-                    <li id="listaOrari1h">
-                        <ol >
-                            <li>08:00 / 09:00</li>
-                            <li>09:00 / 10:00</li>
-                            <li>10:00 / 11:00</li>
-                            <li>11:00 / 12:00</li>
-                            <li>13:00 / 14:00</li>
-                            <li>14:00 / 15:00</li>
-                            <li>15:00 / 16:00</li>
-                            <li>16:00 / 17:00</li>
-                            <li>17:00 / 18:00</li>
-                        </ol>
-                    </li>
-                    <li id="listaOrari3h">
-                        <ol >
-                            <li>08:00 / 11:00</li>
-                            <li>11:00 / 14:00</li>
-                            <li>14:00 / 17:00</li>
-                            <li>17:00 / 20:00</li>
-                        </ol>
-                    </li>
-                    {slot}
-                </ol>
+                <div> <!--altrimenti vanno annidate più grid-->
+                    <p id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</p>
+                    <p id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</p>
+                    <p id="testoPlaceholder">Nessun giorno selezionato.</p>
+                    <ol id="selettoreSlot">
+                        <li id="listaOrari1h">
+                            <ol >
+                                <li>08:00 / 09:00</li>
+                                <li>09:00 / 10:00</li>
+                                <li>10:00 / 11:00</li>
+                                <li>11:00 / 12:00</li>
+                                <li>13:00 / 14:00</li>
+                                <li>14:00 / 15:00</li>
+                                <li>15:00 / 16:00</li>
+                                <li>16:00 / 17:00</li>
+                                <li>17:00 / 18:00</li>
+                            </ol>
+                        </li>
+                        <li id="listaOrari3h">
+                            <ol >
+                                <li>08:00 / 11:00</li>
+                                <li>11:00 / 14:00</li>
+                                <li>14:00 / 17:00</li>
+                                <li>17:00 / 20:00</li>
+                            </ol>
+                        </li>
+                        {slot}
+                    </ol>
+                </div>
             </div>
             <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
@@ -160,7 +162,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                 </fieldset>
 
                 <!--DATI DELLA CARTA DA USARE-->
-                <button type="button" id="cardDataButton" onclick="showCardData()" aria-expanded="false" aria-controls="cardDataFieldset">Paga con carta</button>
+                <button type="button" id="cardDataButton" onclick="showCardData()" aria-expanded="false" aria-controls="cardDataFieldset">Prosegui</button>
                 <fieldset id="cardDataFieldset" class="hiddenObj"> <!--Appare se cliccato il relativo bottone-->
                     <legend>Dati carta</legend>
                     <div class="form-field">
@@ -213,7 +215,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         </fieldset>
                     </div>
                 </fieldset>
-                <span id="spanPrenota"><input type="submit" id="submit_button"  name="action" value="prenota" onclick=""></span>
+                <span id="spanPrenota"><input type="submit" id="submit_button" class="hiddenObj" name="action" value="prenota" onclick=""></span>
             </form>
         </main>
         <!--    FOOTER    -->
