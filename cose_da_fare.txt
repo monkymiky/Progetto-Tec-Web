@@ -1,9 +1,5 @@
 HTML
 -	aggiungere card con info corsi sulla pagina Corsi 
--	inserire nella pagina 404 l'emotional design e scrivere una frase di scuse nella pagina 500
-
--	inserire keyword (e quindi verificare (ed eventualmente cambiare) h1 h2 etc scondo la logica SEO) 
--	inserire description
 -	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
 - 	rendere il sito bilingue
@@ -25,7 +21,6 @@ JS
 	CARD
 -	(optional) far si che da mobile dopo averle girate cliccandoci sopra tornino girate
 	ADMIN
--	js controlli input
 -	js mostra dati prenotazione
 	PRENOTAZIONI
 -	js riempi campo data
