@@ -9,7 +9,7 @@
     
     class DBAccess {
         //accesso per altervista
-        private const HOST_DB = "localhost";
+        private const HOST_DB = "localhost:3306";
         private const DATABASE_NAME = "mnesler";
         private const USERNAME = "mnesler";
         private const PASSWORD = "Feif1eeng2Ea7nei";
