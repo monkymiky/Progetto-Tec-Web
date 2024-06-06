@@ -86,34 +86,44 @@ Class Calendario{
             $connessione->openDBConnection();
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
             $connessione->closeConnection();
-            $i = 0;
-            $considera = true;
+
+            $connessione->openDBConnection();
+            $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
+            $connessione->closeConnection();
+            
+            /*$i = 0;
+            $aDomicilio = false; // variabile che tiene conto del fatto che una prenotazione a domicilio occupa 2 slot e quindi l'iterazione sucessiva non viene considerata
             foreach( $prenotazioni as $prenotaz ){ // per non dover cambiare tutto il codice ricostruisco le non disponibilità dalle prenotazioni
-                if($considera){
-                    $nonDisponibili[$i] = $prenotaz["Data_Ora_Inizio"];
-                    if($prenotaz[6] == false){
-                        $nonDisponibili[$i+1] = false;
-                        $considera = false;
+                if(!$aDomicilio){
+                    $nonDisponibili[$i] = $prenotaz["Data_Ora_Inizio"];//   NON HA SENSO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    if($prenotaz[6] == false){ // la prenotazione è domicilio
+                        $nonDisponibili[$i+1] = true;//   NON HA SENSO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        $aDomicilio = true;
                     }
-                }else{$considera = true;}
-            }
+                }else{$aDomicilio = false;}
+            }*/
+
             if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-                $this->giorno[$i]->disponibile = false;
+                $this->giorno[$i]->disponibile = true;
                 $tuttiSlotOccupati = false; 
                 for($j=0;$j<9;$j++){ // per ogni slot del giorno
                     while($k < count($nonDisponibili)-1 && strtotime($this->giorno[$i]->stringData.$this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                         $k++;
                     }
                     if(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-                        $this->giorno[$i]->disponibilitàSlot[$j] = true;
-                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni["nome"],"indirizzo" => $prenotazioni["indirizzo"],"email" => $prenotazioni["email"],"cel" => $prenotazioni["cel"],"note" => $prenotazioni["note"],"tipo" => $prenotazioni["tipo"]];
-                        if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = true;}
+                        $this->giorno[$i]->disponibilitàSlot[$j] = false;
+                        $z=0; 
+                        while ( $z<count($prenotazioni) && strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) != strtotime($prenotazioni[$z]["Data_Ora_Inizio"])){
+                            $z++;// scorro tutte le prenotazioni fino a trovare quella che si riferisce allo slot non disponibile
+                        }
+                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni[$z]["nome"],"indirizzo" => $prenotazioni[$z]["indirizzo"],"email" => $prenotazioni[$z]["email"],"cel" => $prenotazioni[$z]["cel"],"note" => $prenotazioni[$z]["note"],"tipo" => $prenotazioni[$z]["tipo"]];
+                        if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = false;}
                     }
                     else{
-                        $tuttiSlotOccupati = true;
-                        $this->giorno[$i]->disponibilitàSlot[$j] = false;
+                        $tuttiSlotOccupati = false;
+                        $this->giorno[$i]->disponibilitàSlot[$j] = true;
                         $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cel" =>"","note" =>"","tipo" =>""];
                     }
                 }
@@ -126,30 +136,37 @@ Class Calendario{
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 if($this->giorno[$i]->data >= strtotime("+2 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
-                   $this->giorno[$i]->disponibile = false;
-                   $this->giorno[$i]->disponibile3h = true;
+                   $this->giorno[$i]->disponibile = true; //parto assumendo che almeno uno slot sia disponibile
+                   $this->giorno[$i]->disponibile3h = false; //non so però se ci sono 2 slot consecutivi disponibili
                     $tuttiSlotOccupati = false; 
+                    $slotPrecedenteDisponibile = false; // siccome è il primo slot non esiste uno precedente all'inizio
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                        while($dataora > strtotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                        while(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                             $k++;
                         }
-                        if($dataora == strtotime($nonDisponibili[$k])){ // imposto la disponibilità o meno dello slot
-                           $this->giorno[$i]->disponibilitàSlot[$j] = true;
-                            if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = true;}
+                        if(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // se lo slot non è disponibile
+                            $this->giorno[$i]->disponibilitàSlot[$j] = false; // imposto non disponibile
+                            if($j==8 && $tuttiSlotOccupati){ // se è l'ultimo slot e tutti gli altri sono non disponibili
+                                $this->giorno[$i]->disponibile = false; //imposto l'intero giorno come non disponibile
+                            }
+                            $slotPrecedenteDisponibile = false; // imposto non disponibile per la prossima iterazione
                         }
-                        else{
-                            $tuttiSlotOccupati = true;
-                           $this->giorno[$i]->disponibilitàSlot[$j] = false;
-                            if($slotPrecedenteDisponibile == false){$this->giorno[$i]->disponibile3h = false;}
-                            $slotPrecedenteDisponibile = false;
+                        else{ // lo slot è disponibile
+                            $tuttiSlotOccupati = false;
+                            $this->giorno[$i]->disponibilitàSlot[$j] = true;
+                            if($j!=0 && $this->giorno[$i]->disponibilitàSlot[$j-1] == true){ // se non è il primo slot e quello precedente è disponibile
+                                $this->giorno[$i]->disponibile3h = true; // segno che durante il giorno è disponibile almeno uno slot da 3h 
+                                $slotPrecedenteDisponibile = false;
+                            }
+                            $slotPrecedenteDisponibile = true;// imposto disponibile per la prossima iterazione
                         }
                     }
                 }
                 else{ // giorno intero non disponibile
-                    $this->giorno[$i]->disponibile = true;
-                    $this->giorno[$i]->disponibile3h = true;
+                    $this->giorno[$i]->disponibile = false;
+                    $this->giorno[$i]->disponibile3h = false;
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                       $this->giorno[$i]->disponibilitàSlot[$j] = true;
+                       $this->giorno[$i]->disponibilitàSlot[$j] = false;
                     }
                 }
             }

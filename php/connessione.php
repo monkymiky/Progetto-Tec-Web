@@ -108,7 +108,7 @@
             while($row = $result->fetch_assoc()){
                 $matrice[$i] = $row;  
             }
-            return $matrice; // ritorna un array numerico (non associativo) con tutti gli slot non disponibili
+            return $matrice; // ritorna un array numerico di array associativi con tutte le prenotazioni
         }
 
         public function cancellaPrenotazione($inizio, $tipo){

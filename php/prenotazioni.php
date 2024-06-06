@@ -22,7 +22,7 @@ $checkedDomicilio="";
 $checkedStudio="";
 if(isset($_POST['submit'])){
     // controlli input 
-    $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); // problabilmente sarà da sostituire con $data.$ora
+    $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); 
     
     $tipo = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
     if($tipo){
