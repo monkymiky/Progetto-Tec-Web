@@ -40,7 +40,6 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
         $connessione->closeConnection(); 
       }
     }else{
-      $messaggiForm .= " else 2  ";
       $messaggiForm .= "user o password non inserito";
     }
     $messaggiForm .= " out 1  ";
