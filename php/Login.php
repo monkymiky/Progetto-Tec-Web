@@ -22,23 +22,30 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
   exit;
 }else{ // login da fare
   if (isset($_POST['loginSubmit'])) {
+    $messaggiForm .= " debug : if 1  ";
     if(!isset($_POST["user"]) && !isset($_POST["password"])){
+      $messaggiForm .= "  if 2  ";
       controllaInput($_POST["user"]) ; 
       controllaInput($_POST["password"]);
       $connessione = new DBAccess();
       $connessione->openDBConnection();
       if ($connessione->login($_POST['user'],$_POST['password'])){
+        $messaggiForm .= "  if 3  ";
         $connessione->closeConnection();
         $_SESSION["session_id"] = session_id();
         header("Location: http://$host$uri/$extra");// redirect ad admin.php
         exit;
       }else {
+        $messaggiForm .= " else 1  ";
         $connessione->closeConnection(); 
       }
     }else{
+      $messaggiForm .= " else 2  ";
       $messaggiForm .= "user o password non inserito";
     }
+    $messaggiForm .= " out 1  ";
   }
+  $messaggiForm .= " out 2  ";
 }
 
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
