@@ -85,23 +85,8 @@ Class Calendario{
         if($admin){
             $connessione->openDBConnection();
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
-            $connessione->closeConnection();
-
-            $connessione->openDBConnection();
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
-            
-            /*$i = 0;
-            $aDomicilio = false; // variabile che tiene conto del fatto che una prenotazione a domicilio occupa 2 slot e quindi l'iterazione sucessiva non viene considerata
-            foreach( $prenotazioni as $prenotaz ){ // per non dover cambiare tutto il codice ricostruisco le non disponibilità dalle prenotazioni
-                if(!$aDomicilio){
-                    $nonDisponibili[$i] = $prenotaz["Data_Ora_Inizio"];//   NON HA SENSO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    if($prenotaz[6] == false){ // la prenotazione è domicilio
-                        $nonDisponibili[$i+1] = true;//   NON HA SENSO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                        $aDomicilio = true;
-                    }
-                }else{$aDomicilio = false;}
-            }*/
 
             if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
