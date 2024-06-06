@@ -58,7 +58,6 @@ header {
     background-color: var(--headerBackground);
     color: var(--headerText);
     text-align: center;
-    text-indent: -999em;
     padding: 1em;
 }
 
@@ -71,6 +70,22 @@ header h1 {
     background-position: center;
     font-size: 7em;
     line-height: 1.5em;
+}
+
+header a.skip-link{
+    display:inline-block;
+    text-indent:-999em;
+}
+
+header nav a.germanSwitch {
+    text-indent: -999em;
+    display: inline-block;
+    margin-left:95%;
+    width:5%;  
+    background-image: url(../media/DE_IT.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 #menu-toggle{
