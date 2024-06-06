@@ -133,6 +133,8 @@ Class Calendario{
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
 
+            if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
+
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 if($this->giorno[$i]->data >= strtotime("+2 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
@@ -141,11 +143,7 @@ Class Calendario{
                     $tuttiSlotOccupati = false; 
                     $slotPrecedenteDisponibile = false; // siccome è il primo slot non esiste uno precedente all'inizio
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                        while(
-                            strtotime($this->giorno[$i]->data . 
-                            $this->giorno[$i]->ORARIO_SLOT[$j]) > 
-                            strtotime($nonDisponibili[$k]) &&
-                            $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                        while(strtotime($this->giorno[$i]->data . $this->giorno[$i]->ORARIO_SLOT[$j]) >  strtotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                             $k++;
                         }
                         if(strtotime($this->giorno[$i]->data . $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // se lo slot non è disponibile
