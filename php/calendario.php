@@ -141,10 +141,14 @@ Class Calendario{
                     $tuttiSlotOccupati = false; 
                     $slotPrecedenteDisponibile = false; // siccome è il primo slot non esiste uno precedente all'inizio
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                        while(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k]) && $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                        while(
+                            strtotime($this->giorno[$i]->data . 
+                            $this->giorno[$i]->ORARIO_SLOT[$j]) > 
+                            strtotime($nonDisponibili[$k]) &&
+                            $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                             $k++;
                         }
-                        if(strtotime($this->giorno[$i]->data.$this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // se lo slot non è disponibile
+                        if(strtotime($this->giorno[$i]->data . $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k])){ // se lo slot non è disponibile
                             $this->giorno[$i]->disponibilitàSlot[$j] = false; // imposto non disponibile
                             if($j==8 && $tuttiSlotOccupati){ // se è l'ultimo slot e tutti gli altri sono non disponibili
                                 $this->giorno[$i]->disponibile = false; //imposto l'intero giorno come non disponibile
