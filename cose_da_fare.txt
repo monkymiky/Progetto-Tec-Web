@@ -1,7 +1,7 @@
 HTML
 -	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
-- 	Controllare che le pagine in tedesco abbiano i link corretti e aggiungere pdf tradotto
+- 	Controllare che le pagine in tedesco abbiano i link corretti
 -	sanificare header (molti sono copiancollati dalla home)
 -	convertire in webp le immagini ancora in jpg
 
