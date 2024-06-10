@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Buchen Sie Ihre Leistung, auch zu Hause | Anna Nesler</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
+        <script src="../javascript/navbar.js"></script>
+        <script src="../javascript/prenotazioni_calendario.js"> </script>
+        <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
+    </head>
+    <body class="reservation-page">
+        <!-- HEADER -->    
+        <header>  
+            <nav><a href="../html/prenotazioniTemplate.html" class="germanSwitch">Sprache ändern</a></nav>
+            <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>                                                              
+            <h1 id="logo">Anna Nesler Physiotherapeut</h1>  
+            <button             id="menu-toggle" 
+            type="button" 
+            aria-expanded="false"
+            aria-controls="menu"
+            >
+            ☰
+            </button>           
+        </header>
+        <!-- NAVBAR -->
+        <nav id="menu">
+            <ul>
+                <li lang="en"><a href="../html_DE/index.html">Home</a></li>
+                <li><a href="../html_DE/anna.html">Wer bin mich</a></li>
+                <li class="dropdown">
+                    <button
+                        type="button"
+                        class="dropdown__title"
+                        aria-expanded="false"
+                        aria-controls="Prestazioni-dropdown" 
+                    >
+                        Leistung
+                    </button>
+                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                        <li><a href="../html/prestazioni/fisioterapia.html">Physiotherapie</a></li>
+                        <li><a href="../html/prestazioni/massaggi.html">Massagen</a></li>
+                        <li><a href="../html/prestazioni/danza.html">Freier Tanz</a></li>
+                        <li><a href="../html/prestazioni/corsi.html">Massagekurse</a></li>
+                    </ul>
+                </li>          
+                <li><a href="../html/contatti.html">Kontakte</a></li>
+                <li>Reservierungen</li>                
+            </ul>
+        </nav>
+
+        <!-- BREADCRUMB -->
+        <nav id="breadcrumb">
+            <p>Sie befinden sich in: <a href="../html/index.html" lang="en">Home</a>&gt;Reservierungen</p>
+        </nav>
+        
+        <main id="content">
+            <h1>Buchen Sie eine Leistung</h1>
+            <p>Wählen Sie den Leistungsort aus, um die verfügbaren Slots anzuzeigen:</p>
+            <form id="domicilio-studioSelection">
+                <div class="form-field">
+                    <label for="domicilio">zu Hause</label>
+                    <input id="domicilio" name="scelta-luogo" type="radio" onchange="toggleDomicilio()" onclick="_resetTarget()">
+                </div>
+                <div class="form-field">
+                    <label for="studio">im Studio</label>
+                    <input id="studio" name="scelta-luogo" type="radio" onchange="toggleStudio()" onclick="_resetTarget()">
+                </div>
+            </form>
+            <div id="calendario-slot">
+                {calendario}
+                <div>
+                    <p id="slotTitle1">Wählen Sie einen Tag, um die verfügbaren Slots anzuzeigen.</p>
+                    <p id="slotTitle2">Wählen Sie einen Slot, um eine Buchung vorzunehmen.</p>
+                    <p id="testoPlaceholder">Kein Tag ausgewählt.</p>
+                    <ol id="selettoreSlot">
+                        <li id="listaOrari1h">
+                            <ol>
+                                <li>08:00 / 09:00</li>
+                                <li>09:00 / 10:00</li>
+                                <li>10:00 / 11:00</li>
+                                <li>11:00 / 12:00</li>
+                                <li>13:00 / 14:00</li>
+                                <li>14:00 / 15:00</li>
+                                <li>15:00 / 16:00</li>
+                                <li>16:00 / 17:00</li>
+                                <li>17:00 / 18:00</li>
+                            </ol>
+                        </li>
+                        <li id="listaOrari3h">
+                            <ol>
+                                <li>08:00 / 11:00</li>
+                                <li>11:00 / 14:00</li>
+                                <li>14:00 / 17:00</li>
+                                <li>17:00 / 20:00</li>
+                            </ol>
+                        </li>
+                        {slot}
+                    </ol>
+                </div>
+            </div>
+            <p>Die Dauer der Leistungen ist unabhängig von der Dauer der <span lang="en">Slots</span> (4 Stunden), die von meinen Reisebedürfnissen abhängt.</p>
+            
+            <form id="formPrenota" method="post" name="modulo">
+                <fieldset id="selectedSlot">
+                    <legend>Ausgewählter Slot:</legend>
+                    <div class="form-field">
+                        <span id="spanDate"><input id="date" name="date" readonly value="{data}"></span>
+                        <label for="date">Tag:</label>
+                    </div>
+                    
+                    <div class="form-field">
+                        <span id="spanTime"><input id="time" name="time" readonly value="{ora}"></span>
+                        <label for="time">Zeit:</label>
+                    </div>
+                </fieldset>
+
+                <fieldset id="contactData">
+                    <legend>Kontaktdaten</legend>
+                    <div class="email-and-phone-number">
+                        <div class="form-field">
+                            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="40" value="{email}"></span>
+                            <label for="email">Email:</label>
+                            <span id="errPrenotazioniEmail" class="errContatti">Bitte geben Sie eine gültige Email ein</span>
+                            <span id="noErrPrenotazioniEmail" class="noErrContatti">&#10003;</span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
+                            <label for="cell">Telefonnummer:</label>
+                            <span id="errPrenotazioniTelefono" class="errContatti">Bitte geben Sie eine gültige Telefonnummer ein</span>
+                            <span id="noErrPrenotazioniTelefono" class="noErrContatti">&#10003;</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" type="addr" maxlength="100" value="{indirizzo}"></span>
+                        <label for="indirizzo">Adresse:</label>
+                        <span id="errPrenotazioniIndirizzo" class="errContatti">Bitte geben Sie eine Adresse ein</span>
+                        <span id="noErrPrenotazioniIndirizzo" class="noErrContatti">&#10003;</span>
+                    </div>
+                </fieldset>
+
+                <fieldset id="noteAggiuntive">
+                    <legend>Zusätzliche Anmerkungen</legend>
+                    <div class="form-field">
+                        <span id="spanNote"><textarea id="note" name="note" maxlength="500" value="{note}"></textarea></span>
+                        <label for="note">Anmerkungen:</label>
+                    </div>
+                </fieldset>
+
+                <button type="button" id="cardDataButton" onclick="showCardData()" aria-expanded="false" aria-controls="cardDataFieldset">Weiter</button>
+                <fieldset id="cardDataFieldset" class="hiddenObj">
+                    <legend>Kartendaten</legend>
+                    <div class="form-field">
+                        <span id="spanNameSurname"><input id="name_surname" type="name-surname" name="nome" maxlength="40"></span>
+                        <label for="name-surname">Name und Nachname:</label>
+                        <span id="errPrenotazioniNomeCarta" class="errContatti">Bitte geben Sie den Namen auf der Karte ein</span>
+                        <span id="noErrPrenotazioniNomeCarta" class="noErrContatti">&#10003;</span>
+                    </div>
+                    <div class="dati-carta">
+                        <div class="form-field">
+                            <span id="spanCardNumber"><input id="card_number" type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19"></span>
+                            <label for="card-number">Kartennummer:</label>
+                            <span id="errPrenotazioniNumeroCarta" class="errContatti">Bitte geben Sie die Kartennummer ein</span>
+                            <span id="noErrPrenotazioniNumeroCarta" class="noErrContatti">&#10003;</span>
+                        </div>
+                        <div class="form-field">
+                            <span id="spanCVV"><input id="id_card_cvv" name="card_cvv" type="number" max="999" min="000"></span>
+                            <label for="card-CVV"><abbr title="Card Verification Value">CVV</abbr>:</label>
+                            <span id="errPrenotazioniCVV" class="errContatti">Bitte geben Sie die Nummer auf der Rückseite der Karte ein</span>
+                            <span id="noErrPrenotazioniCVV" class="noErrContatti">&#10003;</span>
+                        </div>
+                        
+                        <fieldset id="scadenzaCarta">
+                            <legend><abbr title="Ablaufdatum">Abl</abbr>.</legend>
+                            <label for="month">Monat:</label>
+                            <select id="month" name="month">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <label for="year">Jahr:</label>
+                            <select id="year" name="year">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                            </select> 
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <span id="spanPrenota"><input type="submit" id="submit_button" class="hiddenObj" name="action" value="buchen" onclick=""></span>
+            </form>
+        </main>
+        <!-- FOOTER -->
+        <footer>
+            <p><a href="../html_DE/contatti.html">kontakte</a></p>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
+        </footer>
+    </body>
+</html>
