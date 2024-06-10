@@ -340,6 +340,140 @@ img{object-fit: cover;}
 #corsi-img1{
     background-image: url(../media/corso.webp);
 }
+
+/********************************************
+CORSI CONSIGLIATI
+********************************************/
+.courses-page #corsi_consigliati {
+    border-top: 1px solid var(--borderColor);
+    text-align: center;
+    margin-top: 2em;
+    display: block;
+}
+
+.courses-page #vedi-di-piu {
+    display: inline-block;
+    width: 6em;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: var(--boxesBackground);
+    border: 0.05em solid var(--borderColor);
+    border-radius: 3em;
+}
+
+.courses-page #corsi_consigliati h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+.courses-page #corsi_consigliati a {
+    text-decoration: none;
+    color: var(--textColor);
+    font-size: 1.2em;
+}
+
+.courses-page .recommended-card-container {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.courses-page .recommended-card {
+    max-width: 100%;
+    width: var(--giftCardWidth);
+    height: var(--giftCardHeight);
+    perspective: 62.5em; 
+    margin: 0.625em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.courses-page .recommended-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.courses-page .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.courses-page .card-front,
+.courses-page .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25em;
+    border-radius: 15px;
+    background-color: var(--backgroundColor);
+}
+
+.courses-page .card-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: var(--cardBorderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 1.2em;
+}
+
+.courses-page .card-name-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    background-color: white;
+    width: 90%;
+    padding: 1.75em;
+    border-radius: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.courses-page .card-name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: black;
+}
+
+.courses-page #img-c1.card-front {
+    background: url("../media/massaggio-thai.webp") no-repeat;
+    background-size: cover;
+}
+
+.courses-page #img-c2.card-front {
+    background: url("../media/massaggio-californiano.webp") no-repeat;
+    background-size: cover;
+}
+
+.courses-page #img-c3.card-front {
+    background: url("../media/massaggio-shiatsu.webp") no-repeat;
+    background-size: cover;
+}
+
 /********************************************
 HOME
 ********************************************/
