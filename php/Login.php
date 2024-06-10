@@ -22,7 +22,7 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
   header("Location: http://$host$uri/$extra");// redirect ad admin.php
   exit;
 }else{ // login da fare
-  if (isset($_POST['loginSubmit'])) {
+  if (isset($_POST['submit'])) {
     $messaggiForm .= " \n debug : if 1  ";
     if(!isset($_POST["user"]) && !isset($_POST["password"])){
       $messaggiForm .= "\n  if 2  ";
