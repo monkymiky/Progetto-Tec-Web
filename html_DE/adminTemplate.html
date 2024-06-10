@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav><a href="../html/adminTemplate.html" class="germanSwitch">Sprache ändern</a></nav>
+      <h1 id="logo">Anna Nesler Physiotherapeut</h1>
+      <a href="#content" class="skip-link">Zum Hauptinhalt springen</a>  
+    </header>
+    <!-- NAVBAR -->
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="../html/index.html">Home</a></li>
+        <li><a href="../html_DE/anna.html">Wer bin mich</a></li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
+            aria-expanded="false"
+            aria-controls="Prestazioni-dropdown"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../html_DE/prestazioni_DE/fisioterapia.html">Physiotherapie</a>
+            </li>
+            <li><a href="../html_DE/prestazioni_DE/massaggi.html">Massagen</a></li>
+            <li><a href="../html_DE/prestazioni_DE/danza.html">Freier Tanz</a></li>
+            <li>
+              <a href="../html_DE/prestazioni_DE/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../html_DE/contatti.html">Kontakte</a></li>
+        <li><a href="../php/prenotazioni.php">Buchungen</a></li>
+      </ul>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <nav id="breadcrumb">
+      <p>Sie befinden sich in: Administratorseite</p>
+    </nav>
+
+    <main id="content">
+      <h1>Administratorseite</h1>
+      <h2>{messaggiForm}</h2>
+      <p>Aktive Buchungen im aktuellen Zeitraum:</p>
+      <p>{calendario}</p>
+      <p>Besetzte Slots am ausgewählten Tag:</p>
+      <p>{slot}</p>
+
+      <p>Buchungsinfo</p>
+
+      <p>Wählen Sie Datum und Uhrzeit der zu STORNIERENDEN Buchung:</p>
+      <form action="../php/admin.php" method="post">
+        <fieldset>
+          <span id="spanDataElimina"><input id="dataElimina" name="data" type="date" /></span>
+          <label for="start-date">Datum</label>
+          <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
+          <label for="ora">Uhrzeit</label>
+          <span id="spanDomicilioElimina"><input id="domicilioElimina" name="scelta-luogo" type="radio" value="domicilio"/></span>
+          <label for="domicilio">zu Hause</label>
+          <span id="spanStudioElimina"><input id="studioElimina" name="scelta-luogo" type="radio" value="studio" /></span>
+          <label for="studio">im Studio</label>
+        </fieldset>
+        <span id="spanCancella"><input type="submit" name="submitCancella" value="stornieren" /></span>
+      </form>
+
+      <p>Buchung ändern:</p>
+      <form action="../php/admin.php" method="post" id="formPrenota">
+        <fieldset>
+          <span id="spanMese"><input id="mese" name="mese" type="hidden" value="{mese}" /></span>
+          <legend>
+            Wählen Sie den Leistungsort, um die verfügbaren Slots anzuzeigen:
+          </legend>
+          <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" /></span>
+          <label for="domicilio">zu Hause</label>
+          <span id="spanStudioModifica"><input id="studioModifica" name="aDomicilio" type="radio" value="0" /></span>
+          <label for="studio">im Studio</label>
+        </fieldset>
+        <fieldset>
+          <legend>Ausgewählter Slot:</legend>
+          <div class="form-field">
+            <span id="spanDataModifica"><input id="dataModifica" name="data" readonly value="{data}" /></span>
+            <!--Stringa recuperata tramite JScript dal calendario?-->
+            <label for="date">Tag:</label>
+          </div>
+
+          <div class="form-field">
+            <span id="spanTime"><input id="time" name="ora" readonly value="{ora}" /></span>
+            <!--Stringa recuperata tramite JScript dal calendario?-->
+            <label for="time">Uhrzeit:</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Kontaktdaten</legend>
+          <div class="form-field">
+            <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40" /></span>
+            <label for="name-surname">Name und Nachname:</label>
+            <span id="errNomeCognome" class="errContatti">X</span>
+          </div>
+          <div class="form-field">
+            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="20" value="{email}"/></span>
+            <label for="email">Email:</label>
+            <span id="errEmail" class="errContatti">X</span>
+          </div>
+
+          <div class="form-field">
+            <span id="spanCell"><input id="cell" name="cel" type="tel" maxlength="15" value="{cel}" /></span>
+            <label for="cell">Telefonnummer:</label>
+            <span id="errTelefono" class="errContatti">X</span>
+          </div>
+
+          <div class="form-field">
+            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}" /></span>
+            <label for="indirizzo">Adresse:</label>
+            <span id="errIndirizzo" class="errContatti">X</span>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Zusätzliche Anmerkungen</legend>
+          <div class="form-field">
+            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}" /></span>
+            <label for="email">Anmerkungen:</label>
+          </div>
+        </fieldset>
+        <span id="spanModifica"><input type="submit" name="action" value="ändern" /></span>
+        <span id="errContattiAdmin" class="errContatti">Überprüfen Sie, ob alle Felder ausgefüllt sind und vollständig sind</span>
+      </form>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <p><a href="../html_DE/contatti.html"> kontaktieren Sie mich </a></p>
+      <div id="Icone-social">
+        <a href="http://instagram.com/iltuoaccount" class="icona-social">
+            <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+        </a>
+        <a href="http://facebook.com/iltuoaccount" class="icona-social">
+            <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+        </a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
+    <script src="../javascript/controllo_form_admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Physiotherapeutin Anna Nesler</title>
+        <meta name="keywords" content=""> 
+        <!-- Beschreibung nach Fertigstellung der Seite verbessern -->
+        <meta name="description" content="Anna Nesler ist eine Physiotherapeutin aus Bozen, die auch Hausbesuche anbietet und personalisierte Behandlungen basierend auf den Problemen anbietet.">
+        <meta name="robots" content="noindex" />
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
+    </head>
+    <body class="login-page">
+        <!-- HEADER -->    
+        <header>                                                                
+            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>                                        
+        </header>
+        <!-- NAVBAR -->
+        <nav id="menu">
+            <ul>
+                <li lang="en"><a href="../html_DE/index.html">Home</a></li>
+                <li><a href="../html_DE/anna.html">Wer bin mich</a></li>
+                <li class="dropdown">
+                    <button
+                        type="button"
+                        class="dropdown__title"
+                        aria-expanded="false"
+                        aria-controls="Prestazioni-dropdown"
+                    >
+                        Leistungen
+                    </button>
+                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
+                        <li><a href="../html_DE/prestazioni_DE/fisiotherapie.html">Physiotherapie</a></li>
+                        <li><a href="../html_DE/prestazioni_DE/massaggi.html">Massagen</a></li>
+                        <li><a href="../html_DE/prestazioni_DE/danza.html">Freier Tanz</a></li>
+                        <li><a href="../html_DE/prestazioni_DE/corsi.html">Massagekurse</a></li>
+                    </ul>
+                </li>          
+                <li><a href="../html_DE/contatti.html">Kontakte</a></li>
+                <li><a href="../php/prenotazioni.php">Buchungen</a></li>                
+            </ul>
+        </nav>
+
+        <!-- BREADCRUMB -->
+        <nav id="breadcrumb">
+            <p>Sie befinden sich in: <span lang="en">Login</span> Administratoren</p>
+        </nav>
+        
+        <main id="content">
+        <p>Diese Seite ist für die Administratoren der Website reserviert. Wenn Sie kein Administrator sind, navigieren Sie bitte über die Navigationsleiste oder kehren Sie zur <a href="/html/index.html" lang="en">Home</a> zurück.</p>
+        <p>{messaggiForm}</p>
+
+            <form method="POST" action="../php/login.php" id="login_form">
+                <div class="form-field">
+                    <input type="text" id="user" name="user" maxlength="40">
+                    <label for="user"><span lang="en">Username:</span></label>
+                    <span class="errContatti" id="errLoginUsername">Bitte einen Benutzernamen eingeben</span>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" name="password" maxlength="40">
+                    <label for="password"><span lang="en">Password:</span></label>
+                    <span class="errContatti" id="errLoginPassword">Bitte ein Passwort eingeben</span>
+                </div>
+                <input type="submit" id="loginSubmit" name="loginSubmit" value="login"/>
+            </form>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p><a href = "../html_DE/contatti.html"> Kontakte </a></p>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Instagram.png" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../media/Facebook.png" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
+        </footer>
+
+        <script src="../javascript/controllo_form_loginTemplate.js"></script>
+    </body>
+</html>
