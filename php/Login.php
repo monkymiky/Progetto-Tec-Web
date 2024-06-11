@@ -15,7 +15,7 @@ $paginaHTML = file_get_contents("../html/loginTemplate.html");
 $messaggiForm = " messaggi debug : \n";
 $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-$extra = 'admin.php';
+$extra = 'Admin.php';
 
 if(isset($_SESSION["session_id"])){ // login gia avvenuto?
   $messaggiForm .= "\n debug : sessione aperta ";
@@ -51,5 +51,3 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 echo $paginaHTML;
 ?>
-
-

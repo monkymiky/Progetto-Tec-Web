@@ -54,7 +54,7 @@ loginForm.addEventListener('submit', function(event) {
     
     event.preventDefault();
     if (checkGenerale()) {
-        loginForm.submit();
+        HTMLFormElement.prototype.submit.call(loginForm);
     }
     else {
         alert("Controlla i campi");

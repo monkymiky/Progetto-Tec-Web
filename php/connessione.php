@@ -8,7 +8,7 @@
     contattami tramite il <a href=\"/html/contatti.html\">form di contatto</a>";
     
     class DBAccess {
-        //accesso per altervista
+        
         private const HOST_DB = "localhost:3306";
         private const DATABASE_NAME = "mnesler";
         private const USERNAME = "mnesler";
