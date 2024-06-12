@@ -22,9 +22,9 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
   header("Location: http://$host$uri/$extra");// redirect ad admin.php
   exit;
 }else{ // login da fare
-  if (isset($_POST['submit'])) {
+  if (!empty($_POST)) {
     $messaggiForm .= " \n debug : if 1  ";
-    if(!isset($_POST["user"]) && !isset($_POST["password"])){
+    if(isset($_POST["user"]) && isset($_POST["password"])){
       $messaggiForm .= "\n  if 2  ";
       controllaInput($_POST["user"]) ; 
       controllaInput($_POST["password"]);
@@ -44,10 +44,13 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
       $messaggiForm .= "\n user o password non inserito";
     }
     $messaggiForm .= " \n out 1  ";
+  }else{
+    $messaggiForm .= " \n out 2  ";
+    
   }
-  $messaggiForm .= " \n out 2  ";
+  
 }
-
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
-echo $paginaHTML;
+    echo $paginaHTML;
+
 ?>
