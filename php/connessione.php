@@ -8,20 +8,22 @@
     contattami tramite il <a href=\"/html/contatti.html\">form di contatto</a>";
     
     class DBAccess {
-        /*
+        
         //accesso server/phpMyAdmin uni
         private const HOST_DB = "localhost:3306";
         private const DATABASE_NAME = "mnesler";
         private const USERNAME = "mnesler";
         private const PASSWORD = "Feif1eeng2Ea7nei";
-        */
+        
         
         // accesso per altervista
+        /*
         private const HOST_DB = "localhost";
         private const DATABASE_NAME = "my_fisioterapiabz";
         private const USERNAME = "fisioterapiabz";
         private const PASSWORD = "";
-        
+        */
+
         private $connessione;
         private $state = false;
         
