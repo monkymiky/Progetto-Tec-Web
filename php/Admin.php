@@ -3,7 +3,7 @@ session_start();
 require_once ("connessione.php");
 require_once ("controlli.php");
 require_once ("calendario.php");
-USE DB\DBAccess;
+use DB\DBAccess;
 $connessione = new DBAccess();
 ini_set('display_errors',1);
 ini_set("display_startup_errors",1);
