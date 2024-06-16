@@ -1,10 +1,10 @@
 HTML
 -	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
--	sanificare header (molti sono copiancollati dalla home)
--       verificare skiplink nelle pagine diverse dalla home
+-	sanificare header (molti sono copiancollati dalla home) (ad esempio, verificare skiplink nelle pagine diverse dalla home)
 -	convertire in webp le immagini ancora in jpg (penso OK)
 -    	verificare perchè alcuni breadcrumb sono implementati diversamente da altri (ad es, in /html_DE/corsi.html)
+-	nelle pagine in tedesco, link a prenotazioni.php rimanda sempre alla pagina in italiano
 
 CSS 
 -	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...
