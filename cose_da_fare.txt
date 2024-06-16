@@ -9,6 +9,7 @@ CSS
 -	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
+-       flag cambio lingua x mobile
 
 TEST
 -	testare tutto dopo aver riempito il DB
