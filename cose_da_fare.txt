@@ -4,6 +4,7 @@ HTML
 -	sanificare header (molti sono copiancollati dalla home)
 -       verificare skiplink nelle pagine diverse dalla home
 -	convertire in webp le immagini ancora in jpg (penso OK)
+-    	verificare perchè alcuni breadcrumb sono implementati diversamente da altri (ad es, in /html_DE/corsi.html)
 
 CSS 
 -	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...
