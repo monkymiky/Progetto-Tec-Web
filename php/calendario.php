@@ -247,7 +247,7 @@ Class Calendario{
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
-                        $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
+                        $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData(this)' ontouchend='javascript:riempiData(this)'>disponibile</button> </li>";
                     }else{
                         $this->stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
                     }
