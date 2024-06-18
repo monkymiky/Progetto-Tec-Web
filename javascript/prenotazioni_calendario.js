@@ -75,6 +75,17 @@ function sanitize() { //la soluzione che segue è estremamente bifolca, ma per o
         }
 }
 
+function riempiData(object) { //riempie i campi dati del form con le informazioni sullo slot cliccato
+    let selectedSlot = object.parentNode.parentNode.parentNode.id;
+    let index = Array.from(document.querySelectorAll("#" + selectedSlot + " ol li button")).indexOf(object);
+    let slotTime = new Date();
+    let slotDay = document.querySelector('[href = "#' + selectedSlot + '"] time').getAttribute("datetime");
+
+    slotTime.setHours("08"); slotTime.setMinutes(30 + 90*index);
+    document.getElementById("time").value = slotTime.toLocaleTimeString('it-IT').substring(0,5);
+    document.getElementById("date").value = slotDay;
+}
+
 function _resetTarget() { //se sono visualizzati degli slot e viene cambiata la tipologia studio/domicilio, gli slot spariscono
     window.location.href = "#domicilio-domicilio-studioSelection"; //potrebbe dare problemi di accessibilità (maledetti screenreader)
 }
