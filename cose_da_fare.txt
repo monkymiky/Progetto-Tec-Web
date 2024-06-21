@@ -10,7 +10,6 @@ CSS
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
 -   flag cambio lingua x mobile
--	css pagina contatti in tedesco diverso da quello in italiano 
 
 TEST
 -	testare tutto dopo aver riempito il DB
