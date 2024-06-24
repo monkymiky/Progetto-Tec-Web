@@ -13,7 +13,7 @@ CSS
 
 TEST
 -	testare tutto dopo aver riempito il DB
--	verificare che funzionino tutti i link dopo aver caricato il sito nel server dell'uni
+-	verificare tutti i link 
 
 
 JS
