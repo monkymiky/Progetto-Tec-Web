@@ -33,7 +33,7 @@ Class Calendario{
     private $mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
     private $stringaCalendario;
     private $stringaSlot;
-    private $nrMese ;
+    private $nrMese;
     private $anno;
     private $mesiInPiu;
 
@@ -66,7 +66,7 @@ Class Calendario{
         $ultimoDelMese = strtotime($this->anno."-".$this->nrMese."-".$giorniDelMese);
         $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
         if($giornoSettimanaUltimoDelMese != "7"){
-            if($nrmese != 12){$meseprox = $this->nrMese+1;$annoultimoTab= $this->anno;}else{$meseprox = 1;$annoultimoTab = $this->anno+1;}
+            if($nrMese != 12){$meseprox = $this->nrMese+1;$annoultimoTab= $this->anno;}else{$meseprox = 1;$annoultimoTab = $this->anno+1;}
             $ultimoTab = strtotime($annoultimoTab."-".$meseprox."-".(7-$giornoSettimanaUltimoDelMese));
             $primoTab = strtotime("-34 day" ,$ultimoTab); 
         }else{
