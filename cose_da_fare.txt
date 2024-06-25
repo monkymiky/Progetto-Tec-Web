@@ -9,6 +9,7 @@ CSS
 	PRENOTAZIONI - ADMIN
 -	css form prenotazione (piu compatto)(ritocchi)
 -   rendere il link per il cambio lingua visibile anche da mobile
+-	sostituire visivamente (il contenuto deve rimanere lo stesso per far funzionare il php) i pulsanti "mese sucessivo/precedente" con delle frecce o simili
 
 
 TEST
