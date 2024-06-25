@@ -137,7 +137,7 @@ elIndirizzo.addEventListener('blur', checkIndirizzo, false);
 elNomeCarta.addEventListener('blur', checkNomeCarta, false);
 elNumeroCarta.addEventListener('blur', checkNumeroCarta, false);
 elCVVCarta.addEventListener('blur', checkCVV, false);
-
+/*
 form.addEventListener('submit',function(e) {
     e.preventDefault();
     if(checkGenerale()) {
@@ -148,3 +148,4 @@ form.addEventListener('submit',function(e) {
         elEmail.focus();
     }
 })
+*/

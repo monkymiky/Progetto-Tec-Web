@@ -25,7 +25,8 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
     </head>
     <body class="reservation-page">
                  <!--    HEADER    -->    
-        <header>  
+        <header> 
+            <nav class="germanSwitch">IT | <a href="../php/prenotazioni_DE.php" >DE</a></nav>
             <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
             <h1 id="logo">Anna Nesler Fisioterapista</h1>  
             <button id="menu-toggle">☰</button>         
@@ -41,6 +42,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
                         class="dropdown__title"
                         aria-expanded="false"
                         aria-controls="Prestazioni-dropdown" 
+                        id="dropdown_button"
                     >
                         Prestazioni
                     </button>
@@ -58,7 +60,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
 
         <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="../html/index.html" lang="en">Home</a>&gt;Prenotazioni</p>
+            <p>Ti trovi in: <span lang="en"><a href="../html/index.html">Home</a></span>Prenotazioni</p>
         </nav>
         
                 

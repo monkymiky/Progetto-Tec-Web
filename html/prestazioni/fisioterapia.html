@@ -16,6 +16,7 @@
     <body>
          <!--    HEADER    -->    
          <header>  
+            <nav class="germanSwitch">IT | <a href="../../html_DE/prestazioni/fisioterapia.html" >DE</a></nav>
             <a href="#homepage_main" class="skip-link">Salta al contenuto principale</a>                                                              
             <h1 id="logo">Anna Nesler Fisioterapista</h1>  
             <button id="menu-toggle">☰</button>         
@@ -31,6 +32,7 @@
                         class="dropdown__title"
                         aria-expanded="false"
                         aria-controls="Prestazioni-dropdown"
+                        id="dropdown_button"
                     >
                         Prestazioni
                     </button>
@@ -48,7 +50,7 @@
 
         <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="../../html/index.html" lang="en">Home</a>&gt;Prestazioni>Fisioterapia</p>
+            <p>Ti trovi in: <span lang="en"><a href="../../html/index.html">Home</a></span><span>Prestazioni</span>Fisioterapia</p>
         </nav>
         
         <main id="content">
@@ -107,8 +109,15 @@
          <!--    FOOTER    -->
          <footer>
             <p><a href = "../../html/contatti.html"> contatti </a></p>
-            <!-- Icone social -->
-            <small>Nesler Michele - Parise Luca - Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../../php/login.php"><span lang="en">login</span> amministratori</a></small>
+            <div id="Icone-social">
+                <a href="http://instagram.com/iltuoaccount" class="icona-social">
+                    <img src="../../media/Instagram.webp" alt="Instagram">
+                </a>
+                <a href="http://facebook.com/iltuoaccount" class="icona-social">
+                    <img src="../../media/Facebook.webp" alt="Facebook">
+                </a>
+            </div>
+            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../../php/login.php"><span lang="en">login</span> amministratori</a></small>
         </footer>
     </body>
 </html>
