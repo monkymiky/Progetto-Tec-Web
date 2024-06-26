@@ -50,6 +50,7 @@ function checkGenerale() {
 
 elUsername.addEventListener('blur', checkUsername, false);
 elPassword.addEventListener('blur', checkPassword, false);
+/*
 loginForm.addEventListener('submit', function(event) {
     
     event.preventDefault();
@@ -62,23 +63,6 @@ loginForm.addEventListener('submit', function(event) {
     }
     
 }, false);
+*/
 
 
-
-/*
-problema con il submit
-
-Il problema risiede nell'elemento <input> del tipo "submit" nel tuo modulo di 
-accesso, che ha sia un id che un name entrambi impostati su "submit". 
-Questo causa un conflitto con il metodo submit() dell'oggetto del modulo.
-
-Puoi risolvere questo problema semplicemente rinominando l'id o 
-il nome dell'elemento <input> in modo che non entrino in conflitto con 
-la funzione submit() del modulo. Ad esempio:
-
-<input type="submit" id="submitBtn" name="submitBtn" value="Login"/>
-
-Con questa modifica, l'elemento <input> non interferirà più con il metodo submit() 
-del modulo, consentendoti di utilizzare loginForm.submit() senza generare un errore.
-Assicurati di aggiornare anche le referenze nell'HTML e nel JavaScript se rinomini 
-l'ID o il nome dell'elemento. */
