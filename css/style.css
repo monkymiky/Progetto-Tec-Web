@@ -1446,11 +1446,11 @@ ol {
     grid-template-columns: 1fr 1fr;
 }
 
-#selettoreSlot>li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
+#selettoreSlot>ol>li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
     display:none;
 }
 
-#selettoreSlot>li:target:not(#slotTitle1) {
+#selettoreSlot>ol>li:target:not(#slotTitle1) {
     display:block;
     grid-row:1;
     grid-column:2;
