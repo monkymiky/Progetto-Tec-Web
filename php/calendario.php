@@ -192,7 +192,7 @@ Class Calendario{
                     if(!$disp) {$tuttodisponibile = false;}
                 }
                 if(!$tuttodisponibile){
-                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
+                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i onclick='emphasize(this)'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
                     $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }    
@@ -201,12 +201,12 @@ Class Calendario{
         else{ // utente non amministratore
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 if($this->giorno[$i]->disponibile){
-                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
+                    $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i onclick='emphasize(this)'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
                     $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }
                 if($this->giorno[$i]->disponibile3h){
-                    $this->stringaCalendario .= "<li class='giorno3h'><a href=#slot3hGiorno$i><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
+                    $this->stringaCalendario .= "<li class='giorno3h'><a href=#slot3hGiorno$i onclick='emphasize(this)'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
                     $this->stringaCalendario .= "<li class='giorno3h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }
