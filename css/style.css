@@ -1351,19 +1351,40 @@ CALENDARIO
 ********************************************/
 /*Gestione allineamento calendario / box selezione slot*/
 #calendario-slot {
-    display:flex;
-    flex-direction:row;
-    flex-shrink:1;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 0.5fr;
 }
 
 @media (max-width: 690px) {
     #calendario-slot {
+        display:flex;
         flex-direction: column;
     }
 }
 
+#slotTitle1 {
+    grid-column:1;
+    grid-row:1;
+}
+
+#slotTitle2 {
+    grid-column:2;
+    grid-row:1;
+}
+
+#selettoreSlot {
+    grid-column:2;
+    grid-row:2;
+}
+
 /*Stile calendario + intestazione + controlli*/
+
+
 #calendario {
+    grid-column:1;
+    grid-row:2;
     margin:auto;
     list-style-type:none;
 
@@ -1480,14 +1501,13 @@ ol {
     color:white;
 }
 
+.emphasized {
+    border: 1px solid black;
+}
+
 /*TEMP*/
 #testoPlaceholder {
     display:none;
-}
-
-#slotTitle1 {
-    grid-row:1;
-    grid-column:1/3;
 }
 
 /***********************************************
