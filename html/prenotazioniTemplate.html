@@ -80,37 +80,34 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             </form>
             <div id="calendario-slot">
                 {calendario}
-                <div> <!--altrimenti vanno annidate più grid-->
-                    <p id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</p>
-                    <p id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</p>
-                    <p id="testoPlaceholder">Nessun giorno selezionato.</p>
-                    <ol id="selettoreSlot">
-                        <li id="listaOrari1h">
-                            <ol>
-                                <li>08:30 / 10:30</li>
-                                <li>10:30 / 11:30</li>
-                                <li>11:30 / 13:00</li>
-                                <li>13:00 / 14:30</li>
-                                <li>14:30 / 16:00</li>
-                                <li>16:00 / 17:30</li>
-                                <li>17:30 / 19:00</li>
-                                <li>19:00 / 20:30</li>
-                                <li>20:30 / 22:00</li>
-                            </ol>
-                        </li>
-                        <li id="listaOrari3h">
-                            <ol >
-                                <li>08:30 / 11:30</li>
-                                <li>11:30 / 15:30</li>
-                                <li>14:30 / 17:30</li>
-                                <li>17:30 / 20:30</li>
-                            </ol>
-                        </li>
-                        {slot}
-                    </ol>
-                </div>
+                <p id="slotTitle1">Seleziona un giorno per visualizzare gli slot disponibili.</p>
+                <p id="slotTitle2">Seleziona uno slot per effettuare una prenotazione.</p>
+                <p id="testoPlaceholder">Nessun giorno selezionato.</p>
+                <ol id="selettoreSlot">
+                    <li id="listaOrari1h">
+                        <ol>
+                            <li>08:30 / 10:30</li>
+                            <li>10:30 / 11:30</li>
+                            <li>11:30 / 13:00</li>
+                            <li>13:00 / 14:30</li>
+                            <li>14:30 / 16:00</li>
+                            <li>16:00 / 17:30</li>
+                            <li>17:30 / 19:00</li>
+                            <li>19:00 / 20:30</li>
+                            <li>20:30 / 22:00</li>
+                        </ol>
+                    </li>
+                    <li id="listaOrari3h">
+                        <ol >
+                            <li>08:30 / 11:30</li>
+                            <li>11:30 / 15:30</li>
+                            <li>14:30 / 17:30</li>
+                            <li>17:30 / 20:30</li>
+                        </ol>
+                    </li>
+                    {slot}
+                </ol>
             </div>
-            <p>La durata delle prestazioni è indipendente dalla durata degli <span lang="en">slot</span> (4 ore), che dipende dalle mie necessità di spostamento.</p>
             
             <form id="formPrenota" method="post" name="modulo">
                 <fieldset id="selectedSlot">
