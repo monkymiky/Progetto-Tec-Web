@@ -1551,3 +1551,23 @@ CALENDARIO / JS-related
     color: green;
 }
 
+.dati-carta {
+    display:flex;
+    flex-direction:column;
+}
+
+#id_card_cvv {
+    width: 30%;
+}
+
+#scadenzaCarta #year, #scadenzaCarta label {
+    margin-left: 1em;
+}
+
+#scadenzaCarta #month {
+    margin-left:1em;
+}
+
+#scadenzaCarta label[for="month"] {
+    margin-left:0em;
+}
