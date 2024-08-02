@@ -1571,3 +1571,8 @@ CALENDARIO / JS-related
 #scadenzaCarta label[for="month"] {
     margin-left:0em;
 }
+
+#spanPrenota #submit_button{
+    margin-left:45%;
+    margin-right:45%;
+}
