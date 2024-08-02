@@ -125,12 +125,6 @@ function checkGenerale() {
     }
 }
 
-
-function showCardData() {
-    document.getElementById("cardDataFieldset").classList.toggle("hiddenObj");
-    document.getElementById("submit-button").classList.toggle("hiddenObj");
-}
-
 elEmail.addEventListener('blur', checkEmail, false);
 elCell.addEventListener('blur', checkCell, false);
 elIndirizzo.addEventListener('blur', checkIndirizzo, false);
