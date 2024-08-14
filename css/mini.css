@@ -284,4 +284,8 @@ section div.img-container{
     width:100%;
 }
 
+#formPrenota #submit_button {
+    margin:0;
+}
+
 
