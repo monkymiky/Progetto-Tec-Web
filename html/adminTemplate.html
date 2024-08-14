@@ -52,13 +52,16 @@
       <p>Ti trovi in: Pagina amministratore</p>
     </nav>
 
-    <main id="content">
+    <main id="adminContent">
       <h1>Pagina amministratore</h1>
       <h2>{messaggiForm}</h2>
       <p>Prenotazioni attive nel periodo corrente:</p>
-      <p>{calendario}</p>
-      <p>Slot occupati nel giorno selezionato:</p>
-      <p>{slot}</p>
+      <div id="adminCalendario-Slot">
+        {calendario}
+        <p>Slot occupati nel giorno selezionato:</p>
+        {slot}
+      </div>
+      
 
       <p>Info prenotazione</p>
 
