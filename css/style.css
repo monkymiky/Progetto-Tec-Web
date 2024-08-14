@@ -261,8 +261,9 @@ main a:hover {
     display: block;
 }
 
-#content p {
-    margin: 1.5em;
+#content h1 {
+    text-align:center;
+    margin-bottom:1em;
 }
 
 /***********************************************
