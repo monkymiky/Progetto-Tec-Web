@@ -101,6 +101,10 @@
         font-size: 1em; /* in style.css è 1.5*/   
         flex-grow: 1;/*tiene il footer in fondo nel mobile*/
     }
+
+    #content p {
+        margin: 1.5em;
+    }
     a , button{
         min-width: 24px;
         min-height: 24px;
