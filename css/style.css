@@ -1562,6 +1562,7 @@ CALENDARIO / JS-related
 
 #id_card_cvv {
     width: 30%;
+    min-width:6em;
 }
 
 #scadenzaCarta #year, #scadenzaCarta label {
@@ -1570,6 +1571,7 @@ CALENDARIO / JS-related
 
 #scadenzaCarta #month {
     margin-left:1em;
+    min-width:4em;
 }
 
 #scadenzaCarta label[for="month"] {
@@ -1583,5 +1585,9 @@ CALENDARIO / JS-related
 
 #name_surname {
     width:50%;
+}
+
+#scadenzaCarta #year {
+    min-width:6em;
 }
 
