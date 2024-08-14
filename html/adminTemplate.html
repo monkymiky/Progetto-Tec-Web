@@ -59,10 +59,32 @@
       <div id="adminCalendario-Slot">
         {calendario}
         <p id="slotDescription">Slot occupati nel giorno selezionato:</p>
-        {slot}
+        <ol id="selettoreSlot">
+          <li id="listaOrari1h">
+            <ol>
+              <li>08:00 / 09:00</li>
+              <li>09:00 / 10:00</li>
+              <li>10:00 / 11:00</li>
+              <li>11:00 / 12:00</li>
+              <li>13:00 / 14:00</li>
+              <li>14:00 / 15:00</li>
+              <li>15:00 / 16:00</li>
+              <li>16:00 / 17:00</li>
+              <li>17:00 / 18:00</li>
+            </ol>
+          </li>
+          <li id="listaOrari3h">
+            <ol>
+              <li>08:00 / 11:00</li>
+              <li>11:00 / 14:00</li>
+              <li>14:00 / 17:00</li>
+              <li>17:00 / 20:00</li>
+            </ol>
+          </li>
+          {slot}
+        </ol>
       </div>
       
-
       <p>Info prenotazione</p>
 
       <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
