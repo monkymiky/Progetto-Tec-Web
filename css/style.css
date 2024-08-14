@@ -261,6 +261,10 @@ main a:hover {
     display: block;
 }
 
+#content p {
+    margin: 1.5em;
+}
+
 /***********************************************
 FISIOTERAPIA - CORSI DI MASSAGGIO - CHI SONO - Danzaterapia
 ***********************************************/
