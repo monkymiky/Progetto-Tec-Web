@@ -14,6 +14,12 @@
         text-indent: -999em;
         z-index: 1;
     }
+
+    nav.germanSwitch {
+        text-indent: 0em;
+        margin-right: 12em;
+    }
+
     header h1 {
         font-size: 3em;
         background-position: left;
