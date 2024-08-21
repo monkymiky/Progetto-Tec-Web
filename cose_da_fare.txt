@@ -29,5 +29,7 @@ PHP
 -	form di contatto (anche mostrare errori agli utenti)
 -	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
 
-
+MOBILE 
+- controllare carte
+- controllare css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
 
