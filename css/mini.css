@@ -1,4 +1,4 @@
-@media screen and (max-width: 520px), (max-device-width: 520px) {
+@media screen and (max-width: 520px), (max-device-width: 520px) /*max-device-width deprecato, da warning. Rimuovere se possibile.*/ {
     html{
         line-height:1em;
         width: 100%;
