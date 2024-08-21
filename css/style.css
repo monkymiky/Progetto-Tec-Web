@@ -1519,6 +1519,43 @@ ol {
     color:white;
 }
 
+/********************************************
+CALENDARIO - ADMIN
+********************************************/
+#adminContent {
+    display:flex;
+    flex-direction: column;
+}
+
+#adminContent #calendario-Slot {
+    margin:auto;
+    display:inline-grid;
+    justify-items:center;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows:0.1fr 0.75fr;
+}
+
+#adminContent #calendario {
+    grid-row:1/span 2;
+    grid-column:1;
+}
+
+#adminContent #slotDescription {
+    grid-row:1;
+    grid-column:2;
+}
+
+#adminContent #selettoreSlot {
+    display: flex;
+    flex-direction:row;
+    
+    border:1px solid black;
+    border-radius:1em;
+    background-color:white;
+    grid-row:2;
+    grid-column:2;
+}
+
 
 /***********************************************
 CALENDARIO / JS-related
