@@ -339,7 +339,7 @@ img{object-fit: cover;}
     background-image: url(../media/massaggio2.jpeg);
 }
 #danza-img1{
-    background-image: url(../media/danza.webp);
+    background-image: url(../media/danza.jpg);
 }
 #corsi-img1{
     background-image: url(../media/corso.webp);
@@ -371,6 +371,7 @@ CORSI CONSIGLIATI
     font-size: 2em;
     margin-bottom: 0.5em;
     margin-top: 1em;
+    line-height: normal;
 }
 
 .courses-page #corsi_consigliati a {
