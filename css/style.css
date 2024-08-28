@@ -1430,18 +1430,23 @@ li input#buttonAvanti, li input#buttonIndietro {
     height:100%;
     border:0em;
     background-color:white;
+    position:relative;
+    z-index:1;
+    opacity:0;
 }
 
 li:has(>#buttonAvanti):after {
     content:">";
     position:absolute;
-    transform:translate(-250%, 2%)
+    transform:translate(-250%, 2%);
+    z-index:0;
 }
 
 li:has(>#buttonIndietro):after {
     content:"<";
     position:absolute;
-    transform:translate(-250%, 2%)
+    transform:translate(-250%, 2%);
+    z-index:0;
 }
 
 #buttonAvanti:hover, #buttonIndietro:hover {
