@@ -1,35 +1,25 @@
 HTML
 -	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
--	convertire in webp le immagini ancora in jpg (penso OK)
-
-
-CSS 
--	(optional)  rendere elegante il codice  -  volendo ristrutturarlo...
-	PRENOTAZIONI - ADMIN
--	css form prenotazione (piu compatto)(ritocchi)
--   rendere il link per il cambio lingua visibile anche da mobile
--	sostituire visivamente (il contenuto deve rimanere lo stesso per far funzionare il php) i pulsanti "mese sucessivo/precedente" con delle frecce o simili
+-	convertire in webp le immagini ancora in jpg (VERIFICARE)
 
 
 TEST
 -	testare tutto dopo aver riempito il DB
 -	verificare tutti i link 
 
-
 JS
-	CARD
--	(optional) far si che da mobile dopo averle girate cliccandoci sopra tornino girate
 	ADMIN
 -	js mostra dati prenotazione
-	PRENOTAZIONI
--	js riempi campo data
 
 PHP 
--	form di contatto (anche mostrare errori agli utenti)
 -	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
+-       sistemare PHP calendario (segna tutto occupato), sia admin che prenotazioni
 
 MOBILE 
-- controllare carte
-- controllare css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
+- controllare corretto funzionamento carte per gli utenti (aggiornare codice server)
+- FARE css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
+
+VARI
+-   verificare consistenza pagine in tedesco
 
