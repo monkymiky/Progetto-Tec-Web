@@ -102,7 +102,7 @@
         flex-grow: 1;/*tiene il footer in fondo nel mobile*/
     }
 
-    #content p {
+    #content p:not(.card-back) {
         margin: 1.5em;
         line-height: 1.2;
     }
