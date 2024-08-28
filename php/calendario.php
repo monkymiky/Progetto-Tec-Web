@@ -79,7 +79,7 @@ Class Calendario{
         $nonDisponibili = array();
         $this->giorno = array();
         $k = 0;
-        $slotPrecedenteDisponibile = false;
+    //    $slotPrecedenteDisponibile = false;
 
 
         if($admin){
@@ -126,7 +126,7 @@ Class Calendario{
                    $this->giorno[$i]->disponibile = true; //parto assumendo che almeno uno slot sia disponibile
                    $this->giorno[$i]->disponibile3h = false; //non so però se ci sono 2 slot consecutivi disponibili
                     $tuttiSlotOccupati = false; 
-                    $slotPrecedenteDisponibile = false; // siccome è il primo slot non esiste uno precedente all'inizio
+                  //  $slotPrecedenteDisponibile = false; // siccome è il primo slot non esiste uno precedente all'inizio
                     for($j=0;$j<9;$j++){ // per ogni slot del giorno
                         $sting_time = date("Y-m-d", $this->giorno[$i]->data)." ".$this->giorno[$i]->ORARIO_SLOT[$j];
                         while(
@@ -141,16 +141,16 @@ Class Calendario{
                             if($j==8 && $tuttiSlotOccupati){ // se è l'ultimo slot e tutti gli altri sono non disponibili
                                 $this->giorno[$i]->disponibile = false; //imposto l'intero giorno come non disponibile
                             }
-                            $slotPrecedenteDisponibile = false; // imposto non disponibile per la prossima iterazione
+                         //   $slotPrecedenteDisponibile = false; // imposto non disponibile per la prossima iterazione
                         }
                         else{ // lo slot è disponibile
                             $tuttiSlotOccupati = false;
                             $this->giorno[$i]->disponibilitàSlot[$j] = true;
                             if($j!=0 && $this->giorno[$i]->disponibilitàSlot[$j-1] == true){ // se non è il primo slot e quello precedente è disponibile
                                 $this->giorno[$i]->disponibile3h = true; // segno che durante il giorno è disponibile almeno uno slot da 3h 
-                                $slotPrecedenteDisponibile = false;
+                               // $slotPrecedenteDisponibile = false;
                             }
-                            $slotPrecedenteDisponibile = true;// imposto disponibile per la prossima iterazione
+                           // $slotPrecedenteDisponibile = true;// imposto disponibile per la prossima iterazione
                         }
                     }
                 }
