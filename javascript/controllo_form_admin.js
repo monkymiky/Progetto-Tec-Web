@@ -63,6 +63,7 @@ function checkIndirizzo() {
         return true;
     }
 }
+/*
 function checkGenerale() {
     if(checkNomeCognome() && checkEmail() && checkIndirizzo() && checkNumeroTelefono()) {
         return true;
@@ -71,12 +72,12 @@ function checkGenerale() {
         return false;
     }
 }
-
+*/
 elNomeCognome.addEventListener('blur', checkNomeCognome, false);
 elEmail.addEventListener('blur', checkEmail, false);
 elTelefono.addEventListener('blur', checkNumeroTelefono, false);
 elIndirizzo.addEventListener('blur', checkIndirizzo, false);
-
+/*
 elForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -89,6 +90,6 @@ elForm.addEventListener('submit', function(e) {
         
     }
 },false)
-
+*/
 
 
