@@ -57,9 +57,9 @@
       <h1>Pagina amministratore</h1>
       <h2>{messaggiForm}</h2>
       <p>Prenotazioni attive nel periodo corrente:</p>
-      <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" onchange="toggleDomicilio()"/></span>
+      <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" onchange="toggleDomicilio()" form="formPrenota"/></span>
       <label for="domicilio">a domicilio</label>
-      <span id="spanStudioModifica"><input id="studioModifica" name="inStudio" type="radio" value="0" onchange="toggleStudio()"/></span>
+      <span id="spanStudioModifica"><input id="studioModifica" name="inStudio" type="radio" value="0" onchange="toggleStudio()" form="formPrenota"/></span>
       <label for="studio">in studio</label>
       <div id="adminCalendario-Slot">
         {calendario}
@@ -99,10 +99,11 @@
           <label for="start-date">Data</label>
           <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
           <label for="ora">Ora</label>
+          <!-->
           <span id="spanDomicilioElimina"><input id="domicilioElimina" name="scelta-luogo" type="radio" value="domicilio"/></span>
           <label for="domicilio">a domicilio</label>
           <span id="spanStudioElimina"><input id="studioElimina" name="scelta-luogo" type="radio" value="studio" /></span>
-          <label for="studio">in studio</label>
+          <label for="studio">in studio</label> <-->
         </fieldset>
         <span id="spanCancella"><input type="submit" name="submitCancella" value="cancella" /></span>
       </form>
