@@ -3,6 +3,8 @@ HTML
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
 -	loghi social del footer sono hardcoded in html, mettere in css
 
+CSS
+-	messaggi errore, fallimento/successo prenotazione da stilizzare
 
 TEST
 -	testare tutto dopo aver riempito il DB
@@ -14,7 +16,8 @@ JS
 
 PHP 
 -	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
--       sistemare PHP calendario (segna tutto occupato), sia admin che prenotazioni
+-   calendario da collegare al php tramite post (poi dovrebbe funzionare)
+-	verificare funzionamento prenotazioni tedesco (dopo averle fatte funzionare in italiano)
 
 MOBILE 
 - controllare corretto funzionamento carte per gli utenti (aggiornare codice server)
