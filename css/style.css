@@ -321,25 +321,25 @@ img{object-fit: cover;}
     display: block;
 }
 #fisio-img1{
-    background-image: url(../media/fisioterapia.jpg);
+    background-image: url(../media/fisioterapia.webp);
 }
 #fisio-img2{
-    background-image: url(../media/post-parto.jpg);
+    background-image: url(../media/post-parto.webp);
 }
 #fisio-img3{
-    background-image: url(../media/fisioterapia2.jpg);
+    background-image: url(../media/fisioterapia2.webp);
 }
 #chi-sono-img2{
-    background-image: url(../media/claudiana.jpeg);
+    background-image: url(../media/claudiana.webp);
 }
 #chi-sono-img3{
-    background-image: url(../media/riflessologia-plantare.jpg);
+    background-image: url(../media/riflessologia-plantare.webp);
 }
 #chi-sono-img4{
-    background-image: url(../media/massaggio2.jpeg);
+    background-image: url(../media/massaggio2.webp);
 }
 #danza-img1{
-    background-image: url(../media/danza.jpg);
+    background-image: url(../media/danza.webp);
 }
 #corsi-img1{
     background-image: url(../media/corso.webp);
@@ -1634,4 +1634,3 @@ CALENDARIO / JS-related
 #scadenzaCarta #year {
     min-width:6em;
 }
-
