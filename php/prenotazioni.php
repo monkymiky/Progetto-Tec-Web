@@ -20,9 +20,10 @@ $indirizzo="";
 $nome="";
 $checkedDomicilio="";
 $checkedStudio="";
-if(isset($_POST['submit'])){
+if(isset($_POST['action']) && $_POST['action'] == "prenota"){
     // controlli input 
-    $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); 
+    $rawDataOra = $_POST['date'].$_POST['time'];
+    $dataOraInizio = controllaDataOra($rawDataOra ,$messaggiForm); 
     
     $tipo = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
     if($tipo){
@@ -43,8 +44,8 @@ if(isset($_POST['submit'])){
 
     $connection->openDBConnection();
     if($messaggiForm == "" && $connection->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
-        $messaggiForm .= "<h1 id='success'>Prenotazione effettuata con successo!! A presto :) </h1>";
-        $dataOraInizio= "";
+        $messaggiForm = "<h1 id='success'>Prenotazione effettuata con successo!! A presto :) </h1>";
+        $dataOraInizio = "";
         $note="";
         $email="";
         $cel="";
@@ -53,6 +54,7 @@ if(isset($_POST['submit'])){
         $checkedDomicilio="";
         $checkedStudio="";
     }
+    else{if ($messaggiForm == "") $messaggiForm = "<h1 id='nonsuccess'>Qualcosa è andato storto con la tua prenotazione. Ci scusiamo per il disagio, probabilmente è colpa nostra però se vuoi puoi provare a rifarla.</h1>";}
 }
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
@@ -75,7 +77,8 @@ $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 $stringMese = "0";
     if(!empty($_POST['action'])){
         controllaInput($_POST["action"]);
-        $calendario = new Calendario(false,$_POST["action"]);
+        if($_POST['action'] == "prenota") $calendario = new Calendario(false,0);
+        else $calendario = new Calendario(false,(int)$_POST["action"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
         $stringMese = $_POST['action'];

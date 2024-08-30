@@ -53,10 +53,10 @@ function controllaEmail(&$email,&$messaggiForm){
 function controllaCel(&$cel, &$messaggiForm){
   if(!isset($cel)){
     controllaInput($cel);
-    if(preg_match("/^([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])$ | ^(+[0-9][0-9] [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])$/", $_POST['cel'])){
+    if(preg_match("/^([0-9][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9][0-9])$ | ^([+][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9][0-9])$/", $_POST['cel'])){
         return $cel;
     }else{
-        $messaggiForm .= "<p>il formato del campo cellulare deve essere 1112223333 oppure +11 2223334444</p>";
+        $messaggiForm .= "<p>il formato del campo cellulare deve essere 111 222 3333 oppure +11 222 333 4444</p>";
     }
 }
 else{
@@ -88,9 +88,7 @@ function controllaIndirizzo(&$indirizzo , &$messaggiForm){
           $messaggiForm .= "<p>L' indirizzo deve essere composto solo da lettere e numeri</p>";
       }
   }else{
-      if($tipo){
-          $messaggiForm .= "<p>L' indirizzo deve essere specificato in tutte le prenotazioni a domicilio</p>";
-      }
+    $messaggiForm .= "<p>L' indirizzo deve essere specificato in tutte le prenotazioni a domicilio</p>";
   }
   return "";
 }
