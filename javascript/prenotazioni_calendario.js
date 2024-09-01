@@ -95,3 +95,12 @@ function _resetTarget() {
   //se sono visualizzati degli slot e viene cambiata la tipologia studio/domicilio, gli slot spariscono
   window.location.href = "#domicilio-domicilio-studioSelection"; //potrebbe dare problemi di accessibilità (maledetti screenreader)
 }
+
+function emphasize(object) {
+	document.querySelectorAll('.emphasized').forEach (
+    	function(obj) {
+        	obj.classList.remove('emphasized');
+        }
+    )
+	object.classList.add('emphasized');
+}
