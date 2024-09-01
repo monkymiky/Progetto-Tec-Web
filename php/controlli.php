@@ -7,11 +7,11 @@ function controllaInput(&$data) { // meglio htmlentities e sttrip_tags?
   }
 
 function controllaDataOra(&$dataOra, &$messaggiForm){
-  if(!isset($dataOra)){
-        if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/",$dataOra)){
+  if(isset($dataOra)){
+        if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9])$/",$dataOra)){
             return $dataOra;
         }else{
-            $messaggiForm .= "<p>il formato del campo slot deve essere aaaa-mm-gg hh-mm-ss</p>";
+            $messaggiForm .= "<p>il formato del campo slot deve essere aaaa-mm-gg hh:mm</p>";
         }
     }
     else{
@@ -21,8 +21,8 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
 }
  
 function controllaADomicilio(&$aDomicilio, &$messaggiForm){
-  if(!isset($aDomicilio) || NULL == filter_var($aDomicilio,FILTER_VALIDATE_BOOLEAN)){
-		$messaggiForm .= "<p> il campo \"a domicilio\" deve essere specificato </p>";
+  if(!isset($aDomicilio) || ! NULL == filter_var($aDomicilio,FILTER_VALIDATE_BOOLEAN) ){
+		$messaggiForm .= "<p> il campo \"a domicilio\\in studio \" deve essere specificato </p>";
     return NULL; 
 	}
   else{
@@ -31,14 +31,14 @@ function controllaADomicilio(&$aDomicilio, &$messaggiForm){
 }
 
 function controllaNote(&$note,&$messaggiForm ){
-  if(!isset($note)){
+  if(isset($note)){
 		controllaInput($note);
 		return $note ;
 	}
 }
 
 function controllaEmail(&$email,&$messaggiForm){
-  if(!isset($email)){
+  if(isset($email)){
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 			$messaggiForm .= "<p>L'email inserito non è in un formato valido </p>";
 		}else{
@@ -51,9 +51,9 @@ function controllaEmail(&$email,&$messaggiForm){
 }
 
 function controllaCel(&$cel, &$messaggiForm){
-  if(!isset($cel)){
+  if(isset($cel)){
     controllaInput($cel);
-    if(preg_match("/^([0-9][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9][0-9])$ | ^([+][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9]* [0-9][0-9][0-9][0-9])$/", $_POST['cel'])){
+    if(preg_match("/^([+]d{2})?\s*\d{3}\s*\d{3}\s*\d{4}$/", $cel)){
         return $cel;
     }else{
         $messaggiForm .= "<p>il formato del campo cellulare deve essere 111 222 3333 oppure +11 222 333 4444</p>";
@@ -66,7 +66,7 @@ return "";
 }
 
 function controllaNome(&$nome, &$messaggiForm){
-  if(!isset($nome)){
+  if(isset($nome)){
     controllaInput($nome);
     if (preg_match("/^[a-zA-Z' ]*$/",$nome)){
         return $nome;
@@ -80,7 +80,7 @@ return "";
 }
 
 function controllaIndirizzo(&$indirizzo , &$messaggiForm){
-  if(!isset($indirizzo)){
+  if(isset($indirizzo)){
   controllaInput($indirizzo);
     if (preg_match("/^[a-zA-Z0-9' ]*$/",$indirizzo)){
         return $indirizzo;

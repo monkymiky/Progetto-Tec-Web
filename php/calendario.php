@@ -21,7 +21,7 @@ Class Giorno {
 
     function __construct($data){
         $this->data = $data;
-        $this->stringData = date("Y-M-d", $data);
+        $this->stringData = date("Y-m-d", $data);
         $this->numero = date("d", $data);
     }
 }
@@ -86,7 +86,7 @@ Class Calendario{
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
 
-            if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
+            if(count($nonDisponibili) == 0){$nonDisponibili[0][0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 $this->giorno[$i]->disponibile = true;
@@ -128,7 +128,7 @@ Class Calendario{
                         $sting_time = date("Y-m-d", $this->giorno[$i]->data)." ".$this->giorno[$i]->ORARIO_SLOT[$j];
                         while(
                             strtotime($sting_time) >  
-                            strtotime($nonDisponibili[$k]) 
+                            strtotime($nonDisponibili[$k][0]) 
                             && 
                             $k < count($nonDisponibili)-1){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
                             $k++;
@@ -168,9 +168,9 @@ Class Calendario{
                                             <time datetime='".$this->anno."'>".$this->anno."</time>
                                             </li>
                                             
-                                            <li><input type='submit' id='buttonIndietro' method='post' name='action' value ='".($this->mesiInPiu-1)."' form='formPrenota'></li>
+                                            <li><input type='submit' id='buttonIndietro' method='post' name='cambioMese' value ='".($this->mesiInPiu-1)."' form='formPrenota'></li>
                                             <li id='mese'><time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
-                                            <li><input type='submit' id='buttonAvanti' method='post' name='action' value ='".($this->mesiInPiu+1)."' form='formPrenota'></li>
+                                            <li><input type='submit' id='buttonAvanti' method='post' name='cambioMese' value ='".($this->mesiInPiu+1)."' form='formPrenota'></li>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                                             <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                                             <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
@@ -210,9 +210,8 @@ Class Calendario{
     }
 
     private function setStringaSlot(){
-        $this->stringaSlot = "<ol>";
-
         if($this->admin){
+            $this->stringaSlot = "<ol>";
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
@@ -242,6 +241,7 @@ Class Calendario{
         }
 
         else{ // utente non amministratore
+            $this->stringaSlot = "<ol>";
             for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot

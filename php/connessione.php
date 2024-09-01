@@ -73,21 +73,22 @@
         }
 
         public function prenota($nome, $email, $cel, $indirizzo, $dataora , $tipo, $note){
+            $tipo = (int)$tipo;
         // se l'utente è gia presente nel db aggiunge solo la prenotazione, altrimenti entrambi. gestisce gli errori.
         // se l'email non è presente e fallisce la seconda query di inserimento (prenotazione) cancella i dati inseriti
             try{
                 $result= $this->connessione->query("SELECT Email FROM Dati_cliente WHERE Email='$email'");
                 if ($result->num_rows == 0){ // nuovo cliente
                     $result->free();
-                    $this->connessione->query("INSERT INTO Dati_cliente (Email,Cellulare,Indirizzo,Nome) VALUES ($email,$cel,$indirizzo,$nome);");
+                    $this->connessione->query("INSERT INTO Dati_cliente (Email,Cellulare,Indirizzo,Nome) VALUES ('$email','$cel','$indirizzo','$nome');");
                 }
-                $this->connessione->query("INSERT INTO Prenotazioni (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ($dataOraInizio, $tipo, $note, $email);");
-                $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ($dataOraInizio);");
+                $this->connessione->query("INSERT INTO Prenotazioni (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ('$dataora', '$tipo', '$note', '$email');");
+                $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ('$dataora');");
                 
-                if($tipo == true){ // elimino anche la tupla che identifica lo slot sucessivo 
-                    $timestampslot2 = strtotime("+90 min" ,$dataOraInizio);
+                if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
+                    $timestampslot2 = strtotime("+90 min" ,$dataora);
                     $slot2= date("Y-m-d H:i:s", $timestampslot2);
-                    $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ($slot2);");
+                    $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ('$slot2');");
                 }
             }catch(Exception $e){
                 $this->openErrorPage("C'èstato un problema nella prenotazione. 
@@ -127,12 +128,13 @@
             }
         }
 
-        public function modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note){
+        public function modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataora, $tipo, $note){
+            $tipo = (int)$tipo;
             try{
-                $this->connessione->query("UPDATE Dati_cliente SET   (Email,Cellulare,Indirizzo,Nome) VALUES ($email,$cel,$indirizzo,$nome);");
-                $this->connessione->query("UPDATE Prenotazioni SET   (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ($dataOraInizio, $tipo, $note, $email);");
-                if($tipo == true){ // elimino anche la tupla che identifica lo slot sucessivo 
-                    $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,$dataOraInizio)); // aggiungo 1,5h
+                $this->connessione->query("UPDATE Dati_cliente SET   (Email,Cellulare,Indirizzo,Nome) VALUES ('$email','$cel','$indirizzo','$nome');");
+                $this->connessione->query("UPDATE Prenotazioni SET   (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ('$dataora', '$tipo', '$note', '$email');");
+                if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
+                    $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,$dataora)); // aggiungo 1,5h
                     $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
