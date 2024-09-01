@@ -51,11 +51,21 @@ function fixMonthDates(year, month) {
   } else if (document.getElementById("studio").checked) {
     list = document.querySelectorAll(".giorno1h");
   }
-  for (var i = daysInCurrentMonth; i < list.length; i++) {
-    list[i].classList.add("nextMonth");
-    list[i].querySelector("a").addEventListener("click", function (event) {
-      event.preventDefault();
-    });
+  var MeseCorrenteiniziato = false;
+  var MeseCorrentefinito = false;
+  for (var i = 0; i < list.length; i++) {
+    if (MeseCorrenteiniziato && list[i].firstElementChild.textContent == "01")
+      MeseCorrentefinito = true;
+    if (list[i].firstElementChild.textContent == "01")
+      MeseCorrenteiniziato = true;
+    if (!MeseCorrenteiniziato || MeseCorrentefinito) {
+      list[i].classList.add("nextMonth");
+      if (list[i].querySelector("a")) {
+        list[i].querySelector("a").addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+      }
+    }
   }
 }
 
@@ -97,10 +107,8 @@ function _resetTarget() {
 }
 
 function emphasize(object) {
-	document.querySelectorAll('.emphasized').forEach (
-    	function(obj) {
-        	obj.classList.remove('emphasized');
-        }
-    )
-	object.classList.add('emphasized');
+  document.querySelectorAll(".emphasized").forEach(function (obj) {
+    obj.classList.remove("emphasized");
+  });
+  object.classList.add("emphasized");
 }

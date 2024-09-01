@@ -66,13 +66,13 @@ Class Calendario{
         $ultimoDelMese = strtotime($this->anno."-".$this->nrMese."-".$giorniDelMese);
         $giornoSettimanaUltimoDelMese = date("N",$ultimoDelMese);
         if($giornoSettimanaUltimoDelMese != "7"){
-            if($this->nrMese != 12){$meseprox = $this->nrMese+1;$annoultimoTab= $this->anno;}else{$meseprox = 1;$annoultimoTab = $this->anno+1;}
+            if($this->nrMese != 12){$meseprox = $this->nrMese+1;$annoultimoTab= $this->anno;}
+            else{$meseprox = 1;$annoultimoTab = $this->anno+1;}
             $ultimoTab = strtotime($annoultimoTab."-".$meseprox."-".(7-$giornoSettimanaUltimoDelMese));
-            $primoTab = strtotime("-34 day" ,$ultimoTab); 
         }else{
             $ultimoTab = $ultimoDelMese;
-            $primoTab = strtotime("-34 day", $ultimoTab); 
         }
+        $primoTab = strtotime("-41 day", $ultimoTab); 
         $SQLultimoTab = date("Y-m-d", $ultimoTab)." 00:00:00";
         $SQLprimoTab = date("Y-m-d", $primoTab)." 00:00:00";
         // ---------------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ Class Calendario{
             $connessione->closeConnection();
 
             if(count($nonDisponibili) == 0){$nonDisponibili[0][0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 $this->giorno[$i]->disponibile = true;
                 $tuttiSlotOccupati = false; 
@@ -118,7 +118,7 @@ Class Calendario{
 
             if(count($nonDisponibili) == 0){$nonDisponibili[0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
 
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 if($this->giorno[$i]->data >= strtotime("+1 day")){ // se il giorno testato è dopo domani (si può prenotare al minimo 2 giorni prima.) -------------------> da testare
                    $this->giorno[$i]->disponibile = true; //parto assumendo che almeno uno slot sia disponibile
@@ -180,7 +180,7 @@ Class Calendario{
                                             <li class='labelgiorno'><abbr title='Domenica'>Dom</abbr></li>";
 
         if($this->admin){
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $tuttodisponibile = true;
                 foreach ($this->giorno[$i]->disponibilitàSlot as $disp){
                     if(!$disp) {$tuttodisponibile = false;}
@@ -193,7 +193,7 @@ Class Calendario{
             }
         }
         else{ // utente non amministratore
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 if($this->giorno[$i]->disponibile){
                     $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i onclick='emphasize(this)'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
                 }else{
@@ -212,7 +212,7 @@ Class Calendario{
     private function setStringaSlot(){
         if($this->admin){
             $this->stringaSlot = "<ol>";
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
@@ -242,7 +242,7 @@ Class Calendario{
 
         else{ // utente non amministratore
             $this->stringaSlot = "<ol>";
-            for($i=0;$i<35;$i++){ // per ogni giorno visualizzato sul calendario
+            for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){

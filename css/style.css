@@ -1,94 +1,91 @@
 * {
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-    font-family: CustomFont;
-    src: url(../media/Montserrat-Regular.ttf);
+  font-family: CustomFont;
+  src: url(../media/Montserrat-Regular.ttf);
 }
 
 :root {
-    --headerBackground:#F2EDE4;
-    --headerText:#262626;
+  --headerBackground: #f2ede4;
+  --headerText: #262626;
 
-    --backgroundColor:#F2DC9B;
-    --textColor:#4e4a4a;
-    --borderColor:#E0A841;
+  --backgroundColor: #f2dc9b;
+  --textColor: #4e4a4a;
+  --borderColor: #e0a841;
 
-    --link:#3C2C23;
-    --visitedLink:#b44b00;
-    --hoverLink:#6f1690;
+  --link: #3c2c23;
+  --visitedLink: #b44b00;
+  --hoverLink: #6f1690;
 
-    --footerBackground:#F2EDE4;
-    --footerText:#262626;
+  --footerBackground: #f2ede4;
+  --footerText: #262626;
 
-    --boxesBackground:white;
+  --boxesBackground: white;
 
-    --font: "CustomFont", "Segoe UI", "Arial", sans-serif;
-  
-    --cardWidth: 22em;
-    --cardHeight: 22em;
-    --cardBorderRadius: 1.25em;
-    --giftCardWidth: 18.75em;
-    --giftCardHeight: 18.75em;
+  --font: "CustomFont", "Segoe UI", "Arial", sans-serif;
+
+  --cardWidth: 22em;
+  --cardHeight: 22em;
+  --cardBorderRadius: 1.25em;
+  --giftCardWidth: 18.75em;
+  --giftCardHeight: 18.75em;
 }
 
 html {
-    font-size: 100%;
-    font-family:var(--font);
-    line-height:1.5em;
-    margin:auto;
-    background-color: var(--backgroundColor);
-    scroll-behavior:smooth;
-    scroll-padding:10em;
+  font-size: 100%;
+  font-family: var(--font);
+  line-height: 1.5em;
+  margin: auto;
+  background-color: var(--backgroundColor);
+  scroll-behavior: smooth;
+  scroll-padding: 10em;
 }
 
 body {
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
 
 /********************************************
 HEADER
 ********************************************/
 header {
-    background-color: var(--headerBackground);
-    color: var(--headerText);
-    text-align: center;
-    padding: 1em;
+  background-color: var(--headerBackground);
+  color: var(--headerText);
+  text-align: center;
+  padding: 1em;
 }
 
 header h1 {
-    margin-top:-0.1em;
-    text-indent: -999em; 
-    background-image: url(../media/logo_nobg.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-size: 7em;
-    line-height: 1.5em;
+  margin-top: -0.1em;
+  text-indent: -999em;
+  background-image: url(../media/logo_nobg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 7em;
+  line-height: 1.5em;
 }
 
-header a.skip-link{
-    display:inline-block;
-    text-indent:-999em;
+header a.skip-link {
+  display: inline-block;
+  text-indent: -999em;
 }
-
 
 header nav.germanSwitch {
-    position: absolute;
-    top: 10px; 
-    right: 10px;
-    padding: 10px;
-    text-decoration: none;      
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  text-decoration: none;
 }
 
-
-#menu-toggle{
-    display: none;
+#menu-toggle {
+  display: none;
 }
 
 /********************************************
@@ -96,387 +93,390 @@ NAV
 ********************************************/
 
 nav {
-    background-color: var(--headerBackground);
-    color: var(--headerText);
-    text-align:center;
-    padding:0.25em;
-    font-size:1em;
+  background-color: var(--headerBackground);
+  color: var(--headerText);
+  text-align: center;
+  padding: 0.25em;
+  font-size: 1em;
 }
 
 #menu {
-    list-style-type: none;
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    z-index: 2;
+  list-style-type: none;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
 }
 
 #menu a {
-    padding: 0.5em;
-    color: var(--link);
+  padding: 0.5em;
+  color: var(--link);
 }
 
 #menu ul li {
-    display: inline-block;
-    margin: 0.5em;
-    position: relative;
+  display: inline-block;
+  margin: 0.5em;
+  position: relative;
 }
 
 #menu ul a {
-    padding:0.5em;
+  padding: 0.5em;
 }
 
-#menu ul a:visited{
-    color: var(--visitedLink);
+#menu ul a:visited {
+  color: var(--visitedLink);
 }
-#menu ul a:hover, button.dropdown__title:hover {
-    background-color: #e4c99e;
-    border-radius:1em;
-    color:var(--hoverLink);
+#menu ul a:hover,
+button.dropdown__title:hover {
+  background-color: #e4c99e;
+  border-radius: 1em;
+  color: var(--hoverLink);
 }
 #menu ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
 }
 
 #menu ul li:hover > ul {
-    display: block;
+  display: block;
 }
 
 #breadcrumb {
-    text-align:left;
-    position: sticky;
-    top: 3.5rem;
-    left: 0px;
-    z-index: 1;
-    padding-left: 2rem;
+  text-align: left;
+  position: sticky;
+  top: 3.5rem;
+  left: 0px;
+  z-index: 1;
+  padding-left: 2rem;
 }
 
 nav a:link {
-    color:var(--link);
+  color: var(--link);
 }
 
 nav a:visited {
-    color:var(--visitedLink);
+  color: var(--visitedLink);
 }
 
-button.dropdown__title{
-        border: none;
-        background-color: var(--headerBackground);
-        padding: 0.5em;
-        font-family: var(--font);
-        font-size: 1em;
-        color: var(--link);
+button.dropdown__title {
+  border: none;
+  background-color: var(--headerBackground);
+  padding: 0.5em;
+  font-family: var(--font);
+  font-size: 1em;
+  color: var(--link);
 }
 button.dropdown__title:after {
-    content: "";
-    border: 0.35rem solid transparent;
-    border-top-color: var(--link);
-    margin-left: 0.25em;
-    display: inline-block;
-    transform: translateY(0.15rem);
-  }
-#Prestazioni-dropdown{
-    width: max-content;
-    border-radius: 1em;
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: var(--link);
+  margin-left: 0.25em;
+  display: inline-block;
+  transform: translateY(0.15rem);
 }
-ul#Prestazioni-dropdown li{
-    display: block;
+#Prestazioni-dropdown {
+  width: max-content;
+  border-radius: 1em;
+}
+ul#Prestazioni-dropdown li {
+  display: block;
 }
 #breadcrumb a:hover {
-    color:var(--hoverLink);
+  color: var(--hoverLink);
 }
-#breadcrumb span:after{
-    content: "";
-    border: 0.35rem solid transparent;
-    border-left-color: var(--link);
-    margin-left: 0.5rem;
-    display: inline-block;
-    height: 0.35rem;
-    width: 0.7rem;
-    box-sizing: border-box;
+#breadcrumb span:after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-left-color: var(--link);
+  margin-left: 0.5rem;
+  display: inline-block;
+  height: 0.35rem;
+  width: 0.7rem;
+  box-sizing: border-box;
 }
 /********************************************
 FOOTER
 ********************************************/
 footer {
-    background-color: var(--footerBackground);
-    color: var(--footerText);
-    padding:1em;
-    text-align: center;
+  background-color: var(--footerBackground);
+  color: var(--footerText);
+  padding: 1em;
+  text-align: center;
 }
-.icona-social{
-    display:inline-block;
-    width: 40px;
-    height: 40px;
+.icona-social {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 footer a:hover {
-    color:var(--hoverLink);
+  color: var(--hoverLink);
 }
-footer a:visited{
-    color: var(--visitedLink);
+footer a:visited {
+  color: var(--visitedLink);
 }
-footer a{
-    padding: 0.5em;
-    color: var(--link);
+footer a {
+  padding: 0.5em;
+  color: var(--link);
 }
 /********************************************
 MAIN GENERALE
 ********************************************/
 
 main {
-    padding:2em;
-    color:var(--textColor);
-    font-size:1em; 
-    max-width: 1200px;
-    margin: auto;
+  padding: 2em;
+  color: var(--textColor);
+  font-size: 1em;
+  max-width: 1200px;
+  margin: auto;
 }
 
 main a:link {
-    color:var(--link);
+  color: var(--link);
 }
 
 main a:visited {
-    color:var(--visitedLink);
+  color: var(--visitedLink);
 }
 
 main a:hover {
-    color:var(--hoverLink);
+  color: var(--hoverLink);
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
 }
 
 #menu ul li:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 #content h1 {
-    text-align:center;
-    margin-bottom:1em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 /***********************************************
 FISIOTERAPIA - CORSI DI MASSAGGIO - CHI SONO - Danzaterapia
 ***********************************************/
 
-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding-top: 2rem;
-    justify-content: space-around;
-    align-items:stretch;
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 2rem;
+  justify-content: space-around;
+  align-items: stretch;
 }
-.title{
-    font-size: 3rem;
-    line-height: 3rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+.title {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
-.subtitle{
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-top: 0em;
-    margin-bottom: 1rem;
-    font-weight: bold;
+.subtitle {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 0em;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
-section div.img-container{
-    width: 45%;
-    padding-left: 1rem ;
-    padding-right:  1rem;
-    flex-grow: 0;
-    flex-shrink: 1;
-    box-sizing: border-box;
-    height: auto;
-    min-width: 18rem;
+section div.img-container {
+  width: 45%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-grow: 0;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  height: auto;
+  min-width: 18rem;
 }
-section div.text-container{
-    width: 55%;
-    flex-grow: 0;
-    box-sizing: border-box;
+section div.text-container {
+  width: 55%;
+  flex-grow: 0;
+  box-sizing: border-box;
 }
-section li{
-    margin-left: 2rem ;
+section li {
+  margin-left: 2rem;
 }
-img{object-fit: cover;}
-.img-square{ 
-    background-clip:content-box;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 16rem;
-    height: 16rem;
-    margin: auto;
-    display: block;
+img {
+  object-fit: cover;
 }
-#fisio-img1{
-    background-image: url(../media/fisioterapia.webp);
+.img-square {
+  background-clip: content-box;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 16rem;
+  height: 16rem;
+  margin: auto;
+  display: block;
 }
-#fisio-img2{
-    background-image: url(../media/post-parto.webp);
+#fisio-img1 {
+  background-image: url(../media/fisioterapia.webp);
 }
-#fisio-img3{
-    background-image: url(../media/fisioterapia2.webp);
+#fisio-img2 {
+  background-image: url(../media/post-parto.webp);
 }
-#chi-sono-img2{
-    background-image: url(../media/claudiana.webp);
+#fisio-img3 {
+  background-image: url(../media/fisioterapia2.webp);
 }
-#chi-sono-img3{
-    background-image: url(../media/riflessologia-plantare.webp);
+#chi-sono-img2 {
+  background-image: url(../media/claudiana.webp);
 }
-#chi-sono-img4{
-    background-image: url(../media/massaggio2.webp);
+#chi-sono-img3 {
+  background-image: url(../media/riflessologia-plantare.webp);
 }
-#danza-img1{
-    background-image: url(../media/danza.webp);
+#chi-sono-img4 {
+  background-image: url(../media/massaggio2.webp);
 }
-#corsi-img1{
-    background-image: url(../media/corso.webp);
+#danza-img1 {
+  background-image: url(../media/danza.webp);
+}
+#corsi-img1 {
+  background-image: url(../media/corso.webp);
 }
 
 /********************************************
 CORSI CONSIGLIATI
 ********************************************/
 .courses-page #corsi_consigliati {
-    border-top: 1px solid var(--borderColor);
-    text-align: center;
-    margin-top: 2em;
-    display: block;
+  border-top: 1px solid var(--borderColor);
+  text-align: center;
+  margin-top: 2em;
+  display: block;
 }
 
 .courses-page #vedi-di-piu {
-    display: inline-block;
-    width: 6em;
-    margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 1em;
-    background-color: var(--boxesBackground);
-    border: 0.05em solid var(--borderColor);
-    border-radius: 3em;
+  display: inline-block;
+  width: 6em;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: var(--boxesBackground);
+  border: 0.05em solid var(--borderColor);
+  border-radius: 3em;
 }
 
 .courses-page #corsi_consigliati h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
-    line-height: normal;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  line-height: normal;
 }
 
 .courses-page #corsi_consigliati a {
-    text-decoration: none;
-    color: var(--textColor);
-    font-size: 1.2em;
+  text-decoration: none;
+  color: var(--textColor);
+  font-size: 1.2em;
 }
 
 .courses-page .recommended-card-container {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .courses-page .recommended-card {
-    max-width: 100%;
-    width: var(--giftCardWidth);
-    height: var(--giftCardHeight);
-    perspective: 62.5em; 
-    margin: 0.625em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    box-sizing: border-box;
+  max-width: 100%;
+  width: var(--giftCardWidth);
+  height: var(--giftCardHeight);
+  perspective: 62.5em;
+  margin: 0.625em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-sizing: border-box;
 }
 
 .courses-page .recommended-card:hover .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .courses-page .card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
 }
 
 .courses-page .card-front,
 .courses-page .card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 1.25em;
-    border-radius: 15px;
-    background-color: var(--backgroundColor);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.25em;
+  border-radius: 15px;
+  background-color: var(--backgroundColor);
 }
 
 .courses-page .card-back {
-    transform: rotateY(180deg);
-    background-color: white;
-    border-radius: var(--cardBorderRadius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.25em;
-    font-size: 1.2em;
+  transform: rotateY(180deg);
+  background-color: white;
+  border-radius: var(--cardBorderRadius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.25em;
+  font-size: 1.2em;
 }
 
 .courses-page .card-name-container {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    right: 0;
-    background-color: white;
-    width: 90%;
-    padding: 1.75em;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  background-color: white;
+  width: 90%;
+  padding: 1.75em;
+  border-radius: 15px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .courses-page .card-name {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: black;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: black;
 }
 
 .courses-page #img-c1.card-front {
-    background: url("../media/massaggio-thai.webp") no-repeat;
-    background-size: cover;
+  background: url("../media/massaggio-thai.webp") no-repeat;
+  background-size: cover;
 }
 
 .courses-page #img-c2.card-front {
-    background: url("../media/massaggio-californiano.webp") no-repeat;
-    background-size: cover;
+  background: url("../media/massaggio-californiano.webp") no-repeat;
+  background-size: cover;
 }
 
 .courses-page #img-c3.card-front {
-    background: url("../media/massaggio-shiatsu.webp") no-repeat;
-    background-size: cover;
+  background: url("../media/massaggio-shiatsu.webp") no-repeat;
+  background-size: cover;
 }
 
 /********************************************
@@ -484,800 +484,816 @@ HOME
 ********************************************/
 
 #prenotazioni-home {
-    width: 15em;
-    display: block;
-    margin:auto;
-    
-    margin-bottom: 2em;
-    padding:1em;
-    
-    background-color:var(--boxesBackground);
-    border: 0.05em solid var(--borderColor);
-    border-radius: 3em;
+  width: 15em;
+  display: block;
+  margin: auto;
 
-    text-align:center;
+  margin-bottom: 2em;
+  padding: 1em;
+
+  background-color: var(--boxesBackground);
+  border: 0.05em solid var(--borderColor);
+  border-radius: 3em;
+
+  text-align: center;
 }
 
 #CosaOffro {
-    width: 100%;
-    height: 50vw;
-    max-height: 600px;
-    margin:auto;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 6fr 8fr;
+  width: 100%;
+  height: 50vw;
+  max-height: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 2fr 2fr 2fr 2fr 6fr 8fr;
 }
 
 #CosaOffro h1 {
-    text-align: center;
-    grid-row:1;
-    grid-column:1/3;
+  text-align: center;
+  grid-row: 1;
+  grid-column: 1/3;
 }
 
 #cosa-offro-links-massaggi {
-    grid-row: 3;
-    grid-column: 2;
+  grid-row: 3;
+  grid-column: 2;
 }
 
 #cosa-offro-links-corsi {
-    grid-row: 5;
-    grid-column: 2;
+  grid-row: 5;
+  grid-column: 2;
 }
 
 #cosa-offro-links-danza {
-    grid-row: 4;
-    grid-column: 2;
+  grid-row: 4;
+  grid-column: 2;
 }
 
 #cosa-offro-links-fisioterapia {
-    grid-row: 2;
-    grid-column: 2;
+  grid-row: 2;
+  grid-column: 2;
 }
 
-.cosa-offro-link{
-    width:13em;
-    height: 1.4em;
-    padding:0.2em;
-    padding-left: 1em;
-    margin:0.1em;
-    background-color:var(--boxesBackground);
-    border: 0.05em solid var(--borderColor);
-    border-radius: 1.4em;
-    white-space: nowrap;
+.cosa-offro-link {
+  width: 13em;
+  height: 1.4em;
+  padding: 0.2em;
+  padding-left: 1em;
+  margin: 0.1em;
+  background-color: var(--boxesBackground);
+  border: 0.05em solid var(--borderColor);
+  border-radius: 1.4em;
+  white-space: nowrap;
 }
 
 #img-corso {
-    width:100%;
-    height:100%;
-    
-    grid-row:2/7;
-    grid-column:1;
-    
-    text-indent:-999em; 
-    background-image:url(../media/corso.webp);
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    font-size:4em;
-    line-height:1.5em;
-    
-    border: 0.05em solid var(--borderColor); /*da cambiare con un colore suo*/
-    border-right-width: 0.55em;
-    border-bottom-width:0.55em;
-    border-radius:0.3em;
+  width: 100%;
+  height: 100%;
 
-    z-index: -1;
+  grid-row: 2/7;
+  grid-column: 1;
 
-    position: relative;
-    left: 20%;
+  text-indent: -999em;
+  background-image: url(../media/corso.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 4em;
+  line-height: 1.5em;
+
+  border: 0.05em solid var(--borderColor); /*da cambiare con un colore suo*/
+  border-right-width: 0.55em;
+  border-bottom-width: 0.55em;
+  border-radius: 0.3em;
+
+  z-index: -1;
+
+  position: relative;
+  left: 20%;
 }
 
 #img-massaggio {
-    width:100%;
-    height:100%;
-    
-    grid-row:6/8;
-    grid-column:2;
-    
-    text-indent: -999em; 
-    background-image: url(../media/massaggi.webp);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-size: 4em;
-    line-height: 1.5em;
-    
-    position: relative;
-    left: -20%;
-    
-    border: 0.05em solid var(--borderColor);
-    border-radius:0.3em;
+  width: 100%;
+  height: 100%;
+
+  grid-row: 6/8;
+  grid-column: 2;
+
+  text-indent: -999em;
+  background-image: url(../media/massaggi.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 4em;
+  line-height: 1.5em;
+
+  position: relative;
+  left: -20%;
+
+  border: 0.05em solid var(--borderColor);
+  border-radius: 0.3em;
 }
-#chi-sono{
-    height: 37vw;
-    max-height: 430px;
-    display: block;
+#chi-sono {
+  height: 37vw;
+  max-height: 430px;
+  display: block;
 }
 
 #foto-anna-home {
-    margin:auto;
-    margin-top:2em;
-    padding:2em;
-    height: 30vw;
-    max-height: 360px;
-    background-image:url(../media/Anna_2.0_rev.webp);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    border-radius:30px;
+  margin: auto;
+  margin-top: 2em;
+  padding: 2em;
+  height: 30vw;
+  max-height: 360px;
+  background-image: url(../media/Anna_2.0_rev.webp);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 30px;
 }
 
 #foto-anna-home-descrizione {
-    display: flex;
-    flex-direction: column;
-    padding:0.5em;
-    width:30%;
-    height: 28vw;
-    max-height: 336px;
-    position: relative;
-    left: 65%;
-    top: calc(min(1200px , 100vw)/100 * -33 );
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 30%;
+  height: 28vw;
+  max-height: 336px;
+  position: relative;
+  left: 65%;
+  top: calc(min(1200px, 100vw) / 100 * -33);
 }
-#foto-anna-home-descrizione p{
-    height: 15vw;
-    max-height: 190px;
-    overflow :hidden;
+#foto-anna-home-descrizione p {
+  height: 15vw;
+  max-height: 190px;
+  overflow: hidden;
 }
 #foto-anna-home-descrizione {
-    background-color: white;
-    border-radius: 1em;
-    padding: 1em;
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
 }
-#foto-anna-home-descrizione > *{
-    margin: 0.4em;
+#foto-anna-home-descrizione > * {
+  margin: 0.4em;
 }
-
 
 /********************************************
 MASSAGGI POPOLARI 
 ********************************************/
 
 #massaggi_popolari {
-    border-top: 1px solid var(--borderColor);
-    text-align: center;
-    margin-top: 2em;
-    display: block;
+  border-top: 1px solid var(--borderColor);
+  text-align: center;
+  margin-top: 2em;
+  display: block;
 }
 
 #vedi-di-piu {
-    display:inline-block;
-    width:6em;
-    margin:auto;
-    margin-top:1em;
-    margin-bottom:1em;
-    padding:1em;
-    background-color:var(--boxesBackground);
-    border:0.05em solid var(--borderColor);
-    border-radius: 3em;
+  display: inline-block;
+  width: 6em;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: var(--boxesBackground);
+  border: 0.05em solid var(--borderColor);
+  border-radius: 3em;
 }
-    
+
 #massaggi_popolari h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
 }
-    
+
 #massaggi_popolari a {
-    text-decoration: none;
-    color: var(--textColor);
-    font-size: 1.2em;
+  text-decoration: none;
+  color: var(--textColor);
+  font-size: 1.2em;
 }
-    
+
 .popular-card-container {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-    
+
 .popular-card {
-    max-width: 100%;
-    width: var(--giftCardWidth);
-    height: var(--giftCardHeight);
-    perspective: 62.5em; 
-    margin: 0.625em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    box-sizing: border-box;
+  max-width: 100%;
+  width: var(--giftCardWidth);
+  height: var(--giftCardHeight);
+  perspective: 62.5em;
+  margin: 0.625em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-sizing: border-box;
 }
-    
+
 .popular-card:hover .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-    
+
 .card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
 }
-    
+
 .card-front,
 .card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 1.25em;
-    border-radius: 15px;
-    background-color: var(--backgroundColor);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.25em;
+  border-radius: 15px;
+  background-color: var(--backgroundColor);
 }
-    
+
 .card-back {
-    transform: rotateY(180deg);
-    background-color: white;
-    border-radius: var(--cardBorderRadius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.25em;
-    font-size: 1.2em;
+  transform: rotateY(180deg);
+  background-color: white;
+  border-radius: var(--cardBorderRadius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.25em;
+  font-size: 1.2em;
 }
-    
+
 .card-name-container {
-    position: absolute;
-    bottom: 10%;
-    left: 50%; /* Lo faccio partire da metà */
-    transform: translateX(-50%); /* poi lo sposto verso sinistra per centrarlo*/
-    right: 0;
-    background-color: white;
-    width: 90%;
-    padding: 1.75em;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
+  position: absolute;
+  bottom: 10%;
+  left: 50%; /* Lo faccio partire da metà */
+  transform: translateX(-50%); /* poi lo sposto verso sinistra per centrarlo*/
+  right: 0;
+  background-color: white;
+  width: 90%;
+  padding: 1.75em;
+  border-radius: 15px;
+  box-sizing: border-box;
+  text-align: center;
 }
-    
+
 .card-name {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: black;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: black;
 }
-    
+
 #img1-1.card-front {
-    background: url("../media/card/card1.webp") no-repeat;
-    background-size: cover;
+  background: url("../media/card/card1.webp") no-repeat;
+  background-size: cover;
 }
-    
-    #img4-1.card-front {
-    background: url("../media/card/card4.webp") no-repeat;
-    background-size: cover;
-    }
-    
+
+#img4-1.card-front {
+  background: url("../media/card/card4.webp") no-repeat;
+  background-size: cover;
+}
+
 #img6-1.card-front {
-    background: url("../media/card/card6.webp") no-repeat;
-    background-size: cover;
+  background: url("../media/card/card6.webp") no-repeat;
+  background-size: cover;
 }
-
-
 
 /********************************************
 CONTATTI
 ********************************************/
 .contact-page #contactForm {
-    max-width: 37.5em;
-    margin: 1.25em auto;
-    background-color: #fff;
-    padding: 1.25em;
-    border-radius: 0.5em;
+  max-width: 37.5em;
+  margin: 1.25em auto;
+  background-color: #fff;
+  padding: 1.25em;
+  border-radius: 0.5em;
 }
 
 .contact-page legend {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
 }
 
 .contact-page fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .contact-page .form-field {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 1em;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 1em;
 }
 
 .contact-page label {
-    display: block;
-    font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
 
 .contact-page input,
 .contact-page textarea {
-    width: 100%;
-    padding: 1em;
-    box-sizing: border-box;
-    border: 0.0625em solid;
-    border-radius: 0.25em;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  border: 0.0625em solid;
+  border-radius: 0.25em;
 }
 
 .contact-page #sendButton {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 0.625em 0.9375em;
-    border: none;
-    border-radius: 0.25em;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.625em 0.9375em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
 }
 
 .contact-page #sendButton:hover {
-    background-color: #1d8623;
+  background-color: #1d8623;
 }
 
-.contact-page #content h1, 
-.contact-page #content h2, 
-.contact-page #content h3, 
-.contact-page #content p, 
-.contact-page #content dl, 
+.contact-page #content h1,
+.contact-page #content h2,
+.contact-page #content h3,
+.contact-page #content p,
+.contact-page #content dl,
 .contact-page #content ul {
-    color: var(--headerText);
-    margin-top: 1em;
-    font-size: 1em; 
-    line-height: 1.5em;
+  color: var(--headerText);
+  margin-top: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .contact-page #content dl dt {
-    font-weight: bold;
-    margin-top: 0.5em;
+  font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .contact-page #content dl dd {
-    margin-left: 20px;
+  margin-left: 20px;
 }
-
 
 /********************************************
 MASSAGGI
 ********************************************/
-.massages-page main h1{
-    text-align: center;
-    margin-bottom: 1em;
+.massages-page main h1 {
+  text-align: center;
+  margin-bottom: 1em;
 }
 .massages-page .shop-items {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .massages-page .card-name-container {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%); 
-    background-color: white;
-    padding: 1.75em;
-    border-radius: var(--cardBorderRadius);
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 60%;
-  }
-  
-  
-  .massages-page .card-name {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-  }
-  
-  
-  .massages-page .card {
-    max-width: 100%;
-    width: var(--cardWidth);
-    height: var(--cardHeight);
-    perspective: 62.5em;
-    margin: 0.625em;
-    background-color: var(--backgroundColor);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .massages-page .card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    position: relative;
-  }
-  
-  .massages-page .card-front,
-  .massages-page .card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 1.25em;
-  }
-  
-  .massages-page .card-front {
-    border-radius: var(--cardBorderRadius);
-  }
-  
-  .massages-page .card-back {
-    transform: rotateY(180deg);
-    background-color: white;
-    border-radius: var(--cardBorderRadius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.25em;
-    font-size: 1.2em;
-  }
-  
-  .massages-page .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .massages-page .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .massages-page .button-text {
-    margin-top: 3em;
-    margin-bottom: 0.5em;
-    font-size: 1.5em;
-    color: black;
-  }
-  
-  .massages-page input[type="button"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 1em 2em;
-    font-size: 1em;
-    border: none;
-    border-radius: 0.3125em;
-    cursor: pointer;
-  }
-  
-  .massages-page input[type="button"]:hover {
-    background-color: #45a049;
-  }
-  
-  /* Immagini dei massaggi */
-  .massages-page #img1.card-front, .massages-page #img2.card-front, .massages-page #img3.card-front, .massages-page #img4.card-front, .massages-page #img5.card-front, .massages-page #img6.card-front, .massages-page #img7.card-front, .massages-page #img8.card-front {
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .massages-page #img1.card-front { background-image: url("../media/card/card1.webp"); }
-  .massages-page #img2.card-front { background-image: url("../media/card/card2.webp"); }
-  .massages-page #img3.card-front { background-image: url("../media/card/card3.webp"); }
-  .massages-page #img4.card-front { background-image: url("../media/card/card4.webp"); }
-  .massages-page #img5.card-front { background-image: url("../media/card/card5.webp"); }
-  .massages-page #img6.card-front { background-image: url("../media/card/card6.webp"); }
-  .massages-page #img7.card-front { background-image: url("../media/card/card7.webp"); }
-  .massages-page #img8.card-front { background-image: url("../media/card/card8.webp"); }
-  
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.massages-page .card-name-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 1.75em;
+  border-radius: var(--cardBorderRadius);
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.massages-page .card-name {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.massages-page .card {
+  max-width: 100%;
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  perspective: 62.5em;
+  margin: 0.625em;
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+}
+
+.massages-page .card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.massages-page .card-front,
+.massages-page .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.25em;
+}
+
+.massages-page .card-front {
+  border-radius: var(--cardBorderRadius);
+}
+
+.massages-page .card-back {
+  transform: rotateY(180deg);
+  background-color: white;
+  border-radius: var(--cardBorderRadius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.25em;
+  font-size: 1.2em;
+}
+
+.massages-page .card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.massages-page .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.massages-page .button-text {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  color: black;
+}
+
+.massages-page input[type="button"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 1em 2em;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.massages-page input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+/* Immagini dei massaggi */
+.massages-page #img1.card-front,
+.massages-page #img2.card-front,
+.massages-page #img3.card-front,
+.massages-page #img4.card-front,
+.massages-page #img5.card-front,
+.massages-page #img6.card-front,
+.massages-page #img7.card-front,
+.massages-page #img8.card-front {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.massages-page #img1.card-front {
+  background-image: url("../media/card/card1.webp");
+}
+.massages-page #img2.card-front {
+  background-image: url("../media/card/card2.webp");
+}
+.massages-page #img3.card-front {
+  background-image: url("../media/card/card3.webp");
+}
+.massages-page #img4.card-front {
+  background-image: url("../media/card/card4.webp");
+}
+.massages-page #img5.card-front {
+  background-image: url("../media/card/card5.webp");
+}
+.massages-page #img6.card-front {
+  background-image: url("../media/card/card6.webp");
+}
+.massages-page #img7.card-front {
+  background-image: url("../media/card/card7.webp");
+}
+.massages-page #img8.card-front {
+  background-image: url("../media/card/card8.webp");
+}
+
 /********************************************
 ERRORI
 ********************************************/
 .error-page body {
-    font-family: var(--font);
-    background-color: var(--backgroundColor);
-    color: #6a0572;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  font-family: var(--font);
+  background-color: var(--backgroundColor);
+  color: #6a0572;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .error-page main {
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .error-page .messaggio-errore-404 {
-    margin-top: 2em;
-    font-size: 3em;
-    color: #d90429;
-    margin-bottom: 0.5em;
+  margin-top: 2em;
+  font-size: 3em;
+  color: #d90429;
+  margin-bottom: 0.5em;
 }
 
 .error-page .messaggio-errore-500 {
-    margin-top: 2em;
-    line-height: 1em;
+  margin-top: 2em;
+  line-height: 1em;
 }
 
 .error-page h1 {
-    font-size: 5em;
-    line-height: 1.2em;
+  font-size: 5em;
+  line-height: 1.2em;
 }
 
 .error-page h2 {
-    font-size: 3em;
-    line-height: 1.2em;
-    color: #6a0572;
-    margin-bottom: 2em;
+  font-size: 3em;
+  line-height: 1.2em;
+  color: #6a0572;
+  margin-bottom: 2em;
 }
 
 .error-page p {
-    font-size: 1.2em;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    color: #6a0572;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  color: #6a0572;
 }
 
 .error-page .home-button-container {
-    display: inline-block;
-    margin-top: 1em;
-    padding: 1em 2em;
-    background-color: #833471;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 0.8em;
-    transition: background-color 0.3s;
-    cursor: pointer;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 1em 2em;
+  background-color: #833471;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.8em;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .error-page .home-button-container:hover,
 .error-page .home-button-container:focus {
-    background-color: #6a0572;
-    outline: none;
+  background-color: #6a0572;
+  outline: none;
 }
 
 .error-page .home-button-container:focus {
-    box-shadow: 0 0 0 0.2em #d90429, 0 0 0 0.4em #f7d794;
+  box-shadow: 0 0 0 0.2em #d90429, 0 0 0 0.4em #f7d794;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .error-page .dog-container {
-    position: relative;
-    display: inline-block;
-    margin-top: 2em;
-    margin-bottom: 2em;
+  position: relative;
+  display: inline-block;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .error-page #dog-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.2s;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .error-page #pet-button {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    padding: 10px 20px;
-    background-color: #d90429;
-    color: #fff;
-    font-size: 1.2em;
-    text-decoration: none;
-    border: none;
-    border-radius: 20px;
-    transition: background-color 0.3s, transform 0.2s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #d90429;
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .error-page #pet-button:hover,
 .error-page #pet-button:focus {
-    background-color: #6a0572;
-    outline: none;
-    transform: scale(1.05);
+  background-color: #6a0572;
+  outline: none;
+  transform: scale(1.05);
 }
 
 @keyframes petting {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .error-page .petting {
-    animation: petting 0.5s ease;
+  animation: petting 0.5s ease;
 }
 
-
 .error-page .tecnico-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .error-page #tecnico-image {
-    width: 500px;
-    height: 500px;
-    background-image: url(../media/tecnico-shiba.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 20%;
+  width: 500px;
+  height: 500px;
+  background-image: url(../media/tecnico-shiba.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20%;
 }
 
 /********************************************
 ADMIN LOGIN
 ********************************************/
 .login-page #content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
 }
 
 .login-page .form-field {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    margin-bottom: 1em;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .login-page #content p {
-    order: 2;
-    margin-top: 1em;
-    text-align: center;
-    max-width: 90%;
+  order: 2;
+  margin-top: 1em;
+  text-align: center;
+  max-width: 90%;
 }
 
 .login-page #content form,
 .login-page input {
-    width: 100%;
-    padding: 0.5em;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
 
 .login-page #content form {
-    max-width: 25em;
-    border: 0.0625em solid;
-    border-radius: 0.5em;
-    background-color: #fff;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1em;
-    padding: 1em;
+  max-width: 25em;
+  border: 0.0625em solid;
+  border-radius: 0.5em;
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
 .login-page label {
-    display: block;
-    font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
 
 .login-page input {
-    border-radius: 0.25em;
-    border: 0.0625em solid;
+  border-radius: 0.25em;
+  border: 0.0625em solid;
 }
 
 .login-page #loginSubmit {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 0.25em;
-    cursor: pointer;
-    display: block;
-    margin: 0.5em auto;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: block;
+  margin: 0.5em auto;
 }
 
 .login-page #loginSubmit:hover {
-    background-color: #1d8623;
+  background-color: #1d8623;
 }
 /********************************************
 FORM PRENOTAZIONI
 ********************************************/
 
 .reservation-page #formPrenota {
-    max-width: 37.5em;
-    margin: 1.25em auto;
-    background-color: #fff;
-    padding: 1.25em;
-    border-radius: 0.5em;
+  max-width: 37.5em;
+  margin: 1.25em auto;
+  background-color: #fff;
+  padding: 1.25em;
+  border-radius: 0.5em;
 }
 
 .reservation-page legend {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1em;
-    color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #333;
 }
 
 .reservation-page fieldset {
-    border: none;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 0.5em;
+  border: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
 }
 
 .reservation-page .form-field {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 1em;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 1em;
+  align-items: flex-start;
 }
 
 .reservation-page label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5em;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 .reservation-page #selectedSlot {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5em;
-    margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
 
 .reservation-page #contactData {
-    margin-bottom: 1em;
-    border-radius: 0.5em;
-    width: 100%;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  width: 100%;
 }
 
 .reservation-page #contactData .email-and-phone-number,
 .reservation-page .dati-carta,
 .reservation-page #spanCVV,
 .reservation-page #scadenzaCarta {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .reservation-page #spanCVV,
 .reservation-page #scadenzaCarta {
-    width: 50%;
+  width: 50%;
 }
 
 .reservation-page #spanIndirizzo,
@@ -1285,7 +1301,7 @@ FORM PRENOTAZIONI
 .reservation-page #spanNote,
 .reservation-page #cardDataFieldset,
 .reservation-page #spanNameSurname {
-    width: 100%;
+  width: 100%;
 }
 
 /* 
@@ -1304,333 +1320,341 @@ l'autofill dei campi dal calendario:
 .reservation-page input[type="number"],
 .reservation-page textarea,
 .reservation-page select {
-    width: 100%;
-    padding: 1em;
-    box-sizing: border-box;
-    border: 0.0625em solid #ccc;
-    border-radius: 0.25em;
-    margin-bottom: 0.5em;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.25em;
+  margin-bottom: 0.5em;
 }
 
-.reservation-page #submit_button, 
+.reservation-page #submit_button,
 .reservation-page #cardDataButton {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 0.625em 0.9375em;
-    border: none;
-    border-radius: 0.25em;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.625em 0.9375em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
 }
 
-.reservation-page #submit_button:hover, 
+.reservation-page #submit_button:hover,
 .reservation-page #cardDataButton:hover {
-    background-color: #1d8623;
+  background-color: #1d8623;
 }
 
 .reservation-page input[type="radio"] {
-    margin-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 .reservation-page select {
-    padding: 0.5em;
-    background-color: #f9f9f9;
+  padding: 0.5em;
+  background-color: #f9f9f9;
 }
 
 .reservation-page button#cardDataButton {
-    width:auto;
-    margin-left:40%;
-    margin-right:40%;
+  width: auto;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
 .reservation-page button#cardDataButton:after {
-    content: "";
-    border: 0.35rem solid transparent;
-    border-top-color: var(--link);
-    margin-left: 0.25em;
-    display: inline-block;
-    transform: translateY(0.15rem);
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: var(--link);
+  margin-left: 0.25em;
+  display: inline-block;
+  transform: translateY(0.15rem);
 }
-
 
 /********************************************
 CALENDARIO
 ********************************************/
 /*Gestione allineamento calendario / box selezione slot*/
 #calendario-slot {
-    margin:auto;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.2fr 0.5fr;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr;
 }
 
 @media (max-width: 690px) {
-    #calendario-slot {
-        display:flex;
-        flex-direction: column;
-    }
+  #calendario-slot {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 #slotTitle1 {
-    grid-column:1;
-    grid-row:1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 #slotTitle2 {
-    grid-column:2;
-    grid-row:1;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 #selettoreSlot {
-    grid-column:2;
-    grid-row:2;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 /*Stile calendario + intestazione + controlli*/
 
-
 #calendario {
-    grid-column:1;
-    grid-row:2;
-    margin:auto;
-    list-style-type:none;
+  grid-column: 1;
+  grid-row: 2;
+  margin: auto;
+  list-style-type: none;
 
-    display:grid;
-    grid-template-columns:repeat(7, 1fr); /*old: 5em*/
-    grid-template-rows:repeat(8, 1fr); /*old: 1.8em*/
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /*old: 5em*/
+  grid-template-rows: repeat(8, 1fr); /*old: 1.8em*/
 
-    background-color:lightgrey;
-    grid-gap:0.3em;
-    border: solid 0.05em grey;
-    text-align:center;
+  background-color: lightgrey;
+  grid-gap: 0.3em;
+  border: solid 0.05em grey;
+  text-align: center;
 }
 
 #calendario a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 #calendario li {
-    scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 #anno {
-    grid-row:1;
-    grid-column:1/8;
+  grid-row: 1;
+  grid-column: 1/8;
 }
 
 #mese {
-    grid-column:2/7
+  grid-column: 2/7;
 }
 
-li input#buttonAvanti, li input#buttonIndietro {
-    text-indent:-999em;
-    width:100%;
-    height:100%;
-    border:0em;
-    background-color:white;
-    position:relative;
-    z-index:1;
-    opacity:0;
+li input#buttonAvanti,
+li input#buttonIndietro {
+  text-indent: -999em;
+  width: 100%;
+  height: 100%;
+  border: 0em;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
 }
 
-li:has(>#buttonAvanti):after {
-    content:">";
-    position:absolute;
-    transform:translate(-250%, 2%);
-    z-index:0;
+li:has(> #buttonAvanti):after {
+  content: ">";
+  position: absolute;
+  transform: translate(-250%, 2%);
+  z-index: 0;
 }
 
-li:has(>#buttonIndietro):after {
-    content:"<";
-    position:absolute;
-    transform:translate(-250%, 2%);
-    z-index:0;
+li:has(> #buttonIndietro):after {
+  content: "<";
+  position: absolute;
+  transform: translate(-250%, 2%);
+  z-index: 0;
 }
 
-#buttonAvanti:hover, #buttonIndietro:hover {
-    cursor:pointer;
-    background-color:grey;
-    color:white;
+#buttonAvanti:hover,
+#buttonIndietro:hover {
+  cursor: pointer;
+  background-color: grey;
+  color: white;
 }
 
 /*Stili tag giorni del mese*/
 
 #calendario .labelgiorno {
-    background-color: black;
-    color:white;
-    grid-row:3;
+  background-color: black;
+  color: white;
+  grid-row: 3;
 }
 
 ol {
-    list-style-type:none;
-    margin:auto;
-    padding:0.5em;
+  list-style-type: none;
+  margin: auto;
+  padding: 0.5em;
 }
 
 #calendario li {
-    background-color: white;
-    transition-duration:0.5s;
+  background-color: white;
+  transition-duration: 0.5s;
 }
 
 #calendario li:not(.nextMonth, .labelgiorno, #mese, #anno):hover {
-    cursor:pointer;
-    background-color:darkgray;
-    color:white;
+  cursor: pointer;
+  background-color: darkgray;
+  color: white;
 }
 
 /*Stili box di selezione slot*/
 
 #selettoreSlot {
-    background-color: white;
-    border: solid 0.05em grey;
-    border-radius:0.5em;
+  background-color: white;
+  border: solid 0.05em grey;
+  border-radius: 0.5em;
 
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-#selettoreSlot>ol>li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder), #adminContent #selettoreSlot>li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
-    display:none;
+#selettoreSlot
+  > ol
+  > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder),
+#adminContent
+  #selettoreSlot
+  > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
+  display: none;
 }
 
-#selettoreSlot>ol>li:target:not(#slotTitle1), #adminContent #selettoreSlot>li:target:not(#slotTitle1) {
-    display:block;
-    grid-row:1;
-    grid-column:2;
+#selettoreSlot > ol > li:target:not(#slotTitle1),
+#adminContent #selettoreSlot > li:target:not(#slotTitle1) {
+  display: block;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 #listaOrari1h {
-    grid-row:1;
-    grid-column:1;
+  grid-row: 1;
+  grid-column: 1;
 }
 
-.slotDisponibile button, .slotDisponibile3h button {
-    width:100%;
-    font:--var(font);
-    border: solid 0.05em lightgrey;
-    background-color:lightgreen;
+.slotDisponibile button,
+.slotDisponibile3h button {
+  width: 100%;
+  font: --var(font);
+  border: solid 0.05em lightgrey;
+  background-color: lightgreen;
 }
 
 .slotNonDisponibile button {
-    width:100%;
-    font:--var(font);
-    border: solid 0.05em lightgrey;
-    background-color:bisque;
+  width: 100%;
+  font: --var(font);
+  border: solid 0.05em lightgrey;
+  background-color: bisque;
 }
 
-.slotDisponibile button:hover, .slotDisponibile3h button:hover {
-    background-color:darkgreen;
-    color:white;
+.slotDisponibile button:hover,
+.slotDisponibile3h button:hover {
+  background-color: darkgreen;
+  color: white;
 }
 
 /********************************************
 CALENDARIO - ADMIN
 ********************************************/
 #adminContent {
-    display:flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #adminContent #calendario-Slot {
-    margin:auto;
-    display:inline-grid;
-    justify-items:center;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows:0.1fr 0.75fr;
+  margin: auto;
+  display: inline-grid;
+  justify-items: center;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 0.1fr 0.75fr;
 }
 
 #adminContent #calendario {
-    grid-row:1/span 2;
-    grid-column:1;
+  grid-row: 1 / span 2;
+  grid-column: 1;
 }
 
 #adminContent #slotDescription {
-    grid-row:1;
-    grid-column:2;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 #adminContent #selettoreSlot {
-    display: flex;
-    flex-direction:row;
-    
-    border:1px solid black;
-    border-radius:1em;
-    background-color:white;
-    grid-row:2;
-    grid-column:2;
-}
+  display: flex;
+  flex-direction: row;
 
+  border: 1px solid black;
+  border-radius: 1em;
+  background-color: white;
+  grid-row: 2;
+  grid-column: 2;
+}
 
 /***********************************************
 CALENDARIO / JS-related
 ***********************************************/
 .nextMonth a {
-    background-color: bisque;
-
-    display:inline-block;
-    pointer-events: none;
-    text-decoration: none;
-    color: currentColor;
+  display: inline-block;
+  pointer-events: none;
+  text-decoration: none;
+  color: currentColor;
+}
+#calendario li.nextMonth {
+  background-color: bisque;
 }
 
 .hiddenObj {
-    display:none;
+  display: none;
 }
 
 .emphasized {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 /*-----------------------------------------*/
 
-
 .errContatti {
-    display: none;
-    text-align: right;
-    color: red;
-    font-size: 0.8em;
+  display: none;
+  text-align: right;
+  color: red;
+  font-size: 0.8em;
 }
 
-.noErrContatti{
-    display: none;
-    text-align: right;
-    color: green;
+.noErrContatti {
+  display: none;
+  text-align: right;
+  color: green;
 }
 
 .dati-carta {
-    display:flex;
-    flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
 
 #id_card_cvv {
-    width: 30%;
-    min-width:6em;
+  width: 30%;
+  min-width: 6em;
 }
 
-#scadenzaCarta #year, #scadenzaCarta label {
-    margin-left: 1em;
+#scadenzaCarta #year,
+#scadenzaCarta label {
+  margin-left: 1em;
 }
 
 #scadenzaCarta #month {
-    margin-left:1em;
-    min-width:4em;
+  margin-left: 1em;
+  min-width: 4em;
 }
 
 #scadenzaCarta label[for="month"] {
-    margin-left:0em;
+  margin-left: 0em;
 }
 
-#spanPrenota #submit_button{
-    margin-left:45%;
-    margin-right:45%;
+#spanPrenota #submit_button {
+  margin-left: 45%;
+  margin-right: 45%;
 }
 
 #name_surname {
-    width:50%;
+  width: 50%;
 }
 
 #scadenzaCarta #year {
-    min-width:6em;
+  min-width: 6em;
 }

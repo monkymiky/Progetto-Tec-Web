@@ -16,11 +16,9 @@ JS
 
 PHP 
 -	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
--   calendario da collegare al php tramite post (poi dovrebbe funzionare)
--	verificare funzionamento prenotazioni tedesco (dopo averle fatte funzionare in italiano)
+-	verificare funzionamento prenotazioni tedesco
 
 MOBILE 
-- controllare corretto funzionamento carte per gli utenti (aggiornare codice server)
 - FARE css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
 
 VARI
