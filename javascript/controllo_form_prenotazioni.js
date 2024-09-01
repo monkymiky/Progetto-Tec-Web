@@ -134,9 +134,14 @@ function checkGenerale() {
   var E = checkNumeroCarta();
   var F = checkCVV;
   if (A && B && C && D && E && F) {
-    return true;
+    return 0;
   } else {
-    return false;
+    if (!A) return 1;
+    else if (!B) return 2;
+    else if (!C) return 3;
+    else if (!D) return 4;
+    else if (!E) return 5;
+    return 6;
   }
 }
 
@@ -146,15 +151,18 @@ elIndirizzo.addEventListener("blur", checkIndirizzo, false);
 elNomeCarta.addEventListener("blur", checkNomeCarta, false);
 elNumeroCarta.addEventListener("blur", checkNumeroCarta, false);
 elCVVCarta.addEventListener("blur", checkCVV, false);
-/*
-form.addEventListener('submit',function(e) {
-    e.preventDefault();
-    if(checkGenerale()) {
-        form.submit();
-    }
-    else {
-        alert("Controlla i campi");
-        elEmail.focus();
-    }
-})
-*/
+
+function checkForm() {
+  $checkResult = checkGenerale();
+  if ($checkResult == 0) {
+    document.getElementById("formPrenota").submit();
+  } else {
+    alert("Controlla i campi");
+    if ($checkResult == 1) elEmail.focus();
+    else if ($checkResult == 2) elCell.focus();
+    else if ($checkResult == 3) elIndirizzo.focus();
+    else if ($checkResult == 4) elNomeCarta.focus();
+    else if ($checkResult == 5) elNumeroCarta.focus();
+    else elCVVCarta.focus();
+  }
+}
