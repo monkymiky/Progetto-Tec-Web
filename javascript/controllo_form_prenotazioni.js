@@ -157,7 +157,6 @@ function checkForm() {
   if ($checkResult == 0) {
     document.getElementById("formPrenota").submit();
   } else {
-    alert("Controlla i campi");
     if ($checkResult == 1) elEmail.focus();
     else if ($checkResult == 2) elCell.focus();
     else if ($checkResult == 3) elIndirizzo.focus();

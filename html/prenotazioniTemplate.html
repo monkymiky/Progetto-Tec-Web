@@ -155,6 +155,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         action="../php/prenotazioni.php"
         method="post"
         name="modulo"
+        onsubmit="return false;"
       >
         <fieldset id="selectedSlot">
           <legend>Slot selezionato:</legend>
@@ -352,7 +353,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             form="formPrenota"
             name="submit"
             value="prenota"
-            onclick="checkForm()"
+            onclick="checkForm();"
         /></span>
       </form>
     </main>

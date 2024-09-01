@@ -20,7 +20,7 @@ $indirizzo="";
 $nome="";
 $checkedDomicilio="";
 $checkedStudio="";
-if(isset($_POST['submit']) && $_POST['submit'] == "prenota"){
+if(isset($_POST['submit'])){
     // controlli input 
     $aDomicilio = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
     if($aDomicilio){
@@ -57,7 +57,6 @@ if(isset($_POST['submit']) && $_POST['submit'] == "prenota"){
     else{
         if ($messaggiForm == "") $messaggiForm = "<h1 id='nonsuccess'>Qualcosa è andato storto con la tua prenotazione. Ci scusiamo per il disagio, probabilmente è colpa nostra però se vuoi puoi provare a rifarla.</h1>";
     }
-    }
 }
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
@@ -80,7 +79,7 @@ $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 $stringMese = "0";
     if(!empty($_POST['cambioMese'])){
         controllaInput($_POST["cambioMese"]);
-        if($_POST['submit'] == "prenota") $calendario = new Calendario(false,0);
+        if(isset($_POST['submit'])) $calendario = new Calendario(false,0);
         else $calendario = new Calendario(false,(int)$_POST["cambioMese"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
