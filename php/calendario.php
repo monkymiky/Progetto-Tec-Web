@@ -258,7 +258,7 @@ Class Calendario{
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($j!=8){
                         if($libero && $this->giorno[$i]->disponibilitàSlot[$j] && $this->giorno[$i]->disponibilitàSlot[$j+1]){
-                            $this->stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData()' ontouchend='javascript:riempiData()'>disponibile</button> </li>";
+                            $this->stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData(this)' ontouchend='javascript:riempiData(this)'>disponibile</button> </li>";
                             $libero = false;
                         }else{
                             $this->stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
