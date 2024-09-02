@@ -74,14 +74,16 @@ function fixMonthDates(year, month) {
 }
 
 function sanitize() {
-  //la soluzione che segue è estremamente bifolca, ma per ora funziona.
   var reference = "slot3hGiorno";
   var objList = [];
-  var indexes = Array(1, 3, 5, 7, 8);
+
   for (var i = 0; i < 35; i++) {
     objList = document.querySelectorAll("#" + reference + i + " li");
-    for (var j = 0; j < 5; j++) {
-      objList[indexes[j]].classList.add("hiddenObj");
+    for (var j = 0; j < 9; j++) {
+      if (objList[j].firstElementChild.textContent == "disponibile") {
+        objList[j].classList.add("doubledObj");
+        objList[j + 1].classList.add("hiddenObj");
+      }
     }
   }
 }

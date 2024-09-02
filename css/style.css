@@ -1521,6 +1521,11 @@ ol {
   border: solid 0.05em lightgrey;
   background-color: lightgreen;
 }
+.slotDisponibile3h button {
+  height: 2rem;
+  margin: 0.5rem;
+  margin-left: 0px;
+}
 
 .slotNonDisponibile button {
   width: 100%;
@@ -1591,6 +1596,8 @@ CALENDARIO / JS-related
 
 .hiddenObj {
   display: none;
+}
+.doubledObj {
 }
 
 .emphasized {
