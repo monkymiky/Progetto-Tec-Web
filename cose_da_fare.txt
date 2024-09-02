@@ -1,6 +1,5 @@
 HTML
--	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
--	loghi social del footer sono hardcoded in html, mettere in css
+-	aggiornare header
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
