@@ -1,5 +1,7 @@
 window.onload = function () {
-  toggleDomicilio();
+  var studio = document.getElementById("studio");
+  if (studio.checked) toggleStudio();
+  else toggleDomicilio();
   sanitize();
 };
 
@@ -65,6 +67,8 @@ function fixMonthDates(year, month) {
           event.preventDefault();
         });
       }
+    } else {
+      if (!list[i].querySelector("a")) list[i].classList.add("dayInPast");
     }
   }
 }
