@@ -198,6 +198,7 @@ ul#Prestazioni-dropdown li {
   width: 0.7rem;
   box-sizing: border-box;
 }
+
 /********************************************
 FOOTER
 ********************************************/
@@ -207,21 +208,38 @@ footer {
   padding: 1em;
   text-align: center;
 }
+
 .icona-social {
   display: inline-block;
   width: 40px;
   height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 10px; /
 }
+
+.icona-social.instagram {
+  background-image: url('../media/Instagram.webp');
+}
+
+.icona-social.facebook {
+  background-image: url('../media/Facebook.webp');
+}
+
 footer a:hover {
   color: var(--hoverLink);
 }
+
 footer a:visited {
   color: var(--visitedLink);
 }
+
 footer a {
   padding: 0.5em;
   color: var(--link);
 }
+
 /********************************************
 MAIN GENERALE
 ********************************************/
