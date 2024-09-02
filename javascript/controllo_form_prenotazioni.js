@@ -38,6 +38,7 @@ function checkEmail() {
   } else {
     err.style.display = "none";
     noerr.style.display = "inline";
+    return true;
   }
 }
 function checkCell() {
@@ -152,16 +153,31 @@ elNomeCarta.addEventListener("blur", checkNomeCarta, false);
 elNumeroCarta.addEventListener("blur", checkNumeroCarta, false);
 elCVVCarta.addEventListener("blur", checkCVV, false);
 
-function checkForm() {
-  $checkResult = checkGenerale();
-  if ($checkResult == 0) {
-    document.getElementById("formPrenota").submit();
+function submitForm(num) {
+  document.getElementById("addMount").setAttribute("value", num);
+  document.getElementById("changeMount").setAttribute("value", "true");
+  document.getElementById("submit_button").click();
+  return true;
+}
+function submitPrenotation() {
+  if (document.getElementById("changeMount").getAttribute("value") != "true") {
+    $checkResult = checkGenerale();
+    if ($checkResult == 0) {
+      return true;
+    } else {
+      if ($checkResult == 1) elEmail.focus();
+      else if ($checkResult == 2) elCell.focus();
+      else if ($checkResult == 3) elIndirizzo.focus();
+      else if ($checkResult == 4) elNomeCarta.focus();
+      else if ($checkResult == 5) elNumeroCarta.focus();
+      else elCVVCarta.focus();
+      return false;
+    }
   } else {
-    if ($checkResult == 1) elEmail.focus();
-    else if ($checkResult == 2) elCell.focus();
-    else if ($checkResult == 3) elIndirizzo.focus();
-    else if ($checkResult == 4) elNomeCarta.focus();
-    else if ($checkResult == 5) elNumeroCarta.focus();
-    else elCVVCarta.focus();
+    return true;
   }
 }
+/*
+document.getElementById("submit_button").addEventListener("click", (event) => {
+  event.preventDefault();
+});*/

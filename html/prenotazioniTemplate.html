@@ -102,6 +102,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
           <input
             id="domicilio"
             type="radio"
+            name="luogo"
             onchange="toggleDomicilio()"
             onclick="_resetTarget()"
           />
@@ -111,6 +112,7 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
           <input
             id="studio"
             type="radio"
+            name="luogo"
             onchange="toggleStudio()"
             onclick="_resetTarget()"
           />
@@ -124,30 +126,32 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         <p id="slotTitle2">
           Seleziona uno slot per effettuare una prenotazione.
         </p>
-        <ol id="selettoreSlot">
-          <li id="listaOrari1h">
-            <ol>
-              <li>08:30 / 10:30</li>
-              <li>10:30 / 11:30</li>
-              <li>11:30 / 13:00</li>
-              <li>13:00 / 14:30</li>
-              <li>14:30 / 16:00</li>
-              <li>16:00 / 17:30</li>
-              <li>17:30 / 19:00</li>
-              <li>19:00 / 20:30</li>
-              <li>20:30 / 22:00</li>
-            </ol>
-          </li>
-          <li id="listaOrari3h">
-            <ol>
-              <li>08:30 / 11:30</li>
-              <li>11:30 / 15:30</li>
-              <li>14:30 / 17:30</li>
-              <li>17:30 / 20:30</li>
-            </ol>
-          </li>
-        </ol>
-        {slot}
+        <div id="selettoreSlot">
+          <ol>
+            <li id="listaOrari1h">
+              <ol>
+                <li>08:30 - 10:30</li>
+                <li>10:30 - 11:30</li>
+                <li>11:30 - 13:00</li>
+                <li>13:00 - 14:30</li>
+                <li>14:30 - 16:00</li>
+                <li>16:00 - 17:30</li>
+                <li>17:30 - 19:00</li>
+                <li>19:00 - 20:30</li>
+                <li>20:30 - 22:00</li>
+              </ol>
+            </li>
+            <li id="listaOrari3h">
+              <ol>
+                <li>08:30 - 11:30</li>
+                <li>11:30 - 15:30</li>
+                <li>14:30 - 17:30</li>
+                <li>17:30 - 20:30</li>
+              </ol>
+            </li>
+          </ol>
+          {slot}
+        </div>
       </div>
 
       <form
@@ -155,11 +159,16 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
         action="../php/prenotazioni.php"
         method="post"
         name="modulo"
-        onsubmit="return false;"
+        onsubmit="return submitPrenotation();"
       >
         <fieldset id="selectedSlot">
           <legend>Slot selezionato:</legend>
-          <input type="hidden" id="scelta-luogo" name="scelta-luogo" value="" />
+          <input
+            type="hidden"
+            id="scelta-luogo"
+            name="scelta-luogo"
+            value="{scelta-luogo}"
+          />
           <div class="form-field">
             <!-- Si potrebbe aggiungere type = "date" ? -->
             <span id="spanDate"
@@ -346,14 +355,19 @@ valutare rimozione div con classe "form-field", se si riesce a mantenere uguale 
             </fieldset>
           </div>
         </fieldset>
+        <input
+          type="hidden"
+          name="changeMount"
+          id="changeMount"
+          value="false"
+        />
+        <input type="hidden" name="addMount" id="addMount" value="{mese}" />
         <span id="spanPrenota"
           ><input
             type="submit"
             id="submit_button"
             form="formPrenota"
             name="submit"
-            value="prenota"
-            onclick="checkForm();"
         /></span>
       </form>
     </main>

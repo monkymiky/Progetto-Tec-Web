@@ -168,9 +168,9 @@ Class Calendario{
                                             <time datetime='".$this->anno."'>".$this->anno."</time>
                                             </li>
                                             
-                                            <li><input type='submit' id='buttonIndietro' method='post' name='cambioMese' value ='".($this->mesiInPiu-1)."' form='formPrenota'></li>
+                                            <li><button type='button' id='buttonIndietro' name='cambioMese' onclick='submitForm(".($this->mesiInPiu-1).")'> &lt </button></li>
                                             <li id='mese'><time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
-                                            <li><input type='submit' id='buttonAvanti' method='post' name='cambioMese' value ='".($this->mesiInPiu+1)."' form='formPrenota'></li>
+                                            <li><button type='button' id='buttonAvanti' name='cambioMese' onclick='submitForm(".($this->mesiInPiu+1).")'> &gt </button></li>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                                             <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                                             <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
@@ -211,7 +211,7 @@ Class Calendario{
 
     private function setStringaSlot(){
         if($this->admin){
-            $this->stringaSlot = "<ol>";
+            $this->stringaSlot = "<ol id='slotList'>";
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
@@ -227,7 +227,7 @@ Class Calendario{
                                                     data-note=\"".$this->giorno[$i]->datiPrenotazioni["note"]."\"
                                                     data-indirizzo=\"".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."\"
                                                     data-tipo=\"".$this->giorno[$i]->datiPrenotazioni["tipo"]."\"
-                                                    onclick='javascript:mostraDati_cliente()' ontouchend='javascript:mostraDati_cliente()'>
+                                                    onclick='javascript:mostraDati_cliente()
                                                     <p>nome : ".$this->giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
                                                     </button> </li>";
                         }
@@ -241,12 +241,12 @@ Class Calendario{
         }
 
         else{ // utente non amministratore
-            $this->stringaSlot = "<ol>";
+            $this->stringaSlot = "<ol id='slotList'>";
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
-                        $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData(this)' ontouchend='javascript:riempiData(this)'>disponibile</button> </li>";
+                        $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData(this)' >disponibile</button> </li>";
                     }else{
                         $this->stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";
                     }
@@ -258,7 +258,7 @@ Class Calendario{
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($j!=8){
                         if($libero && $this->giorno[$i]->disponibilitàSlot[$j] && $this->giorno[$i]->disponibilitàSlot[$j+1]){
-                            $this->stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData(this)' ontouchend='javascript:riempiData(this)'>disponibile</button> </li>";
+                            $this->stringaSlot .= "<li class='slotDisponibile3h'><button type='button' onclick='javascript:riempiData(this)'>disponibile</button> </li>";
                             $libero = false;
                         }else{
                             $this->stringaSlot .= "<li class='slotNonDisponibile'><button type='button' disabled> occupato </button> </li>";

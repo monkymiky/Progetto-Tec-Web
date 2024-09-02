@@ -1438,30 +1438,16 @@ CALENDARIO
   grid-column: 2/7;
 }
 
-li input#buttonAvanti,
-li input#buttonIndietro {
-  text-indent: -999em;
+li button#buttonAvanti,
+li button#buttonIndietro {
+  color: black;
   width: 100%;
   height: 100%;
   border: 0em;
   background-color: white;
-  position: relative;
+
   z-index: 1;
   opacity: 0;
-}
-
-li:has(> #buttonAvanti):after {
-  content: ">";
-  position: absolute;
-  transform: translate(-250%, 2%);
-  z-index: 0;
-}
-
-li:has(> #buttonIndietro):after {
-  content: "<";
-  position: absolute;
-  transform: translate(-250%, 2%);
-  z-index: 0;
 }
 
 #buttonAvanti:hover,
@@ -1490,9 +1476,9 @@ ol {
   transition-duration: 0.5s;
 }
 
-#calendario li:not(.nextMonth, .labelgiorno, #mese, #anno):hover {
+#calendario li:not(.nextMonth, .dayInPast, .labelgiorno, #mese, #anno):hover {
   cursor: pointer;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192);
   color: white;
 }
 
@@ -1507,17 +1493,17 @@ ol {
   grid-template-columns: 1fr 1fr;
 }
 
-#selettoreSlot
-  > ol
+#slotList
   > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder),
 #adminContent
   #selettoreSlot
+  > ol
   > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
   display: none;
 }
 
-#selettoreSlot > ol > li:target:not(#slotTitle1),
-#adminContent #selettoreSlot > li:target:not(#slotTitle1) {
+#slotList > li:target:not(#slotTitle1),
+#adminContent #selettoreSlot > ol > li:target:not(#slotTitle1) {
   display: block;
   grid-row: 1;
   grid-column: 2;
@@ -1597,6 +1583,10 @@ CALENDARIO / JS-related
 }
 #calendario li.nextMonth {
   background-color: bisque;
+}
+
+#calendario li.dayInPast {
+  background-color: rgb(182, 182, 182);
 }
 
 .hiddenObj {

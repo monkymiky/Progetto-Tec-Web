@@ -5,6 +5,7 @@ HTML
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
+-	mini.css form pagina prenotazione e slot + titolo
 
 TEST
 -	testare tutto dopo aver riempito il DB
