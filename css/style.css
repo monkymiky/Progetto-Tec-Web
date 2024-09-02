@@ -1445,9 +1445,7 @@ li button#buttonIndietro {
   height: 100%;
   border: 0em;
   background-color: white;
-
   z-index: 1;
-  opacity: 0;
 }
 
 #buttonAvanti:hover,
