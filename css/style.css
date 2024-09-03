@@ -198,6 +198,7 @@ ul#Prestazioni-dropdown li {
   width: 0.7rem;
   box-sizing: border-box;
 }
+
 /********************************************
 FOOTER
 ********************************************/
@@ -207,21 +208,38 @@ footer {
   padding: 1em;
   text-align: center;
 }
+
 .icona-social {
   display: inline-block;
   width: 40px;
   height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 10px; /
 }
+
+.icona-social.instagram {
+  background-image: url('../media/Instagram.webp');
+}
+
+.icona-social.facebook {
+  background-image: url('../media/Facebook.webp');
+}
+
 footer a:hover {
   color: var(--hoverLink);
 }
+
 footer a:visited {
   color: var(--visitedLink);
 }
+
 footer a {
   padding: 0.5em;
   color: var(--link);
 }
+
 /********************************************
 MAIN GENERALE
 ********************************************/
@@ -1092,16 +1110,20 @@ ERRORI
   display: inline-block;
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
 }
 
 .error-page #dog-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.2s;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url('../media/shiba.webp');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 20%;
+  transition: transform 0.2s;
 }
 
 .error-page #pet-button {
@@ -1163,6 +1185,7 @@ ERRORI
   background-position: center;
   border-radius: 20%;
 }
+
 
 /********************************************
 ADMIN LOGIN
@@ -1375,12 +1398,18 @@ l'autofill dei campi dal calendario:
 CALENDARIO
 ********************************************/
 /*Gestione allineamento calendario / box selezione slot*/
-#calendario-slot,
+#calendario-slot, 
 #adminCalendario-Slot {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 0.5fr;
+  grid-gap: 1em;
+}
+#adminCalendario-Slot .doubleObj {
+  height: 2rem;
+  margin: 0.5rem;
+  margin-left: 0px;
 }
 #adminCalendario-Slot .doubleObj {
   height: 2rem;

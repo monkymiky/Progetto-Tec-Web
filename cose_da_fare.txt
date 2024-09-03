@@ -1,13 +1,9 @@
 HTML
--	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
--	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
--	inserire nell header keyword e description
--	loghi social del footer sono hardcoded in html, mettere in css
+-	aggiornare header
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
 -	pagina admin stilizzare piccole cose (il calendario e gli slot sono gia fatti)
--	mini.css form pagina prenotazione e slot + titolo
 
 TEST
 -	testare tutto dopo aver riempito il DB

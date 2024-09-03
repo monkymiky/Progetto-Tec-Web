@@ -83,7 +83,7 @@
         display: flex;
     }
     #breadcrumb.active{
-        top:22em;
+        top:22.5em;
     }
     #breadcrumb{
         top:5em;
@@ -297,4 +297,106 @@ footer p a {
     font-size: 2em;
 }
 
+/* FORM PRENOTAZIONI */
 
+.reservation-page main h1 {
+    font-size: 2em;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.reservation-page #formPrenota {
+    padding: 1em;
+    margin: 0.5em auto;
+    max-width: 90%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reservation-page .form-field {
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reservation-page input[id="date"],
+.reservation-page input[id="time"],
+.reservation-page input[type="text"],
+.reservation-page input[type="password"],
+.reservation-page input[type="email"],
+.reservation-page input[type="tel"],
+.reservation-page input[type="addr"],
+.reservation-page input[type="name-surname"],
+.reservation-page input[type="number"],
+.reservation-page textarea,
+.reservation-page select {
+    width: 100%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.reservation-page #contactData .email-and-phone-number,
+.reservation-page .dati-carta,
+.reservation-page #spanCVV,
+.reservation-page #scadenzaCarta {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reservation-page #spanCVV,
+.reservation-page #scadenzaCarta {
+    width: 100%;
+}
+
+.reservation-page #submit_button,
+.reservation-page #cardDataButton {
+    width: 100%;
+    margin-top: 1em;
+    padding: 0.8em;
+}
+
+footer {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+.icona-social img {
+    width: 30px; 
+    height: 30px;
+}
+
+footer p a {
+    font-size: 1.5em;
+}
+
+.reservation-page #scadenzaCarta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 0.5em;
+}
+
+.reservation-page #scadenzaCarta select {
+    flex: 1;
+    max-width: 48%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.5em;
+    line-height: 1.5em;
+}
+
+.reservation-page #scadenzaCarta select:last-child {
+    margin-right: 0;
+}
+
+.reservation-page #scadenzaCarta select {
+    display: inline-block;
+}
