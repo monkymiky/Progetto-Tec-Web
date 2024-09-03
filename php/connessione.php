@@ -73,7 +73,8 @@
         }
 
         public function prenota($nome, $email, $cel, $indirizzo, $dataora , $tipo, $note){
-            $tipo = (int)$tipo;
+            if($tipo == "0")$tipo = 0;
+            else $tipo = 1;
         // se l'utente è gia presente nel db aggiunge solo la prenotazione, altrimenti entrambi. gestisce gli errori.
         // se l'email non è presente e fallisce la seconda query di inserimento (prenotazione) cancella i dati inseriti
             try{
@@ -86,7 +87,7 @@
                 $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ('$dataora');");
                 
                 if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
-                    $timestampslot2 = strtotime("+90 min" ,$dataora);
+                    $timestampslot2 = strtotime("+90 min" ,strtotime($dataora));
                     $slot2= date("Y-m-d H:i:s", $timestampslot2);
                     $this->connessione->query("INSERT INTO NonDisponibili (Data_Ora_Inizio) VALUES ('$slot2');");
                 }
@@ -102,15 +103,20 @@
         public function getPrenotazioni($inizio,$fine){
             try{
                 $result = $this->connessione->query(
-                    "SELECT Data_Ora_Inizio, nome, indirizzo, email, cellulare, InfoAggiuntive, tipo FROM Prenotazioni JOIN Dati_cliente WHERE Data_Ora_Inizio BETWEEN '$inizio' AND '$fine';");
+                    "SELECT Data_Ora_Inizio, nome, indirizzo, email, cellulare, InfoAggiuntive, tipo 
+                    FROM Prenotazioni 
+                    JOIN Dati_cliente 
+                    ON Prenotazioni.cliente = Dati_cliente.Email
+                    WHERE Data_Ora_Inizio 
+                    BETWEEN '$inizio' AND '$fine';");
             }
             catch(Exception $ex){
                 $this->openErrorPage("3");
             }
             $matrice = array();
             $i = 0;
-            while($row = $result->fetch_assoc()){
-                $matrice[$i] = $row;  
+            foreach ($result as $row) {
+                $matrice[$i] = $row;  $i++;
             }
             return $matrice; // ritorna un array numerico di array associativi con tutte le prenotazioni
         }

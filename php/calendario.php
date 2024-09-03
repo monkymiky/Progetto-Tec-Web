@@ -14,7 +14,7 @@ Class Giorno {
     public $numero;
     public $data;
     public $disponibilitàSlot = [true,true,true,true,true,true,true,true,true];
-    public $datiPrenotazioni;
+    public $dati_prenotazioni;
     public $disponibile;
     public $disponibile3h;
     public $ORARIO_SLOT = [" 08:30:00"," 10:00:00"," 11:30:00"," 13:00:00"," 14:30:00"," 16:00:00"," 17:30:00"," 19:00:00"," 20:30:00"];
@@ -82,32 +82,59 @@ Class Calendario{
 
         if($admin){
             $connessione->openDBConnection();
+            //echo "<p>".$SQLprimoTab."ultimo =" . $SQLultimoTab ."</p>";
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
 
             if(count($nonDisponibili) == 0){$nonDisponibili[0][0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
+            /*echo"<p>Non disponibili : </p>";
+            for($i = 0; $i<count($nonDisponibili); $i++){
+                echo "<p>".$nonDisponibili[$i][0]."</p>";
+            }
+            echo "<p> prenotazioni :</p>";
+            for($i = 0; $i<count($prenotazioni); $i++){
+                echo "<p>".$prenotazioni[$i]["Data_Ora_Inizio"]."</p>";
+            }
+            echo "<p>".count($prenotazioni)."</p>";*/
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
-                $this->giorno[$i]->disponibile = true;
-                $tuttiSlotOccupati = false; 
+                $this->giorno[$i]->prenotato = true;
+                $tuttiSlotLiberi = false; 
                 for($j=0;$j<9;$j++){ // per ogni slot del giorno
-                    while($k < count($nonDisponibili)-1 && strtotime($this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k][0]) ){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
-                        $k++;
+                    $loSlotValutatoESucessivoAlProssimoSlotPrenotato = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k][0]) ;
+                    while($k < count($nonDisponibili)-1 && $loSlotValutatoESucessivoAlProssimoSlotPrenotato){ //scorro tutti gli slot non disponibili precedenti a quello che sto testando senza uscire dall'array
+                        $k++; // questa penotazione riguarda i giorni/slot precedenti, forse la prossima prenotazione riguarda questo slot o i sucessivi
+                        $loSlotValutatoESucessivoAlProssimoSlotPrenotato = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k][0]) ;
                     }
-                    if(strtotime($this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k][0])){ // imposto la disponibilità o meno dello slot
+                    $loSlotValutatoESucessivoAlProssimoSlotPrenotato = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) > strtotime($nonDisponibili[$k][0]) ;
+
+                    $slotValutatoEPrenotato = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k][0]);
+                    if($slotValutatoEPrenotato){ 
+
+                        //echo "<p>".$this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]. " == ";
+                        //echo $nonDisponibili[$k][0]." = ". $loSlotValutatoESucessivoAlProssimoSlotPrenotato ."</p>";
+
                         $this->giorno[$i]->disponibilitàSlot[$j] = false;
                         $z=0; 
-                        while ( $z<count($prenotazioni) && strtotime($this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]) != strtotime($prenotazioni[$z]["Data_Ora_Inizio"])){
+                        $prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
+                        while ( $z<count($prenotazioni) -1 && !$prenotazioneEDiQuestoSlot ){
                             $z++;// scorro tutte le prenotazioni fino a trovare quella che si riferisce allo slot non disponibile
+                            $prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
                         }
-                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni[$z]["nome"],"indirizzo" => $prenotazioni[$z]["indirizzo"],"email" => $prenotazioni[$z]["email"],"cel" => $prenotazioni[$z]["cel"],"note" => $prenotazioni[$z]["note"],"tipo" => $prenotazioni[$z]["tipo"]];
-                        if($j==8 && $tuttiSlotOccupati){$this->giorno[$i]->disponibile = false;}
+
+                        //$prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
+                        //echo "<p> prenotazione di questo slot : ".$this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]. " == ";
+                        //echo $prenotazioni[$z]["Data_Ora_Inizio"]." = ". $prenotazioneEDiQuestoSlot ."</p>";
+                        //var_dump($prenotazioni[$z]["tipo"]);
+                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni[$z]["nome"],"indirizzo" => $prenotazioni[$z]["indirizzo"],"email" => $prenotazioni[$z]["email"],"cell" => $prenotazioni[$z]["cellulare"],"note" => $prenotazioni[$z]["InfoAggiuntive"],"tipo" => $prenotazioni[$z]["tipo"]];
+                        $this->giorno[$i]->disponibile = false;
                     }
                     else{
                         $tuttiSlotOccupati = false;
                         $this->giorno[$i]->disponibilitàSlot[$j] = true;
-                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cel" =>"","note" =>"","tipo" =>""];
+                        $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => "","indirizzo" =>"","email" =>"","cell" =>"","note" =>"","tipo" =>""];
+                        if($j==8 && !$tuttiSlotOccupati){$this->giorno[$i]->disponibile = true;}
                     }
                 }
             }
@@ -218,18 +245,22 @@ Class Calendario{
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
                         $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>disponibile</button></li>";
                     }else{
-                        if($this->giorno[$i]->datiPrenotazioni != NULL){ 
-                            $this->stringaSlot .= " <li class='slotNonDisponibile'><button type='button'
-                                                    data-dataOra=\"".$this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]."\"
-                                                    data-nome=\"".$this->giorno[$i]->datiPrenotazioni["nome"]."\"  
-                                                    data-email=\"".$this->giorno[$i]->datiPrenotazioni["email"]."\"   
-                                                    data-cel=\"".$this->giorno[$i]->datiPrenotazioni["cel"]."\"
-                                                    data-note=\"".$this->giorno[$i]->datiPrenotazioni["note"]."\"
-                                                    data-indirizzo=\"".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."\"
-                                                    data-tipo=\"".$this->giorno[$i]->datiPrenotazioni["tipo"]."\"
-                                                    onclick='javascript:mostraDati_cliente()
-                                                    <p>nome : ".$this->giorno[$i]->datiPrenotazioni["nome"]."</p><p>indirizzo : ".$this->giorno[$i]->datiPrenotazioni["indirizzo"]."</p>
-                                                    </button> </li>";
+                        if($this->giorno[$i]->dati_prenotazioni[$j] != NULL){ 
+                            $class = "";
+                            if($this->giorno[$i]->dati_prenotazioni[$j] ["tipo"] == "1") $class = 'class ="aDomicilio" ';
+                            $this->stringaSlot .= " <li class='slotNonDisponibile'>
+                                                        <button type='button'
+                                                        data-dataOra='".$this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]."'
+                                                        data-nome='".$this->giorno[$i]->dati_prenotazioni[$j] ["nome"]."'  
+                                                        data-email='".$this->giorno[$i]->dati_prenotazioni[$j] ["email"]."'  
+                                                        data-cell='".$this->giorno[$i]->dati_prenotazioni[$j] ["cell"]."'
+                                                        data-note='".$this->giorno[$i]->dati_prenotazioni[$j] ["note"]."'
+                                                        data-indirizzo='".$this->giorno[$i]->dati_prenotazioni[$j] ["indirizzo"]."'
+                                                        data-tipo='".$this->giorno[$i]->dati_prenotazioni[$j] ["tipo"]."'
+                                                        onclick='mostraDati_cliente(this);'".$class.">
+                                                        ".$this->giorno[$i]->dati_prenotazioni[$j] ["nome"].
+                                                        "</button> 
+                                                    </li>";
                         }
                         else{ // caso in cui il giorno è precedente ad oggi ma non era prenotato
                             $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>disponibile</button></li>";

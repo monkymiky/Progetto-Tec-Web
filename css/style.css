@@ -1366,16 +1366,26 @@ l'autofill dei campi dal calendario:
   display: inline-block;
   transform: translateY(0.15rem);
 }
+#date:focus-visible,
+#time:focus-visible {
+  outline: none;
+}
 
 /********************************************
 CALENDARIO
 ********************************************/
 /*Gestione allineamento calendario / box selezione slot*/
-#calendario-slot {
+#calendario-slot,
+#adminCalendario-Slot {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 0.5fr;
+}
+#adminCalendario-Slot .doubleObj {
+  height: 2rem;
+  margin: 0.5rem;
+  margin-left: 0px;
 }
 
 @media (max-width: 690px) {
@@ -1474,7 +1484,15 @@ ol {
   transition-duration: 0.5s;
 }
 
-#calendario li:not(.nextMonth, .dayInPast, .labelgiorno, #mese, #anno):hover {
+#calendario
+  li:not(
+    .nextMonth,
+    .dayInPast,
+    .noPrenotations,
+    .labelgiorno,
+    #mese,
+    #anno
+  ):hover {
   cursor: pointer;
   background-color: rgb(192, 192, 192);
   color: white;
@@ -1482,7 +1500,8 @@ ol {
 
 /*Stili box di selezione slot*/
 
-#selettoreSlot {
+#selettoreSlot,
+#adminCalendario-Slot {
   background-color: white;
   border: solid 0.05em grey;
   border-radius: 0.5em;
@@ -1492,10 +1511,6 @@ ol {
 }
 
 #slotList
-  > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder),
-#adminContent
-  #selettoreSlot
-  > ol
   > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
   display: none;
 }
@@ -1546,7 +1561,7 @@ CALENDARIO - ADMIN
   flex-direction: column;
 }
 
-#adminContent #calendario-Slot {
+#adminCalendario-Slot #calendario-Slot {
   margin: auto;
   display: inline-grid;
   justify-items: center;
@@ -1584,18 +1599,22 @@ CALENDARIO / JS-related
   text-decoration: none;
   color: currentColor;
 }
+#calendario li.noPrenotations {
+  opacity: 0.5;
+  background-color: rgb(182, 182, 182);
+}
+
 #calendario li.nextMonth {
   background-color: bisque;
 }
 
 #calendario li.dayInPast {
+  opacity: 0.5;
   background-color: rgb(182, 182, 182);
 }
 
 .hiddenObj {
   display: none;
-}
-.doubledObj {
 }
 
 .emphasized {
@@ -1639,6 +1658,18 @@ CALENDARIO / JS-related
 
 #scadenzaCarta label[for="month"] {
   margin-left: 0em;
+}
+
+.noErrScadenza {
+  display: none;
+  text-align: right;
+  color: green;
+}
+.errScadenza {
+  display: none;
+  text-align: right;
+  color: red;
+  font-size: 0.8em;
 }
 
 #spanPrenota #submit_button {

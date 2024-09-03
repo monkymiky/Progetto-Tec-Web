@@ -1,23 +1,26 @@
 HTML
 -	capire come inserire il cane della 404 solo con css senza rompere il dimensionamento
 -	aggiornare header e footer a tutte le pagine a parte index (modificato bottone e accessibilità: attributi aria-expanded)
+-	inserire nell header keyword e description
 -	loghi social del footer sono hardcoded in html, mettere in css
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
+-	pagina admin stilizzare piccole cose (il calendario e gli slot sono gia fatti)
 -	mini.css form pagina prenotazione e slot + titolo
 
 TEST
 -	testare tutto dopo aver riempito il DB
 -	verificare tutti i link 
+-	validare tutte le pagine html e i css (inserire badge)
+-	testare accessibilità con tool online (consigliati dalla prof)
 
 JS
-	ADMIN
--	js mostra dati prenotazione
+
 
 PHP 
--	prenotazioni.php $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
 -	verificare funzionamento prenotazioni tedesco
+-	verificare funzionamento form admin
 
 MOBILE 
 - FARE css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)

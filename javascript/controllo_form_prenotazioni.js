@@ -20,6 +20,8 @@ var elCarta = document.getElementById("creditDebit");
 var elNomeCarta = document.getElementById("name_surname");
 var elNumeroCarta = document.getElementById("card_number");
 var elCVVCarta = document.getElementById("id_card_cvv");
+var elAnnoScadenzaCarta = document.getElementById("year");
+var elMeseScadenzaCarta = document.getElementById("month");
 
 var err;
 var noerr;
@@ -126,6 +128,25 @@ function checkCVV() {
     return true;
   }
 }
+function checkScadenza() {
+  err = document.getElementById("errPrenotazioniCVV");
+  noerr = document.getElementById("noErrPrenotazioniCVV");
+  var anno =
+    elAnnoScadenzaCarta.options[elAnnoScadenzaCarta.selectedIndex].text;
+  var mese =
+    elMeseScadenzaCarta.options[elMeseScadenzaCarta.selectedIndex].text;
+  var oggi = new Date();
+  var scadenza = new Date(parseInt(anno), parseInt(mese), 1);
+  if (oggi >= scadenza) {
+    err.style.display = "inline";
+    noerr.style.display = "none";
+    return false;
+  } else {
+    err.style.display = "none";
+    noerr.style.display = "inline";
+    return true;
+  }
+}
 
 function checkGenerale() {
   var A = checkEmail();
@@ -133,8 +154,9 @@ function checkGenerale() {
   var C = checkIndirizzo();
   var D = checkNomeCarta();
   var E = checkNumeroCarta();
-  var F = checkCVV;
-  if (A && B && C && D && E && F) {
+  var F = checkCVV();
+  var G = checkScadenza();
+  if (A && B && C && D && E && F && G) {
     return 0;
   } else {
     if (!A) return 1;
@@ -142,7 +164,8 @@ function checkGenerale() {
     else if (!C) return 3;
     else if (!D) return 4;
     else if (!E) return 5;
-    return 6;
+    else if (!F) return 6;
+    return 7;
   }
 }
 
@@ -152,6 +175,8 @@ elIndirizzo.addEventListener("blur", checkIndirizzo, false);
 elNomeCarta.addEventListener("blur", checkNomeCarta, false);
 elNumeroCarta.addEventListener("blur", checkNumeroCarta, false);
 elCVVCarta.addEventListener("blur", checkCVV, false);
+elMeseScadenzaCarta.addEventListener("blur", checkScadenza, false);
+elAnnoScadenzaCarta.addEventListener("blur", checkScadenza, false);
 
 function submitForm(num) {
   document.getElementById("addMount").setAttribute("value", num);
@@ -170,14 +195,11 @@ function submitPrenotation() {
       else if ($checkResult == 3) elIndirizzo.focus();
       else if ($checkResult == 4) elNomeCarta.focus();
       else if ($checkResult == 5) elNumeroCarta.focus();
-      else elCVVCarta.focus();
+      else if ($checkResult == 6) elCVVCarta.focus();
+      else elMeseScadenzaCarta.focus();
       return false;
     }
   } else {
     return true;
   }
 }
-/*
-document.getElementById("submit_button").addEventListener("click", (event) => {
-  event.preventDefault();
-});*/

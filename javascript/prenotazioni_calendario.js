@@ -22,7 +22,7 @@ function toggleDomicilio() {
   );
   fixMonthDates(auxDate.getFullYear(), auxDate.getMonth());
 
-  document.querySelector("#scelta-luogo").setAttribute("value", "true");
+  document.querySelector("#scelta-luogo").setAttribute("value", "1");
 }
 
 function toggleStudio() {
@@ -41,7 +41,7 @@ function toggleStudio() {
   );
   fixMonthDates(auxDate.getFullYear(), auxDate.getMonth());
 
-  document.querySelector("#scelta-luogo").setAttribute("value", "false");
+  document.querySelector("#scelta-luogo").setAttribute("value", "0");
 }
 
 function fixMonthDates(year, month) {
@@ -77,7 +77,7 @@ function sanitize() {
   var reference = "slot3hGiorno";
   var objList = [];
 
-  for (var i = 0; i < 35; i++) {
+  for (var i = 0; i < 42; i++) {
     objList = document.querySelectorAll("#" + reference + i + " li");
     for (var j = 0; j < 9; j++) {
       if (objList[j].firstElementChild.textContent == "disponibile") {

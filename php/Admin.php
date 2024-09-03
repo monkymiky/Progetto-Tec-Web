@@ -100,21 +100,21 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
     $paginaHTML = str_replace("{note}", $note, $paginaHTML);
     $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 // --------------------------------------------------------------------------------------------------------------------
-
- //--------------------------- calendario -----------------------------------------------
-    $stringMese = "0";
-    if(isset($_POST['action']) && $_POST['action'] != "modifica"){
-        controllaInput($_POST["action"]);
-        $calendario = new Calendario(false,$_POST["action"]);
+//------------------------------------- clanedario ----------------------------------------------
+$stringMese = "0";
+    if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'true'){
+        controllaInput($_POST["addMount"]);
+        $calendario = new Calendario(true,(int)$_POST["addMount"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
-        $stringMese = $_POST['action'];
+        $stringMese = $_POST['addMount'];
     }else{
-        $calendario = new Calendario(false, 0);
+        $calendario = new Calendario(true, 0);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
     }
     $paginaHTML = str_replace("{mese}", $stringMese, $paginaHTML);
+ 
 //---------------------------------------------------------------------------------------
     echo $paginaHTML;
 }

@@ -20,8 +20,9 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
     return "";
 }
  
-function controllaADomicilio(&$aDomicilio, &$messaggiForm){
-  if(!isset($aDomicilio) || ! NULL == filter_var($aDomicilio,FILTER_VALIDATE_BOOLEAN) ){
+function controllaADomicilio($aDomicilio, &$messaggiForm){
+
+  if(!isset($aDomicilio) || !( $aDomicilio == "1" || $aDomicilio== "0") ){
 		$messaggiForm .= "<p> il campo \"a domicilio\\in studio \" deve essere specificato </p>";
     return NULL; 
 	}

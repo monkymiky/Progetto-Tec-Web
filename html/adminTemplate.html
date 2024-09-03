@@ -6,16 +6,31 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="robots" content="noindex" />
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
-    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-    <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-    <script src="../javascript/prenotazioni_calendario.js"> </script>
+    <link
+      rel="stylesheet"
+      href="../css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/mini.css"
+      type="text/css"
+      media="screen and (max-width:600px)"
+    />
+    <script src="../javascript/admin_calendario.js"></script>
   </head>
   <body>
     <!--    HEADER    -->
     <header>
       <h1 id="logo">Anna Nesler Fisioterapista</h1>
-      <a href="#content" class="skip-link">Salta al contenuto principale</a>  
+      <a href="#content" class="skip-link">Salta al contenuto principale</a>
     </header>
     <!--    NAVBAR    -->
     <nav id="menu">
@@ -57,45 +72,43 @@
       <h1>Pagina amministratore</h1>
       <h2>{messaggiForm}</h2>
       <p>Prenotazioni attive nel periodo corrente:</p>
-      <span id="spanDomicilioModifica"><input id="domicilioModifica" name="aDomicilio" type="radio" value="1" onchange="toggleDomicilio()" form="formPrenota"/></span>
-      <label for="domicilio">a domicilio</label>
-      <span id="spanStudioModifica"><input id="studioModifica" name="aDomicilio" type="radio" value="0" onchange="toggleStudio()" form="formPrenota"/></span>
-      <label for="studio">in studio</label>
       <div id="adminCalendario-Slot">
         {calendario}
         <p id="slotDescription">Slot occupati nel giorno selezionato:</p>
-        <ol id="selettoreSlot">
-          <li id="listaOrari1h">
-            <ol>
-              <li>08:00 / 09:00</li>
-              <li>09:00 / 10:00</li>
-              <li>10:00 / 11:00</li>
-              <li>11:00 / 12:00</li>
-              <li>13:00 / 14:00</li>
-              <li>14:00 / 15:00</li>
-              <li>15:00 / 16:00</li>
-              <li>16:00 / 17:00</li>
-              <li>17:00 / 18:00</li>
-            </ol>
-          </li>
-          <li id="listaOrari3h">
-            <ol>
-              <li>08:00 / 11:00</li>
-              <li>11:00 / 14:00</li>
-              <li>14:00 / 17:00</li>
-              <li>17:00 / 20:00</li>
-            </ol>
-          </li>
+        <div id="selettoreSlot">
+          <ol>
+            <li>08:30 / 10:00</li>
+            <li>10:00 / 11:30</li>
+            <li>11:30 / 13:00</li>
+            <li>13:00 / 14:30</li>
+            <li>14:30 / 16:00</li>
+            <li>16:00 / 17:30</li>
+            <li>17:30 / 19:00</li>
+            <li>19:00 / 20:30</li>
+            <li>20:30 / 22:00</li>
+          </ol>
           {slot}
-        </ol>
+        </div>
       </div>
-      
+
       <p>Info prenotazione</p>
+      <div id="info_prenotazione">
+        <p>Data e Ora inizio prenotazione: <span id="dataOra"></span></p>
+        <p>Nome: <span id="nome"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Cellulare: <span id="cell"></span></p>
+        <p>Note: <span id="note"></span></p>
+        <p>
+          A domicilio? : <span id="tipo"></span> -- <span id="indirizzo"></span>
+        </p>
+      </div>
 
       <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
-      <action="../php/admin.php" method="post">
+      <form action="../php/admin.php" method="post">
         <fieldset>
-          <span id="spanDataElimina"><input id="dataElimina" name="data" type="date" /></span>
+          <span id="spanDataElimina"
+            ><input id="dataElimina" name="data" type="date"
+          /></span>
           <label for="start-date">Data</label>
           <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
           <label for="ora">Ora</label>
@@ -105,13 +118,17 @@
           <span id="spanStudioElimina"><input id="studioElimina" name="scelta-luogo" type="radio" value="studio" /></span>
           <label for="studio">in studio</label> -->
         </fieldset>
-        <span id="spanCancella"><input type="submit" name="submitCancella" value="cancella" /></span>
+        <span id="spanCancella"
+          ><input type="submit" name="submitCancella" value="cancella"
+        /></span>
       </form>
 
       <p>Modifica prenotazione:</p>
       <form action="../php/admin.php" method="post" id="formPrenota">
         <fieldset>
-          <span id="spanMese"><input id="mese" name="mese" type="hidden" value="{mese}" /></span>
+          <span id="spanMese"
+            ><input id="mese" name="mese" type="hidden" value="{mese}"
+          /></span>
           <legend>
             Seleziona il luogo delle prestazioni per visualizzare gli slot
             disponibili:
@@ -120,13 +137,17 @@
         <fieldset>
           <legend>Slot selezionato:</legend>
           <div class="form-field">
-            <span id="spanDataModifica"><input id="dataModifica" name="data" readonly value="{data}" /></span>
+            <span id="spanDataModifica"
+              ><input id="dataModifica" name="data" readonly value="{data}"
+            /></span>
             <!--Stringa recuperata tramite JScript dal calendario?-->
             <label for="date">Giorno:</label>
           </div>
 
           <div class="form-field">
-            <span id="spanTime"><input id="time" name="ora" readonly value="{ora}" /></span>
+            <span id="spanTime"
+              ><input id="time" name="ora" readonly value="{ora}"
+            /></span>
             <!--Stringa recuperata tramite JScript dal calendario?-->
             <label for="time">Ora:</label>
           </div>
@@ -134,24 +155,46 @@
         <fieldset>
           <legend>Dati di contatto</legend>
           <div class="form-field">
-            <span id="spanNameSurname"><input id="name-surname" name="nome" maxlength="40" /></span>
+            <span id="spanNameSurname"
+              ><input id="name-surname" name="nome" maxlength="40"
+            /></span>
             <label for="name-surname">Nome e cognome:</label>
             <span id="errNomeCognome" class="errContatti">X</span>
           </div>
           <div class="form-field">
-            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="20" value="{email}"/></span>
+            <span id="spanEmail"
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                maxlength="20"
+                value="{email}"
+            /></span>
             <label for="email">Email:</label>
             <span id="errEmail" class="errContatti">X</span>
           </div>
 
           <div class="form-field">
-            <span id="spanCell"><input id="cell" name="cel" type="tel" maxlength="15" value="{cel}" /></span>
+            <span id="spanCell"
+              ><input
+                id="cell"
+                name="cel"
+                type="tel"
+                maxlength="15"
+                value="{cel}"
+            /></span>
             <label for="cell">Numero di telefono:</label>
             <span id="errTelefono" class="errContatti">X</span>
           </div>
 
           <div class="form-field">
-            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}" /></span>
+            <span id="spanIndirizzo"
+              ><input
+                id="indirizzo"
+                name="indirizzo"
+                maxlength="100"
+                value="{indirizzo}"
+            /></span>
             <label for="indirizzo">Indirizzo:</label>
             <span id="errIndirizzo" class="errContatti">X</span>
           </div>
@@ -159,12 +202,19 @@
         <fieldset>
           <legend>Note aggiuntive</legend>
           <div class="form-field">
-            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}" /></span>
+            <span id="spanNote"
+              ><input id="note" name="note" maxlength="500" value="{note}"
+            /></span>
             <label for="email">Note:</label>
           </div>
         </fieldset>
-        <span id="spanModifica"><input type="submit" name="action" value="modifica" /></span>
-        <span id="errContattiAdmin" class="errContatti">Controlla che tutti i campi siano stati inseriti e siano completi</span>
+        <span id="spanModifica"
+          ><input type="submit" name="action" value="modifica"
+        /></span>
+        <span id="errContattiAdmin" class="errContatti"
+          >Controlla che tutti i campi siano stati inseriti e siano
+          completi</span
+        >
       </form>
     </main>
     <!--    FOOTER    -->
@@ -172,10 +222,20 @@
       <p><a href="../html/contatti.html"> contattami </a></p>
       <div id="Icone-social">
         <a href="http://instagram.com/iltuoaccount" class="icona-social">
-            <img src="../media/Instagram.png" width="30" height="30" alt="Instagram">
+          <img
+            src="../media/Instagram.png"
+            width="30"
+            height="30"
+            alt="Instagram"
+          />
         </a>
         <a href="http://facebook.com/iltuoaccount" class="icona-social">
-            <img src="../media/Facebook.png" width="30" height="30" alt="Facebook">
+          <img
+            src="../media/Facebook.png"
+            width="30"
+            height="30"
+            alt="Facebook"
+          />
         </a>
       </div>
       <small
