@@ -1394,11 +1394,13 @@ l'autofill dei campi dal calendario:
 CALENDARIO
 ********************************************/
 /*Gestione allineamento calendario / box selezione slot*/
-#calendario-slot {
+#calendario-slot, 
+#adminCalendario-Slot {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 0.5fr;
+  grid-gap: 1em;
 }
 
 @media (max-width: 690px) {
@@ -1567,14 +1569,6 @@ CALENDARIO - ADMIN
 #adminContent {
   display: flex;
   flex-direction: column;
-}
-
-#adminContent #calendario-Slot {
-  margin: auto;
-  display: inline-grid;
-  justify-items: center;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 0.1fr 0.75fr;
 }
 
 #adminContent #calendario {
