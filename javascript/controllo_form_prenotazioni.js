@@ -128,16 +128,22 @@ function checkCVV() {
     return true;
   }
 }
+
 function checkScadenza() {
   err = document.getElementById("errPrenotazioniCVV");
   noerr = document.getElementById("noErrPrenotazioniCVV");
-  var anno =
-    elAnnoScadenzaCarta.options[elAnnoScadenzaCarta.selectedIndex].text;
-  var mese =
-    elMeseScadenzaCarta.options[elMeseScadenzaCarta.selectedIndex].text;
+
+  var anno = parseInt(elAnnoScadenzaCarta.value); // Prendo la data delezionata
+  var mese = parseInt(elMeseScadenzaCarta.value) - 1; // Prendo il mese selezionato (sottraggo 1 perché i mesi in JS partono da 0)
+
+  // Prendo la data corrente
   var oggi = new Date();
-  var scadenza = new Date(parseInt(anno), parseInt(mese), 1);
-  if (oggi >= scadenza) {
+
+  // Costruisco un oggetto data che rappresenta l'ultimo giorno del mese selezionato
+  var scadenza = new Date(anno, mese + 1, 0);
+
+  // Confronto la data attuale a quella selezionata
+  if (oggi > scadenza) {
     err.style.display = "inline";
     noerr.style.display = "none";
     return false;
