@@ -1,6 +1,6 @@
 HTML
 -	aggiornare header (verifica presenza viewport se necessaria o meno)
-- footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate?)
+- footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate? no perche non sono pagine che vengono indirizzate)
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
@@ -14,7 +14,6 @@ TEST
 
 PHP 
 -	verificare funzionamento prenotazioni tedesco
--	verificare funzionamento form admin
 
 MOBILE 
 - FARE css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
