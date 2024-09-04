@@ -26,12 +26,6 @@
       media="screen and (max-width:600px)"
     />
     <script src="../javascript/navbar.js"></script>
-    <!-- 
-        differenze con il codice 
-        <link rel="stylesheet" href="prenotazioni.css" type="text/css" media="screen">
-        <script type="text/Javascript" src="prenotazioni_calendario.js"></script>
-
-        -->
     <script src="../javascript/prenotazioni_calendario.js"></script>
     <script src="../javascript/controllo_form_prenotazioni.js" defer></script>
   </head>
@@ -45,7 +39,14 @@
         >Salta al contenuto principale</a
       >
       <h1 id="logo">Anna Nesler Fisioterapista</h1>
-      <button id="menu-toggle">☰</button>
+      <button 
+      id="menu-toggle" 
+      type="button" 
+      aria-expanded="false"
+      aria-controls="menu"
+      >
+      ☰
+      </button> 
     </header>
     <!--    NAVBAR    -->
     <nav id="menu">
