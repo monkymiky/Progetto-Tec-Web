@@ -1,5 +1,6 @@
 HTML
--	aggiornare header
+-	aggiornare header (verifica presenza viewport se necessaria o meno)
+- footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate?)
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
