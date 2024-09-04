@@ -104,7 +104,7 @@
       </div>
 
       <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
-      <form action="../php/admin.php" method="post">
+      <form action="Admin.php" method="post">
         <fieldset>
           <span id="spanDataElimina"
             ><input id="dataElimina" name="data" type="date"
@@ -124,7 +124,7 @@
       </form>
 
       <p>Modifica prenotazione:</p>
-      <form action="../php/admin.php" method="post" id="formPrenota">
+      <form action="Admin.php" method="post" id="formPrenota">
         <fieldset>
           <span id="spanMese"
             ><input id="mese" name="mese" type="hidden" value="{mese}"
@@ -215,6 +215,15 @@
           >Controlla che tutti i campi siano stati inseriti e siano
           completi</span
         >
+      </form>
+      <form action="Admin.php" method="post" id="hididdenForm">
+        <input
+          type="hidden"
+          name="changeMount"
+          id="changeMount"
+          value="false"
+        />
+        <input type="hidden" name="addMount" id="addMount" value="{mese}" />
       </form>
     </main>
     <!--    FOOTER    -->

@@ -11,9 +11,6 @@ TEST
 -	validare tutte le pagine html e i css (inserire badge)
 -	testare accessibilità con tool online (consigliati dalla prof)
 
-JS
-
-
 PHP 
 -	verificare funzionamento prenotazioni tedesco
 -	verificare funzionamento form admin
@@ -23,4 +20,4 @@ MOBILE
 
 VARI
 -   verificare consistenza pagine in tedesco
-
+- 	fixare il form validatore (js) per il campo dati data di scadenza carta 

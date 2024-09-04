@@ -62,3 +62,9 @@ function doubleAdomicilioPrenotations() {
     }
   }
 }
+function changeMounth(num) {
+  document.getElementById("addMount").setAttribute("value", num);
+  document.getElementById("changeMount").setAttribute("value", "true");
+  document.getElementById("hididdenForm").submit();
+  return true;
+}

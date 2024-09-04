@@ -99,7 +99,15 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
     $paginaHTML = str_replace("{indirizzo}", $indirizzo, $paginaHTML);
     $paginaHTML = str_replace("{note}", $note, $paginaHTML);
     $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
-// --------------------------------------------------------------------------------------------------------------------
+
+}
+else{ // login non effettuato -> reindirizzamento all pagina di login
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'login.php';
+    header("Location: http://$host$uri/$extra");// redirect ad admin.php
+    exit;
+}
 //------------------------------------- clanedario ----------------------------------------------
 $stringMese = "0";
     if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'true'){
@@ -117,15 +125,6 @@ $stringMese = "0";
  
 //---------------------------------------------------------------------------------------
     echo $paginaHTML;
-}
-else{ // login non effettuato -> reindirizzamento all pagina di login
-    $host  = $_SERVER['HTTP_HOST'];
-    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = 'login.php';
-    header("Location: http://$host$uri/$extra");// redirect ad admin.php
-    exit;
-}
-
 ?>
 
 

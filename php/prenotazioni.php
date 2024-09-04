@@ -92,7 +92,7 @@ $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 
 
 //------------------------------------- clanedario ----------------------------------------------
-$stringMese = "0";
+$stringMese = "0"; 
     if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'true'){
         controllaInput($_POST["addMount"]);
         $calendario = new Calendario(false,(int)$_POST["addMount"]);

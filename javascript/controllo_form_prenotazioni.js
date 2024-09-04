@@ -178,7 +178,7 @@ elCVVCarta.addEventListener("blur", checkCVV, false);
 elMeseScadenzaCarta.addEventListener("blur", checkScadenza, false);
 elAnnoScadenzaCarta.addEventListener("blur", checkScadenza, false);
 
-function submitForm(num) {
+function changeMounth(num) {
   document.getElementById("addMount").setAttribute("value", num);
   document.getElementById("changeMount").setAttribute("value", "true");
   document.getElementById("submit_button").click();
