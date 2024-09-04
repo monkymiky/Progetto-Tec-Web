@@ -137,21 +137,24 @@
         public function modificaPrenotazione($oldEmail,$nome,$email,$cel,$indirizzo,$dataora, $tipo, $note){
             $tipo = (int)$tipo;
             try{
+                $this->connessione->begin_transaction();
+                $this->connessione->query("UPDATE Dati_cliente
+                                            SET `Email` = '$email'
+                                            WHERE `Email` = '$oldEmail';");
+
+                $this->connessione->query("UPDATE Prenotazioni
+                            SET Email = (SELECT Email FROM Prenotazioni WHERE email = '$email')
+                            WHERE Email = (SELECT Email FROM Prenotazioni WHERE email = '$oldEmail');");
                 $this->connessione->query(
-                    "UPDATE Dati_cliente
-                    SET Email = '$email',
-                        Cellulare = '$cel',
-                        Indirizzo = '$indirizzo',
-                        Nome = '$nome'
-                    WHERE Dati_cliente.email = '$oldEmail';");
+                    "UPDATE `Dati_cliente` 
+                    SET  `Cellulare` = '$cel', `Indirizzo` = '$indirizzo', `Nome` = '$nome' 
+                    WHERE `Dati_cliente`.`Email` = '$email'");
                 $this->connessione->query(
-                    "UPDATE Prenotazioni 
-                    SET Data_Ora_Inizio = '$dataora', 
-                        Tipo = '$tipo', 
-                        InfoAggiuntive = '$note',
-                        Cliente = '$email'
-                    WHERE Prenotazioni.Data_Ora_Inizio = '$dataora'
-                    AND EXISTS (SELECT 1 FROM Dati_cliente WHERE Email = '$email');");
+                    "UPDATE `Prenotazioni` 
+                    SET `Data_Ora_Inizio` = '$dataora', `Tipo` = '$tipo', `InfoAggiuntive` = '$note',`Cliente` = '$email'
+                    WHERE `Prenotazioni`.`Data_Ora_Inizio` = '$dataora'
+                    AND EXISTS (SELECT 1 FROM `Dati_cliente` WHERE `Email` = '$email');");
+                $this->connessione->commit();
                 if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
                     $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,strtotime($dataora))); // aggiungo 1,5h
                     //$this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
