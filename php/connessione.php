@@ -141,17 +141,13 @@
                 $this->connessione->query("UPDATE Dati_cliente
                                             SET `Email` = '$email'
                                             WHERE `Email` = '$oldEmail';");
-
-                $this->connessione->query("UPDATE Prenotazioni
-                            SET Email = (SELECT Email FROM Prenotazioni WHERE email = '$email')
-                            WHERE Email = (SELECT Email FROM Prenotazioni WHERE email = '$oldEmail');");
                 $this->connessione->query(
                     "UPDATE `Dati_cliente` 
                     SET  `Cellulare` = '$cel', `Indirizzo` = '$indirizzo', `Nome` = '$nome' 
                     WHERE `Dati_cliente`.`Email` = '$email'");
                 $this->connessione->query(
                     "UPDATE `Prenotazioni` 
-                    SET `Data_Ora_Inizio` = '$dataora', `Tipo` = '$tipo', `InfoAggiuntive` = '$note',`Cliente` = '$email'
+                    SET  `Tipo` = '$tipo', `InfoAggiuntive` = '$note',`Cliente` = '$email'
                     WHERE `Prenotazioni`.`Data_Ora_Inizio` = '$dataora'
                     AND EXISTS (SELECT 1 FROM `Dati_cliente` WHERE `Email` = '$email');");
                 $this->connessione->commit();
