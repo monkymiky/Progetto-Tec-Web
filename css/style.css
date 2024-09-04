@@ -1535,6 +1535,10 @@ ol {
   grid-template-columns: 1fr 1fr;
 }
 
+#listaOrari3h li {
+  padding-bottom:1em;
+}
+
 #slotList
   > li:not(#slotTitle1, #listaOrari1h, #listaOrari3h, #testoPlaceholder) {
   display: none;
