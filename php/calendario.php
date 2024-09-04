@@ -9,7 +9,7 @@ ini_set("display_startup_errors",1);
 setlocale(LC_ALL, 'it_IT');
 date_default_timezone_set("Europe/Rome");// setta il fusorario giusto
 
-Class Giorno {
+class Giorno {
     public $stringData;
     public $numero;
     public $data;
@@ -26,7 +26,7 @@ Class Giorno {
     }
 }
 
-Class Calendario{
+class Calendario{
     
     private $admin; // sto creando il calendario per l'admin? true - false
     private $giorno;
