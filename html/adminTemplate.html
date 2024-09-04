@@ -93,13 +93,14 @@
 
       <p>Info prenotazione</p>
       <div id="info_prenotazione">
-        <p>Data e Ora inizio prenotazione: <span id="dataOra"></span></p>
-        <p>Nome: <span id="nome"></span></p>
-        <p>Email: <span id="email"></span></p>
-        <p>Cellulare: <span id="cell"></span></p>
-        <p>Note: <span id="note"></span></p>
+        <p>Data e Ora inizio prenotazione: <span id="dataOraMostra"></span></p>
+        <p>Nome: <span id="nomeMostra"></span></p>
+        <p>Email: <span id="emailMostra"></span></p>
+        <p>Cellulare: <span id="cellMostra"></span></p>
+        <p>Note: <span id="noteMostra"></span></p>
         <p>
-          A domicilio? : <span id="tipo"></span> -- <span id="indirizzo"></span>
+          A domicilio? : <span id="tipoMostra"></span> --
+          <span id="indirizzoMostra"></span>
         </p>
       </div>
 
@@ -112,11 +113,10 @@
           <label for="start-date">Data</label>
           <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
           <label for="ora">Ora</label>
-          <!--
-          <span id="spanDomicilioElimina"><input id="domicilioElimina" name="scelta-luogo" type="radio" value="domicilio"/></span>
-          <label for="domicilio">a domicilio</label>
-          <span id="spanStudioElimina"><input id="studioElimina" name="scelta-luogo" type="radio" value="studio" /></span>
-          <label for="studio">in studio</label> -->
+          <span id="spanLuogo"
+            ><input id="luogo" name="luogo" type="text"
+          /></span>
+          <label for="luogo">Luogo</label>
         </fieldset>
         <span id="spanCancella"
           ><input type="submit" name="submitCancella" value="cancella"
@@ -126,9 +126,6 @@
       <p>Modifica prenotazione:</p>
       <form action="Admin.php" method="post" id="formPrenota">
         <fieldset>
-          <span id="spanMese"
-            ><input id="mese" name="mese" type="hidden" value="{mese}"
-          /></span>
           <legend>
             Seleziona il luogo delle prestazioni per visualizzare gli slot
             disponibili:
@@ -137,26 +134,17 @@
         <fieldset>
           <legend>Slot selezionato:</legend>
           <div class="form-field">
-            <span id="spanDataModifica"
-              ><input id="dataModifica" name="data" readonly value="{data}"
+            <span id="spanDataOra"
+              ><input id="dataOra" name="dataOra" readonly value=""
             /></span>
-            <!--Stringa recuperata tramite JScript dal calendario?-->
-            <label for="date">Giorno:</label>
-          </div>
-
-          <div class="form-field">
-            <span id="spanTime"
-              ><input id="time" name="ora" readonly value="{ora}"
-            /></span>
-            <!--Stringa recuperata tramite JScript dal calendario?-->
-            <label for="time">Ora:</label>
+            <label for="date">Data e Ora inizio:</label>
           </div>
         </fieldset>
         <fieldset>
           <legend>Dati di contatto</legend>
           <div class="form-field">
             <span id="spanNameSurname"
-              ><input id="name-surname" name="nome" maxlength="40"
+              ><input id="nome" name="nome" maxlength="40"
             /></span>
             <label for="name-surname">Nome e cognome:</label>
             <span id="errNomeCognome" class="errContatti">X</span>
@@ -167,7 +155,7 @@
                 id="email"
                 name="email"
                 type="email"
-                maxlength="20"
+                maxlength="50"
                 value="{email}"
             /></span>
             <label for="email">Email:</label>
@@ -178,7 +166,7 @@
             <span id="spanCell"
               ><input
                 id="cell"
-                name="cel"
+                name="cell"
                 type="tel"
                 maxlength="15"
                 value="{cel}"
@@ -203,11 +191,13 @@
           <legend>Note aggiuntive</legend>
           <div class="form-field">
             <span id="spanNote"
-              ><input id="note" name="note" maxlength="500" value="{note}"
+              ><input id="note" name="noteMod" maxlength="500" value="{note}"
             /></span>
-            <label for="email">Note:</label>
+            <label for="note">Note:</label>
           </div>
         </fieldset>
+        <input type="hidden" name="tipo" id="tipo" value="" />
+        <input id="oldEmail" name="oldEmail" type="hidden" value="{email}" />
         <span id="spanModifica"
           ><input type="submit" name="action" value="modifica"
         /></span>

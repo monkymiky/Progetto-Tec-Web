@@ -15,25 +15,37 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
     $messaggiForm = "";
 
     if(isset($_POST['submitCancella'])){
-        if (!isset($_POST['data']) && !isset($_POST['ora'])){
+        echo "<p> cancella mandato! </p>";
+        if (isset($_POST['data']) && isset($_POST['ora'])){
+            echo "<p> if superato ! ";
             controllaInput($_POST['data']); 
             controllaInput($_POST['ora']); 
-            if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/", $_POST['slot'])){
-                if(!isset($_POST['scelta-luogo'])){
-                    $tipo = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
-                    controllaInput($_POST['tipo']);
-                    $connessione->openDBConnection();
-                    $connessione->cancellaPrenotazione($_POST['data'].$_POST['ora'],$tipo); // Query prenotazioni con dati clienti per visualizzare nel calendario 
-                    $connessione->closeConnection();
+            var_dump($_POST['ora']);
+            echo "</p>";
+            $slot = $_POST['data']." ".$_POST['ora'];
+            if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9])$/",$slot)){
+                echo "<p> matchato!</p>";
+                if(isset($_POST['luogo'])){
+                    controllaInput($_POST['luogo']);
+                    if($_POST['luogo'] == "aDomicilio"){
+                        $connessione->openDBConnection();
+                        $connessione->cancellaPrenotazione($slot,1); // Query prenotazioni con dati clienti per visualizzare nel calendario 
+                        $connessione->closeConnection();
+                        $messaggiForm .= "<p>Prenotazione Cancellata con successo!</p>";
+                    }else if ($_POST['luogo'] == "inStudio"){
+                        $connessione->openDBConnection();
+                        $connessione->cancellaPrenotazione($slot,0); // Query prenotazioni con dati clienti per visualizzare nel calendario 
+                        $connessione->closeConnection();
+                        $messaggiForm .= "<p>Prenotazione Cancellata con successo!</p>";
+
+                    }
                 } 
             }else{
-                $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (data = 'aaaa-mm-dd'  ora ='hh:mm:ss')";
+                $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (luogo = aDomicilio / inStudio)";
             }
         }else{
-            $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (data = 'aaaa-mm-dd'  ora ='hh:mm:ss')";
+            $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (luogo = aDomicilio / inStudio)";
         }
-    }else {
-        $messaggiForm .= "per cancellare una prenotazione i campi 'data'  'ora'  e 'luogo' devono essere compilati e formattati nel modo giusto. (data = 'aaaa-mm-dd'  ora ='hh:mm:ss')";
     }
 
 
@@ -48,9 +60,9 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
     $checkedStudio="";
     if(isset($_POST['action'])){ // quando viene mandato avanti/indietro il calendario oppure quando si modifica
         // controlli input 
-        $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); 
+        $dataOraInizio = controllaDataOra( $_POST['dataOra'],$messaggiForm); 
 
-        $tipo = controllaADomicilio($_POST['aDomicilio'],$messaggiForm);
+        $tipo = controllaADomicilio($_POST['tipo'],$messaggiForm);
         if($tipo){
             $checkedDomicilio = "checked";
         }else{
@@ -60,8 +72,9 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
         $note = controllaNote($_POST['note'], $messaggiForm);
         
         $email = controllaEmail($_POST['email'], $messaggiForm);
+        $oldEmail = controllaEmail($_POST['oldEmail'], $messaggiForm);
 
-        $cel = controllaCel($_POST['cel'], $messaggiForm);
+        $cel = controllaCel($_POST['cell'], $messaggiForm);
 
         $nome = controllaNome($_POST['nome'], $messaggiForm);
 
@@ -69,7 +82,7 @@ if(isset($_SESSION["session_id"])){ // login efettuato con successo -> inizio cr
 
         if($_POST['action'] == "modifica"){ //il bottone premuto è quello del form modifica (non del calendario)
             $connessione->openDBConnection();
-            if($messaggiForm == "" && $connessione->modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
+            if($messaggiForm == "" && $connessione->modificaPrenotazione($oldEmail,$nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
                 $messaggiForm .= "<h1 id='success'>Modifica effettuata con successo!! </h1>";
                 $dataOraInizio= "";
                 $note="";

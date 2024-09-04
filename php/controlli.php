@@ -8,7 +8,7 @@ function controllaInput(&$data) { // meglio htmlentities e sttrip_tags?
 
 function controllaDataOra(&$dataOra, &$messaggiForm){
   if(isset($dataOra)){
-        if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9])$/",$dataOra)){
+        if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/",$dataOra)){
             return $dataOra;
         }else{
             $messaggiForm .= "<p>il formato del campo slot deve essere aaaa-mm-gg hh:mm</p>";

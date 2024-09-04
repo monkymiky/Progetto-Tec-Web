@@ -126,7 +126,7 @@
                 $this->connessione->query("DELETE FROM Prenotazioni WHERE Data_Ora_Inizio = '$inizio'");
                 $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$inizio'");
                 if($tipo){
-                    $inizio = date("Y-m-d H:i:s",strtotime("+90 min" ,$inizio)); // aggiunge ad inixio 1,5h
+                    $inizio = date("Y-m-d H:i:s",strtotime("+90 min" ,strtotime($inizio))); // aggiunge ad inixio 1,5h
                     $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$inizio'");
                 }
             }catch(Exception $ex){
@@ -134,14 +134,27 @@
             }
         }
 
-        public function modificaPrenotazione($nome,$email,$cel,$indirizzo,$dataora, $tipo, $note){
+        public function modificaPrenotazione($oldEmail,$nome,$email,$cel,$indirizzo,$dataora, $tipo, $note){
             $tipo = (int)$tipo;
             try{
-                $this->connessione->query("UPDATE Dati_cliente SET   (Email,Cellulare,Indirizzo,Nome) VALUES ('$email','$cel','$indirizzo','$nome');");
-                $this->connessione->query("UPDATE Prenotazioni SET   (Data_Ora_Inizio,Tipo,InfoAggiuntive,cliente) VALUES ('$dataora', '$tipo', '$note', '$email');");
+                $this->connessione->query(
+                    "UPDATE Dati_cliente
+                    SET Email = '$email',
+                        Cellulare = '$cel',
+                        Indirizzo = '$indirizzo',
+                        Nome = '$nome'
+                    WHERE Dati_cliente.email = '$oldEmail';");
+                $this->connessione->query(
+                    "UPDATE Prenotazioni 
+                    SET Data_Ora_Inizio = '$dataora', 
+                        Tipo = '$tipo', 
+                        InfoAggiuntive = '$note',
+                        Cliente = '$email'
+                    WHERE Prenotazioni.Data_Ora_Inizio = '$dataora'
+                    AND EXISTS (SELECT 1 FROM Dati_cliente WHERE Email = '$email');");
                 if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
-                    $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,$dataora)); // aggiungo 1,5h
-                    $this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
+                    $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,strtotime($dataora))); // aggiungo 1,5h
+                    //$this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
                 $this->openErrorPage("4");

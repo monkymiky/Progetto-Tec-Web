@@ -11,26 +11,48 @@ function emphasize(object) {
 }
 
 function mostraDati_cliente(prenotationButton) {
+  var dataOraMostra = document.getElementById("dataOraMostra");
+  var nomeMostra = document.getElementById("nomeMostra");
+  var emailMostra = document.getElementById("emailMostra");
+  var cellMostra = document.getElementById("cellMostra");
+  var noteMostra = document.getElementById("noteMostra");
+  var tipoMostra = document.getElementById("tipoMostra");
+  var indirizzoMostra = document.getElementById("indirizzoMostra");
+
+  dataOraMostra.textContent = prenotationButton.getAttribute("data-dataOra");
+  nomeMostra.textContent = prenotationButton.getAttribute("data-nome");
+  emailMostra.textContent = prenotationButton.getAttribute("data-email");
+  cellMostra.textContent = prenotationButton.getAttribute("data-cell");
+  noteMostra.textContent = prenotationButton.getAttribute("data-note");
+  if (prenotationButton.getAttribute("data-tipo") == 0) {
+    tipoMostra.textContent = "NO";
+    indirizzoMostra.textContent = "";
+  } else {
+    tipoMostra.textContent = "SI";
+    indirizzoMostra.textContent =
+      prenotationButton.getAttribute("data-indirizzo");
+  }
+
   var dataOra = document.getElementById("dataOra");
   var nome = document.getElementById("nome");
   var email = document.getElementById("email");
+  var oldEmail = document.getElementById("oldEmail");
   var cell = document.getElementById("cell");
+  var indirizzo = document.getElementById("indirizzo");
   var note = document.getElementById("note");
   var tipo = document.getElementById("tipo");
-  var indirizzo = document.getElementById("indirizzo");
 
-  dataOra.textContent = prenotationButton.getAttribute("data-dataOra");
-  nome.textContent = prenotationButton.getAttribute("data-nome");
-  email.textContent = prenotationButton.getAttribute("data-email");
-  cell.textContent = prenotationButton.getAttribute("data-cell");
-  note.textContent = prenotationButton.getAttribute("data-note");
-  if (prenotationButton.getAttribute("data-tipo") == 0) {
-    tipo.textContent = "NO";
-    indirizzo.textContent = "";
-  } else {
-    tipo.textContent = "SI";
-    indirizzo.textContent = prenotationButton.getAttribute("data-indirizzo");
-  }
+  dataOra.setAttribute("value", prenotationButton.getAttribute("data-dataOra"));
+  nome.setAttribute("value", prenotationButton.getAttribute("data-nome"));
+  email.setAttribute("value", prenotationButton.getAttribute("data-email"));
+  oldEmail.setAttribute("value", prenotationButton.getAttribute("data-email"));
+  cell.setAttribute("value", prenotationButton.getAttribute("data-cell"));
+  indirizzo.setAttribute(
+    "value",
+    prenotationButton.getAttribute("data-indirizzo")
+  );
+  note.setAttribute("value", prenotationButton.getAttribute("data-note"));
+  tipo.setAttribute("value", prenotationButton.getAttribute("data-tipo"));
 }
 
 function setDayBackground() {
@@ -51,15 +73,9 @@ function setDayBackground() {
 }
 function doubleAdomicilioPrenotations() {
   var list = document.querySelectorAll(".aDomicilio");
-  var check = true;
   for (var i = 0; i < list.length; i++) {
-    if (check) {
-      list[i].classList.add("doubleObj");
-      check = !check;
-    } else {
-      list[i].parentElement.classList.add("hiddenObj");
-      check = !check;
-    }
+    list[i].classList.add("doubleObj");
+    list[i].parentElement.nextElementSibling.classList.add("hiddenObj");
   }
 }
 function changeMounth(num) {

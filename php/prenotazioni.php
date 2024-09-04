@@ -30,7 +30,7 @@ if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'false'){
         $checkedStudio = "checked";
     }
 
-    $rawDataOra = $_POST['date']." ".$_POST['time'];
+    $rawDataOra = $_POST['date']." ".$_POST['time'].":00";
     $dataOraInizio = controllaDataOra($rawDataOra ,$messaggiForm); 
 
     $note = controllaNote($_POST['note'], $messaggiForm);

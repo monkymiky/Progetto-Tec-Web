@@ -1407,15 +1407,11 @@ CALENDARIO
   grid-gap: 1em;
 }
 #adminCalendario-Slot .doubleObj {
-  height: 2rem;
-  margin: 0.5rem;
+  height: 3.1rem;
+  margin: 0.2rem;
   margin-left: 0px;
 }
-#adminCalendario-Slot .doubleObj {
-  height: 2rem;
-  margin: 0.5rem;
-  margin-left: 0px;
-}
+
 
 @media (max-width: 690px) {
   #calendario-slot {
@@ -1564,8 +1560,8 @@ ol {
   background-color: lightgreen;
 }
 .slotDisponibile3h button {
-  height: 2rem;
-  margin: 0.5rem;
+  height: 2.6rem;
+  margin: 0.2rem;
   margin-left: 0px;
 }
 

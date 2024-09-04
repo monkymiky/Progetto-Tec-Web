@@ -1,323 +1,328 @@
 @media screen and (max-width: 520px) {
-    html{
-        line-height:1em;
-        width: 100%;
-    }
-    header {
-        padding: 0.5em 0em 0.5em 0em;
-        width:100%;
-        margin: 0px;
-        position: sticky;
-        top: 0;
-        height: 4em;
-        text-align: left;
-        text-indent: -999em;
-        z-index: 1;
-    }
+  html {
+    line-height: 1em;
+    width: 100%;
+  }
+  header {
+    padding: 0.5em 0em 0.5em 0em;
+    width: 100%;
+    margin: 0px;
+    position: sticky;
+    top: 0;
+    height: 4em;
+    text-align: left;
+    text-indent: -999em;
+    z-index: 1;
+  }
 
-    nav.germanSwitch {
-        text-indent: 0em;
-        margin-right: 12em;
-    }
+  nav.germanSwitch {
+    text-indent: 0em;
+    margin-right: 12em;
+  }
 
-    header h1 {
-        font-size: 3em;
-        background-position: left;
-        margin-left: 5%;
-        margin-top: -0.4em;
-    }
-    #menu-toggle{
-        position: relative;
-        top: -1.9em;
-        left: 75%;
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 0.5em;
-        font-size: 2em;
-        display: inline;
-        min-width: 24px;
-        min-height: 24px;
-    }
-    #menu {
-        display: none;
-        position: sticky;
-        top: 4.9em;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        z-index: 1;
-    }
+  header h1 {
+    font-size: 3em;
+    background-position: left;
+    margin-left: 5%;
+    margin-top: -0.4em;
+  }
+  #menu-toggle {
+    position: relative;
+    top: -1.9em;
+    left: 75%;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0.5em;
+    font-size: 2em;
+    display: inline;
+    min-width: 24px;
+    min-height: 24px;
+  }
+  #menu {
+    display: none;
+    position: sticky;
+    top: 4.9em;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
 
-    #menu ul {
-        width: 100%;
-    }
+  #menu ul {
+    width: 100%;
+  }
 
-    #menu li {
-        display: block;
-        width: 100%;
-        text-align: left;
-        margin: 0;
-    }
-    #menu li>ul>li{
-        text-indent: 20%;
-    }
+  #menu li {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+  #menu li > ul > li {
+    text-indent: 20%;
+  }
 
-    #menu>* {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
+  #menu > * {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    #menu a:hover {
-        background-color: var(--hoverLink);
-        border-radius: 0;
-    }
+  #menu a:hover {
+    background-color: var(--hoverLink);
+    border-radius: 0;
+  }
 
-    #menu ul ul {
-        position: static;
-        display: none;
-        width: 93%;
-    }
+  #menu ul ul {
+    position: static;
+    display: none;
+    width: 93%;
+  }
 
-    #menu.active {
-        display: flex;
-    }
-    #breadcrumb.active{
-        top:22.5em;
-    }
-    #breadcrumb{
-        top:5em;
-    }
-    #menu ul ul {
-        display: block;
-    }
-    /*---------------
+  #menu.active {
+    display: flex;
+  }
+  #breadcrumb.active {
+    top: 22.5em;
+  }
+  #breadcrumb {
+    top: 5em;
+  }
+  #menu ul ul {
+    display: block;
+  }
+  /*---------------
     MAIN
     ------------------*/
-    main{
-        padding:5%;
-        margin: 0px;
-        text-align: center;
-        font-size: 1em; /* in style.css è 1.5*/   
-        flex-grow: 1;/*tiene il footer in fondo nel mobile*/
-    }
+  main {
+    padding: 5%;
+    margin: 0px;
+    text-align: center;
+    font-size: 1em; /* in style.css è 1.5*/
+    flex-grow: 1; /*tiene il footer in fondo nel mobile*/
+  }
 
-    #content p:not(.card-back) {
-        margin: 1.5em;
-        line-height: 1.2;
-    }
-    a , button{
-        min-width: 24px;
-        min-height: 24px;
-    }
-    #prenotazioni-home{
-        margin: auto;
-        width: 70%;
-    }
-    /*------ Cosa Offro -----*/
-    #CosaOffro{
-        height: auto;
-        max-height: none;
-        display: block;
-        margin: 0px;
-        margin-top: 1em;
-        padding: 0px;
-        text-align: center;
-        border: 0px;
-        width: 100%;
-    }
-    
-    #cosa-offro-links-massaggi{
-        background-image: url("../media/massaggi.jpg");
-    }
-    #cosa-offro-links-corsi{
-        background-image: url("../media/corso.jpg");
-    }
-    #cosa-offro-links-danza{
-        background-image: url("../media/danza.jpg");
-    }
-    #cosa-offro-links-fisioterapia{
-        background-image: url("../media/fisioterapia.jpg");
-    }
-    #CosaOffro h1{
-        line-height: 1em;
-    }
-    #CosaOffro div{
-        margin:auto;
-        margin-top: 1em;
-        padding-top:4.4em;
-        width: 80%;
-        height: 6em;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 1em;
-    }
-    #CosaOffro div a{
-        display: block;
-        background-color: white;
-        margin:auto;
-        padding:0.2em;
-        width: 10em;
-        border-radius: 0.5em;
-        border: 1px solid var(--borderColor);
-    }
-    #img-corso {display: none;}
-    #img-massaggio {display: none;}
-    /*------ Descrizione Anna -----*/
-    #chi-sono{
-        height: 25em;
-    }
-    #foto-anna-home{
-        width: 100%;
-        height:37vw;
-        display: block;
-        margin: 0px;
-        padding:0px;
-        margin-top: 1em;
-        border-radius: 1em;
-        background-position:left top;
-    }
-    #foto-anna-home-descrizione{
-        display: block;
-        z-index: 2;
-        background-color: rgba(0,0,0,0);
-        border-radius: 1em;
-        padding: 0em;
-        width: 100%;
-    }
-    #foto-anna-home-descrizione{
-        max-height:10em;
-        position: inherit;
-    }
-    #foto-anna-home-descrizione p{
-        height: auto;
-        max-height: 7em;
-    }
-    /*------ Card -----*/
-    #idee_regalo{
-        margin-top: 0em;
-    }
-    #idee_regalo h2{
-        line-height: 1em;
-    }
-    #idee_regalo h2{
-        margin :auto;
-        margin-top: 1em;
-        height: 100%;
-        margin-bottom: 1em;
-    }
-    #idee_regalo li{
-        width: 100%;
-    }
-    .gift-card {
-        width: auto;
-        height: 60vw;
-    }
-    
-    /*-------
+  #content p:not(.card-back) {
+    margin: 1.5em;
+    line-height: 1.2;
+  }
+  a,
+  button {
+    min-width: 24px;
+    min-height: 24px;
+  }
+  #prenotazioni-home {
+    margin: auto;
+    width: 70%;
+  }
+  /*------ Cosa Offro -----*/
+  #CosaOffro {
+    height: auto;
+    max-height: none;
+    display: block;
+    margin: 0px;
+    margin-top: 1em;
+    padding: 0px;
+    text-align: center;
+    border: 0px;
+    width: 100%;
+  }
+
+  #cosa-offro-links-massaggi {
+    background-image: url("../media/massaggi.jpg");
+  }
+  #cosa-offro-links-corsi {
+    background-image: url("../media/corso.jpg");
+  }
+  #cosa-offro-links-danza {
+    background-image: url("../media/danza.jpg");
+  }
+  #cosa-offro-links-fisioterapia {
+    background-image: url("../media/fisioterapia.jpg");
+  }
+  #CosaOffro h1 {
+    line-height: 1em;
+  }
+  #CosaOffro div {
+    margin: auto;
+    margin-top: 1em;
+    padding-top: 4.4em;
+    width: 80%;
+    height: 6em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1em;
+  }
+  #CosaOffro div a {
+    display: block;
+    background-color: white;
+    margin: auto;
+    padding: 0.2em;
+    width: 10em;
+    border-radius: 0.5em;
+    border: 1px solid var(--borderColor);
+  }
+  #img-corso {
+    display: none;
+  }
+  #img-massaggio {
+    display: none;
+  }
+  /*------ Descrizione Anna -----*/
+  #chi-sono {
+    height: 25em;
+  }
+  #foto-anna-home {
+    width: 100%;
+    height: 37vw;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1em;
+    border-radius: 1em;
+    background-position: left top;
+  }
+  #foto-anna-home-descrizione {
+    display: block;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1em;
+    padding: 0em;
+    width: 100%;
+  }
+  #foto-anna-home-descrizione {
+    max-height: 10em;
+    position: inherit;
+  }
+  #foto-anna-home-descrizione p {
+    height: auto;
+    max-height: 7em;
+  }
+  /*------ Card -----*/
+  #idee_regalo {
+    margin-top: 0em;
+  }
+  #idee_regalo h2 {
+    line-height: 1em;
+  }
+  #idee_regalo h2 {
+    margin: auto;
+    margin-top: 1em;
+    height: 100%;
+    margin-bottom: 1em;
+  }
+  #idee_regalo li {
+    width: 100%;
+  }
+  .gift-card {
+    width: auto;
+    height: 60vw;
+  }
+
+  /*-------
     FOOTER
     ----------*/
-    footer {
-        padding:0.5em;
-        text-align: center;
-        font-size: 0.5em;
-    }
-    .icona-social img{
-        width: 40px;
-        height: 40px;
-    }
-    /*-------
+  footer {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 0.5em;
+  }
+  .icona-social img {
+    width: 40px;
+    height: 40px;
+  }
+  /*-------
     MASSAGGI
     ----------*/
-    .shop-items h2{
-        margin :auto;
-    }
-    .shop-items li{
-        width: 100%;
-    }
-    .card {
-        width: auto;
-        height: 80vw;
-    }
-    .card-container li{
-        height: 15em;
-    }
+  .shop-items h2 {
+    margin: auto;
+  }
+  .shop-items li {
+    width: 100%;
+  }
+  .card {
+    width: auto;
+    height: 80vw;
+  }
+  .card-container li {
+    height: 15em;
+  }
 }
 
 .errContatti {
-    display: none;
-    text-align: right;
-    color: red;
-    font-size: 0.8em;
+  display: none;
+  text-align: right;
+  color: red;
+  font-size: 0.8em;
 }
 
-.noErrContatti{
-    display: none;
-    text-align: right;
-    color: green;
+.noErrContatti {
+  display: none;
+  text-align: right;
+  color: green;
 }
 /*-------
     Chi Sono - Fisioterapia - corsi di massaggio
 ----------*/
-main section{
-    flex-direction: column;
-    padding: 1.5rem 0rem 1rem 0rem;
+main section {
+  flex-direction: column;
+  padding: 1.5rem 0rem 1rem 0rem;
 }
 
-section div.text-container{
-    width: 100%;
-    order: 2;
-    padding:0px 0.7rem;
-    margin: auto;
+section div.text-container {
+  width: 100%;
+  order: 2;
+  padding: 0px 0.7rem;
+  margin: auto;
 }
-.title{
-    font-size: 2rem;
-    margin-bottom: 0px;
+.title {
+  font-size: 2rem;
+  margin-bottom: 0px;
 }
-.subtitle{
-    line-height: 1.5rem;
+.subtitle {
+  line-height: 1.5rem;
 }
-section div.img-container{
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 0%;
-    order:1 ;
-    margin-bottom: 1.5rem;
+section div.img-container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 0%;
+  order: 1;
+  margin-bottom: 1.5rem;
 }
 
 #name_surname {
-    width:100%;
+  width: 100%;
 }
 
 #formPrenota #submit_button {
-    margin:0;
+  margin: 0;
 }
 
 footer p a {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 /* FORM PRENOTAZIONI */
 
 .reservation-page main h1 {
-    font-size: 2em;
-    line-height: 1.2em;
-    margin-bottom: 0.5em;
-    padding-top: 0.5em;
+  font-size: 2em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  padding-top: 0.5em;
 }
 
 .reservation-page #formPrenota {
-    padding: 1em;
-    margin: 0.5em auto;
-    max-width: 90%;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 1em;
+  margin: 0.5em auto;
+  max-width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .reservation-page .form-field {
-    margin-bottom: 1em;
-    width: 100%;
-    box-sizing: border-box;
+  margin-bottom: 1em;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .reservation-page input[id="date"],
@@ -331,72 +336,75 @@ footer p a {
 .reservation-page input[type="number"],
 .reservation-page textarea,
 .reservation-page select {
-    width: 100%;
-    padding: 0.8em;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
-    margin-bottom: 0.5em;
+  width: 100%;
+  padding: 0.8em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 .reservation-page #contactData .email-and-phone-number,
 .reservation-page .dati-carta,
 .reservation-page #spanCVV,
 .reservation-page #scadenzaCarta {
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .reservation-page #spanCVV,
 .reservation-page #scadenzaCarta {
-    width: 100%;
+  width: 100%;
 }
 
 .reservation-page #submit_button,
 .reservation-page #cardDataButton {
-    width: 100%;
-    margin-top: 1em;
-    padding: 0.8em;
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.8em;
 }
 
 footer {
-    padding: 0.5em;
-    text-align: center;
-    font-size: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 0.5em;
 }
 
 .icona-social img {
-    width: 30px; 
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 footer p a {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .reservation-page #scadenzaCarta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    gap: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 0.5em;
 }
 
 .reservation-page #scadenzaCarta select {
-    flex: 1;
-    max-width: 48%;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 0.5em;
-    line-height: 1.5em;
+  flex: 1;
+  max-width: 48%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0.5em;
+  line-height: 1.5em;
 }
 
 .reservation-page #scadenzaCarta select:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .reservation-page #scadenzaCarta select {
-    display: inline-block;
+  display: inline-block;
+}
+#selettoreSlot {
+  line-height: 1.5em;
 }
