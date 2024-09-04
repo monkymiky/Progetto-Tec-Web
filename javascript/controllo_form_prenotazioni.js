@@ -130,8 +130,8 @@ function checkCVV() {
 }
 
 function checkScadenza() {
-  err = document.getElementById("errPrenotazioniCVV");
-  noerr = document.getElementById("noErrPrenotazioniCVV");
+  err = document.getElementById("errScadenza");
+  noerr = document.getElementById("noErrScadenza");
 
   var anno = parseInt(elAnnoScadenzaCarta.value); // Prendo la data delezionata
   var mese = parseInt(elMeseScadenzaCarta.value) - 1; // Prendo il mese selezionato (sottraggo 1 perché i mesi in JS partono da 0)
@@ -162,6 +162,7 @@ function checkGenerale() {
   var E = checkNumeroCarta();
   var F = checkCVV();
   var G = checkScadenza();
+
   if (A && B && C && D && E && F && G) {
     return 0;
   } else {
