@@ -326,38 +326,42 @@
             </div>
 
             <!--INSERIRE SCADENZA DELLA CARTA -->
-            <fieldset id="scadenzaCarta">
-              <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
-              <legend><abbr title="Scadenza">Scad</abbr>.</legend>
-              <label for="month">Mese:</label>
-              <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-              <select id="month" name="month">
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="8">08</option>
-                <option value="9">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-              <label for="year">Anno:</label>
-              <!--Label inclusa per accessibilità, si nasconderà via CSS-->
-              <select id="year" name="year">
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028</option>
-                <option value="2029">2029</option>
-              </select>
+            <div>
               <span id="errScadenza" class="errContatti">La carta è scaduta</span>
               <span id="noErrScadenza" class="noErrContatti">&#10003;</span>
-            </fieldset>
+              <fieldset id="scadenzaCarta">
+                <!--Brutto annidare Fieldset ma mi sa che per questioni di accessibilità è necessario-->
+              
+                <legend><abbr title="Scadenza">Scad</abbr>.</legend>
+                <label for="month">Mese:</label>
+                <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                <select id="month" name="month">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="8">08</option>
+                  <option value="9">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <label for="year">Anno:</label>
+                <!--Label inclusa per accessibilità, si nasconderà via CSS-->
+                <select id="year" name="year">
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                </select>
+
+              </fieldset>
+            </div>
           </div>
         </fieldset>
         <input
