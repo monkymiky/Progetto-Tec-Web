@@ -683,6 +683,7 @@ MASSAGGI POPOLARI
   font-size: 2em;
   margin-bottom: 0.5em;
   margin-top: 1em;
+  line-height: 1.3em;
 }
 
 #massaggi_popolari a {
@@ -1547,6 +1548,9 @@ ol {
 
 #listaOrari3h li {
   padding-bottom:1em;
+}
+#listaOrari1h {
+  line-height: 1.68em;
 }
 
 #slotList
