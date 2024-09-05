@@ -793,6 +793,23 @@ MASSAGGI POPOLARI
 /********************************************
 CONTATTI
 ********************************************/
+.contact-page .title {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contact-page .subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 0em;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
 .contact-page #contactForm {
   max-width: 37.5em;
   margin: 1.25em auto;
@@ -847,8 +864,6 @@ CONTATTI
 }
 
 .contact-page #content h1,
-.contact-page #content h2,
-.contact-page #content h3,
 .contact-page #content p,
 .contact-page #content dl,
 .contact-page #content ul {
@@ -1327,11 +1342,6 @@ FORM PRENOTAZIONI
   width: 100%;
 }
 
-/* 
-In caso si possano aggiungere i tipi date e time senza che si rompa
-l'autofill dei campi dal calendario:
-.reservation-page input[type="date"],
-.reservation-page input[type="time"], */
 .reservation-page input[id="date"],
 .reservation-page input[id="time"],
 .reservation-page input[type="text"],
