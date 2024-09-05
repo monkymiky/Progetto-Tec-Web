@@ -189,14 +189,17 @@ class Calendario{
     }
 
     private function setStringaCalendario(){
-        
+        //per essere compliant alla sintassi prevista per il tag <time>
+        $stringaMese = $this->nrMese-1; 
+        if (strlen($stringaMese)==1) {$stringaMese="0".$stringaMese;}
+
         $this->stringaCalendario = "     <ol id='calendario'>
                                             <li id='anno'> 
                                             <time datetime='".$this->anno."'>".$this->anno."</time>
                                             </li>
                                             
                                             <li><button type='button' id='buttonIndietro' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu-1).")'> &lt; </button></li>
-                                            <li id='mese'><time datetime='".($this->anno)."-".($this->nrMese-1)."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
+                                            <li id='mese'><time datetime='".($this->anno)."-".$stringaMese."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
                                             <li><button type='button' id='buttonAvanti' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu+1).")'> &gt; </button></li>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                                             <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
