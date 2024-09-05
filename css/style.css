@@ -1400,6 +1400,11 @@ FORM PRENOTAZIONI
   display: inline-block;
   transform: translateY(0.15rem);
 }
+
+#errScadenza, #noErrScadenza {
+  text-align: left;
+}
+
 #date:focus-visible,
 #time:focus-visible {
   outline: none;
