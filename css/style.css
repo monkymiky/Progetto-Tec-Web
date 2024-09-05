@@ -526,7 +526,7 @@ HOME
   grid-template-rows: 2fr 2fr 2fr 2fr 2fr 6fr 8fr;
 }
 
-#CosaOffro h1 {
+#CosaOffro h2 {
   text-align: center;
   grid-row: 1;
   grid-column: 1/3;
