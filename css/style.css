@@ -216,7 +216,7 @@ footer {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 10px; /
+  margin: 0 10px;
 }
 
 .icona-social.instagram {
@@ -1559,7 +1559,7 @@ ol {
 .slotDisponibile button,
 .slotDisponibile3h button {
   width: 100%;
-  font: --var(font);
+  font: var(--font);
   border: solid 0.05em lightgrey;
   background-color: lightgreen;
 }
@@ -1571,7 +1571,7 @@ ol {
 
 .slotNonDisponibile button {
   width: 100%;
-  font: --var(font);
+  font: var(--font);
   border: solid 0.05em lightgrey;
   background-color: bisque;
 }
