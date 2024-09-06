@@ -1546,8 +1546,7 @@ ol {
 
 /*Stili box di selezione slot*/
 
-#selettoreSlot,
-#adminCalendario-Slot {
+#selettoreSlot {
   background-color: white;
   border: solid 0.05em grey;
   border-radius: 0.5em;
