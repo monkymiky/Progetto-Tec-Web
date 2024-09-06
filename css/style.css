@@ -501,11 +501,6 @@ CORSI CONSIGLIATI
 HOME
 ********************************************/
 
-#homepage_main h2 {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-}
-
 #prenotazioni-home {
   width: 15em;
   display: block;
@@ -1642,6 +1637,25 @@ CALENDARIO - ADMIN
   grid-column: 2;
 }
 
+#adminContent li .slotNonDisponibile button {
+  width: 100%;
+  font: var(--font);
+  border: solid 0.05em lightgrey;
+  background-color: lightgreen;
+}
+
+#adminContent li .slotDisponibile button {
+  width: 100%;
+  font: var(--font);
+  border: solid 0.05em lightgrey;
+  background-color: bisque;
+}
+
+#adminContent li .slotNonDisponibile button:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
 /***********************************************
 CALENDARIO / JS-related
 ***********************************************/
@@ -1674,6 +1688,7 @@ CALENDARIO / JS-related
 }
 
 /*-----------------------------------------*/
+
 
 .errContatti {
   display: none;
@@ -1735,4 +1750,21 @@ CALENDARIO / JS-related
 
 #scadenzaCarta #year {
   min-width: 6em;
+}
+
+/***********************************************
+ADMIN - varie
+***********************************************/
+
+#info_prenotazione {
+  background-color:white;
+  border: solid 0.05em grey;
+  border-radius: 0.5em;
+  padding: 0.7em
+}
+
+#adminContent #formPrenota div.form-field {
+  display:flex;
+  flex-direction:row-reverse;
+  margin-right:50%
 }
