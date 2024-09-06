@@ -118,12 +118,12 @@ nav {
   padding: 0.5em;
 }
 
-#menu a:link {
+#menu a:link, nav a:link {
   padding: 0.5em;
   color: var(--link);
 }
 
-#menu ul a:visited {
+#menu ul a:visited, nav a:visited {
   color: var(--visitedLink);
 }
 #menu ul a:hover,
