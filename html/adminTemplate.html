@@ -2,75 +2,43 @@
 <html lang="it">
   <head>
     <title>Admin</title>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="robots" content="noindex" />
-
-    <link
-      rel="stylesheet"
-      href="../css/style.css"
-      type="text/css"
-      media="screen"
-    />
-    <link
-      rel="stylesheet"
-      href="../css/print.css"
-      type="text/css"
-      media="print"
-    />
-    <link
-      rel="stylesheet"
-      href="../css/mini.css"
-      type="text/css"
-      media="screen and (max-width:600px)"
-    />
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
     <script src="../javascript/admin_calendario.js"></script>
   </head>
   <body>
-    <!--    HEADER    -->
+    <!-- HEADER -->
     <header>
       <h1 id="logo">Anna Nesler Fisioterapista</h1>
-      <a href="#adminContent" class="skip-link"
-        >Salta al contenuto principale</a
-      >
+      <a href="#adminContent" class="skip-link">Salta al contenuto principale</a>
     </header>
-    <!--    NAVBAR    -->
+    <!-- NAVBAR -->
     <nav id="menu">
       <ul>
         <li lang="en"><a href="../html/index.html">Home</a></li>
         <li><a href="../html/anna.html">Chi Sono</a></li>
         <li class="dropdown">
-          <button
-            type="button"
-            class="dropdown__title"
-            aria-expanded="false"
-            aria-controls="Prestazioni-dropdown"
-            id="dropdown_button"
-          >
-            Prestazioni
-          </button>
+          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="Prestazioni-dropdown" id="dropdown_button">Prestazioni</button>
           <ul class="dropdown__menu" id="Prestazioni-dropdown">
-            <li>
-              <a href="../html/prestazioni/fisioterapia.html">Fisioterapia</a>
-            </li>
+            <li><a href="../html/prestazioni/fisioterapia.html">Fisioterapia</a></li>
             <li><a href="../html/prestazioni/massaggi.html">Massaggi</a></li>
             <li><a href="../html/prestazioni/danza.html">Danzaterapia</a></li>
-            <li>
-              <a href="../html/prestazioni/corsi.html">Corsi di Massaggio</a>
-            </li>
+            <li><a href="../html/prestazioni/corsi.html">Corsi di Massaggio</a></li>
           </ul>
         </li>
         <li><a href="../html/contatti.html">Contatti</a></li>
         <li><a href="../php/prenotazioni.php">Prenotazioni</a></li>
       </ul>
     </nav>
-
-    <!--    BREADCRUMB    -->
+    <!-- BREADCRUMB -->
     <nav id="breadcrumb">
       <p>Ti trovi in: Pagina amministratore</p>
     </nav>
-
     <main id="adminContent">
       <h1>Pagina amministratore</h1>
       <h2>{messaggiForm}</h2>
@@ -93,7 +61,6 @@
           {slot}
         </div>
       </div>
-
       <p>Info prenotazione</p>
       <div id="info_prenotazione">
         <p>Data e Ora inizio prenotazione: <span id="dataOraMostra"></span></p>
@@ -101,91 +68,51 @@
         <p>Email: <span id="emailMostra"></span></p>
         <p>Cellulare: <span id="cellMostra"></span></p>
         <p>Note: <span id="noteMostra"></span></p>
-        <p>
-          A domicilio? : <span id="tipoMostra"></span> --
-          <span id="indirizzoMostra"></span>
-        </p>
+        <p>A domicilio? : <span id="tipoMostra"></span> -- <span id="indirizzoMostra"></span></p>
       </div>
-
       <p>Seleziona data e ora della prenotazione da CANCELLARE:</p>
       <form action="Admin.php" method="post">
         <fieldset>
-          <span id="spanDataElimina"
-            ><input id="dataElimina" name="data" type="date"
-          /></span>
-          <label for="start-date">Data</label>
-          <span id="spanOra"><input id="ora" name="ora" type="time" /></span>
+          <span id="spanDataElimina"><input id="dataElimina" name="data" type="date"></span>
+          <label for="dataElimina">Data</label>
+          <span id="spanOra"><input id="ora" name="ora" type="time"></span>
           <label for="ora">Ora</label>
-          <span id="spanLuogo"
-            ><input id="luogo" name="luogo" type="text"
-          /></span>
+          <span id="spanLuogo"><input id="luogo" name="luogo" type="text"></span>
           <label for="luogo">Luogo</label>
         </fieldset>
-        <span id="spanCancella"
-          ><input type="submit" name="submitCancella" value="cancella"
-        /></span>
+        <span id="spanCancella"><input type="submit" name="submitCancella" value="cancella"></span>
       </form>
-
       <p>Modifica prenotazione:</p>
       <form action="Admin.php" method="post" id="formPrenota">
         <fieldset>
-          <legend>
-            Seleziona il luogo delle prestazioni per visualizzare gli slot
-            disponibili:
-          </legend>
+          <legend>Seleziona il luogo delle prestazioni per visualizzare gli slot disponibili:</legend>
         </fieldset>
         <fieldset>
           <legend>Slot selezionato:</legend>
           <div class="form-field">
-            <span id="spanDataOra"
-              ><input id="dataOra" name="dataOra" readonly value=""
-            /></span>
-            <label for="date">Data e Ora inizio:</label>
+            <span id="spanDataOra"><input id="dataOra" name="dataOra" readonly value=""></span>
+            <label for="dataOra">Data e Ora inizio:</label>
           </div>
         </fieldset>
         <fieldset>
           <legend>Dati di contatto</legend>
           <div class="form-field">
-            <span id="spanNameSurname"
-              ><input id="nome" name="nome" maxlength="40"
-            /></span>
-            <label for="name-surname">Nome e cognome:</label>
+            <span id="spanNameSurname"><input id="nome" name="nome" maxlength="40"></span>
+            <label for="nome">Nome e cognome:</label>
             <span id="errNomeCognome" class="errContatti">X</span>
           </div>
           <div class="form-field">
-            <span id="spanEmail"
-              ><input
-                id="email"
-                name="email"
-                type="email"
-                maxlength="50"
-                value="{email}"
-            /></span>
+            <span id="spanEmail"><input id="email" name="email" type="email" maxlength="50" value="{email}"></span>
             <label for="email">Email:</label>
             <span id="errEmail" class="errContatti">X</span>
           </div>
-
           <div class="form-field">
-            <span id="spanCell"
-              ><input
-                id="cell"
-                name="cell"
-                type="tel"
-                maxlength="15"
-                value="{cel}"
-            /></span>
+            <span id="spanCell"><input id="cell" name="cell" type="tel" maxlength="15" value="{cel}"></span>
             <label for="cell">Numero di telefono:</label>
             <span id="errTelefono" class="errContatti">X</span>
           </div>
-
           <div class="form-field">
-            <span id="spanIndirizzo"
-              ><input
-                id="indirizzo"
-                name="indirizzo"
-                maxlength="100"
-                value="{indirizzo}"
-            /></span>
+            <span id="spanIndirizzo"><input id="indirizzo" name="indirizzo" maxlength="100" value="{indirizzo}"></span>
             <label for="indirizzo">Indirizzo:</label>
             <span id="errIndirizzo" class="errContatti">X</span>
           </div>
@@ -193,54 +120,28 @@
         <fieldset>
           <legend>Note aggiuntive</legend>
           <div class="form-field">
-            <span id="spanNote"
-              ><input id="note" name="note" maxlength="500" value="{note}"
-            /></span>
+            <span id="spanNote"><input id="note" name="note" maxlength="500" value="{note}"></span>
             <label for="note">Note:</label>
           </div>
         </fieldset>
-        <input type="hidden" name="tipo" id="tipo" value="" />
-        <input id="oldEmail" name="oldEmail" type="hidden" />
-        <span id="spanModifica"
-          ><input type="submit" name="action" value="modifica"
-        /></span>
-        <span id="errContattiAdmin" class="errContatti"
-          >Controlla che tutti i campi siano stati inseriti e siano
-          completi</span
-        >
+        <input type="hidden" name="tipo" id="tipo" value="">
+        <input id="oldEmail" name="oldEmail" type="hidden">
+        <span id="spanModifica"><input type="submit" name="action" value="modifica"></span>
+        <span id="errContattiAdmin" class="errContatti">Controlla che tutti i campi siano stati inseriti e siano completi</span>
       </form>
       <form action="Admin.php" method="post" id="hididdenForm">
-        <input
-          type="hidden"
-          name="changeMount"
-          id="changeMount"
-          value="false"
-        />
-        <input type="hidden" name="addMount" id="addMount" value="{mese}" />
+        <input type="hidden" name="changeMount" id="changeMount" value="false">
+        <input type="hidden" name="addMount" id="addMount" value="{mese}">
       </form>
     </main>
-    <!--    FOOTER    -->
+    <!-- FOOTER -->
     <footer>
-      <p><a href="../html/contatti.html"> contatti </a></p>
+      <p><a href="../html/contatti.html">contatti</a></p>
       <div id="Icone-social">
-        <a
-          href="http://instagram.com/iltuoaccount"
-          class="icona-social instagram"
-          aria-label="Instagram"
-        ></a>
-        <a
-          href="http://facebook.com/iltuoaccount"
-          class="icona-social facebook"
-          aria-label="Facebook"
-        ></a>
+        <a href="http://instagram.com/iltuoaccount" class="icona-social instagram" aria-label="Instagram"></a>
+        <a href="http://facebook.com/iltuoaccount" class="icona-social facebook" aria-label="Facebook"></a>
       </div>
-      <small
-        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
-        <span lang="en">All Rights Reserved</span>
-        <a href="../php/login.php"
-          ><span lang="en">login</span> amministratori</a
-        ></small
-      >
+      <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> amministratori</a></small>
     </footer>
     <script src="../javascript/controllo_form_admin.js"></script>
   </body>
