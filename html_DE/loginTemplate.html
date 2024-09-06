@@ -5,26 +5,33 @@
         <title>Physiotherapeutin Anna Nesler</title>
         <meta name="keywords" content=""> 
         <meta name="description" content="">
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
         
         <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
         <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-
         <script src="../javascript/controllo_form_loginTemplate.js" defer></script>
     </head>
     <body class="login-page">
-        <!-- HEADER -->    
-        <header>       
-            <nav class="germanSwitch"><a href="../php/login.php" >IT</a> | DE</nav>
-            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>                                        
+        <!--    HEADER    -->    
+        <header>          
+            <nav class="germanSwitch"><a href="../php/login.php">IT</a> | DE</nav>
+            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>   
+            <button 
+            id="menu-toggle" 
+            type="button" 
+            aria-expanded="false"
+            aria-controls="menu"
+            >
+            ☰
+            </button> 
         </header>
-        <!-- NAVBAR -->
+        <!--    NAVBAR    -->
         <nav id="menu">
             <ul>
-                <li lang="en"><a href="../html_DE/index.html">Home</a></li>
-                <li><a href="../html_DE/anna.html">Wer bin mich</a></li>
-                <li class="dropdown">
+            <li lang="en"><a href="../html_DE/index.html">Home</a></li>
+            <li><a href="../html_DE/anna.html">Über mich</a></li>
+            <li class="dropdown">
                     <button
                         type="button"
                         class="dropdown__title"
@@ -35,49 +42,49 @@
                         Leistungen
                     </button>
                     <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                        <li><a href="../html_DE/prestazioni/fisiotherapie.html">Physiotherapie</a></li>
+                        <li><a href="../html_DE/prestazioni/fisioterapia.html">Physiotherapie</a></li>
                         <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
-                        <li><a href="../html_DE/prestazioni/danza.html">Freier Tanz</a></li>
+                        <li><a href="../html_DE/prestazioni/danza.html">Tanztherapie</a></li>
                         <li><a href="../html_DE/prestazioni/corsi.html">Massagekurse</a></li>
                     </ul>
                 </li>          
-                <li><a href="../html_DE/contatti.html">Kontakte</a></li>
-                <li><a href="../php/prenotazioni_DE.php">Buchungen</a></li>                
+            <li><a href="../html_DE/contatti.html">Kontakt</a></li>
+            <li><a href="../php/prenotazioni.php">Reservierungen</a></li>                
             </ul>
         </nav>
 
-        <!-- BREADCRUMB -->
+        <!--    BREADCRUMB    -->
         <nav id="breadcrumb">
-            <p>Sie befinden sich in: <span lang="en">Login</span> Administratoren</p>
+            <p>Sie befinden sich hier: <span lang="en">Login</span> Administratoren</p>
         </nav>
         
         <main id="content">
-        <p>Diese Seite ist für die Administratoren der Website reserviert. Wenn Sie kein Administrator sind, navigieren Sie bitte über die Navigationsleiste oder kehren Sie zur <a href="/html/index.html" lang="en">Home</a> zurück.</p>
+        <p>Diese Seite ist den Administratoren der Website vorbehalten. Wenn Sie keiner sind, navigieren Sie bitte über die Navigationsleiste oder kehren Sie zur <a href="/html_DE/index.html" lang="en">Home</a> zurück.</p>
         <p>{messaggiForm}</p>
 
             <form method="POST" action="../php/login.php" id="login_form">
                 <div class="form-field">
                     <input type="text" id="user" name="user" maxlength="40">
                     <label for="user"><span lang="en">Username:</span></label>
-                    <span class="errContatti" id="errLoginUsername">Bitte einen Benutzernamen eingeben</span>
+                    <span class="errContatti" id="errLoginUsername">Geben Sie einen Benutzernamen ein</span>
                 </div>
                 <div class="form-field">
                     <input type="password" id="password" name="password" maxlength="40">
                     <label for="password"><span lang="en">Password:</span></label>
-                    <span class="errContatti" id="errLoginPassword">Bitte ein Passwort eingeben</span>
+                    <span class="errContatti" id="errLoginPassword">Geben Sie ein Passwort ein</span>
                 </div>
-                <input type="submit" id="loginSubmit" name="loginSubmit" value="login"/>
+                <input type="submit" id="loginSubmit" value="Login" name="submit">
             </form>
         </main>
 
-        <!-- FOOTER -->
+        <!--    FOOTER    -->
         <footer>
-            <p><a href="../html_DE/contatti.html"> kontakte </a></p>
+            <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
             <div id="Icone-social">
                 <a href="http://instagram.com/iltuoaccount" class="icona-social instagram" aria-label="Instagram"></a>
                 <a href="http://facebook.com/iltuoaccount" class="icona-social facebook" aria-label="Facebook"></a>
             </div>
             <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
-        </footer>    
+        </footer>
     </body>
 </html>
