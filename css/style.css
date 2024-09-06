@@ -1329,6 +1329,9 @@ FORM PRENOTAZIONI
   justify-content: space-between;
   width: 100%;
 }
+#scadenzaCarta {
+  padding-left: 0;
+}
 
 .reservation-page #spanCVV,
 .reservation-page #scadenzaCarta {
