@@ -501,6 +501,11 @@ CORSI CONSIGLIATI
 HOME
 ********************************************/
 
+#homepage_main h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
 #prenotazioni-home {
   width: 15em;
   display: block;
