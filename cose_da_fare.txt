@@ -2,18 +2,19 @@ HTML
 -	aggiornare header (verifica presenza viewport se necessaria o meno)
 - footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate? no perche non sono pagine che vengono indirizzate)
 
+
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
 -	pagina admin stilizzare piccole cose (il calendario e gli slot sono gia fatti)
 
 TEST
--	testare tutto dopo aver riempito il DB
+-	testare tutto dopo aver riempito il DB 
 -	verificare tutti i link 
 -	validare tutte le pagine html e i css (inserire badge)
 -	testare accessibilità con tool online (consigliati dalla prof)
 
 PHP 
--	verificare funzionamento prenotazioni tedesco
+-	verificare funzionamento prenotazioni in tedesco
 
 MOBILE 
 - FARE css pagina amministratori/login da versione mobile (carica la versione desktop se si fa da mobile)
