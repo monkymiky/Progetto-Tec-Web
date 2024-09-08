@@ -1554,10 +1554,8 @@ ol {
   grid-template-columns: 1fr 1fr;
 }
 
-#listaOrari3h li {
-  padding-bottom:1em;
-}
-#listaOrari1h {
+
+#listaOrari1h, #listaOrari3h {
   line-height: 1.68em;
 }
 
