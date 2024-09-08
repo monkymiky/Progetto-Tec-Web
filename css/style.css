@@ -1558,7 +1558,7 @@ ol {
   padding: 0.8em;
 }
 .phpError {
-  background-color: var(--nosuccessMessage);
+  background-color: #ff3b3b;
   border-radius: 2em;
   padding: 0.8em;
   margin-bottom: 0.5em;
