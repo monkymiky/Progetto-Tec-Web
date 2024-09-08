@@ -25,6 +25,9 @@
 
   --boxesBackground: white;
 
+  --successMessage : lightgreen;
+  --nosuccessMessage : #ff0030;
+
   --font: "CustomFont", "Segoe UI", "Arial", sans-serif;
 
   --cardWidth: 22em;
@@ -1543,6 +1546,24 @@ ol {
   color: white;
 }
 
+#success {
+  background-color: var(--successMessage);
+  border-radius: 2em;
+  padding: 0.8em;
+}
+#nonsuccess{
+  background-color: var(--nosuccessMessage);
+  border-radius: 2em;
+  padding: 0.8em;
+}
+.phpError {
+  background-color: var(--nosuccessMessage);
+  border-radius: 2em;
+  padding: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+
 /*Stili box di selezione slot*/
 
 #selettoreSlot {
@@ -1770,3 +1791,5 @@ ADMIN - varie
   flex-direction:row-reverse;
   margin-right:50%
 }
+
+
