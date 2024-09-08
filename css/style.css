@@ -1476,7 +1476,7 @@ CALENDARIO
   grid-gap: 0.3em;
   border: solid 0.05em grey;
   text-align: center;
-  min-width: 272px;
+  min-width: 350px;
 }
 
 #calendario a {
@@ -1488,6 +1488,8 @@ CALENDARIO
 
 #calendario li {
   scroll-behavior: smooth;
+  min-height: 2em;
+  min-width: 2em;
 }
 
 #anno {
