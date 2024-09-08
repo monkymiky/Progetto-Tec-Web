@@ -62,10 +62,9 @@ function fixMonthDates(year, month) {
       MeseCorrenteiniziato = true;
     if (!MeseCorrenteiniziato || MeseCorrentefinito) {
       list[i].classList.add("nextMonth");
-      if (list[i].querySelector("a")) {
-        list[i].querySelector("a").addEventListener("click", function (event) {
-          event.preventDefault();
-        });
+      toBeReplaced = list[i].querySelector("a");
+      if (toBeReplaced) {
+        toBeReplaced.replaceWith(toBeReplaced.childNodes[0]); 
       }
     } else {
       if (!list[i].querySelector("a")) list[i].classList.add("dayInPast");

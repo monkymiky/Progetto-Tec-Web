@@ -1430,18 +1430,14 @@ CALENDARIO
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 0.5fr;
   grid-gap: 1em;
+  max-width: 50rem;
+ 
+
 }
 #adminCalendario-Slot .doubleObj {
   height: 3.1rem;
   margin: 0.2rem;
   margin-left: 0px;
-}
-
-@media (max-width: 690px) {
-  #calendario-slot {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 #slotTitle1 {
@@ -1475,6 +1471,7 @@ CALENDARIO
   grid-gap: 0.3em;
   border: solid 0.05em grey;
   text-align: center;
+  min-width: 320px;
 }
 
 #calendario a {
@@ -1486,6 +1483,8 @@ CALENDARIO
 
 #calendario li {
   scroll-behavior: smooth;
+  min-height: 2em;
+  min-width: 2em;
 }
 
 #anno {
@@ -1562,6 +1561,7 @@ ol {
   border-radius: 2em;
   padding: 0.8em;
   margin-bottom: 0.5em;
+  color: white;
 }
 
 /*Stili box di selezione slot*/
@@ -1791,4 +1791,9 @@ ADMIN - varie
   display: flex;
   flex-direction: row-reverse;
   margin-right: 50%;
+}
+
+
+#adminContent h1{
+  margin-bottom:1em;
 }

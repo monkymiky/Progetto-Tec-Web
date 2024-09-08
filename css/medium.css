@@ -20,5 +20,10 @@
         background-color: white;
         border-radius: 1em;
     }
+    #calendario-slot {
+        display: flex;
+        flex-direction: column;
+    }
+}
     
 }
