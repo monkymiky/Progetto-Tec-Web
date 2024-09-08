@@ -389,8 +389,6 @@ footer p a {
   gap: 0.5em;
 }
 
-
-
 .reservation-page #scadenzaCarta select {
   flex: 1;
   max-width: 48%;
@@ -408,7 +406,9 @@ footer p a {
   display: inline-block;
 }
 
-.reservation-page #errScadenza, #noErrScadenza, #errPrenotazioniCVV{
+.reservation-page #errScadenza,
+#noErrScadenza,
+#errPrenotazioniCVV {
   text-align: left;
   padding-bottom: 0.5em;
 }
@@ -423,4 +423,7 @@ footer p a {
 
 #calendario {
   max-width: 300px;
+}
+.slotDisponibile3h button {
+  height: 3rem;
 }

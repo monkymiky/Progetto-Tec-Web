@@ -1431,8 +1431,6 @@ CALENDARIO
   grid-template-rows: 0.2fr 0.5fr;
   grid-gap: 1em;
   max-width: 50rem;
- 
-
 }
 #adminCalendario-Slot .doubleObj {
   height: 3.1rem;
@@ -1615,6 +1613,7 @@ ol {
   font: var(--font);
   border: solid 0.05em lightgrey;
   background-color: bisque;
+  margin: 0.1rem 0rem;
 }
 .slotNonDisponibile button:disabled {
   color: rgb(16, 16, 16);
@@ -1793,7 +1792,6 @@ ADMIN - varie
   margin-right: 50%;
 }
 
-
-#adminContent h1{
-  margin-bottom:1em;
+#adminContent h1 {
+  margin-bottom: 1em;
 }
