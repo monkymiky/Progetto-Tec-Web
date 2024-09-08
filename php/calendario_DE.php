@@ -213,15 +213,18 @@ class Calendario{
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $tuttodisponibile = true;
                 foreach ($this->giorno[$i]->disponibilitàSlot as $disp){
-                    if(!$disp) {$tuttodisponibile = false;}
+                    if(!$disp) {
+                        $tuttodisponibile = false;
+                    }
                 }
-                if(!$tuttodisponibile){
+                if(!$tuttodisponibile){  // Linea 216
                     $this->stringaCalendario .= "<li class='giorno1h'><a href=#slot1hGiorno$i onclick='emphasize(this)'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></a></li>";
-                }else{
+                } else {
                     $this->stringaCalendario .= "<li class='giorno1h'><time datetime=".$this->giorno[$i]->stringData.">".$this->giorno[$i]->numero."</time></li>";
                 }    
             }
         }
+
         else{ // utente non amministratore
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 if($this->giorno[$i]->disponibile){
