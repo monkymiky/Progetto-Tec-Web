@@ -420,3 +420,7 @@ footer p a {
 #listaOrari3h li {
   line-height: 1.8em;
 }
+
+#calendario {
+  max-width: 300px;
+}

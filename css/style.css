@@ -1431,7 +1431,7 @@ CALENDARIO
   grid-template-rows: 0.2fr 0.5fr;
   grid-gap: 1em;
   max-width: 50rem;
-  min-height: 24rem;
+ 
 
 }
 #adminCalendario-Slot .doubleObj {
