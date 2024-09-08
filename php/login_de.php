@@ -2,7 +2,7 @@
 // inclusione del file di connessione
 session_start();
 require_once ("connessione.php");
-require_once ("controlli.php");
+require_once ("controlli_DE.php");
 USE DB\DBAccess;
 
 ini_set('display_errors',1);
@@ -10,9 +10,9 @@ ini_set("display_startup_errors",1);
 
 setlocale(LC_ALL, 'it_IT');
 
-$paginaHTML = file_get_contents("../html/loginTemplate.html");
+$paginaHTML = file_get_contents("../html_DE/loginTemplate.html");
 
-$messaggiForm = " messaggi : \n";
+$messaggiForm = " messaggi  : \n";
 $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 $extra = 'Admin.php';
@@ -37,7 +37,7 @@ if(isset($_SESSION["session_id"])){ // login gia avvenuto?
         $connessione->closeConnection(); 
       }
     }else{
-      $messaggiForm .= "\n user o password non inserito";
+      $messaggiForm .= "\n user oder password nicht eingefügt";
     }
   }
   
