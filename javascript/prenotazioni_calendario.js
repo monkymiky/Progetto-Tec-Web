@@ -64,7 +64,7 @@ function fixMonthDates(year, month) {
       list[i].classList.add("nextMonth");
       toBeReplaced = list[i].querySelector("a");
       if (toBeReplaced) {
-        toBeReplaced.replaceWith(toBeReplaced.childNodes[0]); 
+        toBeReplaced.replaceWith(toBeReplaced.childNodes[0]);
       }
     } else {
       if (!list[i].querySelector("a")) list[i].classList.add("dayInPast");
@@ -79,7 +79,10 @@ function sanitize() {
   for (var i = 0; i < 42; i++) {
     objList = document.querySelectorAll("#" + reference + i + " li");
     for (var j = 0; j < 9; j++) {
-      if (objList[j].firstElementChild.textContent == "disponibile") {
+      if (
+        objList[j].firstElementChild.textContent == "disponibile" ||
+        objList[j].firstElementChild.textContent == "verfügbar"
+      ) {
         objList[j].classList.add("doubledObj");
         objList[j + 1].classList.add("hiddenObj");
       }

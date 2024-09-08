@@ -66,7 +66,7 @@ if($dataOraInizio != ""){
 }
 $paginaHTML = str_replace("{nome}", $nome, $paginaHTML);
 $paginaHTML = str_replace("{email}", $email, $paginaHTML);
-$paginaHTML = str_replace("{cel}", $cel, $paginaHTML);
+$paginaHTML = str_replace("{cell}", $cel, $paginaHTML);
 $paginaHTML = str_replace("{indirizzo}", $indirizzo, $paginaHTML);
 $paginaHTML = str_replace("{note}", $note, $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
