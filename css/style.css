@@ -1438,13 +1438,6 @@ CALENDARIO
   margin-left: 0px;
 }
 
-@media (max-width: 690px) {
-  #calendario-slot {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 #slotTitle1 {
   grid-column: 1;
   grid-row: 1;
