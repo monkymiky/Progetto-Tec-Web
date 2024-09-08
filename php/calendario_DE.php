@@ -201,13 +201,13 @@ class Calendario{
                                             <li><button type='button' id='buttonIndietro' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu-1).")'> &lt; </button></li>
                                             <li id='mese'><time datetime='".($this->anno)."-".$stringaMese."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
                                             <li><button type='button' id='buttonAvanti' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu+1).")'> &gt; </button></li>
-                                            <li class='labelgiorno'><abbr title='Montag'>Mo</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Dienstag'>Di</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Mittwoch'>Mi</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Donnerstag'>Do</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Freitag'>Fr</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Samstag'>Sa</abbr></li>
-                                            <li class='labelgiorno'><abbr title='Sonntag'>So</abbr></li> ";
+                                            <li class='labelgiorno'><abbr title='Montag'>Mon</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Dienstag'>Die</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Mittwoch'>Mit</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Donnerstag'>Don</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Freitag'>Fre</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Samstag'>Sam</abbr></li>
+                                            <li class='labelgiorno'><abbr title='Sonntag'>Son</abbr></li> ";
 
         if($this->admin){
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
