@@ -1,6 +1,5 @@
 HTML
 -	aggiornare header (verifica presenza viewport se necessaria o meno)
-- footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate? no perche non sono pagine che vengono indirizzate)
 - verificare correttezza skiplink
 
 CSS
@@ -22,3 +21,6 @@ MOBILE
 VARI
 -   verificare consistenza pagine in tedesco
 - 	fixare il form validatore (js) per il campo dati data di scadenza carta 
+
+JS
+-   sostituire <a> non cliccabili calendario con <text>

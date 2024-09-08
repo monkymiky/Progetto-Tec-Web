@@ -1,125 +1,262 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>Anna Nesler, Masseurin und Physiotherapeutin in Bozen</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="Anna Nesler, Bozen, Physiotherapeutin, Masseurin, Behandlungen, ganzheitliche Massage, Hausbesuche, Claudiana, Selbstheilung, Reflexologie, Thai Yoga, Akupressur, Praxis, Verspannungen, postpartale Behandlung, chronische Schmerzen">
-        <meta name="description" content=" Anna hat ihr Studium der Physiotherapie an der Claudiana in Bozen abgeschlossen und beschloss, einen ganzheitlicheren Ansatz zu verfolgen, der die Person als Ganzes betrachtet.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Anna Nesler, Masseurin und Physiotherapeutin in Bozen</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Anna Nesler, Bozen, Physiotherapeutin, Masseurin, Behandlungen, ganzheitliche Massage, Hausbesuche, Claudiana, Selbstheilung, Reflexologie, Thai Yoga, Akupressur, Praxis, Verspannungen, postpartale Behandlung, chronische Schmerzen"
+    />
+    <meta
+      name="description"
+      content=" Anna hat ihr Studium der Physiotherapie an der Claudiana in Bozen abgeschlossen und beschloss, einen ganzheitlicheren Ansatz zu verfolgen, der die Person als Ganzes betrachtet."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
-        <script src="../javascript/navbar.js"></script>
-     </head>
-    
-     <body class="anna-page">
-    
-        <!--    HEADER    -->    
-        <header>  
-            <nav class="germanSwitch"><a href="../html/anna.html">IT</a> | DE</nav>
-            <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>                                                              
-            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>  
-            <button 
-            id="menu-toggle"
-            type="button" 
+    <link
+      rel="stylesheet"
+      href="../css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/mini.css"
+      type="text/css"
+      media="screen and (max-width:520px)"
+    />
+    <script src="../javascript/navbar.js"></script>
+  </head>
+
+  <body class="anna-page">
+    <!--    HEADER    -->
+    <header>
+      <nav class="germanSwitch"><a href="../html/anna.html">IT</a> | DE</nav>
+      <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>
+      <h1 id="logo">Anna Nesler Physiotherapeutin</h1>
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+    </header>
+    <!--    NAVBAR    -->
+
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="../html_DE/index.html">Home</a></li>
+        <li>Über mich</li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
             aria-expanded="false"
-            aria-controls="menu"
+            aria-controls="Prestazioni-dropdown"
+            id="dropdown_button"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../html_DE/prestazioni/fisioterapia.html"
+                >Physiotherapie</a
+              >
+            </li>
+            <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
+            <li>
+              <a href="../html_DE/prestazioni/danza.html">Tanztherapie</a>
+            </li>
+            <li>
+              <a href="../html_DE/prestazioni/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../html_DE/contatti.html">Kontakt</a></li>
+        <li><a href="../php/prenotazioni_DE.php">Reservierungen</a></li>
+      </ul>
+    </nav>
+    <!--    BREADCRUMB    -->
+    <nav id="breadcrumb">
+      <p>
+        Sie befinden sich hier:
+        <span lang="en"><a href="../html_DE/index.html">Home</a></span
+        >Anna
+      </p>
+    </nav>
+
+    <!--    MAIN    -->
+
+    <main id="content">
+      <section>
+        <div class="text-container">
+          <h2 class="title">Ich heiße Anna Nesler</h2>
+          <h3 class="subtitle">
+            Ich bin Masseurin und Physiotherapeutin in Bozen.
+          </h3>
+          <p>
+            In meinem Ansatz integriere ich die
+            <strong
+              >traditionelle Physiotherapie mit Techniken der ganzheitlichen
+              Massage</strong
+            >, um den Menschen in den Mittelpunkt zu stellen und eine
+            ganzheitliche Heilung zu fördern.
+          </p>
+          <p>
+            Ich biete
+            <strong>Behandlungen in meiner Praxis oder auch zu Hause</strong>
+            an, um Verspannungen, postpartale Schwierigkeiten, akute und
+            chronische Schmerzen zu behandeln.
+          </p>
+          <p>
+            Schau dir die Leistungen an, die ich auf der
+            <span lang="en"><a href="../html_DE/index.html">Home</a></span>
+            anbiete!
+          </p>
+        </div>
+        <div class="img-container" id="ChiSonoFrist">
+          <img
+            class="img-square"
+            src="../media/anna.jpg"
+            alt="Anna lächelt, trägt ein hellblaues Polohemd, hat lange Haare und eine Brille."
+          />
+          <!-- ALT aktualisiert -->
+        </div>
+      </section>
+      <section>
+        <div class="img-container left-img-container">
+          <span id="chi-sono-img2" class="img-square total-hight"> </span>
+        </div>
+        <div class="text-container">
+          <h3 class="subtitle">Mein Werdegang</h3>
+          <p>
+            Mein Weg begann in der kleinen Stadt Bozen, wo ich geboren und
+            aufgewachsen bin und meine Leidenschaft für Massagen entdeckte.
+          </p>
+          <p>
+            Ich habe mein
+            <strong
+              >Physiotherapie-Diplom an der Claudiana-Schule in Bozen</strong
             >
-            ☰
-            </button>         
-        </header>
-        <!--    NAVBAR    -->
-        
-        <nav id="menu">
-            <ul>
-               <li lang="en"><a href="../html_DE/index.html">Home</a></li>
-               <li>Über mich</li>
-               <li class="dropdown"> 
-                    <button
-                        type="button"
-                        class="dropdown__title"
-                        aria-expanded="false"
-                        aria-controls="Prestazioni-dropdown"
-                        id="dropdown_button"
-                    >
-                        Leistungen
-                    </button>
-                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                        <li><a href="../html_DE/prestazioni/fisioterapia.html">Physiotherapie</a></li>
-                        <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
-                        <li><a href="../html_DE/prestazioni/danza.html">Tanztherapie</a></li>
-                        <li><a href="../html_DE/prestazioni/corsi.html">Massagekurse</a></li>
-                    </ul>
-                </li>          
-               <li><a href="../html_DE/contatti.html">Kontakt</a></li>
-               <li><a href="../php/prenotazioni.php">Reservierungen</a></li>                
-            </ul>
-        </nav>
-        <!--    BREADCRUMB    -->
-        <nav id="breadcrumb">
-           <p>Sie befinden sich hier: <span lang="en"><a href="../html_DE/index.html">Home</a></span>Anna</p>
-        </nav>
-    
-        <!--    MAIN    -->
-        
-        <main id="content">
-            <section>
-                <div class="text-container">
-                    <h2 class="title">Ich heiße Anna Nesler</h2>
-                    <h3 class="subtitle">Ich bin Masseurin und Physiotherapeutin in Bozen.</h3>
-                    <p>In meinem Ansatz integriere ich die <strong>traditionelle Physiotherapie mit Techniken der ganzheitlichen Massage</strong>, um den Menschen in den Mittelpunkt zu stellen und eine ganzheitliche Heilung zu fördern.</p>
-                    <p>Ich biete <strong>Behandlungen in meiner Praxis oder auch zu Hause</strong> an, um Verspannungen, postpartale Schwierigkeiten, akute und chronische Schmerzen zu behandeln.</p>
-                    <p>Schau dir die Leistungen an, die ich auf der <span lang="en"><a href="../html_DE/index.html">Home</a></span> anbiete!</p>
-                </div> 
-                <div class ="img-container " id="ChiSonoFrist">
-                    <img class="img-square" src="../media/anna.jpg" alt="Anna lächelt, trägt ein hellblaues Polohemd, hat lange Haare und eine Brille."> <!-- ALT aktualisiert -->
-                </div>
-            </section>
-            <section>
-                <div class="img-container left-img-container">
-                    <span id="chi-sono-img2" class="img-square total-hight"> </span>
-                </div>
-                <div class ="text-container">
-                    <h3 class="subtitle">Mein Werdegang</h3>
-                    <p>Mein Weg begann in der kleinen Stadt Bozen, wo ich geboren und aufgewachsen bin und meine Leidenschaft für Massagen entdeckte.</p>
-                    <p>Ich habe mein <strong>Physiotherapie-Diplom an der Claudiana-Schule in Bozen</strong> erworben und nach Jahren der Ausbildung und Praxis verspürte ich das Bedürfnis, meinen Horizont zu erweitern und etwas Größeres zu erkunden.</p>
-                    <p>Der medizinische Ansatz hat mir die grundlegenden <strong>wissenschaftlichen Grundlagen der Anatomie und Physiologie</strong> vermittelt, die für die Arbeit in diesem Bereich unerlässlich sind.</p>
-                    <p>Zugleich sah ich auch seine größte Grenze: die Tatsache, dass der Mensch <strong>nicht als Ganzes betrachtet wird.</strong></p>
-                    <p>Es musste mehr geben. Und so begann ich zu suchen.</p>
-                </div>
-            </section>
-            <section>
-                <div class="text-container">
-                    <h3 class="subtitle">Die ganzheitliche Lehre</h3>
-                    <p>Eines Tages bescherte mir das Leben ein Geschenk: Ein ehemaliger Studienkollege ließ mich die <a href="../html_DE/prestazioni/massaggi.html#hawaiiano">hawaiianische Massage</a> erleben. Ich war tief beeindruckt. Zum ersten Mal fühlte ich mich <strong>völlig akzeptiert und mit mir selbst in Kontakt.</strong></p>
-                    <p>Ein Gefühl, das ich, das gebe ich zu, während der vielen Stunden im Praktikum, wo ich das Gefühl hatte, „repariert werden zu müssen“, nicht empfunden hatte.</p>
-                    <p>Meine Intuition war richtig: Am Körper zu arbeiten, wie ich es in der Schule gelernt hatte, ist sicherlich wichtig. Aber um ein körperliches Problem wirklich zu lösen, muss man verstehen, dass es nur ein Spiegelbild eines inneren Ungleichgewichts ist, und deshalb muss man <strong>am gesamten Menschen ansetzen.</strong></p>
-                    <p>In meinem Ansatz kombiniere ich heute <strong>die <a href="../html_DE/prestazioni/massaggi.html#thai-yoga">Thai-Yoga-Massage</a></strong>, die <a href="../html_DE/prestazioni/massaggi.html#hawaiiano">Hawaiianische Massage</a>, die <a href="../html_DE/prestazioni/massaggi.html#vietnamita"> vietnamesische Reflexologie</a> und die <strong>Prinzipien der Akupressur.</strong> Diese Techniken sind äußerst wirksam zur Wiederherstellung des Gleichgewichts von Körper und Geist und können, wenn sie in einem Umfeld der Akzeptanz und des Zuhörens angewendet werden, wirklich sehr hilfreich sein.</p>    
-                </div>
-                <div class ="img-container">
-                    <span id="chi-sono-img3" class="img-square total-hight"> </span>
-                </div>
-            </section>
-            <section>
-                <div class="img-container left-img-container" id="ChiSonoLast">
-                    <span id="chi-sono-img4" class="img-square"> </span>
-                </div>
-                <div class ="text-container ">
-                    <h3 class="subtitle">Ein Raum für (Selbst-)Heilung</h3>
-                    <p>Aus diesem Grund habe ich beschlossen, einen echten Raum für (Selbst-)Heilung zu schaffen, in dem diese Techniken angewendet werden, wobei der <strong>totale Akzeptanz, Empfang und Zuhören der Menschen</strong>, die zu mir kommen, Priorität eingeräumt wird.</p>
-                    <p>Ich glaube, dass jeder Mensch die Fähigkeit in sich trägt, sich selbst zu heilen. Meine Aufgabe ist es, als Unterstützerin zu dienen, damit diese Heilung im Einklang mit der Individualität jedes Einzelnen geschehen kann.</p>
-                </div>
-            </section>
-        </main>
-       <!--    FOOTER    -->
-        <footer>
-            <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
-            <div id="Icone-social">
-                <a href="http://instagram.com/iltuoaccount" class="icona-social instagram" aria-label="Instagram"></a>
-                <a href="http://facebook.com/iltuoaccount" class="icona-social facebook" aria-label="Facebook"></a>
-            </div>
-            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
-        </footer>    
-    </body>
+            erworben und nach Jahren der Ausbildung und Praxis verspürte ich das
+            Bedürfnis, meinen Horizont zu erweitern und etwas Größeres zu
+            erkunden.
+          </p>
+          <p>
+            Der medizinische Ansatz hat mir die grundlegenden
+            <strong
+              >wissenschaftlichen Grundlagen der Anatomie und
+              Physiologie</strong
+            >
+            vermittelt, die für die Arbeit in diesem Bereich unerlässlich sind.
+          </p>
+          <p>
+            Zugleich sah ich auch seine größte Grenze: die Tatsache, dass der
+            Mensch <strong>nicht als Ganzes betrachtet wird.</strong>
+          </p>
+          <p>Es musste mehr geben. Und so begann ich zu suchen.</p>
+        </div>
+      </section>
+      <section>
+        <div class="text-container">
+          <h3 class="subtitle">Die ganzheitliche Lehre</h3>
+          <p>
+            Eines Tages bescherte mir das Leben ein Geschenk: Ein ehemaliger
+            Studienkollege ließ mich die
+            <a href="../html_DE/prestazioni/massaggi.html#hawaiiano"
+              >hawaiianische Massage</a
+            >
+            erleben. Ich war tief beeindruckt. Zum ersten Mal fühlte ich mich
+            <strong>völlig akzeptiert und mit mir selbst in Kontakt.</strong>
+          </p>
+          <p>
+            Ein Gefühl, das ich, das gebe ich zu, während der vielen Stunden im
+            Praktikum, wo ich das Gefühl hatte, „repariert werden zu müssen“,
+            nicht empfunden hatte.
+          </p>
+          <p>
+            Meine Intuition war richtig: Am Körper zu arbeiten, wie ich es in
+            der Schule gelernt hatte, ist sicherlich wichtig. Aber um ein
+            körperliches Problem wirklich zu lösen, muss man verstehen, dass es
+            nur ein Spiegelbild eines inneren Ungleichgewichts ist, und deshalb
+            muss man <strong>am gesamten Menschen ansetzen.</strong>
+          </p>
+          <p>
+            In meinem Ansatz kombiniere ich heute
+            <strong
+              >die
+              <a href="../html_DE/prestazioni/massaggi.html#thai-yoga"
+                >Thai-Yoga-Massage</a
+              ></strong
+            >, die
+            <a href="../html_DE/prestazioni/massaggi.html#hawaiiano"
+              >Hawaiianische Massage</a
+            >, die
+            <a href="../html_DE/prestazioni/massaggi.html#vietnamita">
+              vietnamesische Reflexologie</a
+            >
+            und die <strong>Prinzipien der Akupressur.</strong> Diese Techniken
+            sind äußerst wirksam zur Wiederherstellung des Gleichgewichts von
+            Körper und Geist und können, wenn sie in einem Umfeld der Akzeptanz
+            und des Zuhörens angewendet werden, wirklich sehr hilfreich sein.
+          </p>
+        </div>
+        <div class="img-container">
+          <span id="chi-sono-img3" class="img-square total-hight"> </span>
+        </div>
+      </section>
+      <section>
+        <div class="img-container left-img-container" id="ChiSonoLast">
+          <span id="chi-sono-img4" class="img-square"> </span>
+        </div>
+        <div class="text-container">
+          <h3 class="subtitle">Ein Raum für (Selbst-)Heilung</h3>
+          <p>
+            Aus diesem Grund habe ich beschlossen, einen echten Raum für
+            (Selbst-)Heilung zu schaffen, in dem diese Techniken angewendet
+            werden, wobei der
+            <strong>totale Akzeptanz, Empfang und Zuhören der Menschen</strong>,
+            die zu mir kommen, Priorität eingeräumt wird.
+          </p>
+          <p>
+            Ich glaube, dass jeder Mensch die Fähigkeit in sich trägt, sich
+            selbst zu heilen. Meine Aufgabe ist es, als Unterstützerin zu
+            dienen, damit diese Heilung im Einklang mit der Individualität jedes
+            Einzelnen geschehen kann.
+          </p>
+        </div>
+      </section>
+    </main>
+    <!--    FOOTER    -->
+    <footer>
+      <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
+      <div id="Icone-social">
+        <a
+          href="http://instagram.com/iltuoaccount"
+          class="icona-social instagram"
+          aria-label="Instagram"
+        ></a>
+        <a
+          href="http://facebook.com/iltuoaccount"
+          class="icona-social facebook"
+          aria-label="Facebook"
+        ></a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
+  </body>
 </html>
