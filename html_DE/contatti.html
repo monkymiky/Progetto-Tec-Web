@@ -1,120 +1,223 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>Kontakt | Anna Nesler Physiotherapeutin - Buchungen & Informationen</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="Kontakt, Anna Nesler, Bozen, Physiotherapie, Massagen, Tanztherapie">
-        <meta name="description" content="Kontaktieren Sie Anna Nesler, Physiotherapeutin in Bozen! Buchen Sie einen Termin oder fordern Sie Informationen zu Physiotherapie-, Massage- und Tanztherapiebehandlungen an. Rufen Sie 3776639323 an.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>
+      Kontakt | Anna Nesler Physiotherapeutin - Buchungen & Informationen
+    </title>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Kontakt, Anna Nesler, Bozen, Physiotherapie, Massagen, Tanztherapie"
+    />
+    <meta
+      name="description"
+      content="Kontaktieren Sie Anna Nesler, Physiotherapeutin in Bozen! Buchen Sie einen Termin oder fordern Sie Informationen zu Physiotherapie-, Massage- und Tanztherapiebehandlungen an. Rufen Sie 3776639323 an."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-        <script src="../javascript/navbar.js"></script>
-        
-    </head> 
-    
-    <body class="contact-page">
-        <!-- HEADER -->
-        <header>  
-            <nav class="germanSwitch"><a href="../html/contatti.html">IT</a> | DE</nav>
-            <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>                                                              
-            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>  
-            <button 
-            id="menu-toggle" 
-            type="button" 
+    <link
+      rel="stylesheet"
+      href="../css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/mini.css"
+      type="text/css"
+      media="screen and (max-width:600px)"
+    />
+    <script src="../javascript/navbar.js"></script>
+  </head>
+
+  <body class="contact-page">
+    <!-- HEADER -->
+    <header>
+      <nav class="germanSwitch">
+        <a href="../html/contatti.html">IT</a> | DE
+      </nav>
+      <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>
+      <h1 id="logo">Anna Nesler Physiotherapeutin</h1>
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="../html_DE/index.html">Home</a></li>
+        <li><a href="../html_DE/anna.html">Über mich</a></li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
             aria-expanded="false"
-            aria-controls="menu"
+            aria-controls="Prestazioni-dropdown"
+            id="dropdown_button"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../html_DE/prestazioni/fisioterapia.html"
+                >Physiotherapie</a
+              >
+            </li>
+            <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
+            <li>
+              <a href="../html_DE/prestazioni/danza.html">Tanztherapie</a>
+            </li>
+            <li>
+              <a href="../html_DE/prestazioni/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li>Kontakt</li>
+        <li><a href="../php/prenotazioni.php">Reservierungen</a></li>
+      </ul>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <nav id="breadcrumb">
+      <p>
+        Sie befinden sich hier:
+        <span lang="en"><a href="../html_DE/index.html">Home</a></span
+        >Kontakt
+      </p>
+    </nav>
+
+    <main id="content">
+      <h2 class="title">Kontakt</h2>
+      <h3 class="subtitle">Buchungen und Informationen</h3>
+      <dl>
+        <dt>Telefonnummer:</dt>
+        <dd>3776639323</dd>
+        <dt>Adresse der Praxis:</dt>
+        <dd>Via Paolotti 15</dd>
+        <dt>Email-Adresse:</dt>
+        <dd>anna.nesler@gmail.com</dd>
+      </dl>
+      <p>
+        Für Buchungen verwenden Sie den
+        <a href="../php/prenotazioni.php">Kalender</a>.
+      </p>
+
+      <!-- FORM -->
+      <form id="contactForm" action="#" method="get">
+        <fieldset>
+          <legend>Schnellkontakt</legend>
+
+          <div class="form-field">
+            <span id="spanName"
+              ><input
+                id="name"
+                name="name"
+                placeholder="Name eingeben"
+                maxlength="40"
+                aria-required="true"
+            /></span>
+            <label for="name">Name:</label>
+            <span id="errContattiNome" class="errContatti"
+              >Geben Sie einen Namen ein</span
             >
-            ☰
-            </button>          
-        </header>
+            <span id="noErrContattiNome" class="noErrContatti">&#10003;</span>
+          </div>
 
-        <!-- NAVBAR -->
-        <nav id="menu">
-            <ul>
-                <li lang="en"><a href="../html_DE/index.html">Home</a></li>
-                <li><a href="../html_DE/anna.html">Über mich</a></li>
-                <li class="dropdown">
-                    <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="Prestazioni-dropdown" id="dropdown_button">Leistungen</button>
-                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                        <li><a href="../html_DE/prestazioni/fisioterapia.html">Physiotherapie</a></li>
-                        <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
-                        <li><a href="../html_DE/prestazioni/danza.html">Tanztherapie</a></li>
-                        <li><a href="../html_DE/prestazioni/corsi.html">Massagekurse</a></li>
-                    </ul>
-                </li>          
-                <li>Kontakt</li>
-                <li><a href="../php/prenotazioni.php">Reservierungen</a></li>                
-            </ul>
-        </nav>
+          <div class="form-field">
+            <span id="spanEmail"
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="E-Mail eingeben"
+                maxlength="40"
+                aria-required="true"
+            /></span>
+            <label for="email"><span lang="en">Email</span>:</label>
+            <span id="errContattiEmail" class="errContatti"
+              >Geben Sie eine gültige E-Mail-Adresse ein</span
+            >
+            <span id="noErrContattiEmail" class="noErrContatti">&#10003;</span>
+          </div>
 
-        <!-- BREADCRUMB -->
-        <nav id="breadcrumb">
-            <p>Sie befinden sich hier: <span lang="en"><a href="../html_DE/index.html">Home</a></span>Kontakt</p>
-        </nav>
- 
-        <main id="content">
-            <h2 class="title">Kontakt</h2>
-            <h3 class="subtitle">Buchungen und Informationen</h3>
-            <dl>
-                <dt>Telefonnummer:</dt>
-                <dd>3776639323</dd>
-                <dt>Adresse der Praxis:</dt>
-                <dd>Via ...</dd>
-                <dt>Email-Adresse:</dt>
-                <dd>anna.nesler@gmail.com</dd>
-            </dl>
-            <p>Für Buchungen verwenden Sie den <a href="../php/prenotazioni.php">Kalender</a>.</p>
+          <div class="form-field">
+            <span id="spanSubject"
+              ><input
+                id="subject"
+                name="subject"
+                placeholder="Betreff eingeben"
+                maxlength="40"
+                aria-required="true"
+            /></span>
+            <label for="subject">Betreff:</label>
+            <span id="errContattiOggetto" class="errContatti"
+              >Geben Sie einen Betreff ein</span
+            >
+            <span id="noErrContattiOggetto" class="noErrContatti"
+              >&#10003;</span
+            >
+          </div>
 
-            <!-- FORM -->
-            <form id="contactForm" action="#" method="get">
-                <fieldset>
-                    <legend>Schnellkontakt</legend>
+          <div class="form-field">
+            <textarea
+              id="emailContent"
+              name="emailContent"
+              rows="5"
+              cols="50"
+              aria-required="true"
+            ></textarea>
+            <label for="emailContent">Schreiben Sie hier:</label>
+            <span id="errContattiScriviQui" class="errContatti"
+              >Geben Sie einen Text ein</span
+            >
+            <span id="noErrContattiScriviQui" class="noErrContatti"
+              >&#10003;</span
+            >
+          </div>
 
-                    <div class="form-field">
-                        <span id="spanName"><input id="name" name="name" placeholder="Name eingeben" maxlength="40" aria-required="true"></span>
-                        <label for="name">Name:</label>
-                        <span id="errContattiNome" class="errContatti">Geben Sie einen Namen ein</span>
-                        <span id="noErrContattiNome" class="noErrContatti">&#10003;</span>
-                    </div>
-                    
-                    <div class="form-field">
-                        <span id="spanEmail"><input id="email" name="email" type="email" placeholder="E-Mail eingeben" maxlength="40" aria-required="true"></span>
-                        <label for="email"><span lang="en">Email</span>:</label>
-                        <span id="errContattiEmail" class="errContatti">Geben Sie eine gültige E-Mail-Adresse ein</span>
-                        <span id="noErrContattiEmail" class="noErrContatti">&#10003;</span>
-                    </div>
+          <span id="spanInvia"
+            ><input id="sendButton" type="submit" value="Senden"
+          /></span>
+        </fieldset>
+      </form>
+    </main>
 
-                    <div class="form-field">
-                        <span id="spanSubject"><input id="subject" name="subject" placeholder="Betreff eingeben" maxlength="40" aria-required="true"></span>
-                        <label for="subject">Betreff:</label>
-                        <span id="errContattiOggetto" class="errContatti">Geben Sie einen Betreff ein</span>
-                        <span id="noErrContattiOggetto" class="noErrContatti">&#10003;</span>
-                    </div>
-                    
-                    <div class="form-field">
-                        <textarea id="emailContent" name="emailContent" rows="5" cols="50" aria-required="true"></textarea>
-                        <label for="emailContent">Schreiben Sie hier:</label>
-                        <span id="errContattiScriviQui" class="errContatti">Geben Sie einen Text ein</span>
-                        <span id="noErrContattiScriviQui" class="noErrContatti">&#10003;</span>
-                    </div>
-                    
-                    <span id="spanInvia"><input id="sendButton" type="submit" value="Senden"></span>
-                </fieldset>
-            </form>
-        </main>
+    <!-- FOOTER -->
+    <footer>
+      <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
+      <div id="Icone-social">
+        <a
+          href="http://instagram.com/iltuoaccount"
+          class="icona-social instagram"
+          aria-label="Instagram"
+        ></a>
+        <a
+          href="http://facebook.com/iltuoaccount"
+          class="icona-social facebook"
+          aria-label="Facebook"
+        ></a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
 
-        <!-- FOOTER -->
-        <footer>
-            <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
-            <div id="Icone-social">
-                <a href="http://instagram.com/iltuoaccount" class="icona-social instagram" aria-label="Instagram"></a>
-                <a href="http://facebook.com/iltuoaccount" class="icona-social facebook" aria-label="Facebook"></a>
-            </div>
-            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
-        </footer>   
-
-        <script src="../javascript/controllo_form_contatti.js"></script>
-    </body>
+    <script src="../javascript/controllo_form_contatti.js"></script>
+  </body>
 </html>
