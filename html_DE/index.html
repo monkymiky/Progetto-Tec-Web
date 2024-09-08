@@ -1,147 +1,245 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>Physiotherapie und Massagen in Bozen und Umgebung | Anna Nesler</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="Anna Nesler, Bozen, Physiotherapie, Masseurin, Behandlung, Tanztherapie, Lymphdrainage, Reflexologie, Beckenboden, postpartale Behandlung, Nackensteifheit, Hexenschuss, Verstauchungen, Rückenschmerzen, Knieschmerzen, Verstopfung, Senioren">
-        <meta name="description" content="Anna Nesler, Physiotherapie und Massagen in Bozen, auch Hausbesuche. Häufige Behandlungen: chronische Probleme, Verstauchungen, Schwangerschaft, postpartale Behandlung, Senioren.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>
+      Physiotherapie und Massagen in Bozen und Umgebung | Anna Nesler
+    </title>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Anna Nesler, Bozen, Physiotherapie, Masseurin, Behandlung, Tanztherapie, Lymphdrainage, Reflexologie, Beckenboden, postpartale Behandlung, Nackensteifheit, Hexenschuss, Verstauchungen, Rückenschmerzen, Knieschmerzen, Verstopfung, Senioren"
+    />
+    <meta
+      name="description"
+      content="Anna Nesler, Physiotherapie und Massagen in Bozen, auch Hausbesuche. Häufige Behandlungen: chronische Probleme, Verstauchungen, Schwangerschaft, postpartale Behandlung, Senioren."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-        <link rel="stylesheet" href="../css/medium.css" type="text/css" media="screen and (max-width:768px)">
-        <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:520px)">
-        <script src="../javascript/navbar.js"></script>
-     </head>
-    
-     <body>
-    
-        <!--    HEADER    -->    
-        <header>  
-            <nav class="germanSwitch"><a href="../html/index.html">IT</a> | DE</nav>
-            <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>                                                              
-            <h1 id="logo">Anna Nesler Physiotherapeutin</h1>  
-            <button 
-            id="menu-toggle" 
-            type="button" 
+    <link
+      rel="stylesheet"
+      href="../css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/medium.css"
+      type="text/css"
+      media="screen and (max-width:768px)"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/mini.css"
+      type="text/css"
+      media="screen and (max-width:520px)"
+    />
+    <script src="../javascript/navbar.js"></script>
+  </head>
+
+  <body>
+    <!--    HEADER    -->
+    <header>
+      <nav class="germanSwitch"><a href="../html/index.html">IT</a> | DE</nav>
+      <a href="#homepage_main" class="skip-link">Zum Hauptinhalt springen</a>
+      <h1 id="logo">Anna Nesler Physiotherapeutin</h1>
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+    </header>
+    <!--    NAVBAR    -->
+
+    <nav id="menu">
+      <ul>
+        <li lang="en">Home</li>
+        <li><a href="../html_DE/anna.html">Über mich</a></li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
             aria-expanded="false"
-            aria-controls="menu"
+            aria-controls="Prestazioni-dropdown"
+            id="dropdown_button"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../html_DE/prestazioni/fisioterapia.html"
+                >Physiotherapie</a
+              >
+            </li>
+            <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
+            <li><a href="../html_DE/prestazioni/danza.html">Freier Tanz</a></li>
+            <li>
+              <a href="../html_DE/prestazioni/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../html_DE/contatti.html">Kontakt</a></li>
+        <li><a href="../php/prenotazioni.php">Reservierungen</a></li>
+      </ul>
+    </nav>
+    <!--    BREADCRUMB    -->
+    <nav id="breadcrumb">
+      <p>Sie befinden sich hier: <span lang="en">Home</span></p>
+    </nav>
+
+    <!--    MAIN    -->
+
+    <main id="homepage_main">
+      <a
+        class="prenotazioni-home"
+        id="prenotazioni-home"
+        href="../php/prenotazioni.php"
+        >Buche eine Behandlung</a
+      >
+
+      <section id="CosaOffro">
+        <h2>Angebotene Leistungen:</h2>
+        <div class="cosa-offro-link" id="cosa-offro-links-fisioterapia">
+          <a
+            id="link-fisioterapia"
+            href="../html_DE/prestazioni/fisioterapia.html"
+            >Physiotherapie</a
+          >
+        </div>
+        <div class="cosa-offro-link" id="cosa-offro-links-massaggi">
+          <a id="link-massaggi" href="../html_DE/prestazioni/massaggi.html"
+            >Massagen</a
+          >
+        </div>
+        <div class="cosa-offro-link" id="cosa-offro-links-danza">
+          <a id="link-danza" href="../html_DE/prestazioni/danza.html"
+            >Tanztherapie</a
+          >
+        </div>
+        <div class="cosa-offro-link" id="cosa-offro-links-corsi">
+          <a id="link-corsi" href="../html_DE/prestazioni/corsi.html"
+            >Massagekurse</a
+          >
+        </div>
+        <div id="img-corso"></div>
+        <div id="img-massaggio"></div>
+      </section>
+
+      <section id="chi-sono">
+        <div id="foto-anna-home"></div>
+        <div id="foto-anna-home-descrizione">
+          <h2>Anna Nesler</h2>
+          <h3>Physiotherapeutin und Masseurin</h3>
+          <p>
+            Mein Weg begann in der kleinen Stadt Bozen, wo ich geboren und
+            aufgewachsen bin und meine Leidenschaft für Massagen entdeckte. Ich
+            habe mein
+            <strong
+              >Physiotherapie-Diplom an der Claudiana-Schule in Bozen</strong
             >
-            ☰
-            </button>         
-        </header>
-        <!--    NAVBAR    -->
-        
-        <nav id="menu">
-            <ul>
-               <li lang="en">Home</li>
-               <li><a href="../html_DE/anna.html">Über mich</a></li>
-               <li class="dropdown">
-                    <button
-                        type="button"
-                        class="dropdown__title"
-                        aria-expanded="false"
-                        aria-controls="Prestazioni-dropdown"
-                        id="dropdown_button"
-                    >
-                        Leistungen
-                    </button>
-                    <ul class="dropdown__menu" id="Prestazioni-dropdown">
-                        <li><a href="../html_DE/prestazioni/fisioterapia.html">Physiotherapie</a></li>
-                        <li><a href="../html_DE/prestazioni/massaggi.html">Massagen</a></li>
-                        <li><a href="../html_DE/prestazioni/danza.html">Freier Tanz</a></li>
-                        <li><a href="../html_DE/prestazioni/corsi.html">Massagekurse</a></li>
-                    </ul>
-                </li>          
-               <li><a href="../html_DE/contatti.html">Kontakt</a></li>
-               <li><a href="../php/prenotazioni.php">Reservierungen</a></li>                
-            </ul>
-        </nav>
-        <!--    BREADCRUMB    -->
-        <nav id="breadcrumb">
-            <p>Sie befinden sich hier: <span lang="en">Home</span></p>
-        </nav>
-    
-        <!--    MAIN    -->
-    
-        <main id="homepage_main">
-            <a class="prenotazioni-home" id="prenotazioni-home" href="../php/prenotazioni.php">Buche eine Behandlung</a>
-            
-            <section id="CosaOffro">
-                <h2>Angebotene Leistungen:</h2>
-                <div class="cosa-offro-link" id="cosa-offro-links-fisioterapia"><a  id="link-fisioterapia" href="../html_DE/prestazioni/fisioterapia.html">Physiotherapie</a></div>
-                <div class="cosa-offro-link" id="cosa-offro-links-massaggi"><a  id="link-massaggi" href="../html_DE/prestazioni/massaggi.html">Massagen</a></div>
-                <div class="cosa-offro-link" id="cosa-offro-links-danza"><a  id="link-danza" href="../html_DE/prestazioni/danza.html">Tanztherapie</a></div>
-                <div class="cosa-offro-link" id="cosa-offro-links-corsi"><a  id="link-corsi" href="../html_DE/prestazioni/corsi.html">Massagekurse</a></div>
-                <div id="img-corso"></div>
-                <div id="img-massaggio"></div>
-            </section>
-            
-            <section id="chi-sono">
-                <div id="foto-anna-home"></div>
-                <div id="foto-anna-home-descrizione">
-                    <h2>Anna Nesler</h2>
-                    <h3>Physiotherapeutin und Masseurin</h3>
-                    <p>Mein Weg begann in der kleinen Stadt Bozen, wo ich geboren und aufgewachsen bin und meine Leidenschaft für Massagen entdeckte.
-                    Ich habe mein <strong>Physiotherapie-Diplom an der Claudiana-Schule in Bozen</strong> erworben und nach Jahren der Ausbildung und Praxis verspürte ich das Bedürfnis, meinen Horizont zu erweitern und etwas Größeres zu erkunden.
-                    Der medizinische Ansatz hat mir die grundlegenden <strong>wissenschaftlichen Grundlagen der Anatomie und Physiologie</strong> vermittelt, die für die Arbeit in diesem Bereich unerlässlich sind.
-                    Zugleich sah ich auch seine größte Grenze: die Tatsache, dass der Mensch <strong>nicht als Ganzes betrachtet wird</strong>.
-                    Es musste mehr geben. Und so begann ich zu suchen.</p>
-                    <a href="anna.html">Erfahre mehr</a>
+            erworben und nach Jahren der Ausbildung und Praxis verspürte ich das
+            Bedürfnis, meinen Horizont zu erweitern und etwas Größeres zu
+            erkunden. Der medizinische Ansatz hat mir die grundlegenden
+            <strong
+              >wissenschaftlichen Grundlagen der Anatomie und
+              Physiologie</strong
+            >
+            vermittelt, die für die Arbeit in diesem Bereich unerlässlich sind.
+            Zugleich sah ich auch seine größte Grenze: die Tatsache, dass der
+            Mensch <strong>nicht als Ganzes betrachtet wird</strong>. Es musste
+            mehr geben. Und so begann ich zu suchen.
+          </p>
+          <a href="anna.html">Erfahre mehr</a>
+        </div>
+      </section>
+
+      <section id="massaggi_popolari">
+        <h2>Die beliebtesten Massagen:</h2>
+
+        <ul class="popular-card-container">
+          <!-- Popular Card 1 -->
+          <li id="popular-card-1" class="popular-card">
+            <div class="card-inner">
+              <div class="card-front" id="img1-1">
+                <div class="card-name-container">
+                  <div class="card-name">
+                    Hawaiianische Massage Lomi Lomi Nui
+                  </div>
                 </div>
-            </section>
-           
-                     
-            <section id="massaggi_popolari">
-                <h2>Die beliebtesten Massagen:</h2>
-                
-                <ul class="popular-card-container">
-                    <!-- Popular Card 1 -->
-                    <li id="popular-card-1" class="popular-card">
-                        <div class="card-inner">
-                            <div class="card-front" id="img1-1">
-                                <div class="card-name-container">
-                                    <div class="card-name">Hawaiianische Massage Lomi Lomi Nui</div>
-                                </div>
-                            </div>
-                            <p class="card-back">Die einhüllenden Griffe mit Kokosöl und sanfter Druck vermitteln tiefe Akzeptanz, Ganzheit und Harmonie.</p>
-                        </div>
-                    </li>
-                    <!-- Popular Card 2 -->
-                    <li id="popular-card-2" class="popular-card">
-                        <div class="card-inner">
-                            <div class="card-front" id="img4-1">
-                                <div class="card-name-container">
-                                    <div class="card-name">Vietnamesische Gesichtszonenreflexologie Dien Chan</div>
-                                </div>
-                            </div>
-                            <p class="card-back">Wird im Sitzen durchgeführt. Kann eine Vielzahl von Beschwerden lindern. Sehr effektiv.</p>
-                        </div>
-                    </li>
-                    <!-- Popular Card 3 -->
-                    <li id="popular-card-3" class="popular-card">
-                        <div class="card-inner">
-                            <div class="card-front" id="img6-1">
-                                <div class="card-name-container">
-                                    <div class="card-name">Lymphdrainage Vodder</div>
-                                </div>
-                            </div>
-                            <p class="card-back">Sehr sanft, sehr effektiv. Bekämpft Schwellungen, schmerzlindernd, unterstützt das Immunsystem.</p>
-                        </div>
-                    </li>
-                </ul>
-                <a href="../html_DE/prestazioni/massaggi.html" id="vedi-di-piu">Mehr sehen</a>
-            </section>
-        </main>
-    
-        <!--    FOOTER    -->
-        <footer>
-            <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
-            <div id="Icone-social">
-                <a href="http://instagram.com/iltuoaccount" class="icona-social instagram" aria-label="Instagram"></a>
-                <a href="http://facebook.com/iltuoaccount" class="icona-social facebook" aria-label="Facebook"></a>
+              </div>
+              <p class="card-back">
+                Die einhüllenden Griffe mit Kokosöl und sanfter Druck vermitteln
+                tiefe Akzeptanz, Ganzheit und Harmonie.
+              </p>
             </div>
-            <small>Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia - <span lang="en">All Rights Reserved</span> <a href="../php/login.php"><span lang="en">login</span> administratoren</a></small>
-        </footer>   
-     </body>
+          </li>
+          <!-- Popular Card 2 -->
+          <li id="popular-card-2" class="popular-card">
+            <div class="card-inner">
+              <div class="card-front" id="img4-1">
+                <div class="card-name-container">
+                  <div class="card-name">
+                    Vietnamesische Reflexologie Dien Chan
+                  </div>
+                </div>
+              </div>
+              <p class="card-back">
+                Wird im Sitzen durchgeführt. Kann eine Vielzahl von Beschwerden
+                lindern. Sehr effektiv.
+              </p>
+            </div>
+          </li>
+          <!-- Popular Card 3 -->
+          <li id="popular-card-3" class="popular-card">
+            <div class="card-inner">
+              <div class="card-front" id="img6-1">
+                <div class="card-name-container">
+                  <div class="card-name">Lymphdrainage Vodder</div>
+                </div>
+              </div>
+              <p class="card-back">
+                Sehr sanft, sehr effektiv. Bekämpft Schwellungen,
+                schmerzlindernd, unterstützt das Immunsystem.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <a href="../html_DE/prestazioni/massaggi.html" id="vedi-di-piu"
+          >Mehr sehen</a
+        >
+      </section>
+    </main>
+
+    <!--    FOOTER    -->
+    <footer>
+      <p><a href="../html_DE/contatti.html"> Kontakt </a></p>
+      <div id="Icone-social">
+        <a
+          href="http://instagram.com/iltuoaccount"
+          class="icona-social instagram"
+          aria-label="Instagram"
+        ></a>
+        <a
+          href="http://facebook.com/iltuoaccount"
+          class="icona-social facebook"
+          aria-label="Facebook"
+        ></a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
+  </body>
 </html>
