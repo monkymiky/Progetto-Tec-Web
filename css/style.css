@@ -1433,7 +1433,7 @@ CALENDARIO
   max-width: 50rem;
 }
 #adminCalendario-Slot {
-  max-height: 25rem;
+  min-height: 25rem;
 }
 
 #adminCalendario-Slot .doubleObj {
