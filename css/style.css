@@ -1431,6 +1431,8 @@ CALENDARIO
   grid-template-rows: 0.2fr 0.5fr;
   grid-gap: 1em;
   max-width: 50rem;
+  min-height: 24rem;
+
 }
 #adminCalendario-Slot .doubleObj {
   height: 3.1rem;
@@ -1469,7 +1471,7 @@ CALENDARIO
   grid-gap: 0.3em;
   border: solid 0.05em grey;
   text-align: center;
-  min-width: 350px;
+  min-width: 320px;
 }
 
 #calendario a {
@@ -1789,4 +1791,9 @@ ADMIN - varie
   display: flex;
   flex-direction: row-reverse;
   margin-right: 50%;
+}
+
+
+#adminContent h1{
+  margin-bottom:1em;
 }
