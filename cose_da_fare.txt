@@ -1,23 +1,11 @@
 HTML
 -	aggiornare header (verifica presenza viewport se necessaria o meno)
-- verificare correttezza skiplink
-
-CSS
--	messaggi errore, fallimento/successo prenotazione da stilizzare
--	pagina admin stilizzare piccole cose (il calendario e gli slot sono gia fatti)
+-   verificare correttezza skiplink
 
 TEST
 -	testare tutto dopo aver riempito il DB 
--	verificare tutti i link SPECIALMENTE quelli in tedesco
--	validare tutte le pagine html e i css (inserire badge)
+-	verificare tutti i link contatti e pagina admin SPECIALMENTE quelli in tedesco (navbar funzionano)
 -	testare accessibilità con tool online (consigliati dalla prof)
 
 PHP 
--	verificare funzionamento prenotazioni in tedesco
-
-VARI
--   verificare consistenza pagine in tedesco
-- 	fixare il form validatore (js) per il campo dati data di scadenza carta 
-
-JS
--   sostituire <a> non cliccabili calendario con <text>
+-	verificare funzionamento prenotazioni in tedesco ( non funziona, ritradurre prenotazioni.php)
