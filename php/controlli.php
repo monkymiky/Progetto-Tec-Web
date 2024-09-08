@@ -11,11 +11,11 @@ function controllaDataOra(&$dataOra, &$messaggiForm){
         if(preg_match("/^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:00)$/",$dataOra)){
             return $dataOra;
         }else{
-            $messaggiForm .= "<p>il formato del campo slot deve essere aaaa-mm-gg hh:mm</p>";
+            $messaggiForm .= "<p class=""phpError"">il formato del campo slot deve essere aaaa-mm-gg hh:mm</p>";
         }
     }
     else{
-        $messaggiForm .= "<p>selezionare uno slot</p>";
+        $messaggiForm .= "<p class=""phpError"">selezionare uno slot</p>";
     }
     return "";
 }

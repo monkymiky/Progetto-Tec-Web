@@ -1556,6 +1556,12 @@ ol {
   border-radius: 2em;
   padding: 0.8em;
 }
+.phpError {
+  background-color: var(--nosuccessMessage);
+  border-radius: 2em;
+  padding: 0.8em;
+  margin-bottom: 0.5em;
+}
 
 
 /*Stili box di selezione slot*/
