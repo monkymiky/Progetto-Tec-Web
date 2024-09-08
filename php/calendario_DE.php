@@ -246,14 +246,14 @@ class Calendario{
         if($this->admin){
             $this->stringaSlot = "<ol id='slotList'>";
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
-                $this->stringaSlot .= '<li id='slot1hGiorno$i'><ol>'; // calendario slot 1,5 h
+                $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
                         $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' disabled>verfügbar</button></li>";
                     }else{
                         if($this->giorno[$i]->dati_prenotazioni[$j] != NULL){ 
                             $class = '';
-                            if($this->giorno[$i]->dati_prenotazioni[$j] ['tipo'] == '1') $class = 'class ='aDomicilio' ';
+                            if($this->giorno[$i]->dati_prenotazioni[$j] ['tipo'] == '1') $class = "class ='aDomicilio' ";
                             $this->stringaSlot .= " <li class='slotNonDisponibile'>
                                                         <button type='button'
                                                         data-dataOra='".$this->giorno[$i]->stringData . $this->giorno[$i]->ORARIO_SLOT[$j]."'
@@ -280,7 +280,7 @@ class Calendario{
         else{ // utente non amministratore
             $this->stringaSlot = "<ol id='slotList'>";
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
-                $this->stringaSlot .= '<li id='slot1hGiorno$i'><ol>'; // calendario slot 1,5 h
+                $this->stringaSlot .= "<li id='slot1hGiorno$i'><ol>"; // calendario slot 1,5 h
                 for($j=0;$j<9;$j++){ // per ogni slot
                     if($this->giorno[$i]->disponibilitàSlot[$j]){
                         $this->stringaSlot .= "<li class='slotDisponibile'><button type='button' onclick='javascript:riempiData(this)' >verfügbar</button> </li>";
@@ -318,4 +318,3 @@ class Calendario{
     public function getStringaCalendario(){return $this->stringaCalendario;}
 
     }
-}
