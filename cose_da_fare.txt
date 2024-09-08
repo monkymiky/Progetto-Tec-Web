@@ -1,7 +1,7 @@
 HTML
 -	aggiornare header (verifica presenza viewport se necessaria o meno)
 - footer/header in pagine di errore (ci vanno keyword e description in DBerrorTemplate? no perche non sono pagine che vengono indirizzate)
-
+- verificare correttezza skiplink
 
 CSS
 -	messaggi errore, fallimento/successo prenotazione da stilizzare
@@ -9,7 +9,7 @@ CSS
 
 TEST
 -	testare tutto dopo aver riempito il DB 
--	verificare tutti i link 
+-	verificare tutti i link SPECIALMENTE quelli in tedesco
 -	validare tutte le pagine html e i css (inserire badge)
 -	testare accessibilità con tool online (consigliati dalla prof)
 
