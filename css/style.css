@@ -659,7 +659,8 @@ MASSAGGI POPOLARI
   display: block;
 }
 
-#vedi-di-piu {
+a#vedi-di-piu:link {
+  text-decoration: underline;
   display: inline-block;
   width: 6em;
   margin: auto;
@@ -669,6 +670,14 @@ MASSAGGI POPOLARI
   background-color: var(--boxesBackground);
   border: 0.05em solid var(--borderColor);
   border-radius: 3em;
+}
+
+a#vedi-di-piu:visited {
+  color: var(--visitedLink);
+}
+
+a#vedi-di-piu:hover {
+  color: var(--hoverLink);
 }
 
 #massaggi_popolari h2 {
