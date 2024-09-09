@@ -25,7 +25,8 @@ input,
 }
 #domicilio,
 #studio,
-.inputPrenotazioni {
+.inputPrenotazioni,
+.noteLabel {
   display: block;
 }
 

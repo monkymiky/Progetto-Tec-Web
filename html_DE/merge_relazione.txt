@@ -1,0 +1,269 @@
+Fisioterapia e Massaggi Anna Nesler
+
+Relazione progetto Tecnologie Web
+Anno 2021-2022
+
+
+Gruppo:
+Michele Nesler 	2000559
+Elia Leonetti 		2009998
+Luca Parise 		2043677
+Marco Cristo 		1232582
+
+
+Informazioni sul sito:
+Login consegna: mnesler
+Indirizzo sito web: http://localhost:8080/mnesler/Progetto-Tec-Web/html/index.html 
+E-mail referente gruppo: michele.nesler@studenti.unipd.it
+
+Accessi interni al sito:
+USER	PASSWORD
+admin	admin
+
+
+
+
+
+
+
+
+
+
+Indice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analisi:
+1.1	Descrizione testuale
+Ci propone di creare un sito che consenta ad eventuali interessati o curiosi di entrare in contatto e conoscere Anna Nesler fisioterapista e massaggiatrice a Bolzano. Agli interessati viene anche data la possibilità di prenotare un trattamento tramite un calendario in cui vengono mostrati gli slot temporali disponibili. 
+L’amministratore (Anna Nesler) ha la possibilità di visualizzare il calendario completo di dati dei clienti e delle prenotazioni, modificare queste ultime (o cancellarle) e impostare gli slot che preferisce come non disponibili.
+1.2	Analisi del target di utenza
+La prima e più lampante osservazione che abbiamo fatto è la necessità di avere un sito bilingue, data dalla composizione linguistica degli abitanti della provincia di Bolzano (70% tedeschi, 30% italiani) e dal forte senso identitario associato alla lingua tedesca presente in Sudtirol.
+Dall’esperienza di Anna Nesler evinciamo che l’utenza sarà variegata, sia in età che in genere ma le categorie di persone più interessate alla fisioterapia sono sportivi, anziani e neomamme. Le persone più interessate ai massaggi invece sono principalmente lavoratori e anziani. La Danza Libera, altra attività che viene illustrata nel sito interessa principalmente le persone adulte in generale.
+Da questa analisi ci si può aspettare che le visite al sito avvengano lievemente in maggioranza da smartphone, seguendo la tendenza generale della navigazione online, non essendo i servizi che offre il sito con particolarità tali da rendere preferibile agli utenti una consultazione da desktop.
+Il sito permette a tutte le tipologie di ricerca di essere effettuate con efficacia: 
+• Tiro perfetto: Il sito non ha uno schema organizzativo esatto ma essendo la gerarchia poco profonda e non molto estesa e le categorie non facilmente sovrapponibili l’utente può raggiungere l’informazione che cerca senza sbagliarsi. 
+• Trappola per aragoste: Grazie alla suddivisione in argomenti delle pagine del sito l’utente può già farsi una idea del contenuto disponibile sul sito, inoltre a parte il servizio di prenotazione, il sito segue un format molto comune nei siti di presentazione di professionisti e quindi è probabile che l’utente abbia già a priori un’idea attendibile del contenuto. 
+• Pesca a strascico: La struttura del sito è particolarmente semplice ed intuitiva, questo permette agli utenti di esplorare la totalità del sito senza perdere contenuti o avere un sovraccarico cognitivo.
+• Boa di segnalazione: Tutte le pagine visibili all’utente sono statiche a parte la pagina prenotazioni. Essa da un’istantanea del mese successivo e nella maggior parte delle situazioni ciò corrisponde a ciò che l’utente sta cercando essendo che l’unico scopo che può avere è quello di guardare la disponibilità per eventualmente prenotare un trattamento. Nel raro caso in cui l’utente voglia prenotare un trattamento in una data molto distante arriverà comunque in pochi click al mese che gli interessa.
+1.3	Servizi offerti
+•	Prenotazione prestazioni. 
+•	Pagina Admin in cui si vede il riepilogo di tutte le prenotazioni comprendenti i contatti dei clienti e in cui è possibile modificare o cancellare una prestazione; è anche possibile impostare degli slot come non disponibili o disponibili.
+•	Form di contatto per scrivere un’e-mail ad Anna direttamente dal sito.
+•	Vetrina dei massaggi offerti.
+
+2	Progettazione
+Per la progettazione abbiamo usato una strategia Mobile First e Responsive Web Design. L’approccio Mobile First ci permette di concentrarci sulla modalità principale di accesso del nostro target di utenza, ovvero quella da mobile. Questo comporta una struttura dell’informazione chiara e di semplice fruizione. L’approccio Responsive Web Design invece si basa sul concetto di media query, strumento che ottimizza la visualizzazione per specifiche dimensioni di dispositivi e viewport. 
+Oramai sia le app mobile che la maggior parte dei browser desktop ricevono aggiornamenti automatici periodici. Questo ci consente di utilizzare senza grossi problemi le nuove tecnologie web e le ultime feature degli standard HTML5 e CSS3.
+2.1	Tipi di utente
+• Utente: principale tipologia di utente, potrà solamente fruire del contenuto offerto dal sito, prenotare trattamenti e inviare e-mail ad Anna tramite il form di contatto.
+• Amministratore: oltre alle funzionalità di base potrà offerte all’utente, può cancellare, modificare e visualizzare le prenotazioni oltre a rendere non disponibili o disponibili a piacimento gli slot temporali.
+2.2	Struttura del sito
+Il sito presenta una limitata profondità e una limitata larghezza:
+• Home: Vengono illustrate in breve le funzioni principali del sito. Il suo scopo principale è quello di landing page.
+• Chi Sono: Pagina di presentazione di Anna Nesler, con il suo precorso di studi e lavorativo, i suoi valori e la sua etica professionale.
+• Prestazioni: Vengono elencate i vari servizi e attività proposte da Anna. Non è una pagina, ma solo un elenco nella navbar. 
+•	Fisioterapia: Viene spiegato cos’è la fisioterapia e in che situazioni può essere utile, ponendo l’attenzione maggiormente sulle casistiche che Anna affronta frequentemente e nelle quali è ormai esperta.
+•	Massaggi: Vengono presentati tramite delle accattivanti flip-card i massaggi offerti da Anna corredati di una piccola descrizione, del prezzo e della durata
+•	Danzaterapia: Viene descritto in cosa consiste la danzaterapia, chi può farla e l’utente viene invitato a seguire Anna sui social per essere informato riguardo ai workshop di danza che lei organizza.
+•	Corsi di Massaggio: Introduce i corsi di massaggio che Anna offre e illustra quelli in programma.
+• Contatti: La pagina dove l’utente può trovare i contatti e il form di contatto per scrivere ad Anna.
+• Prenotazioni: La pagina in cui l’utente tramite un calendario visualizza gli slot temporali disponibili e può prenotare un trattamento. Questa pagina è pensata per ridurre il carico di lavoro di Anna e permettere all’utente di scegliere autonomamente il momento che più gli piace per ricevere il trattamento tra quelli disponibili. In questo modo viene ridotto notevolmente il tempo che altrimenti sarebbe necessario per concordare un appuntamento, migliorando anche l’esperienza del cliente. Dopo aver selezionato lo slot l’utente può procedere al pagamento online. Questa è la principale feature interattiva del sito.
+• Login Administrator: pagina quasi nascosta agli utenti normali, è presente solo un link <small> nel footer per accedervi. Serve solamente agli amministratori per accedere alla pagina Admin. Informa gli utenti non amministratori che lo scopo di quella sezione del sito non è dedicato a loro.
+• Admin: Qui Anna può cancellare, modificare e visualizzare, con tutti i dettagli, le prenotazioni nel calendario, oltre a rendere non disponibili o disponibili a piacimento gli slot temporali.
+2.2.1	Header
+Contiene il logo del sito, ed un link nascosto agli utenti che non utilizzano screen reader, per saltare al contenuto della pagina evitando di ascoltare ogni volta tutto il contenuto della navbar e della breadcrumb. Abbiamo preso in considerazione di non saltare la Breadcrumb, essendo utile a ridurre il disorientamento e comunque trattandosi di un breve testo. La decisione è ricaduta sul saltarla per coerenza con lo “standard de facto” a cui l’utente è abituato dalla sua esperienza in rete.
+2.2.2 Navbar
+La navbar è strutturata come unordered list che racchiude le varie pagine visitabili del sito. Per evitare link circolari, quello della pagina attuale viene sempre rimosso e reso chiaramente riconoscibile rispetto agli altri. 
+Si è prestata particolare attenzione all’accessibilità inserendo la freccetta che rende riconoscibile il bottone del menù a tendina “prestazioni” tramite css (non è un carattere ma un bordo superiore) ed aggiungendo degli attributi aria-expanded ai bottoni “prestazioni” e “menu ad hamburger” per la visualizzazione mobile, che rendono esplicito se il menù è aperto o chiuso. 
+2.2.3 Breadcrumb
+Per agevolare agli utenti la visita del sito e per evitare il disorientamento è stata aggiunta una breadcrumb in ogni pagina visitabile. Questa sezione di pagina è stata costruita sfruttando il tag semantico. Anche in questo elemento la pagina attuale non è un link attivo sempre per evitare i link circolari. Si è tenuto conto dell’accessibilità prestando attenzione alle parole di lingua inglese come ad esempio Home. Le freccette, essendo di presentazione, vengono inserite tramite CSS.
+2.2.3 Contenuto
+Per ogni pagina si è cercato di mantenere una struttura semplice che permettesse all’utente di rispondere chiaramente e velocemente alle tre domande fondamentali: 
+•	 Dove sono? 
+Domanda a cui è facile rispondere grazie all’header e più in dettaglio grazie alla breadcrumb. 
+
+•	Di cosa si tratta? 
+Grazie all’utilizzo appropriato di tag semantici nella struttura della pagina il contenuto importante salta subito all’occhio e all’orecchio dell’utente.
+
+•	 Dove posso andare? 
+Anche qui data la gerarchia su cui si basano le pagine del sito, i percorsi sono facilmente intuibili dall’utente. Inoltre, sempre grazie alla breadcrumb, è possibile farsi un’idea di come risalire la struttura del sito.
+Vediamo per ogni pagina come è strutturato il contenuto:
+•	Home:
+La Home riassume i contenuti delle varie pagine presenti nel sito, ogni pagina del sito è raggiungibile da un link presente nel contenuto della home, oltre che dalla navbar, ed abbiamo fatto attenzione a mantenere i titoli delle sezioni coerenti con il testo dei link nella navbar.
+Come prima cosa, sempre presente “above the fold” si trova una “call to action” ovvero il link che porta alla pagina prenotazione. Poi troviamo la sezione “Prestazioni offerte” con i vari link alle pagine prestazioni. Successivamente la sezione “Chi Sono” con una breve presentazione di Anna e infine la sezione “I massaggi più popolari” in cui sono presentati i 3 massaggi più richiesti. 
+
+•	Chi Sono: 
+Ѐ la pagina in cui Anna si presenta. Nella pagina vengono citati dei massaggi che sono stati importanti nel percorso di anna; questi sono link che rimandano alla pagina massaggi. 
+La prima foto è la più rappresentativa di anna e viene considerata di contenuto e quindi corredata da un apposito attributo alt.
+Prestazioni:
+•	Fisioterapia: 
+Viene spiegato cos’è la Fisioterapia e in che situazioni è utile. La pagina informa il lettore e potenziale cliente/paziente quali sono le problematiche che Anna ha affrontato spesso e quindi nelle quali è esperta.
+
+•	Massaggi: 
+Tramite delle accattivanti Flip-card vengono presentati i vari massaggi che fa Anna, con una breve descrizione, il prezzo e la durata. In fondo alla pagina l’utente può trovare maggiori informazioni visionando un file pdf cliccando sul bottone “PDF” che lo informa rispetto al tipo di file che sta per aprire.
+
+•	Danzaterapia: 
+Viene introdotta brevemente la danzaterapia, spiegato a chi è rivolta e gli utenti vengono invitati a seguire Anna sui social per rimanere aggiornati sui prossimi workshop da lei organizzati.
+
+•	Corsi di massaggio:
+Questa pagina serve a informare gli utenti che Anna è solita tenere corsi di massaggio, che vengono poi invitati a seguire Anna sui social per rimanere aggiornati sui prossimi corsi da lei organizzati se interessati.
+
+•	Contatti:
+La pagina in cui gli utenti trovano i contatti di anna ed un form per inviarle un e-mail direttamente dal sito.
+
+•	Prenotazioni:
+Questa pagina costituisce la principale funzionalità interattiva del sito. Qua l’utente visualizza un calendario generato dinamicamente in cui ha una panoramica dei giorni in cui Anna è disponibile a fare massaggi/trattamenti e cliccando su un giorno visualizza la panoramica del singolo giorno. Cliccando uno slot temporale questo viene selezionato e va riempire un campo nel form di prenotazione. Poi riempiendo anche gli altri campi del form effettua la prenotazione che viene registrata automaticamente.
+Il calendario è organizzato in questo modo:
+-	Per chiarezza vengono sempre visualizzati 42 giorni, quelli non appartenenti al mese corrente sono distinguibili attraverso la differente colorazione. Sono distinguibili anche i giorni appartenenti al 
+-	Le colonne si riferiscono ai giorni della settimana (come tutti siamo abituati) e le righe sono le differenti settimane.
+-	Le finestre del calendario sono 2: 
+o	Una per la visualizzazione dei giorni del mese 
+o	L’altra per la visualizzazione degli slot temporali all’interno del giorno selezionato
+-	Prima di visualizzare il calendario l’utente deve scegliere il luogo del trattamento/massaggio, in quanto se a domicilio ad Anna serve il tempo per recarsi in loco e tornare indietro, quindi i tempi sono raddoppiati, ed anche gli slot temporali disponibili visualizzati dall’utente saranno di durata doppia.
+La scelta di raddoppiare il tempo dedicato ai trattamenti a domicilio è stata presa discutendone con Anna. La criticità che abbiamo osservato è che, se lo spostamento fosse stato corto avrebbe richiesto meno tempo e quindi riservare 2 slot temporali non sarebbe stato un utilizzo efficiente del tempo. Anna però ha preferito questa soluzione, scartando a priori qualcosa di più efficiente, siccome questa migliora il suo benessere sul lavoro rendendolo più rilassato.
+•	Login amministratori:
+Serve solamente agli amministratori per accedere alla pagina Admin. Informa gli utenti non amministratori che lo scopo di quella sezione del sito non è dedicato a loro.
+
+•	Pagina Admin: 
+Viene visualizzato lo stesso calendario come nella pagina prenotazioni ma gli slot prenotati vengono visualizzati corredati dai dati delle prenotazioni. 
+Ѐ presente un form per cancellare le prenotazioni ed uno per modificarle. Si possono anche impostare degli slot come non disponibili.
+Data la natura didattica del progetto e il fatto che l’unico utente a cui è rivolta la pagina è l’amministratore abbiamo deciso di tralasciare la cura della grafica del form e della traduzione in lingua tedesca.
+Sono presenti altre pagine di servizio non direttamente raggiungibili:
+•	Errore 404 e 500: Appaiono quando avviene un errore, la prima in caso di pagina sconosciuta, la seconda per problemi del server. Abbiamo utilizzato l’emotional design per rendere meno spiacevoli queste casistiche all’utente che le incontra.
+
+•	Footer: 
+All’interno del footer sono state inserite le informazioni utili dopo aver visitato tutta la pagina. In questo caso i nomi dei componenti del gruppo, un link alla pagina contatti e i link ai social di Anna, come è consuetudine. È presente anche il link che porta alla pagina di login amministratori, è appositamente poco visibile perché essendo una parte del sito dedicata ai soli amministratori se l’utente non la nota è meglio poiché in questo modo viene ridotto carico cognitivo e si evita il sovraccarico.
+
+2.3 Emotional design
+Nella pagina relativa all’errore 404 abbiamo deciso di utilizzare una battuta per mantenere un tono leggero e “sdrammatizzare” l’inconveniente. Una scelta analoga è stata effettuata per la pagina dell’errore 500; questo sovverte le aspettative dell’utente (le pagine d’errore solitamente si presentano in maniera neutra) per sollecitare un senso di sorpresa rispetto alla vignetta caricaturale proposta, e fare leva sul contrasto cognitivo che può scaturire rispetto all’esperienza abituale dell’utente.
+2.4 Suddivisione del lavoro
+Michele Nesler: 
+•	Script PHP
+•	Sviluppo della base di dati
+•	Progettazione e discussione delle funzionalità con Anna
+•	Stesura Relazione
+•	CSS dispositivi mobili (esclusa pagina Prenotazioni)
+•	CSS desktop contenuto pagine “Chi Sono” “Fisioterapia” e “Danzaterapia” e “corsi di massaggio”
+•	CSS grid “prestazioni offerte” nella pagina Home
+•	JS navbar 
+•	JS Pagina Admin
+•	HTML Home
+•	Keyword Description e <title>
+Elia Leonetti:
+•	HTML pagina Prenotazioni, Admin, Contatti
+•	CSS desktop pagina Home, Prenotazioni
+•	CSS vario pagina Admin (calendario, form)
+•	JS calendario nella pagina Prenotazioni e Admin
+•	JS gestione slot/autocompilazione form
+•	Implementazione switch italiano/tedesco
+Luca Parise:
+•	JS validazione dei vari form
+•	HTML vario per validazione
+•	HTML Header 
+•	CSS per la stampa
+•	Creazione prestazioni.pdf
+Marco Cristo:
+•	HTML e CSS pagina “massaggi”
+•	Sezione "I massaggi più popolari" della Home
+•	Ideazione dei contenuti per l’emotional desing nelle pagine 404 e 500
+•	HTML, CSS e JS pagine errori 404 e 500
+•	Refactoring e unificazione dei fogli di stile in un unico file style.css
+•	CSS e accessibilità dei form
+Nonostante questa suddivisione, tutti i membri hanno collaborato in tutti gli aspetti della realizzazione del sito, particolarmente per quanto riguarda l’accessibilità di esso.
+3 Implementazione
+3.1 Front-end 
+3.1.1 Script di validazione
+Per gestire la validazione lato client dei dati immessi dall’utente è stato scritto del codice javascript il quale controlla i valori immessi tramite delle espressioni regolari. I contenuti dei campi vengono validati ogni volta che il focus su di loro cambia. Se ci sono errori viene mostrato a schermo un messaggio di errore di colore rosso, contenuto in uno span all’inizio non visibile nella pagina. Una volta corretti il messaggio di errore sparisce e viene inserita una spunta verde. Prima di poter inviare il form, ogni campo dati viene validato e solo nel caso ognuno di questi sia corretto, allora sarà possibile eseguire il submit. 
+Quando il submit fallisce, il focus viene riportato automaticamente sul campo dati su cui si trova l’errore, al fine di migliorare l’accessibilità. 
+È stato fatto uso dei principali strumenti che il linguaggio javascript fornisce: 
+-	Modifica del DOM
+-	Modifica dei nodi 
+-	Gestione degli eventi
+In particolare, per la validazione, il sito presenta 4 file javascript: 
+-	“controllo_form_admin.js”
+-	“controllo_form_contatti.js”
+-	“controllo_form_loginTemplate.js”
+-	“controllo_form_prenotazioni.js”
+
+3.1.2 Script Navbar
+Per migliorare l’accessibilità e consentire agli utenti che utilizzano screen-reader di distinguere se la tendina che si apre cliccando sul bottone prestazioni sia aperta o chiusa lo script setta un attributo aria-expanded come “false” oppure “true” a seconda del caso. Questo non succede se la visualizzazione è mobile, in questo caso la tendina “prestazioni” è sempre aperta, succede però per l’intera navbar che è resa visibile o meno cliccando sul menu ad hamburger.
+3.1.2 Grid e Flex
+Tutte le flipcard sono posizionate all’interno delle pagine tramite l’utilizzo della regola CSS “display:flex;” che consente di ottenere una visualizzazione gradevole da dispositivi di dimensioni differenti scrivendo il minor quantitativo di codice possibile. Stessa cosa vale per le section all’interno delle pagine “chi sono”, “fisioterapia” e “danzaterapia” e “corsi di massaggio”.
+La regola “display: grid;” è stata usata invece per creare un design accattivante nella prima sezione della Homepage, nonché per realizzare il calendario delle pagine “prenotazioni” e “admin”. 
+3.1.4 Calendario 
+Una particolare scelta progettuale è stata presa per quanto riguarda il calendario, si è scelto infatti di utilizzare dei link, piuttosto che dei bottoni, per ogni giorno che portano alla visualizzazione dei relativi slot disponibili per la prenotazione. Questo, in primo luogo, migliora l’accessibilità del calendario; inoltre, è implementabile interamente in CSS, aiutando a contenere la dimensione dei file di scripting associati alla pagina, e rendendo la funzionalità disponibile anche qualora Javascript non fosse abilitato nel browser. Il calendario sfrutta comunque una serie di funzionalità implementate come function nello script  JS relativo:
+- una funzione che, alla selezione del luogo per la prestazione (domicilio o studio), lasci visibili solo le caselle relative alla modalità selezionata; l’opzione di default, visualizzata all’apertura della pagina, è “domicilio”.
+- una funzione che consente di estrapolare, una volta cliccato uno slot, le informazioni orarie ad esso associate (nel caso della pagina Prenotazioni) oppure i dati dell’utente che ha effettuato la prenotazione (nel caso della pagina Admin), e che si occupa di compilare tali informazioni nei rispettivi form. 
+- per ridurre il senso di disorientamento dell’utente è stata inclusa una funzione che evidenzia il giorno selezionato dall’utente.
+- via script, ai giorni visualizzati a calendario ma afferenti al mese precedente o successivo (rispetto a quello correntemente selezionato) viene applicato uno stile differente. Questo migliora la leggibilità del calendario.
+
+
+3.1.5 Stampa 
+Per permettere agli utenti di salvare offline le informazioni presenti nel nostro sito è stato predisposto un foglio di stile aggiuntivo che modifica e adatta la pagina alla stampa 2, sia digitale in PDF che verso la stampa la carta stampata. La maggior parte dei componenti interattivi vengono nascosti per dare la precedenza al contenuto vero e proprio, il font viene sostituito con uno adatto alla stampa ovvero uno con grazie. Alcune pagine sono state definite non stampabili dato che non contengono alcun contenuto utile offline e volevamo tenere conto anche dell’aspetto ecologico.
+
+3.2 Back-end
+3.2.1 Validazione form
+Questo secondo controllo lato server viene fatto anche per il caso in cui l’utente abbia disabilitato gli script javascript, ma principalmente per proteggersi da attacchi. Questo viene fatto tramite le funzioni htmlspecialchars() , trim(), stripslashes(), come suggerisce www.w3schools.com e tramite le espressioni regolari o i filtri php. 
+Normalmente avremmo anche implementato il meccanismo dei Prepared Statements per inserire i dati nel database e prevenire attacchi quali SQL-Injection ma la natura didattica del progetto ci ha portati a scegliere di dedicare il nostro tempo ad altri aspetti e posticipare questo ad un futuro in cui il sito venga messo online e quindi fruibile a tutti. 
+Ogni script di validazione ha anche la funzionalità di auto-riempimento che consente all’utente che ha sbagliato ad inserire un campo dati di ricompilare solo quello e non anche tutti gli altri.
+Non abbiamo implementato nessun meccanismo di validazione della sezione dati carta nel form di prenotazione in quanto questi dati non vengono salvati nel database e normalmente la validazione sarebbe affidata a sevizi di terze parti.
+
+
+3.2.2 Calendario
+A partire dal giorno odierno e dal numero di volte che l’utente è andato avanti o indietro tra i mesi sul calendario vengono calcolati i giorni che devono essere visualizzati, quelli che non appartengono al mese visualizzato. Viene aperta una connessione con il database e richiesta la tabella delle prenotazioni. Se l’utente è amministratore il calendario verrà visualizzato nella pagina amministratore, quindi viene generato un calendario che riporta le prenotazioni (ovvero ogni giorno è segnato come libero o occupato e ogni slot di ogni giorno può essere a sua volta libero o occupato, ma esso è anche corredato dai dati della prenotazione. Infatti se l’utente non è amministratore e il calendario deve essere visualizzato nella pagina prenotazioni gli slot vengono segnati disponibili o meno ma non vengono riportati i dati delle prenotazioni. Una difficoltà in più è data dal fatto che se l’utente sceglie come modalità del trattamento “a domicilio” il calendario mostrerà slot liberi solamente se ce n’è 2 liberi vicini e darà l’illusione che sia uno unico, siccome il tempo da riservare è doppio.
+Si è fatta particolare attenzione a chiudere subito le connessioni con il server per non tenerlo occupato senza motivo.
+3.2.3 Admin
+Lo script che serve ad eliminare le prenotazioni non ha la funzionalità di auto-riempimento in caso di errori, questo per aumentare l’attenzione che verrà dedicata a questa operazione molto delicata.
+3.2.4 Database
+Contiene solamente i dati dei clienti e le prenotazioni, oltre all’username dell’admin e alla sua password.
+4 Prestazioni e SEO
+Le prestazioni di un sito sono fondamentali per avere un buon posizionamento nei vari canali comunicativi e motori di ricerca, quindi si è deciso di:
+•	 Chiudere tutte le connessioni con il database il prima possibile, evitando di tenerlo occupato inutilmente.
+•	Utilizzare standard moderni come WebP per ridurre il più possibile il peso delle immagini senza perdità qualità.
+•	Inserire il meta-tag robots per impedire l’indicizzazione della pagina login amministratori e amministratori
+Ci siamo concentrati maggiormente sulla scelta dei testi dei titoli nella pagina e sui vari tag semantici, oltre che al tag <title> e al meta tag description, rispetto a fare affidamento alle sole keyword. Nel sito developers.google.com viene detto che Google non prende in considerazione nel ranking il tag keyword e il suo contenuto. Oltre a Google facendo una breve ricerca abbiamo scoperto che anche gli altri motori di ricerca non lo utilizzano più se non marginalmente
+5 Accessibilità
+Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0. 5.1 Separazione tra contenuto, presentazione e struttura 
+La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio gli accessi delle varie categorie di utenti. La parte di contenuto è stata sviluppata tramite HTML5 in modo da poter sfruttare a pieno i tag semantici e le nuove funzionalità aggiunte dello standard.5 Tramite CSS3 sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato anche coadiuvato dal linguaggio Javascript. Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati durante tutto lo sviluppo di aver rispettato tutte le regole dello standard.
+5.2 Attributi ARIA 
+Nonostante aver utilizzato il più possibile i tag semantici offerti da HTML5 abbiamo inserito anche alcuni attributi ARIA in modo da renderli più espressivi e accessibli. 
+•	 Breadcrumb: la breadcrumb è stata definita tramite aria-label come breadcrumb, inoltre la pagina attuale è indicata dall’attributo aria-page="current". 
+•	Validazione dei form: lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato dal ruolo aria-role="alert" che porta l’attenzione dello screen-reader su di esso quando questo viene inserito nella pagina. 
+•	Bottoni link: quando non è stato possibile sfruttare tag come è stato necessario usare l’attributo role="button" su quei link che vengono rappresentati come bottoni dal CSS.
+5.3 Contrasti 
+Come principale colore se ne è scelto uno caldo per dare senso d’accoglienza. Da lì tutti gli altri colori sono stati scelti in modo da avere un contrasto che rispetti gli standard AA del WCAG sfruttando lo strumento online Contrast Finder. Questi contrasti sono poi stati analizzati e confermati tramite i siti WCAG - Contrast Checker e Color contrast checker, oltre ai Firefox Developer Tools. 
+5.4 Tabindex
+Non è sembrato necessario modificare l’ordine dei tabindex manualmente. Per come è stato strutturato il sito questi sono già organizzati nel modo corretto.
+5.5 Lingue straniere 
+Il sito è bilingue, Italiano e Tedesco. Inoltre, ogni parola che deve essere letta con pronuncia straniera è stata contrassegnata tramite l’attributo lang. Questo attributo è stato posizionato nel suo tag di appartenenza e altre in un tag di comodo aggiunto al momento come <span>. Un esempio di questa nostra attenzione è la semplice parola Home nella breadcrumb e in tutte le altre sue posizioni.
+6 Testing
+
