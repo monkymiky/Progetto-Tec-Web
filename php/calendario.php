@@ -198,9 +198,9 @@ class Calendario{
                                             <time datetime='".$this->anno."'>".$this->anno."</time>
                                             </li>
                                             
-                                            <li><button type='button' id='buttonIndietro' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu-1).")'> &lt; </button></li>
+                                            <li><button type='button' id='buttonIndietro' name='cambioMese' aria-label='Vai al mese precedente' onclick='changeMounth(".($this->mesiInPiu-1).")'> &lt; </button></li>
                                             <li id='mese'><time datetime='".($this->anno)."-".$stringaMese."'>".($this->mesi[(int)$this->nrMese-1])."</time></li>
-                                            <li><button type='button' id='buttonAvanti' name='cambioMese' onclick='changeMounth(".($this->mesiInPiu+1).")'> &gt; </button></li>
+                                            <li><button type='button' id='buttonAvanti' name='cambioMese' aria-label='Vai al mese successivo' onclick='changeMounth(".($this->mesiInPiu+1).")'> &gt; </button></li>
                                             <li class='labelgiorno'><abbr title='Lunedì'>Lun</abbr></li>
                                             <li class='labelgiorno'><abbr title='Martedì'>Mar</abbr></li>
                                             <li class='labelgiorno'><abbr title='Mercoledì'>Mer</abbr></li>
