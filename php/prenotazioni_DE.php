@@ -15,45 +15,62 @@ $messaggiForm = "";
 $dataOraInizio= "";
 $note="";
 $email="";
-$cel="";
+$cell="";
 $indirizzo="";
 $nome="";
 $checkedDomicilio="";
 $checkedStudio="";
-if(isset($_POST['submit'])){
+$sceltaLuogo = "";
+
+if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'false'){
     // controlli input 
-    $dataOraInizio = controllaDataOra($_POST['data'].$_POST['ora'] ,$messaggiForm); 
-    
-    $tipo = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
-    if($tipo){
+    $aDomicilio = controllaADomicilio($_POST['scelta-luogo'],$messaggiForm);
+    if($aDomicilio){
         $checkedDomicilio = "checked";
     }else{
         $checkedStudio = "checked";
     }
 
+    $rawDataOra = $_POST['date']." ".$_POST['time'].":00";
+    $dataOraInizio = controllaDataOra($rawDataOra ,$messaggiForm); 
+
     $note = controllaNote($_POST['note'], $messaggiForm);
     
     $email = controllaEmail($_POST['email'], $messaggiForm);
 
-    $cel = controllaCel($_POST['cel'], $messaggiForm);
+    $cell = controllaCel($_POST['cell'], $messaggiForm);
 
     $nome = controllaNome($_POST['nome'], $messaggiForm);
 
     $indirizzo = controllaIndirizzo($_POST['indirizzo'] , $messaggiForm);
 
     $connection->openDBConnection();
-    if($messaggiForm == "" && $connection->prenota($nome,$email,$cel,$indirizzo,$dataOraInizio, $tipo, $note)){
-        $messaggiForm .= "<h1 id='success'>Prenotazione effettuata con successo!! A presto :) </h1>";
+    if($messaggiForm == "" && $connection->prenota($nome,$email,$cell,$indirizzo,$dataOraInizio, $aDomicilio, $note)){
+        $messaggiForm .= "<h1 id='success'>Buchung erfolgreich durchgeführt!! Bis bald :) </h1>";
         $dataOraInizio= "";
         $note="";
         $email="";
-        $cel="";
+        $cell="";
         $indirizzo="";
         $nome="";
         $checkedDomicilio="";
         $checkedStudio="";
+        $sceltaLuogo = "";
+    }
+}else{
+    if(isset($_POST['date']) && isset($_POST['time'])) $dataOraInizio= $_POST['date']." ".$_POST['time'];
+    if(isset($_POST['note']))$note= $_POST['note'];
+    if(isset($_POST['email']))$email=$_POST['email'];
+    if(isset($_POST['cell']))$cell=$_POST['cell'];
+    if(isset($_POST['indirizzo']))$indirizzo=$_POST['indirizzo'];
+    if(isset($_POST['nome']))$nome=$_POST['nome'];
+    if(isset($_POST['scelta-luogo'])){
+        $sceltaLuogo = $_POST['scelta-luogo'];
+        if($sceltaLuogo) $checkedDomicilio="checked";
+        else $checkedStudio="checked";
     }
 }
+$paginaHTML = str_replace("{scelta-luogo}", $sceltaLuogo, $paginaHTML);
 $paginaHTML = str_replace("{checkedDomicilio}", $checkedDomicilio, $paginaHTML);
 $paginaHTML = str_replace("{checkedStudio}", $checkedStudio, $paginaHTML);
 if($dataOraInizio != ""){
@@ -66,19 +83,19 @@ if($dataOraInizio != ""){
 }
 $paginaHTML = str_replace("{nome}", $nome, $paginaHTML);
 $paginaHTML = str_replace("{email}", $email, $paginaHTML);
-$paginaHTML = str_replace("{cell}", $cel, $paginaHTML);
+$paginaHTML = str_replace("{cell}", $cell, $paginaHTML);
 $paginaHTML = str_replace("{indirizzo}", $indirizzo, $paginaHTML);
 $paginaHTML = str_replace("{note}", $note, $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiForm, $paginaHTML);
 
 //------------------------------------- clanedario ----------------------------------------------
-$stringMese = "0";
-    if(!empty($_POST['action'])){
-        controllaInput($_POST["action"]);
-        $calendario = new Calendario(false,$_POST["action"]);
+$stringMese = "0"; 
+    if(isset($_POST['changeMount']) && $_POST['changeMount'] == 'true'){
+        controllaInput($_POST["addMount"]);
+        $calendario = new Calendario(false,(int)$_POST["addMount"]);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
         $paginaHTML = str_replace("{slot}", $calendario->getStringaSlot(), $paginaHTML);
-        $stringMese = $_POST['action'];
+        $stringMese = $_POST['addMount'];
     }else{
         $calendario = new Calendario(false, 0);
         $paginaHTML = str_replace("{calendario}", $calendario->getStringaCalendario(), $paginaHTML);
