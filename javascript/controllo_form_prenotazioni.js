@@ -24,114 +24,114 @@ var elAnnoScadenzaCarta = document.getElementById("year");
 var elMeseScadenzaCarta = document.getElementById("month");
 
 var err;
-var noerr;
+var noError;
 
 function checkEmail() {
   err = document.getElementById("errPrenotazioniEmail");
-  noerr = document.getElementById("noErrPrenotazioniEmail");
+  noError = document.getElementById("noErrorPrenotazioniEmail");
   if (
     elEmail.value == "" ||
     elEmail.value == undefined ||
     !email_regex.test(elEmail.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 function checkCell() {
   err = document.getElementById("errPrenotazioniTelefono");
-  noerr = document.getElementById("noErrPrenotazioniTelefono");
+  noError = document.getElementById("noErrorPrenotazioniTelefono");
   if (
     elCell.value == "" ||
     elCell.value == undefined ||
     !cell_regex.test(elCell.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 function checkIndirizzo() {
   err = document.getElementById("errPrenotazioniIndirizzo");
-  noerr = document.getElementById("noErrPrenotazioniIndirizzo");
+  noError = document.getElementById("noErrorPrenotazioniIndirizzo");
   if (
     elIndirizzo.value == "" ||
     elIndirizzo.value == undefined ||
     !regex.test(elIndirizzo.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 function checkNomeCarta() {
   err = document.getElementById("errPrenotazioniNomeCarta");
-  noerr = document.getElementById("noErrPrenotazioniNomeCarta");
+  noError = document.getElementById("noErrorPrenotazioniNomeCarta");
   if (
     elNomeCarta == "" ||
     elNomeCarta == undefined ||
     !nome_regex.test(elNomeCarta.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 function checkNumeroCarta() {
   err = document.getElementById("errPrenotazioniNumeroCarta");
-  noerr = document.getElementById("noErrPrenotazioniNumeroCarta");
+  noError = document.getElementById("noErrorPrenotazioniNumeroCarta");
   if (
     elNumeroCarta.value == "" ||
     elNumeroCarta == undefined ||
     !numero_carta_regex.test(elNumeroCarta.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 function checkCVV() {
   err = document.getElementById("errPrenotazioniCVV");
-  noerr = document.getElementById("noErrPrenotazioniCVV");
+  noError = document.getElementById("noErrorPrenotazioniCVV");
   if (
     elCVVCarta.value == "" ||
     elCVVCarta.value == undefined ||
     !numero_CVV_regex.test(elCVVCarta.value)
   ) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }
 
 function checkScadenza() {
   err = document.getElementById("errScadenza");
-  noerr = document.getElementById("noErrScadenza");
+  noError = document.getElementById("noErrorScadenza");
 
   var anno = parseInt(elAnnoScadenzaCarta.value); // Prendo la data delezionata
   var mese = parseInt(elMeseScadenzaCarta.value) - 1; // Prendo il mese selezionato (sottraggo 1 perché i mesi in JS partono da 0)
@@ -145,11 +145,11 @@ function checkScadenza() {
   // Confronto la data attuale a quella selezionata
   if (oggi > scadenza) {
     err.style.display = "inline";
-    noerr.style.display = "none";
+    noError.style.display = "none";
     return false;
   } else {
     err.style.display = "none";
-    noerr.style.display = "inline";
+    noError.style.display = "inline";
     return true;
   }
 }

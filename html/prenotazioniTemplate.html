@@ -178,13 +178,23 @@
           />
           <div class="form-field">
             <span id="spanDate"
-              ><input id="date" name="date" readonly value="{data}"
+              ><input
+                id="date"
+                class="inputPrenotazioni"
+                name="date"
+                readonly
+                value="{data}"
             /></span>
             <label for="date">Giorno:</label>
           </div>
           <div class="form-field">
             <span id="spanTime"
-              ><input id="time" name="time" readonly value="{ora}"
+              ><input
+                id="time"
+                class="inputPrenotazioni"
+                name="time"
+                readonly
+                value="{ora}"
             /></span>
             <label for="time">Ora:</label>
           </div>
@@ -195,6 +205,7 @@
             <div class="form-field">
               <span id="spanEmail"
                 ><input
+                  class="inputPrenotazioni"
                   id="email"
                   name="email"
                   type="email"
@@ -202,16 +213,17 @@
                   value="{email}"
               /></span>
               <label for="email">Email:</label>
-              <span id="errPrenotazioniEmail" class="errContatti"
+              <span id="errPrenotazioniEmail" class="error"
                 >Inserire una mail valida</span
               >
-              <span id="noErrPrenotazioniEmail" class="noErrContatti"
+              <span id="noErrorPrenotazioniEmail" class="noError"
                 >&#10003;</span
               >
             </div>
             <div class="form-field">
               <span id="spanCell"
                 ><input
+                  class="inputPrenotazioni"
                   id="cell"
                   name="cell"
                   type="tel"
@@ -219,10 +231,10 @@
                   value="{cell}"
               /></span>
               <label for="cell">Numero di telefono:</label>
-              <span id="errPrenotazioniTelefono" class="errContatti"
+              <span id="errPrenotazioniTelefono" class="error"
                 >Inserire un numero di telefono valido</span
               >
-              <span id="noErrPrenotazioniTelefono" class="noErrContatti"
+              <span id="noErrorPrenotazioniTelefono" class="noError"
                 >&#10003;</span
               >
             </div>
@@ -230,6 +242,7 @@
           <div class="form-field">
             <span id="spanIndirizzo"
               ><input
+                class="inputPrenotazioni"
                 id="indirizzo"
                 name="indirizzo"
                 type="text"
@@ -237,10 +250,10 @@
                 value="{indirizzo}"
             /></span>
             <label for="indirizzo">Indirizzo:</label>
-            <span id="errPrenotazioniIndirizzo" class="errContatti"
+            <span id="errPrenotazioniIndirizzo" class="error"
               >Inserire un indirizzo</span
             >
-            <span id="noErrPrenotazioniIndirizzo" class="noErrContatti"
+            <span id="noErrorPrenotazioniIndirizzo" class="noError"
               >&#10003;</span
             >
           </div>
@@ -258,13 +271,18 @@
           <legend>Dati carta</legend>
           <div class="form-field">
             <span id="spanNameSurname"
-              ><input id="name_surname" type="text" name="nome" maxlength="40"
+              ><input
+                id="name_surname"
+                class="inputPrenotazioni"
+                type="text"
+                name="nome"
+                maxlength="40"
             /></span>
             <label for="name_surname">Nome e cognome:</label>
-            <span id="errPrenotazioniNomeCarta" class="errContatti"
+            <span id="errPrenotazioniNomeCarta" class="error"
               >Inserire il nome sulla carta</span
             >
-            <span id="noErrPrenotazioniNomeCarta" class="noErrContatti"
+            <span id="noErrorPrenotazioniNomeCarta" class="noError"
               >&#10003;</span
             >
           </div>
@@ -272,6 +290,7 @@
             <div class="form-field">
               <span id="spanCardNumber"
                 ><input
+                  class="inputPrenotazioni"
                   id="card_number"
                   type="text"
                   name="card_number"
@@ -279,16 +298,17 @@
                   maxlength="19"
               /></span>
               <label for="card_number">Numero della carta:</label>
-              <span id="errPrenotazioniNumeroCarta" class="errContatti"
+              <span id="errPrenotazioniNumeroCarta" class="error"
                 >Inserire il numero della carta</span
               >
-              <span id="noErrPrenotazioniNumeroCarta" class="noErrContatti"
+              <span id="noErrorPrenotazioniNumeroCarta" class="noError"
                 >&#10003;</span
               >
             </div>
             <div class="form-field">
               <span id="spanCVV"
                 ><input
+                  class="inputPrenotazioni"
                   id="id_card_cvv"
                   name="card_cvv"
                   type="number"
@@ -298,15 +318,13 @@
               <label for="id_card_cvv"
                 ><abbr title="Codice di verifica o convalida">CVV</abbr>:</label
               >
-              <span id="errPrenotazioniCVV" class="errContatti"
+              <span id="errPrenotazioniCVV" class="error"
                 >Inserisci i numeri sul retro della carta</span
               >
-              <span id="noErrPrenotazioniCVV" class="noErrContatti"
-                >&#10003;</span
-              >
+              <span id="noErrorPrenotazioniCVV" class="noError">&#10003;</span>
             </div>
-            <span id="errScadenza" class="errContatti">La carta è scaduta</span>
-            <span id="noErrScadenza" class="noErrContatti">&#10003;</span>
+            <span id="errScadenza" class="error">La carta è scaduta</span>
+            <span id="noErrorScadenza" class="noError">&#10003;</span>
             <fieldset id="scadenzaCarta">
               <legend><abbr title="Scadenza">Scad</abbr>.</legend>
               <label for="month">Mese:</label>

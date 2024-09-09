@@ -1410,7 +1410,7 @@ FORM PRENOTAZIONI
 }
 
 #errScadenza,
-#noErrScadenza {
+#noErrorScadenza {
   text-align: left;
 }
 
@@ -1717,14 +1717,14 @@ CALENDARIO / JS-related
 
 /*-----------------------------------------*/
 
-.errContatti {
+.error {
   display: none;
   text-align: right;
   color: red;
   font-size: 0.8em;
 }
 
-.noErrContatti {
+.noError {
   display: none;
   text-align: right;
   color: green;
@@ -1754,7 +1754,7 @@ CALENDARIO / JS-related
   margin-left: 0em;
 }
 
-.noErrScadenza {
+.noErrorScadenza {
   display: none;
   text-align: right;
   color: green;

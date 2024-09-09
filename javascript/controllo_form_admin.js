@@ -12,7 +12,7 @@ var errEmail = document.getElementById("errEmail");
 var errTelefono = document.getElementById("errTelefono");
 var errIndirizzo = document.getElementById("errIndirizzo");
 
-var errMessage = document.getElementById("errContattiAdmin");
+var errMessage = document.getElementById("errorAdmin");
 
 var elForm = document.getElementById("formPrenota");
 
