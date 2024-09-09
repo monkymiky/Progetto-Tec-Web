@@ -1,6 +1,6 @@
 HTML
--	aggiornare header (verifica presenza viewport se necessaria o meno)
 -   verificare correttezza skiplink
+-   modificare colori link (eliminare nero)
 
 TEST
 -	testare tutto dopo aver riempito il DB 
