@@ -1,7 +1,5 @@
 HTML
--   verificare correttezza skiplink
--   inserire header e footer e controllarei i relativi link nelle pagine d'errore in tedesco
-
+-   verificare correttezza skiplink (dovrebbero essere corretti, li ho aggiornati ma non testati)
 TEST
 -	testare tutto dopo aver riempito il DB 
 -	testare accessibilità con tool online (consigliati dalla prof)
