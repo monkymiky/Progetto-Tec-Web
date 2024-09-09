@@ -9,18 +9,18 @@
 }
 
 :root {
-  --headerBackground: #f2ede4;
+  --headerBackground: #f2fdf4;
   --headerText: #262626;
 
   --backgroundColor: #f2dc9b;
   --textColor: #4e4a4a;
   --borderColor: #e0a841;
 
-  --link: #ffdd00;
-  --visitedLink: #d900bb;
-  --hoverLink: #6f1690;
+  --link: #a50;
+  --visitedLink: #9900bb;
+  --hoverLink: #007000;
 
-  --footerBackground: #f2ede4;
+  --footerBackground: #f2fdf4;
   --footerText: #262626;
 
   --boxesBackground: white;
