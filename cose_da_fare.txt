@@ -6,6 +6,3 @@ TEST
 -	testare tutto dopo aver riempito il DB 
 -	verificare tutti i link contatti e pagina admin SPECIALMENTE quelli in tedesco (navbar funzionano)
 -	testare accessibilità con tool online (consigliati dalla prof)
-
-PHP 
--	verificare funzionamento prenotazioni in tedesco ( non funziona, ritradurre prenotazioni.php)
