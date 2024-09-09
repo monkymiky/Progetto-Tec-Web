@@ -1,6 +1,6 @@
 HTML
 -   verificare correttezza skiplink
--   modificare colori link (eliminare nero)
+-   inserire header e footer e controllarei i relativi link nelle pagine d'errore in tedesco
 
 TEST
 -	testare tutto dopo aver riempito il DB 

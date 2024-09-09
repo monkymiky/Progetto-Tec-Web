@@ -1,25 +1,131 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title lang="en">Error 500</title>
 
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"> 
-    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-    <link rel="stylesheet" href="../css/mini.css" type="text/css" media="screen and (max-width:600px)">
-</head>
+    <link
+      rel="stylesheet"
+      href="../css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/mini.css"
+      type="text/css"
+      media="screen and (max-width:600px)"
+    />
+  </head>
 
-<body class="error-page">
-    <main>
-        <div class="messaggio-errore-500">
-            <h1><span lang="en">Internal Server Error</span></h1>
-            <h2>Wir können die Anfrage nicht verarbeiten</h2>
-        </div>
-        <div class="tecnico-container">
-            <div id="tecnico-image" aria-label="Hund, der als Wissenschaftler verkleidet ist, zwischen brennenden Servern"></div>
-        </div>  
-        <p>Wir entschuldigen uns für die Unannehmlichkeiten. Unser kompetentester Techniker ist bereits am Unfallort eingetroffen.</p>
-        <a class="home-button-container" id="torna-da-500" href="../html_DE/index.html">Zurück zur Startseite</a>
+  <body class="error-page">
+    <!--    HEADER    -->
+    <header>
+      <a href="#content" class="skip-link">Zum Hauptinhalt springen</a>
+      <nav class="germanSwitch">
+        <a href="../../html/prestazioni/danza.html">IT</a> | DE
+      </nav>
+      <h1 id="logo">Anna Nesler Physiotherapeutin</h1>
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+    </header>
+    <!--    NAVBAR    -->
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="../../html_DE/index.html">Home</a></li>
+        <li><a href="../../html_DE/anna.html">Über mich</a></li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
+            aria-expanded="false"
+            aria-controls="Prestazioni-dropdown"
+            id="dropdown_button"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../../html_DE/prestazioni/fisioterapia.html"
+                >Physiotherapie</a
+              >
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/massaggi.html">Massagen</a>
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/danza.html">Tanztherapie</a>
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../html_DE/contatti.html">Kontakt</a></li>
+        <li><a href="../../php/prenotazioni_DE.php">Reservierungen</a></li>
+      </ul>
+    </nav>
+
+    <!--    BREADCRUMB    -->
+    <nav id="breadcrumb">
+      <p>Sie befinden sich hier: Seite nicht erreichbar</p>
+    </nav>
+    <main id="content">
+      <div class="messaggio-errore-500">
+        <h1><span lang="en">Internal Server Error</span></h1>
+        <h2>Wir können die Anfrage nicht verarbeiten</h2>
+      </div>
+      <div class="tecnico-container">
+        <div
+          id="tecnico-image"
+          aria-label="Hund, der als Wissenschaftler verkleidet ist, zwischen brennenden Servern"
+        ></div>
+      </div>
+      <p>
+        Wir entschuldigen uns für die Unannehmlichkeiten. Unser kompetentester
+        Techniker ist bereits am Unfallort eingetroffen.
+      </p>
+      <a
+        class="home-button-container"
+        id="torna-da-500"
+        href="../html_DE/index.html"
+        >Zurück zur Startseite</a
+      >
     </main>
-</body>
+    <!--    FOOTER    -->
+    <footer>
+      <p><a href="../contatti.html"> Kontakt </a></p>
+      <div id="Icone-social">
+        <a
+          href="http://instagram.com/iltuoaccount"
+          class="icona-social instagram"
+          aria-label="Instagram"
+        ></a>
+        <a
+          href="http://facebook.com/iltuoaccount"
+          class="icona-social facebook"
+          aria-label="Facebook"
+        ></a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login_de.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
+  </body>
 </html>

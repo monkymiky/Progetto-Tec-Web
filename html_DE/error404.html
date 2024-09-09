@@ -24,7 +24,64 @@
   </head>
 
   <body class="error-page">
-    <main>
+    <!--    HEADER    -->
+    <header>
+      <a href="#content" class="skip-link">Zum Hauptinhalt springen</a>
+      <nav class="germanSwitch">
+        <a href="../../html/prestazioni/danza.html">IT</a> | DE
+      </nav>
+      <h1 id="logo">Anna Nesler Physiotherapeutin</h1>
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+    </header>
+    <!--    NAVBAR    -->
+    <nav id="menu">
+      <ul>
+        <li lang="en"><a href="../../html_DE/index.html">Home</a></li>
+        <li><a href="../../html_DE/anna.html">Über mich</a></li>
+        <li class="dropdown">
+          <button
+            type="button"
+            class="dropdown__title"
+            aria-expanded="false"
+            aria-controls="Prestazioni-dropdown"
+            id="dropdown_button"
+          >
+            Leistungen
+          </button>
+          <ul class="dropdown__menu" id="Prestazioni-dropdown">
+            <li>
+              <a href="../../html_DE/prestazioni/fisioterapia.html"
+                >Physiotherapie</a
+              >
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/massaggi.html">Massagen</a>
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/danza.html">Tanztherapie</a>
+            </li>
+            <li>
+              <a href="../../html_DE/prestazioni/corsi.html">Massagekurse</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../html_DE/contatti.html">Kontakt</a></li>
+        <li><a href="../../php/prenotazioni_DE.php">Reservierungen</a></li>
+      </ul>
+    </nav>
+
+    <!--    BREADCRUMB    -->
+    <nav id="breadcrumb">
+      <p>Sie befinden sich hier: Seite nicht erreichbar</p>
+    </nav>
+    <main id="content">
       <div class="container">
         <h1>404</h1>
         <h2>Seite nicht gefunden.</h2>
@@ -46,5 +103,28 @@
         >Zurück zur Startseite</a
       >
     </main>
+    <!--    FOOTER    -->
+    <footer>
+      <p><a href="../contatti.html"> Kontakt </a></p>
+      <div id="Icone-social">
+        <a
+          href="http://instagram.com/iltuoaccount"
+          class="icona-social instagram"
+          aria-label="Instagram"
+        ></a>
+        <a
+          href="http://facebook.com/iltuoaccount"
+          class="icona-social facebook"
+          aria-label="Facebook"
+        ></a>
+      </div>
+      <small
+        >Nesler Michele - Parise Luca - Cristo Marco - Leonetti Elia -
+        <span lang="en">All Rights Reserved</span>
+        <a href="../php/login_de.php"
+          ><span lang="en">login</span> administratoren</a
+        ></small
+      >
+    </footer>
   </body>
 </html>
