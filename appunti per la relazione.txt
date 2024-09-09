@@ -1,9 +1,3 @@
-giustificare la non buona usabilità della pagina admin dicendo che è un progetto accademico e perciò abbiamo ridotto le funzionalità in modo da rientrare nel monteore previsto, ma per un progetto reale lo avremmo fatto.
-
-Giustificare bassa accessibilità colore hover sui link (è poco rilevante che lo sia)
-
-min 320 px
-
 Nesler Michele - michele.nesler@studenti.unipd.it - 2000559
 Parise Luca - luca.parise.3@studenti.unipd.it -2043677 
 Cristo Marco - marco.cristo@studenti.unipd.it - 1232582
