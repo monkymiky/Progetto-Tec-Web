@@ -224,17 +224,15 @@ footer {
   background-image: url("../media/Facebook.webp");
 }
 
-footer a:hover {
-  color: var(--hoverLink);
+footer a:link {
+  padding: 0.5em;
+  color: var(--link);
 }
-
 footer a:visited {
   color: var(--visitedLink);
 }
-
-footer a {
-  padding: 0.5em;
-  color: var(--link);
+footer a:hover {
+  color: var(--hoverLink);
 }
 
 /********************************************
