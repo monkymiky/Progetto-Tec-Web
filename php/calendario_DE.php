@@ -82,21 +82,11 @@ class Calendario{
 
         if($admin){
             $connessione->openDBConnection();
-            //echo "<p>".$SQLprimoTab."ultimo =" . $SQLultimoTab ."</p>";
             $prenotazioni = $connessione->getPrenotazioni($SQLprimoTab,$SQLultimoTab); // Query prenotazioni con dati clienti per visualizzare nel calendario 
             $nonDisponibili = $connessione->getNonDisponibili($SQLprimoTab,$SQLultimoTab);//Query slot non disponibili per visualizzare nel calendario ------------
             $connessione->closeConnection();
 
             if(count($nonDisponibili) == 0){$nonDisponibili[0][0] = "2000-00-00 00:00:00";} //il caso in cui sono tutti disponibili è gestito 
-            /*echo"<p>Non disponibili : </p>";
-            for($i = 0; $i<count($nonDisponibili); $i++){
-                echo "<p>".$nonDisponibili[$i][0]."</p>";
-            }
-            echo "<p> prenotazioni :</p>";
-            for($i = 0; $i<count($prenotazioni); $i++){
-                echo "<p>".$prenotazioni[$i]["Data_Ora_Inizio"]."</p>";
-            }
-            echo "<p>".count($prenotazioni)."</p>";*/
             for($i=0;$i<42;$i++){ // per ogni giorno visualizzato sul calendario
                 $this->giorno[$i] = new Giorno(strtotime("+$i day",$primoTab));
                 $this->giorno[$i]->prenotato = true;
@@ -112,9 +102,7 @@ class Calendario{
                     $slotValutatoEPrenotato = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($nonDisponibili[$k][0]);
                     if($slotValutatoEPrenotato){ 
 
-                        //echo "<p>".$this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]. " == ";
-                        //echo $nonDisponibili[$k][0]." = ". $loSlotValutatoESucessivoAlProssimoSlotPrenotato ."</p>";
-
+                        
                         $this->giorno[$i]->disponibilitàSlot[$j] = false;
                         $z=0; 
                         $prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
@@ -123,10 +111,6 @@ class Calendario{
                             $prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
                         }
 
-                        //$prenotazioneEDiQuestoSlot = strtotime($this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]) == strtotime($prenotazioni[$z]["Data_Ora_Inizio"]);
-                        //echo "<p> prenotazione di questo slot : ".$this->giorno[$i]->stringData ." ". $this->giorno[$i]->ORARIO_SLOT[$j]. " == ";
-                        //echo $prenotazioni[$z]["Data_Ora_Inizio"]." = ". $prenotazioneEDiQuestoSlot ."</p>";
-                        //var_dump($prenotazioni[$z]["tipo"]);
                         $this->giorno[$i]->dati_prenotazioni[$j] = ["nome" => $prenotazioni[$z]["nome"],"indirizzo" => $prenotazioni[$z]["indirizzo"],"email" => $prenotazioni[$z]["email"],"cell" => $prenotazioni[$z]["cellulare"],"note" => $prenotazioni[$z]["InfoAggiuntive"],"tipo" => $prenotazioni[$z]["tipo"]];
                         $this->giorno[$i]->disponibile = false;
                     }
