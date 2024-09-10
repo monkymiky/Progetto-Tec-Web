@@ -574,7 +574,7 @@ HOME
   font-size: 4em;
   line-height: 1.5em;
 
-  border: 0.05em solid var(--borderColor); /*da cambiare con un colore suo*/
+  border: 0.05em solid var(--borderColor);
   border-right-width: 0.55em;
   border-bottom-width: 0.55em;
   border-radius: 0.3em;
