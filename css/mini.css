@@ -129,16 +129,16 @@
   }
 
   #cosa-offro-links-massaggi {
-    background-image: url("../media/massaggi.jpg");
+    background-image: url("../media/massaggi.webp");
   }
   #cosa-offro-links-corsi {
-    background-image: url("../media/corso.jpg");
+    background-image: url("../media/corso.webp");
   }
   #cosa-offro-links-danza {
-    background-image: url("../media/danza.jpg");
+    background-image: url("../media/danza.webp");
   }
   #cosa-offro-links-fisioterapia {
-    background-image: url("../media/fisioterapia.jpg");
+    background-image: url("../media/fisioterapia.webp");
   }
   #CosaOffro h1 {
     line-height: 1em;
