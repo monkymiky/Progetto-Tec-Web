@@ -110,8 +110,7 @@ function riempiData(object) {
 }
 
 function _resetTarget() {
-  //se sono visualizzati degli slot e viene cambiata la tipologia studio/domicilio, gli slot spariscono
-  window.location.href = "#domicilio-domicilio-studioSelection"; //potrebbe dare problemi di accessibilità (maledetti screenreader)
+  window.location.href = "#domicilio-domicilio-studioSelection";
 }
 
 function emphasize(object) {

@@ -68,31 +68,8 @@ function checkIndirizzo() {
     return true;
   }
 }
-/*
-function checkGenerale() {
-    if(checkNomeCognome() && checkEmail() && checkIndirizzo() && checkNumeroTelefono()) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-*/
+
 elNomeCognome.addEventListener("blur", checkNomeCognome, false);
 elEmail.addEventListener("blur", checkEmail, false);
 elTelefono.addEventListener("blur", checkNumeroTelefono, false);
 elIndirizzo.addEventListener("blur", checkIndirizzo, false);
-/*
-elForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if(checkGenerale()) {
-        elForm.submit();
-    }
-    else {
-        alert("controlla i campi");
-        elNomeCognome.focus();
-        
-    }
-},false)
-*/

@@ -1,6 +1,5 @@
 <?php
     namespace DB;
-    //Es ist möglich, date() und mktime() gleichzeitig zu verwenden, um Datumsangaben in der Zukunft oder der Vergangenheit zu bestimmen.
     const MESSAGGIO_SHOW_ERR = "Scusa, il sito ha avuto un problema. Riprova tra qualche minuto oppure 
     contattami tramite il <a href=\"/html/contatti.html\">form di contatto</a> riportando il seguente 
     errore. Potrebbe essere d'aiuto ai tecnici!";
@@ -14,15 +13,6 @@
         private const DATABASE_NAME = "mnesler";
         private const USERNAME = "mnesler";
         private const PASSWORD = "Feif1eeng2Ea7nei";
-        
-        
-        // accesso per altervista
-        /*
-        private const HOST_DB = "localhost";
-        private const DATABASE_NAME = "my_fisioterapiabz";
-        private const USERNAME = "fisioterapiabz";
-        private const PASSWORD = "";
-        */
 
         private $connessione;
         private $state = false;
@@ -153,7 +143,6 @@
                 $this->connessione->commit();
                 if($tipo == 1){ // elimino anche la tupla che identifica lo slot sucessivo 
                     $slot2= date("Y-m-d H:i:s", strtotime("+90 min" ,strtotime($dataora))); // aggiungo 1,5h
-                    //$this->connessione->query("DELETE FROM NonDisponibili WHERE Data_Ora_Inizio = '$slot2'");
                 }
             }catch(Exception $e){
                 $this->openErrorPage("4");
