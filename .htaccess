@@ -1,0 +1,2 @@
+ErrorDocument 404 http://localhost:8080/mnesler/Progetto-Tec-Web/html/error404.html
+ErrorDocument 500 http://localhost:8080/mnesler/Progetto-Tec-Web/html/error500.html
